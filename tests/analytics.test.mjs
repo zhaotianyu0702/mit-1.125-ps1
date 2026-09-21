@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyzeSkills, distribution, selectJobs, skillScenario } from '../dist/analytics.js';
+import { analyzeSkills, distribution, selectJobs, skillScenario, postingSkillCoverage } from '../dist/analytics.js';
 
 const job = (overrides = {}) => ({
   id: 'j1', company: 'Acme', title: 'ML role', roleFamily: 'ML Engineering',
@@ -45,26 +45,62 @@ test('graduate evidence includes explicit and zero experience, while experience 
   assert.deepEqual(selectJobs(jobs, { evidence: 'early', experience: 'senior' }).map(item => item.id), ['zero']);
 });
 
-test('skill analysis excludes preselected recommendations and reports cooccurrence/new postings', () => {
-  const jobs = [job({ skills: [{ name: 'Python' }, { name: 'SQL' }] }), job({ id: 'j2', skills: [{ name: 'SQL' }, { name: 'Docker' }], company: 'Beta' })];
-  const result = analyzeSkills(jobs, ['python']);
-  assert.equal(result.withKnownSkillCount, 1);
-  assert.equal(result.demand.find(row => row.skill === 'Python').selected, true);
-  assert.equal(result.demand.find(row => row.skill === 'SQL').cooccurrenceCount, 1);
-  assert.equal(result.demand.find(row => row.skill === 'Docker').newPostingCount, 1);
-  assert.equal(result.recommendations.some(row => row.skill === 'Python'), false);
+test('coverage uses the fraction of distinct posting skills and rounds the target up', () => {
+  const role=job({skills:['Python','python3','SQL','Docker','PyTorch','LLMs']});
+  assert.equal(postingSkillCoverage(role,['Python','SQL'],60).covered,false);
+  const covered=postingSkillCoverage(role,['Python','SQL','LLM'],60);
+  assert.equal(covered.total,5);assert.equal(covered.matched,3);assert.equal(covered.required,3);assert.equal(covered.covered,true);
+  assert.equal(postingSkillCoverage(job(),['Python'],50).covered,true);
+  assert.equal(postingSkillCoverage(job(),['Python'],60).covered,false);
 });
 
-test('selected skill aliases collapse before matching', () => {
-  const result = analyzeSkills([job({ skills: [{ name: 'LLMs' }] })], ['llm', 'large language models']);
-  assert.deepEqual(result.selectedSkills, ['LLMs']);
-  assert.equal(result.withKnownSkillCount, 1);
+test('unknown skill lists are unscored and excluded from each role denominator', () => {
+  const jobs=[job({skills:['Python']}),job({id:'unknown',skills:[]})];
+  const result=analyzeSkills(jobs,['Python']);
+  assert.equal(result.total,2);assert.equal(result.eligibleCount,1);assert.equal(result.unscoredCount,1);
+  assert.equal(result.coveredCount,1);assert.equal(result.coveredShare,100);
+  assert.equal(result.byRole.find(r=>r.key==='ML Engineering').eligibleCount,1);
+  assert.equal(postingSkillCoverage(jobs[1],[]).covered,false);
+  assert.equal(analyzeSkills([],[]).coveredShare,0);
 });
 
-test('skill scenarios handle empty selections and increment by distinct postings', () => {
-  const jobs = [job({ skills: [{ name: 'Python' }] }), job({ id: 'j2', skills: [{ name: 'SQL' }] }), job({ id: 'j3', skills: [] })];
-  assert.deepEqual(skillScenario(jobs, [], 'SQL'), { before: 0, after: 1, gain: 1, total: 3 });
-  assert.deepEqual(skillScenario(jobs, ['Python'], 'SQL'), { before: 1, after: 2, gain: 1, total: 3 });
+test('marginal recommendations outrank more frequent skills that do not cross the target', () => {
+  const jobs=[job({skills:['Python','SQL']}),job({id:'other',skills:['Docker','CUDA','AWS','Spark','Ray']}),job({id:'third',skills:['Docker','C++','PyTorch','GCP','Java']})];
+  const before=structuredClone(jobs);
+  const result=analyzeSkills(jobs,['Python'],60);
+  assert.equal(result.recommendations[0].skill,'SQL');assert.equal(result.recommendations[0].gain,1);
+  assert.equal(result.demand.find(r=>r.skill==='Docker').count,2);
+  assert.equal(result.demand.find(r=>r.skill==='Docker').gain,0);
+  assert.equal(result.demand.find(r=>r.skill==='Docker').closerCount,2);
+  assert.equal(result.recommendations.some(r=>r.skill==='Python'),false);
+  assert.deepEqual(jobs,before);
+});
+
+test('aliases collapse in both the selection and the posting denominator', () => {
+  const result=analyzeSkills([job({skills:['LLMs','LLM','large language models','SQL']})],['llm','large language models'],60);
+  assert.deepEqual(result.selectedSkills,['LLMs']);assert.equal(result.coveredCount,0);assert.equal(result.oneAwayCount,1);
+  assert.equal(result.recommendations[0].skill,'SQL');assert.equal(result.recommendations[0].gain,1);
+});
+
+test('scenarios distinguish crossing the target from intermediate progress', () => {
+  const jobs=[job({skills:['Python','SQL']}),job({id:'j2',skills:['Python','SQL','Docker','CUDA','AWS']}),job({id:'j3',skills:[]})];
+  assert.deepEqual(skillScenario(jobs,['Python'],'SQL',60),{before:0,after:1,gain:1,total:2,unscoredCount:1,threshold:60,closerCount:1});
+  assert.equal(skillScenario(jobs,['Python'],'Python',60).gain,0);
+  assert.equal(analyzeSkills(jobs,[],60).coveredCount,0);
+  assert.equal(analyzeSkills(jobs,['Python','SQL','Docker','CUDA','AWS'],60).recommendations.length,0);
+});
+
+test('coverage is monotone in skills and inverse-monotone in threshold; card gains equal scenarios', () => {
+  const jobs=[job({skills:['Python','SQL','Docker']}),job({id:'j2',skills:['Python','SQL','Docker','AWS','CUDA']}),job({id:'j3',skills:['Python']})];
+  const counts=[40,50,60,70,80].map(t=>analyzeSkills(jobs,['Python','SQL'],t).coveredCount);
+  assert.ok(counts.every((count,i)=>i===0||count<=counts[i-1]));
+  for(const threshold of [40,60,80]){
+    const before=analyzeSkills(jobs,['Python'],threshold);
+    for(const row of before.demand.filter(r=>!r.selected)){
+      const result=skillScenario(jobs,['Python'],row.skill,threshold);
+      assert.equal(result.gain,row.gain);assert.equal(result.closerCount,row.closerCount);assert.ok(result.gain>=0);
+    }
+  }
 });
 
 test('reference skill filters select exactly the postings counted in the charts', () => {

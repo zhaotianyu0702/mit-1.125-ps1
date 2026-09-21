@@ -1,4 +1,4 @@
-import { EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, ROLE_FAMILIES, experienceLevel } from './core.js?v=3.2';
+import { EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, ROLE_FAMILIES, experienceLevel } from './core.js?v=3.3';
 
 const GRADUATE_STATUSES = new Set(['explicit', 'zero-experience']);
 const EARLY_STATUSES = new Set([...GRADUATE_STATUSES, 'early-career']);
@@ -102,41 +102,77 @@ export function distribution(jobs = [], dimension) {
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 }
 
-export function analyzeSkills(jobs = [], selectedSkills = []) {
-  const selectedByKey = new Map();
-  for (const skill of selectedSkills) {
-    const display = canonicalSkill(skill);
-    if (skillKey(display) && !selectedByKey.has(skillKey(display))) selectedByKey.set(skillKey(display), display);
+// These are exploration controls, not employer eligibility requirements.
+export const SKILL_THRESHOLDS = [40, 50, 60, 70, 80];
+export const DEFAULT_SKILL_THRESHOLD = 60;
+export const skillThreshold = value => SKILL_THRESHOLDS.includes(Number(value)) ? Number(value) : DEFAULT_SKILL_THRESHOLD;
+
+function normalizedSelection(selectedSkills) {
+  const byKey = new Map();
+  for (const value of selectedSkills) {
+    const display=canonicalSkill(value), key=skillKey(display);
+    if(key && !byKey.has(key))byKey.set(key,display);
   }
-  const selected = [...selectedByKey.values()];
-  const selectedKeys = new Set(selected.map(skillKey));
-  const postingSkills = jobs.map(job => new Set(jobSkills(job).map(skillKey)));
-  const withKnownSkill = postingSkills.filter(skills => selectedKeys.size && [...selectedKeys].some(skill => skills.has(skill))).length;
-  const byRole = ROLE_FAMILIES.map(key => {
-    const indexes = jobs.map((job, index) => [job, index]).filter(([job]) => text(job?.roleFamily) === key).map(([, index]) => index);
-    const count = indexes.length;
-    const known = indexes.filter(index => selectedKeys.size && [...selectedKeys].some(skill => postingSkills[index].has(skill))).length;
-    return { key, label: key, count, withKnownSkillCount: known, withKnownSkillShare: percent(known, count) };
-  });
-  const demandMap = new Map();
-  jobs.forEach((job, index) => {
-    for (const skill of new Set(jobSkills(job))) {
-      const key = skillKey(skill);
-      const row = demandMap.get(key) || { skill, count: 0, companies: new Set(), cooccurrenceCount: 0, newPostingCount: 0 };
-      row.count++;
-      if (job?.company) row.companies.add(companyKey(job.company));
-      if ([...selectedKeys].some(selectedKey => postingSkills[index].has(selectedKey))) row.cooccurrenceCount++;
-      else row.newPostingCount++;
-      demandMap.set(key, row);
-    }
-  });
-  const demand = [...demandMap.entries()].map(([key, row]) => ({ skill: row.skill, count: row.count, share: percent(row.count, jobs.length), companies: row.companies.size, selected: selectedKeys.has(key), cooccurrenceCount: row.cooccurrenceCount, newPostingCount: row.newPostingCount }))
-    .sort((a, b) => b.count - a.count || b.companies - a.companies || a.skill.localeCompare(b.skill));
-  return { selectedSkills: selected, total: jobs.length, withKnownSkillCount: withKnownSkill, withKnownSkillShare: percent(withKnownSkill, jobs.length), byRole, demand, recommendations: demand.filter(row => !row.selected).slice(0, 3) };
+  return byKey;
 }
 
-export function skillScenario(jobs = [], selectedSkills = [], skill) {
-  const before = analyzeSkills(jobs, selectedSkills).withKnownSkillCount;
-  const after = analyzeSkills(jobs, [...selectedSkills, skill]).withKnownSkillCount;
-  return { before, after, gain: after - before, total: jobs.length };
+export function postingSkillCoverage(job, selectedSkills = [], threshold = DEFAULT_SKILL_THRESHOLD) {
+  const selected = new Set(normalizedSelection(selectedSkills).keys());
+  return coverageRecord(job, selected, skillThreshold(threshold));
+}
+function coverageRecord(job, selected, threshold) {
+  const skills = jobSkills(job), keys = skills.map(skillKey);
+  const matched = keys.filter(key=>selected.has(key)).length;
+  const required = Math.ceil(skills.length * threshold / 100);
+  const scorable = skills.length > 0;
+  return {skills, matched, total:skills.length, required, scorable,
+    coverage:scorable ? percent(matched,skills.length) : null,
+    covered:scorable && matched>=required,
+    missing:skills.filter(skill=>!selected.has(skillKey(skill)))};
+}
+
+export function analyzeSkills(jobs = [], selectedSkills = [], threshold = DEFAULT_SKILL_THRESHOLD) {
+  threshold=skillThreshold(threshold);
+  const selectedByKey=normalizedSelection(selectedSkills);
+  const selectedKeys=new Set(selectedByKey.keys());
+  const records=jobs.map(job=>coverageRecord(job,selectedKeys,threshold));
+  const scorable=records.filter(row=>row.scorable);
+  const coveredCount=scorable.filter(row=>row.covered).length;
+  const oneAwayCount=scorable.filter(row=>row.required-row.matched===1).length;
+  const byRole=ROLE_FAMILIES.map(key=>{
+    const indexes=jobs.map((job,index)=>[job,index]).filter(([job])=>job.roleFamily===key).map(([,index])=>index);
+    const eligible=indexes.map(index=>records[index]).filter(row=>row.scorable);
+    const covered=eligible.filter(row=>row.covered).length;
+    return {key,label:key,count:indexes.length,eligibleCount:eligible.length,coveredCount:covered,coveredShare:percent(covered,eligible.length)};
+  });
+  const demandMap=new Map();
+  jobs.forEach((job,index)=>{
+    const record=records[index];
+    for(const skill of record.skills){
+      const key=skillKey(skill);
+      const row=demandMap.get(key)||{skill,count:0,companies:new Set(),gainCompanies:new Set(),gain:0,closerCount:0,progressGain:0};
+      row.count++;
+      if(job.company)row.companies.add(companyKey(job.company));
+      if(!selectedKeys.has(key) && !record.covered){
+        if(record.matched+1>=record.required){row.gain++;if(job.company)row.gainCompanies.add(companyKey(job.company));}
+        else row.closerCount++;
+        // Each previously unmet posting contributes at most one full target's
+        // progress; adding a skill contributes 1 / ceil(skill count * target).
+        row.progressGain+=1/record.required;
+      }
+      demandMap.set(key,row);
+    }
+  });
+  const demand=[...demandMap.entries()].map(([key,row])=>({skill:row.skill,count:row.count,share:percent(row.count,jobs.length),companies:row.companies.size,selected:selectedKeys.has(key),gain:row.gain,gainCompanies:row.gainCompanies.size,closerCount:row.closerCount,progressGain:row.progressGain}))
+    .sort((a,b)=>b.count-a.count||b.companies-a.companies||a.skill.localeCompare(b.skill));
+  const recommendations=demand.filter(row=>!row.selected && (row.gain || row.closerCount))
+    .sort((a,b)=>b.gain-a.gain||b.progressGain-a.progressGain||b.companies-a.companies||a.skill.localeCompare(b.skill)).slice(0,3);
+  return {selectedSkills:[...selectedByKey.values()],threshold,total:jobs.length,eligibleCount:scorable.length,unscoredCount:jobs.length-scorable.length,coveredCount,coveredShare:percent(coveredCount,scorable.length),oneAwayCount,byRole,demand,recommendations};
+}
+
+export function skillScenario(jobs = [], selectedSkills = [], skill, threshold = DEFAULT_SKILL_THRESHOLD) {
+  const before=analyzeSkills(jobs,selectedSkills,threshold);
+  const after=analyzeSkills(jobs,[...selectedSkills,skill],threshold);
+  const candidate=before.demand.find(row=>skillKey(row.skill)===skillKey(skill));
+  return {before:before.coveredCount,after:after.coveredCount,gain:after.coveredCount-before.coveredCount,total:before.eligibleCount,unscoredCount:before.unscoredCount,threshold:before.threshold,closerCount:candidate?.closerCount||0};
 }
