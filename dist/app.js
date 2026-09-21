@@ -1,5 +1,5 @@
-import { ROLE_FAMILIES, EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, unique } from './core.js?v=3.3';
-import { selectJobs, distribution, analyzeSkills, skillScenario, jobSkills, SKILL_THRESHOLDS, DEFAULT_SKILL_THRESHOLD, skillThreshold, postingSkillCoverage } from './analytics.js?v=3.3';
+import { ROLE_FAMILIES, EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, unique } from './core.js?v=3.4';
+import { selectJobs, distribution, analyzeSkills, skillScenario, jobSkills, SKILL_COVERAGE_TARGET, postingSkillCoverage } from './analytics.js?v=3.4';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -10,14 +10,13 @@ const stateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'Cali
 const roleShort = {'ML Engineering':'ML engineering','AI Applications':'AI applications','Research':'Research','ML Infrastructure':'ML infrastructure','Applied Data Science':'Data science'};
 const levelColors = {entry:'#91b06a',senior:'#397d70',staff:'#648ba7',manager:'#bd936d',unspecified:'#dce2da'};
 const storageKey = 'compass-skills-v1';
-const state = { jobs: [], meta: {}, coverage: [], filters: {...defaults}, view: 'landscape', skills: [], remember: false, scenario: '', threshold: DEFAULT_SKILL_THRESHOLD, allRegions: false, referencePage: 0 };
+const state = { jobs: [], meta: {}, coverage: [], filters: {...defaults}, view: 'landscape', skills: [], remember: false, scenario: '', allRegions: false, referencePage: 0 };
 let toastTimer;
 
 function readRoute() {
   const hash = location.hash.slice(1);
   state.view = ({guide:'skills',explore:'landscape',insights:'landscape',methodology:'postings',data:'postings',compare:'landscape'})[hash] || (['landscape','skills','postings'].includes(hash) ? hash : 'landscape');
   const params = new URLSearchParams(location.search);
-  state.threshold=skillThreshold(params.get('target'));
   const role = params.get('role') || params.get('roles');
   const rawExperience = params.get('experienceLevel');
   const experience = ({'new-grad':'entry',mid:'senior',leadership:'manager'})[rawExperience] || rawExperience;
@@ -33,7 +32,6 @@ function readRoute() {
 function writeRoute() {
   const params = new URLSearchParams();
   for (const [key, value] of Object.entries(state.filters)) if (value !== 'all' && value !== '') params.set(key === 'experience' ? 'experienceLevel' : key, value);
-  if(state.threshold!==DEFAULT_SKILL_THRESHOLD)params.set('target',state.threshold);
   history.replaceState(null, '', `${location.pathname}${params.size ? '?' + params : ''}#${state.view}`);
 }
 function navigate(view) { state.view = view; writeRoute(); render(); window.scrollTo({top:0,behavior:'instant'}); $('#page-heading h1')?.focus({preventScroll:true}); }
@@ -118,10 +116,10 @@ function skillPicker() {
   return `<section class="panel"><div class="panel-head"><div><h2>What have you used?</h2><p>Coursework, projects or research</p></div><span class="selection-count">${state.skills.length} selected</span></div><div class="skill-chips">${shown.map(skillChip).join('')}</div>${remaining.length?`<label class="other-skill"><span class="skip-link">Add another skill</span><select data-other-skill aria-label="Add another skill"><option value="">Add another skill…</option>${remaining.map(skill=>`<option value="${escape(skill)}">${escape(skill)}</option>`).join('')}</select></label>`:''}<div class="selection-footer"><label class="remember"><input type="checkbox" data-remember ${state.remember?'checked':''}>Remember on this device</label><button class="text-button" data-action="clear-skills">Clear skills</button></div></section>`;
 }
 function footprint(analysis) {
-  return `<section class="panel coverage-panel"><div class="panel-head"><div><h2>Your skill coverage</h2><p>Meet your target for each posting</p></div><label class="target-control">Skill target<select data-target aria-label="Skill coverage target">${SKILL_THRESHOLDS.map(value=>`<option value="${value}" ${state.threshold===value?'selected':''}>${value}%</option>`).join('')}</select></label></div>
+  return `<section class="panel coverage-panel"><div class="panel-head"><div><h2>Your skill coverage</h2><p>At least ${SKILL_COVERAGE_TARGET}% of each posting’s skills</p></div></div>
     <div class="coverage-stats"><div class="coverage-main"><strong>${analysis.eligibleCount?pct(analysis.coveredCount,analysis.eligibleCount)+'%':'—'}</strong><span>${fmt(analysis.coveredCount)} / ${fmt(analysis.eligibleCount)} postings meet target</span></div><div class="coverage-near"><strong>${fmt(analysis.oneAwayCount)}</strong><span>one skill away</span></div></div>
-    <div class="footprint-list">${analysis.byRole.map(r=>`<div class="footprint-row"><span>${escape(roleShort[r.key])}</span><div class="footprint-track" aria-hidden="true"><i style="width:${r.coveredShare}%"></i></div><b title="${r.coveredCount} of ${r.eligibleCount} scored postings meet the ${state.threshold}% target">${r.eligibleCount?pct(r.coveredCount,r.eligibleCount)+'%':'—'}</b></div>`).join('')}</div>
-    <details class="coverage-definition"><summary>${state.threshold}% means ${Math.ceil(5*state.threshold/100)} of 5 listed skills${analysis.unscoredCount?` · ${analysis.unscoredCount} unscored`:""} +</summary><p>Selected skills ÷ tracked skills in each posting, rounded up to a whole skill. ${analysis.unscoredCount?`${fmt(analysis.unscoredCount)} postings without tracked skills excluded. `:''}Mentions include required and preferred skills; this is a learning target, not a qualification score.</p></details></section>`;
+    <div class="footprint-list">${analysis.byRole.map(r=>`<div class="footprint-row"><span>${escape(roleShort[r.key])}</span><div class="footprint-track" aria-hidden="true"><i style="width:${r.coveredShare}%"></i></div><b title="${r.coveredCount} of ${r.eligibleCount} scored postings meet the ${SKILL_COVERAGE_TARGET}% target">${r.eligibleCount?pct(r.coveredCount,r.eligibleCount)+'%':'—'}</b></div>`).join('')}</div>
+    <details class="coverage-definition"><summary>${SKILL_COVERAGE_TARGET}% means ${Math.ceil(5*SKILL_COVERAGE_TARGET/100)} of 5 listed skills${analysis.unscoredCount?` · ${analysis.unscoredCount} unscored`:""} +</summary><p>Required matches = ${SKILL_COVERAGE_TARGET}% × tracked skills, rounded up to a whole skill. ${analysis.unscoredCount?`${fmt(analysis.unscoredCount)} postings without tracked skills excluded. `:''}Mentions include required and preferred skills; this is a learning target, not a qualification score.</p></details></section>`;
 }
 function projectIdea(skill) {
   const ideas = {
@@ -149,16 +147,16 @@ function projectIdea(skill) {
 }
 function recommendations(analysis) {
   const rows = analysis.recommendations;
-  if (!rows.length) return `<div class="scenario-placeholder">${analysis.eligibleCount?'Every scored posting meets your target. Raise the target or explore another direction.':'No tracked skills in this view. Try another direction.'}</div>`;
-  return `<div class="section-title"><h2>${state.skills.length?'What could you learn next?':'Skills to start with'}</h2><p>Ranked by added coverage at your ${state.threshold}% target</p></div><div class="recommendations">${rows.map((r,i)=>`<article class="recommendation ${state.scenario===r.skill?'previewing':''}"><div class="rec-title"><span class="rank">0${i+1}</span><h3>${escape(r.skill)}</h3></div><div class="rec-number">+${fmt(r.gain)}<small>postings reach target</small></div><p class="rec-progress">${fmt(r.closerCount)} more move closer</p><p class="rec-detail"><button class="text-button" data-reference-skill="${escape(r.skill)}">Mentioned in ${fmt(r.count)} postings ↗</button></p><button class="small-button" data-preview="${escape(r.skill)}">Try adding ${escape(r.skill)} ↗</button><details class="practice"><summary>One practice project +</summary><p>${escape(projectIdea(r.skill))}</p></details></article>`).join('')}</div>`;
+  if (!rows.length) return `<div class="scenario-placeholder">${analysis.eligibleCount?'Every scored posting meets the target. Explore another direction.':'No tracked skills in this view. Try another direction.'}</div>`;
+  return `<div class="section-title"><h2>${state.skills.length?'What could you learn next?':'Skills to start with'}</h2><p>Added coverage at the ${SKILL_COVERAGE_TARGET}% target</p></div><div class="recommendations">${rows.map((r,i)=>`<article class="recommendation ${state.scenario===r.skill?'previewing':''}"><div class="rec-title"><span class="rank">0${i+1}</span><h3>${escape(r.skill)}</h3></div><div class="rec-number">+${fmt(r.gain)}<small>postings reach target</small></div><p class="rec-progress">${fmt(r.closerCount)} more move closer</p><p class="rec-detail"><button class="text-button" data-reference-skill="${escape(r.skill)}">Mentioned in ${fmt(r.count)} postings ↗</button></p><button class="small-button" data-preview="${escape(r.skill)}">Try adding ${escape(r.skill)} ↗</button><details class="practice"><summary>One practice project +</summary><p>${escape(projectIdea(r.skill))}</p></details></article>`).join('')}</div>`;
 }
 function scenarioPanel(jobs) {
   if (!state.scenario || state.skills.includes(state.scenario)) return '<div class="scenario-placeholder">Try a suggested skill to preview the change.</div>';
-  const result = skillScenario(jobs,state.skills,state.scenario,state.threshold);
-  return `<section class="scenario" aria-label="Skill scenario"><div class="scenario-copy"><h2>What if I add ${escape(state.scenario)}?</h2><p class="caption">Postings reaching the ${state.threshold}% target</p></div><div class="scenario-bars">${[['before','Now',result.before],['after','With it',result.after]].map(([cls,label,count])=>`<div class="scenario-row ${cls}"><span>${label}</span><div class="track"><i style="width:${pct(count,result.total)}%"></i></div><b>${fmt(count)}</b></div>`).join('')}</div><div class="scenario-gain">+${fmt(result.gain)}<small>reach target</small><span class="scenario-closer">${fmt(result.closerCount)} more move closer</span></div><button class="button" data-action="apply-skill">Add to my skills</button></section>`;
+  const result = skillScenario(jobs,state.skills,state.scenario,SKILL_COVERAGE_TARGET);
+  return `<section class="scenario" aria-label="Skill scenario"><div class="scenario-copy"><h2>What if I add ${escape(state.scenario)}?</h2><p class="caption">Postings reaching the ${SKILL_COVERAGE_TARGET}% target</p></div><div class="scenario-bars">${[['before','Now',result.before],['after','With it',result.after]].map(([cls,label,count])=>`<div class="scenario-row ${cls}"><span>${label}</span><div class="track"><i style="width:${pct(count,result.total)}%"></i></div><b>${fmt(count)}</b></div>`).join('')}</div><div class="scenario-gain">+${fmt(result.gain)}<small>reach target</small><span class="scenario-closer">${fmt(result.closerCount)} more move closer</span></div><button class="button" data-action="apply-skill">Add to my skills</button></section>`;
 }
 function renderSkills(jobs) {
-  const analysis = analyzeSkills(jobs,state.skills,state.threshold);
+  const analysis = analyzeSkills(jobs,state.skills,SKILL_COVERAGE_TARGET);
   return `<div class="skill-grid">${skillPicker()}${footprint(analysis)}</div>${jobs.length ? recommendations(analysis)+scenarioPanel(jobs) : `<div style="margin-top:18px">${emptyView()}</div>`}`;
 }
 function download(url,title,type) { return `<a class="download-link" href="${url}"><span>${title} ↗</span><span class="file-type">${type}</span></a>`; }
@@ -166,14 +164,14 @@ function safeUrl(value) { try { const u = new URL(value); return u.protocol === 
 function referenceRow(job) {
   const inferred=['requirements','scope'].includes(job.experienceLevelBasis);
   const skills=jobSkills(job);
-  const coverage=postingSkillCoverage(job,state.skills,state.threshold);
+  const coverage=postingSkillCoverage(job,state.skills,SKILL_COVERAGE_TARGET);
   const locations=unique(job.locations.map(l=>[l.city==='US location not specified'?'':l.city,l.state].filter(Boolean).join(', ')));
   if(job.remote)locations.unshift('Remote');
   const source=job.experienceEvidenceSource;
   return `<tr>
     <td class="posting-title"><strong>${escape(job.title)}</strong><span>${escape(job.company)}</span><span class="posting-direction">${escape(roleShort[job.roleFamily]||job.roleFamily)}</span></td>
     <td class="posting-level"><details><summary class="level-badge level-${escape(job.experienceLevel)}">${escape(EXPERIENCE_LEVEL_LABELS[job.experienceLevel]||'Unspecified')}<span>${inferred?'inferred':'↘'}</span></summary><div class="level-evidence"><p>${escape(job.experienceLevelEvidence)}</p>${source?.excerpt?`<blockquote>${escape(source.excerpt)}</blockquote>`:''}</div></details></td>
-    <td>${state.skills.length && coverage.scorable?`<div class="posting-coverage ${coverage.covered?'target-met':''}"><span>${coverage.matched}/${coverage.total} skills selected</span><b>${coverage.covered?'Target met':`${coverage.required-coverage.matched} more to ${state.threshold}%`}</b></div>`:''}<div class="reference-skills">${skills.length?skills.map(skill=>`<button data-reference-skill="${escape(skill)}" class="reference-skill ${state.skills.includes(skill)?'known-skill':''}" aria-label="Show postings mentioning ${escape(skill)}">${escape(skill)}</button>`).join(''):'<span class="reference-muted">No tracked mentions</span>'}</div></td>
+    <td>${state.skills.length && coverage.scorable?`<div class="posting-coverage ${coverage.covered?'target-met':''}"><span>${coverage.matched}/${coverage.total} skills selected</span><b>${coverage.covered?'Target met':`${coverage.required-coverage.matched} more to ${SKILL_COVERAGE_TARGET}%`}</b></div>`:''}<div class="reference-skills">${skills.length?skills.map(skill=>`<button data-reference-skill="${escape(skill)}" class="reference-skill ${state.skills.includes(skill)?'known-skill':''}" aria-label="Show postings mentioning ${escape(skill)}">${escape(skill)}</button>`).join(''):'<span class="reference-muted">No tracked mentions</span>'}</div></td>
     <td class="posting-location">${escape(locations.join(' · ')||'US — not specified')}</td>
     <td class="posting-source"><a href="${safeUrl(job.url)}" target="_blank" rel="noopener" aria-label="Source for ${escape(job.title)} at ${escape(job.company)}">Source ↗</a><span>${escape(job.verifiedAt?.slice(0,10))}</span></td>
   </tr>`;
@@ -210,7 +208,6 @@ $('#filters').addEventListener('change',event=>{
   render(`[data-filter="${key}"]`);
 });
 document.addEventListener('change',event=>{
-  if(event.target.hasAttribute('data-target')){state.threshold=skillThreshold(event.target.value);render('[data-target]');return;}
   if(event.target.dataset.referenceFilter==='skill'){state.filters.skill=event.target.value;state.referencePage=0;render('[data-reference-filter="skill"]');return;}
   if(event.target.hasAttribute('data-other-skill') && event.target.value) { state.skills=unique([...state.skills,event.target.value]);persistSkills();render();return; }
   if(event.target.hasAttribute('data-remember')) { state.remember=event.target.checked; persistSkills(); }

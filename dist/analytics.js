@@ -1,4 +1,4 @@
-import { EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, ROLE_FAMILIES, experienceLevel } from './core.js?v=3.3';
+import { EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, ROLE_FAMILIES, experienceLevel } from './core.js?v=3.4';
 
 const GRADUATE_STATUSES = new Set(['explicit', 'zero-experience']);
 const EARLY_STATUSES = new Set([...GRADUATE_STATUSES, 'early-career']);
@@ -102,10 +102,10 @@ export function distribution(jobs = [], dimension) {
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 }
 
-// These are exploration controls, not employer eligibility requirements.
-export const SKILL_THRESHOLDS = [40, 50, 60, 70, 80];
-export const DEFAULT_SKILL_THRESHOLD = 60;
-export const skillThreshold = value => SKILL_THRESHOLDS.includes(Number(value)) ? Number(value) : DEFAULT_SKILL_THRESHOLD;
+// One fixed learning target for the site. Explicit thresholds are only used
+// by the offline sensitivity study and tests, never by user or URL controls.
+export const SKILL_COVERAGE_TARGET = 70;
+const skillThreshold = value => Number.isFinite(Number(value)) && Number(value) > 0 && Number(value) <= 100 ? Number(value) : SKILL_COVERAGE_TARGET;
 
 function normalizedSelection(selectedSkills) {
   const byKey = new Map();
@@ -116,7 +116,7 @@ function normalizedSelection(selectedSkills) {
   return byKey;
 }
 
-export function postingSkillCoverage(job, selectedSkills = [], threshold = DEFAULT_SKILL_THRESHOLD) {
+export function postingSkillCoverage(job, selectedSkills = [], threshold = SKILL_COVERAGE_TARGET) {
   const selected = new Set(normalizedSelection(selectedSkills).keys());
   return coverageRecord(job, selected, skillThreshold(threshold));
 }
@@ -131,7 +131,7 @@ function coverageRecord(job, selected, threshold) {
     missing:skills.filter(skill=>!selected.has(skillKey(skill)))};
 }
 
-export function analyzeSkills(jobs = [], selectedSkills = [], threshold = DEFAULT_SKILL_THRESHOLD) {
+export function analyzeSkills(jobs = [], selectedSkills = [], threshold = SKILL_COVERAGE_TARGET) {
   threshold=skillThreshold(threshold);
   const selectedByKey=normalizedSelection(selectedSkills);
   const selectedKeys=new Set(selectedByKey.keys());
@@ -170,7 +170,7 @@ export function analyzeSkills(jobs = [], selectedSkills = [], threshold = DEFAUL
   return {selectedSkills:[...selectedByKey.values()],threshold,total:jobs.length,eligibleCount:scorable.length,unscoredCount:jobs.length-scorable.length,coveredCount,coveredShare:percent(coveredCount,scorable.length),oneAwayCount,byRole,demand,recommendations};
 }
 
-export function skillScenario(jobs = [], selectedSkills = [], skill, threshold = DEFAULT_SKILL_THRESHOLD) {
+export function skillScenario(jobs = [], selectedSkills = [], skill, threshold = SKILL_COVERAGE_TARGET) {
   const before=analyzeSkills(jobs,selectedSkills,threshold);
   const after=analyzeSkills(jobs,[...selectedSkills,skill],threshold);
   const candidate=before.demand.find(row=>skillKey(row.skill)===skillKey(skill));

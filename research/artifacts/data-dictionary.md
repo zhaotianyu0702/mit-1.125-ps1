@@ -10,7 +10,7 @@ The unit is one unique public job posting. A posting may contain multiple locati
 - `experience distribution`: postings grouped by four broad exploration buckets; unspecified remains visible when evidence is insufficient.
 - `region distribution`: one count per listed state and a separate `Remote - US` bucket; totals can overlap.
 - `skill-demand matrix`: postings mentioning a skill divided by filtered postings in the direction; one count per cell.
-- `skill lab coverage`: filtered postings meeting a per-posting skill target (60% by default), shown as count and fraction by role.
+- `skill lab coverage`: filtered postings meeting a per-posting skill target (fixed at 70%), shown as count and fraction by role.
 - `missing-skill recommendation`: unselected skills ranked by new target crossings, then summed 1/ceil(skill count * target) progress on unmet postings, then company breadth.
 
 ## Snapshot fields

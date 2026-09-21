@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyzeSkills, distribution, selectJobs, skillScenario, postingSkillCoverage } from '../dist/analytics.js';
+import { analyzeSkills, distribution, selectJobs, skillScenario, postingSkillCoverage, SKILL_COVERAGE_TARGET } from '../dist/analytics.js';
 
 const job = (overrides = {}) => ({
   id: 'j1', company: 'Acme', title: 'ML role', roleFamily: 'ML Engineering',
@@ -52,6 +52,30 @@ test('coverage uses the fraction of distinct posting skills and rounds the targe
   assert.equal(covered.total,5);assert.equal(covered.matched,3);assert.equal(covered.required,3);assert.equal(covered.covered,true);
   assert.equal(postingSkillCoverage(job(),['Python'],50).covered,true);
   assert.equal(postingSkillCoverage(job(),['Python'],60).covered,false);
+});
+
+test('the fixed site target agrees across posting, role and what-if coverage', () => {
+  const posting=job({skills:['Python','Machine learning','LLMs','SQL','PyTorch']});
+  const selected=['Python','Machine learning','LLMs'];
+  assert.equal(SKILL_COVERAGE_TARGET,70);
+  assert.equal(postingSkillCoverage(posting,selected).required,4);
+  assert.equal(postingSkillCoverage(posting,selected).covered,false);
+  const before=analyzeSkills([posting],selected);
+  assert.equal(before.threshold,70);
+  assert.equal(before.coveredCount,0);
+  assert.equal(before.byRole.find(r=>r.key==='ML Engineering').coveredCount,0);
+  assert.equal(skillScenario([posting],selected,'SQL').gain,1);
+  assert.equal(analyzeSkills([posting],[...selected,'SQL']).coveredCount,1);
+  // A four-skill posting can miss one; an 80% cutoff would require all four.
+  assert.equal(postingSkillCoverage(job({skills:['Python','SQL','PyTorch','LLMs']}),['Python','SQL','LLMs']).covered,true);
+});
+
+test('offline sensitivity studies can compare 70, 75 and 80 without fallback', () => {
+  const posting=job({skills:['Python','SQL','Docker','CUDA','AWS','Spark','Ray']});
+  const selected=['Python','SQL','Docker','CUDA','AWS'];
+  assert.equal(analyzeSkills([posting],selected,70).coveredCount,1);
+  assert.equal(analyzeSkills([posting],selected,75).coveredCount,0);
+  assert.equal(analyzeSkills([posting],selected,80).coveredCount,0);
 });
 
 test('unknown skill lists are unscored and excluded from each role denominator', () => {
