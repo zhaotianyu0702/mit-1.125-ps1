@@ -66,3 +66,13 @@ test('skill scenarios handle empty selections and increment by distinct postings
   assert.deepEqual(skillScenario(jobs, [], 'SQL'), { before: 0, after: 1, gain: 1, total: 3 });
   assert.deepEqual(skillScenario(jobs, ['Python'], 'SQL'), { before: 1, after: 2, gain: 1, total: 3 });
 });
+
+test('reference skill filters select exactly the postings counted in the charts', () => {
+  const jobs = [job({ id:'llm', skills:[{name:'large language models'},{name:'LLMs'}] }), job({ id:'sql', skills:[{name:'SQL'}] }), job({ id:'empty', skills:[] })];
+  for (const row of distribution(jobs,'skill')) {
+    assert.equal(selectJobs(jobs,{skill:row.label}).length,row.count);
+  }
+  assert.deepEqual(selectJobs(jobs,{skill:'LLM'}).map(j=>j.id),['llm']);
+  assert.deepEqual(selectJobs(jobs,{skill:'SQL',q:'acme',experience:'entry'}).map(j=>j.id),['sql']);
+  assert.equal(selectJobs(jobs,{skill:'SQL',q:'python'}).length,0);
+});

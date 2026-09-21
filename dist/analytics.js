@@ -1,4 +1,4 @@
-import { EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, ROLE_FAMILIES, experienceLevel } from './core.js?v=3.1';
+import { EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, ROLE_FAMILIES, experienceLevel } from './core.js?v=3.2';
 
 const GRADUATE_STATUSES = new Set(['explicit', 'zero-experience']);
 const EARLY_STATUSES = new Set([...GRADUATE_STATUSES, 'early-career']);
@@ -26,7 +26,7 @@ const canonicalSkill = value => {
 const skillKey = value => normalize(canonicalSkill(value));
 const unique = values => [...new Set(values.filter(Boolean))];
 const companyKey = value => normalize(value);
-const jobSkills = job => {
+export const jobSkills = job => {
   const byKey = new Map();
   for (const skill of (job?.skills || [])) {
     const display = canonicalSkill(typeof skill === 'string' ? skill : skill?.name);
@@ -49,6 +49,8 @@ export function selectJobs(jobs = [], filters = {}) {
   const level = filters.experience ?? 'all';
   const region = filters.region ?? 'all';
   const evidence = filters.evidence ?? 'all';
+  const skill = filters.skill ?? 'all';
+  const query = normalize(filters.q).split(/\s+/).filter(Boolean);
   return jobs.filter(job => {
     if (role !== 'all' && text(job?.roleFamily) !== role) return false;
     if (level !== 'all' && experienceLevel(job) !== level) return false;
@@ -57,6 +59,9 @@ export function selectJobs(jobs = [], filters = {}) {
     } else if (region !== 'all' && !jobStates(job).includes(text(region).toUpperCase())) {
       return false;
     }
+    if (skill !== 'all' && !jobSkills(job).some(value=>skillKey(value)===skillKey(skill))) return false;
+    const searchable=normalize([job.company,job.title,job.roleFamily,...jobSkills(job)].join(' '));
+    if (!query.every(term=>searchable.includes(term))) return false;
     return evidenceMatches(job, evidence);
   });
 }

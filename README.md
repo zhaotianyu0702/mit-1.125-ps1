@@ -1,14 +1,14 @@
 # AI Career Compass - MIT 1.125 PS1
 
-AI Career Compass is a concise, source-backed visualizer for a frozen sample of US AI job postings. It helps a student inspect the opportunity landscape and run a local skill-mention experiment. The current snapshot contains **852 postings from 107 companies**.
+AI Career Compass is a concise, source-backed visualizer for a frozen sample of US AI job postings. It helps a student inspect the opportunity landscape and run a local skill-mention experiment. Snapshot totals are derived from the published data rather than hard-coded in the interface documentation.
 
 Live site: [AI Career Compass](https://ai-career-compass-us-new-grad.zhaotianyu0702.chatgpt.site). Submission repository: [zhaotianyu0702/mit-1.125-ps1](https://github.com/zhaotianyu0702/mit-1.125-ps1).
 
-The interface has two main tabs: `Opportunity landscape` (`#landscape`, the default) and `Skill lab` (`#skills`). A lightweight guided tour moves through three prompts: explore opportunities, map your skills, and try a suggested skill. `Data & method` (`#data`) is the secondary tab for CSV exports, source provenance, assignment materials, methodology, and reflection. The tour preserves the shared filters and selected skills; skill profile data stays in the browser, with optional device-local memory.
+The interface has two main tabs: `Opportunity landscape` (`#landscape`, the default) and `Skill lab` (`#skills`). `Job references` (`#postings`) is the reference view for the full posting list, with experience, skills, direction, location, and source fields. It does not provide an application channel. Assignment materials, methodology, and reflection remain available from the compact accessible `Project files` footer. Skill profile data stays in the browser, with optional device-local memory.
 
-The two main views share four filters: primary role direction, experience level, US region/state/remote, and graduate evidence (`all`, `explicit graduate`, or `early career`). Landscape shows distributions by direction, experience, and region, plus a skill-demand matrix. Skill lab reports the fraction and count of filtered postings mentioning at least one selected skill by role. “Try one skill” shows before/after posting coverage; recommendations rank missing skills by posting mentions and then company breadth, with a small suggested learning-project template.
+All three views share four filters: primary role direction, experience level, US region/state/remote, and graduate evidence (`all`, `explicit graduate`, or `early career`). Job references adds posting search and a canonical skill-mention filter; those selections can persist into the charts and Skill lab. Landscape shows distributions by direction, experience, and region, plus a skill-demand matrix. Skill lab reports the fraction and count of filtered postings mentioning at least one selected skill by role. “Try one skill” shows before/after posting coverage; recommendations rank missing skills by posting mentions and then company breadth, with a small suggested learning-project template.
 
-Skill mention coverage is descriptive. It does not estimate eligibility, match score, readiness, hiring probability, proficiency, or the absence of an unmentioned skill. Experience buckets are descriptive exploration labels, not graduate eligibility: title and curated labels are retained; when no title label exists, a numeric requirement of 0–2 years maps to entry, 3–4 to mid, and 5+ to senior; prior professional experience without years maps to experienced; explicit multi-level or level-dependent requirements map to Level varies; otherwise the value remains unknown. These inferred buckets record the basis in the data and do not change graduate flags or qualification paths.
+Skill mention coverage is descriptive. It does not estimate eligibility, match score, readiness, hiring probability, proficiency, or the absence of an unmentioned skill. Experience buckets are four broad exploration labels, not graduate eligibility: `entry` covers 0–2 years; `senior` covers experienced individual contributors with 3+ years, supported independent scope, or a prior production track record; `staff` requires explicit senior technical scope; and `manager` requires people-management scope. Ordinary experience familiarity alone is insufficient. If the source does not support one of these interpretations, the value is `unspecified`. Source-derived labels record their evidence and do not change graduate flags or qualification paths.
 
 ## Run locally
 
@@ -49,7 +49,7 @@ Inspect the PDFs after generation. `research/artifacts` contains the source arti
 
 ```text
 dist/                       Deployable static site and canonical data snapshot
-  data.json                 852-posting source-linked snapshot
+  data.json                 Source-linked snapshot
   downloads/                CSV exports and course materials
   presentation.html         Five-slide, five-minute presentation
 research/                   Collection partitions and document generator

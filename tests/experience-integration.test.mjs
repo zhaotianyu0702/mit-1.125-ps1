@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { assessJob } from '../dist/matching.js';
 const data=JSON.parse(readFileSync(new URL('../dist/data.json',import.meta.url)));
-const levels=new Set(['new-grad','entry','mid','senior','staff','leadership','experienced','open-level','unspecified']);
+const levels=new Set(['entry','senior','staff','manager','unspecified']);
 test('each published role has a traceable experience label independent of graduate evidence',()=>{
   for(const j of data.jobs){
     assert.ok(levels.has(j.experienceLevel),j.id);
@@ -29,10 +29,11 @@ test('source-inferred levels preserve a matching excerpt and source record',()=>
     assert.ok(j.experienceEvidenceSource?.excerpt,j.id);
     assert.ok(j.experienceEvidenceSource.url.startsWith('https://'),j.id);
     assert.equal(j.experienceEvidenceSource.verifiedAt,j.verifiedAt,j.id);
-    if(['entry','mid','senior'].includes(j.experienceLevel)){
+    if(j.experienceLevelBasis==='requirements' && j.requirementYears?.length){
       assert.ok(j.requirementYears?.length,j.id);
-      const n=j.requirementYears[0];
-      assert.equal(j.experienceLevel,n<=2?'entry':n<=4?'mid':'senior',j.id);
+      const n=j.classifiedRequirementYears;
+      assert.ok(Number.isFinite(n),j.id);
+      assert.equal(j.experienceLevel,n<=2?'entry':'senior',j.id);
     }
   }
 });

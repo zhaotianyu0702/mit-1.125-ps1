@@ -180,6 +180,8 @@ def build():
             }
             if evidence.get('requirementYears') is not None:
                 j['requirementYears'] = evidence['requirementYears']
+        if label['experienceLevelBasis'] == 'requirements' and evidence_matches and evidence.get('classifiedRequirementYears') is not None:
+            j['classifiedRequirementYears'] = evidence['classifiedRequirementYears']
         j.update(label)
         output.append(j)
     output.sort(key=lambda j: (j['company'].lower(), j['title'].lower()))
@@ -203,11 +205,11 @@ def build():
     coverage = sorted(latest.values(), key=lambda c: (c['company'].casefold(), c['url']))
     old_path = ROOT / 'dist/data.json'
     old_meta = json.loads(old_path.read_text()).get('meta', {}) if old_path.exists() else {}
-    meta = {'snapshotDate': '2026-09-21', 'generatedAt': datetime.now(timezone.utc).isoformat(), 'version': '3.1', 'unit': 'unique public job posting', 'geography': 'United States', 'scope': 'US AI technical roles across experience levels; graduate eligibility is independent of title and source-inferred experience buckets', 'review': 'Curated source review plus separately labeled automated discovery; not employer-certified', 'githubUrl': 'https://github.com/zhaotianyu0702/mit-1.125-ps1', 'sourcePartitions': PARTITIONS, 'excludedCount': len(excluded)}
+    meta = {'snapshotDate': '2026-09-21', 'generatedAt': datetime.now(timezone.utc).isoformat(), 'version': '3.2', 'unit': 'unique public job posting', 'geography': 'United States', 'scope': 'US AI technical roles across experience levels; graduate eligibility is independent of title and source-inferred experience buckets', 'review': 'Curated source review plus separately labeled automated discovery; not employer-certified', 'githubUrl': 'https://github.com/zhaotianyu0702/mit-1.125-ps1', 'sourcePartitions': PARTITIONS, 'excludedCount': len(excluded)}
     result = {'meta': meta, 'jobs': output, 'coverage': coverage, 'excluded': excluded}
     old_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     (ROOT / 'research/integration-exclusions.json').write_text(json.dumps(excluded, ensure_ascii=False, indent=2) + '\n')
-    common = ['id', 'company', 'title', 'url', 'applyUrl', 'source', 'sourceId', 'roleFamily', 'newgradStatus', 'experienceLevel', 'experienceLevelBasis', 'experienceLevelEvidence', 'experienceEvidenceSource', 'requirementYears', 'locationText', 'workplace', 'remote', 'remoteScope', 'reviewLevel', 'experienceReferences', 'qualificationPaths', 'startWindow', 'startYears', 'skills', 'salary', 'sponsorship', 'sponsorshipNote', 'summary', 'newgradEvidence', 'aiEvidence', 'qualificationNote', 'publishedAt', 'deadline', 'verifiedAt', 'reviewNote']
+    common = ['id', 'company', 'title', 'url', 'applyUrl', 'source', 'sourceId', 'roleFamily', 'newgradStatus', 'experienceLevel', 'experienceLevelBasis', 'experienceLevelEvidence', 'experienceEvidenceSource', 'requirementYears', 'classifiedRequirementYears', 'locationText', 'workplace', 'remote', 'remoteScope', 'reviewLevel', 'experienceReferences', 'qualificationPaths', 'startWindow', 'startYears', 'skills', 'salary', 'sponsorship', 'sponsorshipNote', 'summary', 'newgradEvidence', 'aiEvidence', 'qualificationNote', 'publishedAt', 'deadline', 'verifiedAt', 'reviewNote']
     write_csv('jobs.csv', output, common)
     write_csv('qualification_paths.csv', [{'job_id': j['id'], 'path_id': f"{j['id']}-{i+1}", **p} for j in output for i, p in enumerate(j['qualificationPaths'])], ['job_id', 'path_id', 'degrees', 'minYears', 'experienceType', 'graduation', 'graduationYears', 'evidence'])
     write_csv('job_locations.csv', [{'job_id': j['id'], **l, 'workplace': j['workplace'], 'remote': j['remote']} for j in output for l in j['locations']], ['job_id', 'city', 'state', 'country', 'workplace', 'remote'])

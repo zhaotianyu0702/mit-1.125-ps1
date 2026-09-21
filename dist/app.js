@@ -1,36 +1,37 @@
-import { ROLE_FAMILIES, EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, unique } from './core.js?v=3.1';
-import { selectJobs, distribution, analyzeSkills, skillScenario } from './analytics.js?v=3.1';
+import { ROLE_FAMILIES, EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, unique } from './core.js?v=3.2';
+import { selectJobs, distribution, analyzeSkills, skillScenario, jobSkills } from './analytics.js?v=3.2';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt = value => Number(value).toLocaleString('en-US');
 const pct = (count, total) => total ? Math.round(count / total * 100) : 0;
-const defaults = { role: 'all', experience: 'all', region: 'all', evidence: 'all' };
+const defaults = { role: 'all', experience: 'all', region: 'all', evidence: 'all', skill: 'all', q: '' };
 const stateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'Washington, DC',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
 const roleShort = {'ML Engineering':'ML engineering','AI Applications':'AI applications','Research':'Research','ML Infrastructure':'ML infrastructure','Applied Data Science':'Data science'};
-const levelColors = {'new-grad':'#739743',entry:'#bdcf8f',mid:'#b49266',senior:'#397d70',staff:'#648ba7',leadership:'#bd936d',experienced:'#8aa99a','open-level':'#a49fc3',unspecified:'#dce2da'};
+const levelColors = {entry:'#91b06a',senior:'#397d70',staff:'#648ba7',manager:'#bd936d',unspecified:'#dce2da'};
 const storageKey = 'compass-skills-v1';
-const guideKey = 'compass-guide-seen-v1';
-const state = { jobs: [], meta: {}, coverage: [], filters: {...defaults}, view: 'landscape', skills: [], remember: false, scenario: '', guideActive: true, guideStep: 0, allRegions: false };
+const state = { jobs: [], meta: {}, coverage: [], filters: {...defaults}, view: 'landscape', skills: [], remember: false, scenario: '', allRegions: false, referencePage: 0 };
 let toastTimer;
 
 function readRoute() {
   const hash = location.hash.slice(1);
-  state.view = ({guide:'skills',explore:'landscape',insights:'landscape',methodology:'data',compare:'landscape'})[hash] || (['landscape','skills','data'].includes(hash) ? hash : 'landscape');
+  state.view = ({guide:'skills',explore:'landscape',insights:'landscape',methodology:'postings',data:'postings',compare:'landscape'})[hash] || (['landscape','skills','postings'].includes(hash) ? hash : 'landscape');
   const params = new URLSearchParams(location.search);
   const role = params.get('role') || params.get('roles');
-  const experience = params.get('experienceLevel');
+  const rawExperience = params.get('experienceLevel');
+  const experience = ({'new-grad':'entry',mid:'senior',leadership:'manager'})[rawExperience] || rawExperience;
   const region = params.get('region') || params.get('state');
   state.filters = {
     role: ROLE_FAMILIES.includes(role) ? role : 'all',
     experience: EXPERIENCE_LEVELS.includes(experience) ? experience : 'all',
     region: region === 'remote' || region === 'Remote' ? 'remote' : stateNames[region] ? region : 'all',
-    evidence: ['graduate','early'].includes(params.get('evidence')) ? params.get('evidence') : 'all'
+    evidence: ['graduate','early'].includes(params.get('evidence')) ? params.get('evidence') : 'all',
+    skill: params.get('skill') || 'all', q: params.get('q') || ''
   };
 }
 function writeRoute() {
   const params = new URLSearchParams();
-  for (const [key, value] of Object.entries(state.filters)) if (value !== 'all') params.set(key === 'experience' ? 'experienceLevel' : key, value);
+  for (const [key, value] of Object.entries(state.filters)) if (value !== 'all' && value !== '') params.set(key === 'experience' ? 'experienceLevel' : key, value);
   history.replaceState(null, '', `${location.pathname}${params.size ? '?' + params : ''}#${state.view}`);
 }
 function navigate(view) { state.view = view; writeRoute(); render(); window.scrollTo({top:0,behavior:'instant'}); $('#page-heading h1')?.focus({preventScroll:true}); }
@@ -43,52 +44,21 @@ function selectControl(key, label, options) {
   return `<label>${label}<select data-filter="${key}" aria-label="${label}">${options.map(([value,text]) => `<option value="${escape(value)}" ${state.filters[key] === value ? 'selected' : ''}>${escape(text)}</option>`).join('')}</select></label>`;
 }
 function renderFilters() {
-  $('#filters').hidden = state.view === 'data';
-  if (state.view === 'data') return;
   const regions = unique(state.jobs.flatMap(j => j.locations.map(l => l.state))).sort((a,b) => stateNames[a]?.localeCompare(stateNames[b]) || 0);
   $('#filters').innerHTML = selectControl('role','Direction',[['all','All directions'],...ROLE_FAMILIES.map(x=>[x,roleShort[x]])])
     + selectControl('experience','Experience level',[['all','All levels'],...EXPERIENCE_LEVELS.map(x=>[x,EXPERIENCE_LEVEL_LABELS[x]])])
     + selectControl('region','Location',[['all','Across the US'],['remote','Remote listings'],...regions.map(x=>[x,stateNames[x] || x])])
     + selectControl('evidence','Graduate evidence',[['all','All postings'],['graduate','Explicit graduate pathways'],['early','Graduate + 0–2 year pathways']])
-    + '<div class="filter-tools"><button class="small-button" data-action="reset">Reset</button><button class="small-button" data-action="share" aria-label="Copy this chart view link">Share ↗</button></div>';
+    + '<div class="filter-tools"><button class="small-button" data-action="reset">Reset</button><button class="small-button" data-action="share" aria-label="Copy this view link">Share ↗</button></div>';
+  $('#active-filters').innerHTML = ['skill','q'].filter(key=>state.filters[key] && state.filters[key]!=='all').map(key=>`<button class="filter-tag" data-clear-filter="${key}" aria-label="Remove ${key==='q'?'search':'skill'} filter: ${escape(state.filters[key])}">${key==='q'?'Search':'Skill'}: ${escape(state.filters[key])} <span aria-hidden="true">×</span></button>`).join('');
 }
 function renderHeading() {
-  const headings = { landscape:['OPPORTUNITIES / 01','Opportunity landscape','See where AI work is concentrated.'], skills:['YOUR SKILLS / 02','Explore what to learn next.','Select your skills. Explore what comes next.'], data:['BEHIND THE CHARTS','Data & method','The sample, its limits, and the project files.'] };
-  const [eyebrow,title,subtitle] = headings[state.view];
-  $('#page-heading').innerHTML = `<div><h1 tabindex="-1">${title}</h1><p>${subtitle}</p></div><div class="snapshot">${escape(state.meta.snapshotDate)}${state.view!=='data'?'<button class="text-button guide-launch" data-action="start-guide">Guide me ↗</button>':''}</div>`;
+  const headings = { landscape:['Opportunity landscape','See where AI work is concentrated.'], skills:['Explore what to learn next.','Select your skills. Explore what comes next.'], postings:['Job references','The postings behind the charts.'] };
+  const [title,subtitle] = headings[state.view];
+  $('#page-heading').innerHTML = `<div><h1 tabindex="-1">${title}</h1><p>${subtitle}</p></div><div class="snapshot">${escape(state.meta.snapshotDate)}</div>`;
   document.querySelectorAll('[data-nav]').forEach(link => {
     if (link.dataset.nav === state.view) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
   });
-}
-function renderGuide() {
-  const panel=$('#guide');
-  panel.hidden=!state.guideActive || state.view==='data';
-  document.querySelectorAll('.guide-focus').forEach(el=>el.classList.remove('guide-focus'));
-  if(panel.hidden)return;
-  if(state.view==='landscape')state.guideStep=0;
-  else if(state.guideStep===0)state.guideStep=1;
-  const steps=['Explore the market','Select your skills','Try one more'];
-  const instructions=[
-    'Click a chart to focus on a direction, level or location.',
-    state.skills.length?`${state.skills.length} skills selected. Watch the coverage chart change.`:'Select skills you have used in coursework or projects.',
-    'Try a suggested skill and compare how many more postings mention it.'
-  ];
-  const next=['Choose my skills →',state.skills.length?'Try a suggestion →':'Find a starting skill →','Finish ✓'];
-  panel.innerHTML=`<div class="guide-top"><nav aria-label="Guide steps">${steps.map((label,i)=>`<button data-guide-step="${i}" ${i===state.guideStep?'aria-current="step"':''}><span>${i+1}</span>${label}</button>`).join('')}</nav><button class="text-button guide-skip" data-action="skip-guide">Skip</button></div><div class="guide-bottom"><p>${instructions[state.guideStep]}</p><div>${state.guideStep?'<button class="text-button" data-action="guide-back">← Back</button>':''}<button class="button primary" data-action="guide-next">${next[state.guideStep]}</button></div></div>`;
-  const target=state.guideStep===0?'.dashboard-grid .panel':state.guideStep===1?'.skill-grid .panel':'.recommendations';
-  document.querySelector(target)?.classList.add('guide-focus');
-}
-function guideTo(step) {
-  state.guideActive=true;state.guideStep=Math.max(0,Math.min(2,step));
-  state.view=step===0?'landscape':'skills';
-  if(step===2&&!state.scenario)state.scenario=analyzeSkills(selectJobs(state.jobs,state.filters),state.skills).recommendations[0]?.skill||'';
-  writeRoute();render();
-  if(step===2)document.querySelector('.recommendations')?.scrollIntoView({behavior:'smooth',block:'center'});
-  else window.scrollTo({top:0,behavior:'instant'});
-  $('#guide [data-action="guide-next"]')?.focus({preventScroll:true});
-}
-function finishGuide() {
-  state.guideActive=false;try{localStorage.setItem(guideKey,'true');}catch{}render();
 }
 function summary(jobs) {
   const stats = [[jobs.length,'Postings'],[unique(jobs.map(j=>j.company)).length,'Companies'],[unique(jobs.flatMap(j=>j.locations.map(l=>l.state))).length,'States & DC'],[jobs.filter(j=>j.newgradStatus==='explicit').length,'Explicit new grad']];
@@ -110,7 +80,7 @@ function experienceChart(jobs) {
     const arc = `<circle cx="100" cy="100" r="70" fill="none" stroke="${levelColors[row.key]}" stroke-width="21" stroke-dasharray="${length} ${circumference-length}" stroke-dashoffset="${-offset}" transform="rotate(-90 100 100)"/>`;
     offset += length; return arc;
   }).join('');
-  return `<div class="level-chart"><svg class="ring" viewBox="0 0 200 200" role="img" aria-label="Experience distribution, ${jobs.length} postings. Counts listed alongside.">${arcs}<text x="100" y="99" text-anchor="middle" class="ring-total">${fmt(jobs.length)}</text><text x="100" y="119" text-anchor="middle" class="ring-sub">POSTINGS</text></svg><div class="legend">${rows.map(row=>`<button data-drill="experience" data-value="${escape(row.key)}" aria-label="Filter ${escape(row.label)}: ${row.count} postings"><i class="dot" style="background:${levelColors[row.key]}"></i><span>${escape(row.label)}</span><b>${fmt(row.count)}</b></button>`).join('')}</div></div><p class="caption">Titles + source requirements · ${jobs.filter(j=>['requirements','scope'].includes(j.experienceLevelBasis)).length} inferred</p>`;
+  return `<div class="level-chart"><svg class="ring" viewBox="0 0 200 200" role="img" aria-label="Experience distribution, ${jobs.length} postings. Counts listed alongside.">${arcs}<text x="100" y="99" text-anchor="middle" class="ring-total">${fmt(jobs.length)}</text><text x="100" y="119" text-anchor="middle" class="ring-sub">POSTINGS</text></svg><div class="legend">${rows.map(row=>`<button data-drill="experience" data-value="${escape(row.key)}" aria-label="Filter ${escape(row.label)}: ${row.count} postings"><i class="dot" style="background:${levelColors[row.key]}"></i><span>${escape(row.label)}</span><b>${fmt(row.count)}</b></button>`).join('')}</div></div><details class="level-key"><summary>How levels are grouped · ${jobs.filter(j=>['requirements','scope'].includes(j.experienceLevelBasis)).length} inferred</summary><p>Entry: graduate / 0–2 years. Senior: experienced IC, including 3+ years or independent ownership. Staff: senior technical scope. Manager: people leadership. Unspecified: insufficient evidence.</p></details>`;
 }
 function skillMatrix(jobs) {
   const skills = distribution(jobs,'skill').slice(0,7);
@@ -175,7 +145,7 @@ function projectIdea(skill) {
 function recommendations(analysis) {
   const rows = analysis.recommendations;
   if (!rows.length) return '<div class="scenario-placeholder">No unselected skill mentions remain in this view. Try another direction.</div>';
-  return `<div class="section-title"><h2>${state.skills.length?'What could you learn next?':'Common skills to start with'}</h2><p>Unselected skills, ranked by mentions in this view</p></div><div class="recommendations">${rows.map((r,i)=>`<article class="recommendation ${state.scenario===r.skill?'previewing':''}"><div class="rec-title"><span class="rank">0${i+1}</span><h3>${escape(r.skill)}</h3></div><div class="rec-number">${Math.round(r.share)}%<small>of this view</small></div><p class="rec-detail">${fmt(r.count)} postings · ${r.companies} companies</p><button class="small-button" data-preview="${escape(r.skill)}">Try adding ${escape(r.skill)} ↗</button><details class="practice"><summary>One practice project +</summary><p>${escape(projectIdea(r.skill))}</p></details></article>`).join('')}</div>`;
+  return `<div class="section-title"><h2>${state.skills.length?'What could you learn next?':'Common skills to start with'}</h2><p>Unselected skills, ranked by mentions in this view</p></div><div class="recommendations">${rows.map((r,i)=>`<article class="recommendation ${state.scenario===r.skill?'previewing':''}"><div class="rec-title"><span class="rank">0${i+1}</span><h3>${escape(r.skill)}</h3></div><div class="rec-number">${Math.round(r.share)}%<small>of this view</small></div><p class="rec-detail"><button class="text-button" data-reference-skill="${escape(r.skill)}">${fmt(r.count)} postings ↗</button> · ${r.companies} companies</p><button class="small-button" data-preview="${escape(r.skill)}">Try adding ${escape(r.skill)} ↗</button><details class="practice"><summary>One practice project +</summary><p>${escape(projectIdea(r.skill))}</p></details></article>`).join('')}</div>`;
 }
 function scenarioPanel(jobs) {
   if (!state.scenario || state.skills.includes(state.scenario)) return '<div class="scenario-placeholder">Try a suggested skill to preview the change.</div>';
@@ -188,31 +158,40 @@ function renderSkills(jobs) {
 }
 function download(url,title,type) { return `<a class="download-link" href="${url}"><span>${title} ↗</span><span class="file-type">${type}</span></a>`; }
 function safeUrl(value) { try { const u = new URL(value); return u.protocol === 'https:' ? escape(u.href) : '#'; } catch { return '#'; } }
-function renderData() {
-  const jobs=state.jobs, curated=jobs.filter(j=>j.reviewLevel!=='automated-discovery').length;
-  return summary(jobs)+`<div class="data-grid"><section class="panel"><h2>How to read the charts</h2>
-    <details class="method-row" open><summary>Sample & collection</summary><p>${fmt(jobs.length)} deduplicated US AI postings from ${unique(jobs.map(j=>j.company)).length} companies. Official career pages and public <a href="https://docs.greenhouse.io/job-board.html" target="_blank" rel="noopener">Greenhouse</a>, <a href="https://developers.ashbyhq.com/docs/public-job-posting-api" target="_blank" rel="noopener">Ashby</a> and <a href="https://github.com/lever/postings-api" target="_blank" rel="noopener">Lever</a> sources. ${curated} curated records; ${jobs.length-curated} automated discovery records. Collected on the dates in the downloadable data.</p></details>
-    <details class="method-row"><summary>Definitions & recommendation logic</summary><p>One posting is one observation, not one vacancy or hire. Role and experience counts sum to the selected total. States and skills overlap. Heatmap percentages use postings within each direction as the denominator. A skill counts once per posting, including required, preferred and contextual mentions.</p><p>Your skill footprint counts postings mentioning at least one selected skill. Suggestions rank unselected skills by posting mentions, then company breadth. The scenario adds one skill and recounts. Practice projects are learning suggestions. Experience labels prioritize explicit titles. When titles give no level, clear requirements map 0–2 years to entry, 3–4 to mid, and 5+ to senior. These are inferred exploration buckets. Experience requested means relevant experience is stated without a clear numeric level; Level varies means the employer states multiple or level-dependent requirements. Preferred-only or ambiguous numbers remain unclassified. Graduate eligibility is separate.</p></details>
-    <details class="method-row"><summary>Missing data & limits</summary><p>This is a purposive ATS sample, not the whole US market. Employer selection, inaccessible boards and uneven disclosure shape the charts. The older personal search was Bay Area / LLM focused and used only for discovery. Automated skill extraction uses a fixed vocabulary, so tracked terms are overrepresented. Missing or unparsed fields remain unknown; a missing skill mention is not proof a skill is unnecessary. Experience titles vary by company. Postings can close after collection. Skill counts support exploration, not hiring odds or causal salary claims.</p></details>
-    <details class="method-row"><summary>Privacy & AI assistance</summary><p>No name, résumé, contact details or personal location is collected. Skill choices stay in page memory, or in your browser if you enable Remember on this device. They are not sent to a server or included in shared links. Clear skills removes that saved set. AI agents assisted collection and coding; automated discovery records were not individually verified.</p></details>
-  </section><section class="panel"><h2>Data & project files</h2><div class="download-links">
-    ${download('./downloads/jobs.csv','Posting dataset','CSV')}
-    ${download('./downloads/methodology.pdf','One-page methodology','PDF')}
-    ${download('./downloads/reflection.pdf','Reflection','PDF')}
-    ${download('./presentation.html','Five-minute presentation','SLIDES')}
-    ${download('./downloads/demo-script.md','Demo notes','MD')}
-    ${download('./downloads/data-dictionary.md','Data dictionary','MD')}
-    ${download(safeUrl(state.meta.githubUrl),'Source code on GitHub','CODE')}
-  </div><details class="method-row"><summary>Additional data tables</summary><div class="download-links">${download('./downloads/job_skills.csv','Skill mentions','CSV')}${download('./downloads/job_locations.csv','Locations','CSV')}${download('./downloads/qualification_paths.csv','Qualification pathways','CSV')}${download('./downloads/salary_ranges.csv','Salary ranges','CSV')}${download('./downloads/source_coverage.csv','Source checks','CSV')}</div></details></section></div>
-  <details class="panel source-panel"><summary><h2>Source coverage <span class="selection-count">${state.coverage.length} checks · expand +</span></h2></summary><p class="caption">An inaccessible source does not imply no hiring.</p><div class="source-table-wrap"><table class="source-table"><thead><tr><th>Company / source</th><th>Result</th><th>Checked</th></tr></thead><tbody>${state.coverage.map(c=>`<tr><td><a href="${safeUrl(c.url)}" target="_blank" rel="noopener">${escape(c.company)} ↗</a></td><td class="status">${escape(c.status)}</td><td>${escape(c.checkedAt?.slice(0,10))}</td></tr>`).join('')}</tbody></table></div></details>`;
+function referenceRow(job) {
+  const inferred=['requirements','scope'].includes(job.experienceLevelBasis);
+  const skills=jobSkills(job);
+  const locations=unique(job.locations.map(l=>[l.city==='US location not specified'?'':l.city,l.state].filter(Boolean).join(', ')));
+  if(job.remote)locations.unshift('Remote');
+  const source=job.experienceEvidenceSource;
+  return `<tr>
+    <td class="posting-title"><strong>${escape(job.title)}</strong><span>${escape(job.company)}</span><span class="posting-direction">${escape(roleShort[job.roleFamily]||job.roleFamily)}</span></td>
+    <td class="posting-level"><details><summary class="level-badge level-${escape(job.experienceLevel)}">${escape(EXPERIENCE_LEVEL_LABELS[job.experienceLevel]||'Unspecified')}<span>${inferred?'inferred':'↘'}</span></summary><div class="level-evidence"><p>${escape(job.experienceLevelEvidence)}</p>${source?.excerpt?`<blockquote>${escape(source.excerpt)}</blockquote>`:''}</div></details></td>
+    <td><div class="reference-skills">${skills.length?skills.map(skill=>`<button data-reference-skill="${escape(skill)}" class="reference-skill ${state.skills.includes(skill)?'known-skill':''}" aria-label="Show postings mentioning ${escape(skill)}">${escape(skill)}</button>`).join(''):'<span class="reference-muted">No tracked mentions</span>'}</div></td>
+    <td class="posting-location">${escape(locations.join(' · ')||'US — not specified')}</td>
+    <td class="posting-source"><a href="${safeUrl(job.url)}" target="_blank" rel="noopener" aria-label="Source for ${escape(job.title)} at ${escape(job.company)}">Source ↗</a><span>${escape(job.verifiedAt?.slice(0,10))}</span></td>
+  </tr>`;
+}
+function renderPostings(jobs) {
+  const pageSize=25, pages=Math.max(1,Math.ceil(jobs.length/pageSize));
+  state.referencePage=Math.max(0,Math.min(state.referencePage,pages-1));
+  const start=state.referencePage*pageSize;
+  const sorted=[...jobs].sort((a,b)=>a.company.localeCompare(b.company)||a.title.localeCompare(b.title));
+  const skills=distribution(state.jobs,'skill');
+  return `<div class="reference-toolbar"><form id="reference-search" role="search"><label class="skip-link" for="posting-search">Search postings</label><input id="posting-search" name="q" type="search" value="${escape(state.filters.q)}" placeholder="Company, title or skill" autocomplete="off"><button class="small-button" type="submit">Search</button></form><label class="reference-skill-select"><span class="skip-link">Filter by skill mention</span><select data-reference-filter="skill" aria-label="Filter by skill mention"><option value="all">All skill mentions</option>${skills.map(skill=>`<option value="${escape(skill.label)}" ${state.filters.skill.toLowerCase()===skill.label.toLowerCase()?'selected':''}>${escape(skill.label)}</option>`).join('')}</select></label></div>
+  <div class="reference-heading"><p><strong>${fmt(jobs.length)}</strong> of ${fmt(state.jobs.length)} postings</p><button class="text-button" data-view="landscape">View this slice in charts ↗</button></div>
+  ${jobs.length?`<div class="reference-table-wrap"><table class="reference-table"><caption class="skip-link">Posting references for the selected chart filters</caption><thead><tr><th scope="col">Role / company</th><th scope="col">Experience</th><th scope="col">Skill mentions</th><th scope="col">Location</th><th scope="col">Source / checked</th></tr></thead><tbody>${sorted.slice(start,start+pageSize).map(referenceRow).join('')}</tbody></table></div><div class="reference-pagination"><span>${fmt(start+1)}–${fmt(Math.min(start+pageSize,jobs.length))} of ${fmt(jobs.length)}</span><div><button class="small-button" data-reference-page="${state.referencePage-1}" ${state.referencePage===0?'disabled':''}>← Previous</button><span>Page ${state.referencePage+1} / ${pages}</span><button class="small-button" data-reference-page="${state.referencePage+1}" ${state.referencePage===pages-1?'disabled':''}>Next →</button></div></div>`:emptyView()}`;
+}
+function renderProjectFiles() {
+  $('#project-files').innerHTML=`<summary>Project files +</summary><div class="download-links">${download('./downloads/jobs.csv','Posting dataset','CSV')}${download('./downloads/methodology.pdf','Methodology & limitations','PDF')}${download('./downloads/reflection.pdf','Reflection','PDF')}${download('./presentation.html','Five-minute presentation','SLIDES')}${download('./downloads/demo-script.md','Demo notes','MD')}${download('./downloads/data-dictionary.md','Data dictionary','MD')}${download(safeUrl(state.meta.githubUrl),'Source code','GITHUB')}</div>`;
 }
 function emptyView() { return '<div class="empty"><h2>No postings in this slice.</h2><p>Try another level, location or evidence group.</p><button class="button" data-action="reset">Reset filters</button></div>'; }
 function render(focusKey) {
   renderHeading(); renderFilters();
   const jobs=selectJobs(state.jobs,state.filters);
-  $('#content').innerHTML = state.view==='data' ? renderData() : state.view==='skills' ? renderSkills(jobs) : renderLandscape(jobs);
+  $('#content').innerHTML = state.view==='postings' ? renderPostings(jobs) : state.view==='skills' ? renderSkills(jobs) : renderLandscape(jobs);
   $('#content').setAttribute('aria-busy','false');
-  renderGuide();
+  renderProjectFiles();
   if (focusKey) document.querySelector(focusKey)?.focus({preventScroll:true});
   writeRoute();
 }
@@ -221,17 +200,20 @@ $('#filters').addEventListener('change',event=>{
   const key=event.target.dataset.filter;
   if (!(key in defaults)) return;
   state.filters[key]=event.target.value;
-  state.allRegions=false;
+  state.allRegions=false;state.referencePage=0;
   render(`[data-filter="${key}"]`);
 });
 document.addEventListener('change',event=>{
+  if(event.target.dataset.referenceFilter==='skill'){state.filters.skill=event.target.value;state.referencePage=0;render('[data-reference-filter="skill"]');return;}
   if(event.target.hasAttribute('data-other-skill') && event.target.value) { state.skills=unique([...state.skills,event.target.value]);persistSkills();render();return; }
   if(event.target.hasAttribute('data-remember')) { state.remember=event.target.checked; persistSkills(); }
 });
 document.addEventListener('click',async event=>{
   const button=event.target.closest('button');
   if(!button)return;
-  if(button.dataset.guideStep!==undefined){guideTo(Number(button.dataset.guideStep));return;}
+  if(button.dataset.clearFilter){const key=button.dataset.clearFilter;state.filters[key]=defaults[key];state.referencePage=0;render();return;}
+  if(button.dataset.referenceSkill){state.filters.skill=button.dataset.referenceSkill;state.referencePage=0;navigate('postings');return;}
+  if(button.dataset.referencePage!==undefined){state.referencePage=Number(button.dataset.referencePage);render();$('.reference-heading')?.scrollIntoView({block:'start'});$('.reference-pagination button:not(:disabled)')?.focus({preventScroll:true});return;}
   if(button.dataset.view){navigate(button.dataset.view);return;}
   if(button.dataset.skill){
     const skill=button.dataset.skill;
@@ -245,28 +227,24 @@ document.addEventListener('click',async event=>{
   if(button.dataset.drill){
     const key=button.dataset.drill;
     state.filters[key]=state.filters[key]===button.dataset.value?'all':button.dataset.value;
-    state.allRegions=false;render();return;
+    state.allRegions=false;state.referencePage=0;render();return;
   }
   if(button.dataset.matrixRole){state.filters.role=button.dataset.matrixRole;state.scenario=button.dataset.matrixSkill;navigate('skills');return;}
   if(button.dataset.preview){state.scenario=button.dataset.preview;if(state.view!=='skills')navigate('skills');else render();$('.scenario')?.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
   switch(button.dataset.action){
-    case 'start-guide': guideTo(state.view==='skills'?1:0);break;
-    case 'skip-guide': finishGuide();break;
-    case 'guide-back': guideTo(state.guideStep-1);break;
-    case 'guide-next': if(state.guideStep<2)guideTo(state.guideStep+1);else{finishGuide();toast('Keep exploring — you can reopen the guide anytime.');}break;
-    case 'reset': state.filters={...defaults};state.allRegions=false;render();break;
+    case 'reset': state.filters={...defaults};state.allRegions=false;state.referencePage=0;render();break;
     case 'regions': state.allRegions=!state.allRegions;render();break;
     case 'clear-skills': state.skills=[];state.scenario='';state.remember=false;persistSkills();render();break;
     case 'apply-skill': if(state.scenario){state.skills=unique([...state.skills,state.scenario]);state.scenario='';persistSkills();render();}break;
     case 'share': try {await navigator.clipboard.writeText(location.href);toast('Chart view copied. Your skills stay private.');}catch{toast('Copy the page address to share this view.');}break;
   }
 });
+document.addEventListener('submit',event=>{if(event.target.id!=='reference-search')return;event.preventDefault();state.filters.q=new FormData(event.target).get('q').trim();state.referencePage=0;render('#posting-search');});
 window.addEventListener('hashchange',()=>{if(location.hash==='#main'){$('#main').focus();return;}readRoute();render();});
 window.addEventListener('popstate',()=>{readRoute();render();});
 
 async function init(){
   readRoute();
-  try{state.guideActive=localStorage.getItem(guideKey)!=='true';}catch{}
   try{
     const response=await fetch('./data.json', {cache:'no-cache'});
     if(!response.ok)throw Error('Snapshot unavailable');
