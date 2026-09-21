@@ -27,13 +27,26 @@ class CollectionScreenTests(unittest.TestCase):
         self.assertEqual(collector.locations("Cambridge, UK"), [])
         self.assertIsNone(self.screen(job(location="Cambridge, UK")))
 
-    def test_ten_year_requirement_is_excluded_and_never_becomes_zero(self):
-        self.assertIsNone(self.screen(job(content="Build machine learning systems. Requires 10 years of industry experience.")))
+    def test_lowercase_nonstate_words_are_not_state_codes(self):
+        self.assertEqual(collector.locations("Remote, in Europe"), [])
+        self.assertEqual(collector.locations("Remote, or elsewhere"), [])
 
-    def test_five_to_twelve_year_requirements_are_excluded(self):
-        for years in (5, 8, 12):
-            with self.subTest(years=years):
-                self.assertIsNone(self.screen(job(content=f"Develop model inference systems with {years}+ years of experience.")))
+    def test_ten_year_requirement_is_retained_as_reference_and_never_becomes_zero(self):
+        result = self.screen(job(content="Build machine learning systems. Requires 10 years of industry experience."))
+        self.assertIsNotNone(result)
+        self.assertEqual(result["experienceReferences"], [10])
+        self.assertIsNone(result["qualificationPaths"][0]["minYears"])
+
+    def test_five_to_twelve_range_is_retained_with_numeric_bounds(self):
+        result = self.screen(job(content="Develop model inference systems with 5-12 years of experience."))
+        self.assertIsNotNone(result)
+        self.assertEqual(result["experienceReferences"], [5, 12])
+        self.assertIsNone(result["qualificationPaths"][0]["minYears"])
+
+    def test_word_number_experience_is_captured(self):
+        result = self.screen(job(content="Develop model inference systems with ten years of experience."))
+        self.assertIsNotNone(result)
+        self.assertEqual(result["experienceReferences"], [10])
 
     def test_ordinary_software_engineer_with_ai_boilerplate_is_excluded(self):
         raw = job(
@@ -42,8 +55,63 @@ class CollectionScreenTests(unittest.TestCase):
         )
         self.assertIsNone(self.screen(raw))
 
-    def test_fellow_titles_are_excluded(self):
+    def test_nontechnical_fellow_titles_are_excluded(self):
         self.assertIsNone(self.screen(job(title="AI Research Fellow")))
+
+    def test_senior_technical_title_is_retained(self):
+        result = self.screen(job(title="Senior Machine Learning Engineer"))
+        self.assertIsNotNone(result)
+        self.assertEqual(result["experienceLevel"], "senior")
+
+    def test_management_title_is_retained_when_technical(self):
+        result = self.screen(job(title="Manager, Machine Learning Engineering"))
+        self.assertIsNotNone(result)
+
+    def test_business_ai_titles_are_excluded_even_with_technical_context(self):
+        titles = [
+            "Product Manager, Inference Platform",
+            "Senior Manager, Technical Program Management (Search & AI)",
+            "Partnership Manager, AI for Science",
+            "Customer Success Manager, Managed Inference",
+            "AI Success Manager",
+            "Director, Product Marketing, AI",
+            "Customer Enablement AI Programs",
+            "AI Research Lab Strategy & Operations",
+            "Head of Revenue Operations & AI",
+            "Commodity Sourcing Manager, AI Infrastructure",
+            "Strategic Partnerships, AI/API",
+            "AI Journey Operations Manager",
+            "Technical Account Manager, AI Infrastructure",
+            "CX Strategy Manager, AI Transformation",
+            "AI Strategist, Healthcare",
+            "AI Deployment Strategist",
+            "Strategic Finance Lead - AI",
+            "Applied AI: Product Strategy & Revenue Lead",
+            "Product Operations | AI Revenue Systems",
+            "AI Strategy Consultant, Frontier Tech",
+            "Accounting AI Solutions Lead",
+            "Strategic AI Adoption Lead",
+            "Staff Platform Manager, AI Personalization",
+        ]
+        for title in titles:
+            with self.subTest(title=title):
+                self.assertIsNone(self.screen(job(title=title)))
+
+    def test_engineering_and_research_titles_with_business_context_are_retained(self):
+        for title in (
+            "AI Operations Engineer",
+            "Software Engineer, AI Enablement",
+            "Senior Machine Learning Engineer, Operations Research",
+            "Data Scientist, Marketing",
+            "Head of AI Enablement Engineering",
+            "Finance & Strategy AI Engineer",
+            "AI Engineer, Customer Success",
+            "AI Operations Engineer, Partnerships",
+            "Applied AI Architect, Partnerships",
+            "Staff Software Engineer, GTM & AI Strategy",
+        ):
+            with self.subTest(title=title):
+                self.assertIsNotNone(self.screen(job(title=title)))
 
     def test_generic_remote_does_not_establish_us_location(self):
         self.assertEqual(collector.locations("Remote"), [])

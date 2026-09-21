@@ -1,6 +1,6 @@
 # Data dictionary
 
-Generated from snapshot `2026-09-21` with 224 jobs and 60 companies.
+Generated from snapshot `2026-09-21` with 852 jobs and 107 companies.
 
 The canonical record is one posting. One posting can have multiple qualification paths, skills, salary ranges, or US locations.
 
@@ -18,6 +18,8 @@ The canonical record is one posting. One posting can have multiple qualification
 | `locations` | One or more source-listed US city/state/country objects. |
 | `workplace/remote` | Stated work arrangement; unknown remains Not stated. |
 | `newgradStatus` | explicit, zero-experience, early-career (0-2 industry years), or unclear (graduate eligibility not established). |
+| `experienceLevel/Basis/Evidence` | Recognized title seniority or curated graduate fallback, with provenance; unspecified is not entry level. |
+| `experienceReferences` | Year values mentioned in source text or curated paths, not a validated minimum. Required/preferred and degree alternatives need review. |
 | `qualificationPaths` | Structured degree and experience alternatives; minYears is zero only when the source explicitly says no experience is needed. |
 | `skills` | Skill name, required/preferred/mentioned level, and alternativeGroup for OR language. |
 | `salary` | Disclosed base range with currency, period, and scope; bonus/equity are not merged. |

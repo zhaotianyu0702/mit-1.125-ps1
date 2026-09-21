@@ -104,7 +104,7 @@ def main():
             "checkedAt": NOW,
             "status": "inaccessible" if error else ("verified roles" if selected else "no qualifying roles"),
             "note": (f"Official Ashby API request failed ({error}); availability unknown." if error else
-                      f"Automated shared screen inspected {len(raw)} live postings; {len(selected)} passed listed/full-time/US/AI/title/experience gates. Eligibility remains unclear until JD review."),
+                      f"Automated shared screen inspected {len(raw)} live postings; {len(selected)} passed listed/full-time/US/technical-AI gates across experience levels. Eligibility remains unclear until JD review."),
             "qualifyingCount": len(selected),
         })
     # A slug can be present in both maintained metadata and legacy snapshots;

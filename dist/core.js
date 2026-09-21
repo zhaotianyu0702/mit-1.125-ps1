@@ -1,10 +1,21 @@
 export const ROLE_FAMILIES=['ML Engineering','AI Applications','Research','ML Infrastructure','Applied Data Science'];
 export const DEGREES=['Bachelor','Master','PhD'];
-export const DEFAULT_FILTERS={q:'',degrees:[],roles:[],state:'',city:'',company:'',workplace:'',graduation:'',start:'',experience:'',skill:'',tag:'',sponsorship:'',salary:'',deadlineOnly:false,includeZero:false,includeEarly:false,includeUnclear:false,includeUnknown:true,savedOnly:false,sort:'company'};
+export const EXPERIENCE_LEVELS=['new-grad','entry','mid','senior','staff','leadership','unspecified'];
+export const EXPERIENCE_LEVEL_LABELS={"new-grad":'New grad',entry:'Entry/junior',mid:'Mid-level',senior:'Senior',staff:'Staff/principal',leadership:'Leadership',unspecified:'Not specified'};
+export const EXPERIENCE_LEVEL_BASIS=['title','curated','unknown'];
+export const DEFAULT_FILTERS={q:'',degrees:[],roles:[],state:'',city:'',company:'',workplace:'',graduation:'',start:'',experience:'',experienceLevel:'all',skill:'',tag:'',sponsorship:'',salary:'',deadlineOnly:false,includeZero:true,includeEarly:true,includeUnclear:true,includeUnknown:true,savedOnly:false,sort:'company'};
 export const freshFilters=()=>({...DEFAULT_FILTERS,degrees:[],roles:[]});
 export function unique(xs){return [...new Set(xs.filter(x=>x!==null&&x!==undefined&&x!==''))];}
 export function canonicalUrl(url){try{const u=new URL(url);u.hash='';for(const key of [...u.searchParams.keys()])if(/^(utm_|source$|gh_src$|lever-source$|spread$|ref$)/i.test(key))u.searchParams.delete(key);return u.href.replace(/\/$/,'');}catch{return url;}}
 export function deduplicate(jobs){const seen=new Set();return jobs.filter(j=>{const k=`${j.company.toLowerCase()}::${j.requisitionId||j.sourceId||canonicalUrl(j.url)}`;if(seen.has(k))return false;seen.add(k);return true;});}
+export function normalizeExperienceLevel(value){return EXPERIENCE_LEVELS.includes(value)?value:'unspecified';}
+export function experienceLevel(job){
+ if(job?.experienceLevel&&EXPERIENCE_LEVELS.includes(job.experienceLevel))return job.experienceLevel;
+ return 'unspecified';
+}
+export function experienceLevelBasis(job){return EXPERIENCE_LEVEL_BASIS.includes(job?.experienceLevelBasis)?job.experienceLevelBasis:'unknown';}
+export function experienceLevelEvidence(job){return String(job?.experienceLevelEvidence||((job?.experienceReferences||[]).length?`Posting mentions ${job.experienceReferences.join(', ')} year${job.experienceReferences.length===1?'':'s'} of experience; this is a raw mention, not a validated minimum.`:'No parsed experience level evidence; treat this as unspecified.'))}
+export function experienceLabel(job){return EXPERIENCE_LEVEL_LABELS[experienceLevel(job)]||EXPERIENCE_LEVEL_LABELS.unspecified;}
 const unknown=v=>v===null||v===undefined||v===''||v==='Not stated';
 function pathChecks(path,f){const checks=[];
  if(f.degrees.length){const ds=path.degrees||[];checks.push(ds.length?f.degrees.some(d=>ds.includes(d)):null);}
@@ -17,6 +28,7 @@ export function pathwayMatch(job,f){const active=f.degrees.length||f.graduation|
  return unresolved?'unknown':'conflict';
 }
 export function filteredJobs(jobs,f,saved=[]){const result=jobs.filter(j=>{
+ if(f.experienceLevel&&f.experienceLevel!=='all'&&experienceLevel(j)!==f.experienceLevel)return false;
  if(j.newgradStatus==='zero-experience'&&!f.includeZero)return false;
  if(j.newgradStatus==='early-career'&&!f.includeEarly)return false;
  if(j.newgradStatus==='unclear'&&!f.includeUnclear)return false;
@@ -46,11 +58,11 @@ export function filteredJobs(jobs,f,saved=[]){const result=jobs.filter(j=>{
  });
 }
 export function counts(jobs,getLabels){const values=new Map();for(const j of jobs)for(const k of unique(getLabels(j))){if(!values.has(k))values.set(k,{label:k,count:0,companies:new Set()});const v=values.get(k);v.count++;v.companies.add(j.company);}return [...values.values()].map(v=>({...v,companies:v.companies.size})).sort((a,b)=>b.count-a.count||a.label.localeCompare(b.label));}
-export function aggregate(jobs){return {total:jobs.length,companies:unique(jobs.map(j=>j.company)).length,states:unique(jobs.flatMap(j=>j.locations.map(l=>l.state))).length,explicit:jobs.filter(j=>j.newgradStatus==='explicit').length,remote:jobs.filter(j=>j.remote).length,salaryDisclosed:jobs.filter(j=>j.salary?.some(s=>s.currency==='USD'&&s.period==='year')).length,roles:counts(jobs,j=>[j.roleFamily]),locations:counts(jobs,j=>[...j.locations.map(l=>l.state),...(j.remote?['Remote — US']:[])]),degrees:counts(jobs,j=>j.qualificationPaths.flatMap(p=>p.degrees)),skills:counts(jobs,j=>(j.skills||[]).map(s=>s.name))};}
+export function aggregate(jobs){return {total:jobs.length,companies:unique(jobs.map(j=>j.company)).length,states:unique(jobs.flatMap(j=>j.locations.map(l=>l.state))).length,explicit:jobs.filter(j=>j.newgradStatus==='explicit').length,remote:jobs.filter(j=>j.remote).length,salaryDisclosed:jobs.filter(j=>j.salary?.some(s=>s.currency==='USD'&&s.period==='year')).length,roles:counts(jobs,j=>[j.roleFamily]),experienceLevels:counts(jobs,j=>[experienceLabel(j)]),locations:counts(jobs,j=>[...j.locations.map(l=>l.state),...(j.remote?['Remote — US']:[])]),degrees:counts(jobs,j=>j.qualificationPaths.flatMap(p=>p.degrees)),skills:counts(jobs,j=>(j.skills||[]).map(s=>s.name))};}
 export function salaryText(job){const a=job.salary||[];if(!a.length)return 'Salary not stated';const usd=a.filter(s=>s.currency==='USD'&&s.period==='year');if(!usd.length)return 'See salary details';if(usd.length>1)return `${usd.length} disclosed pay ranges`;const s=usd[0];return `$${Math.round(s.min/1000)}k–$${Math.round(s.max/1000)}k / year`;}
 export function locationText(j){if(j.locationText)return j.locationText;return j.remote?'Remote — US':j.locations.map(l=>[l.city,l.state].filter(Boolean).join(', ')).join(' · ');}
 export function degreeText(j){const d=unique(j.qualificationPaths.flatMap(p=>p.degrees));return d.length?d.join(' / '):'Degree not stated';}
 export function csvCell(v){let s=v===null||v===undefined?'':String(v);if(/^[=+@\-]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}
-export function toCSV(jobs){const cols=['id','company','title','role_family','newgrad_status','review_level','review_note','locations','workplace','degree_pathways','graduation_windows','start_window','salary_ranges','skills','sponsorship','source','source_url','verified_at'];const rows=jobs.map(j=>[j.id,j.company,j.title,j.roleFamily,j.newgradStatus,j.reviewLevel||'curated-source-review',j.reviewNote||'',locationText(j),j.workplace,JSON.stringify(j.qualificationPaths),j.qualificationPaths.map(p=>p.graduation).join('; '),j.startWindow,JSON.stringify(j.salary),j.skills.map(s=>`${s.name} (${s.level})`).join('; '),j.sponsorship,j.source,j.url,j.verifiedAt]);return '\uFEFF'+[cols,...rows].map(row=>row.map(csvCell).join(',')).join('\r\n');}
-export function filtersFromSearch(search){const f=freshFilters();const p=new URLSearchParams(search);for(const k of Object.keys(f)){if(!p.has(k))continue;const v=p.get(k);if(Array.isArray(f[k]))f[k]=v.split('|').filter(Boolean);else if(typeof f[k]==='boolean')f[k]=v==='true';else f[k]=v;}f.degrees=f.degrees.filter(d=>DEGREES.includes(d));f.roles=f.roles.filter(r=>ROLE_FAMILIES.includes(r));if(!['company','title','published','salary','deadline'].includes(f.sort))f.sort='company';return f;}
+export function toCSV(jobs){const cols=['id','company','title','role_family','experience_level','experience_level_basis','experience_level_evidence','experience_references_raw','newgrad_status','review_level','review_note','locations','workplace','degree_pathways','graduation_windows','start_window','salary_ranges','skills','sponsorship','source','source_url','verified_at'];const rows=jobs.map(j=>[j.id,j.company,j.title,j.roleFamily,experienceLevel(j),experienceLevelBasis(j),experienceLevelEvidence(j),JSON.stringify(j.experienceReferences||[]),j.newgradStatus,j.reviewLevel||'curated-source-review',j.reviewNote||'',locationText(j),j.workplace,JSON.stringify(j.qualificationPaths),j.qualificationPaths.map(p=>p.graduation).join('; '),j.startWindow,JSON.stringify(j.salary),j.skills.map(s=>`${s.name} (${s.level})`).join('; '),j.sponsorship,j.source,j.url,j.verifiedAt]);return '\uFEFF'+[cols,...rows].map(row=>row.map(csvCell).join(',')).join('\r\n');}
+export function filtersFromSearch(search){const f=freshFilters();const p=new URLSearchParams(search);for(const k of Object.keys(f)){if(!p.has(k))continue;const v=p.get(k);if(Array.isArray(f[k]))f[k]=v.split('|').filter(Boolean);else if(typeof f[k]==='boolean')f[k]=v==='true';else f[k]=v;}f.degrees=f.degrees.filter(d=>DEGREES.includes(d));f.roles=f.roles.filter(r=>ROLE_FAMILIES.includes(r));if(!['all',...EXPERIENCE_LEVELS].includes(f.experienceLevel))f.experienceLevel='all';if(!['company','title','published','salary','deadline'].includes(f.sort))f.sort='company';return f;}
 export function filtersToSearch(f){const p=new URLSearchParams();for(const k of Object.keys(DEFAULT_FILTERS)){if(k==='savedOnly')continue;const v=f[k];if(Array.isArray(v)){if(v.length)p.set(k,v.join('|'));}else if(v!==DEFAULT_FILTERS[k])p.set(k,String(v));}return p.toString();}

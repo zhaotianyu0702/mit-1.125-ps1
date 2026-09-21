@@ -2,6 +2,8 @@
 
 A guided exploration tool for students who are new to the US AI job market. Start with your background, project experience and preferences; learn what different AI roles involve; investigate a source-backed shortlist; and try skill or location scenarios.
 
+Live site: [AI Career Compass](https://ai-career-compass-us-new-grad.zhaotianyu0702.chatgpt.site) (access follows the current Site sharing setting).
+
 Submission repository: [zhaotianyu0702/mit-1.125-ps1](https://github.com/zhaotianyu0702/mit-1.125-ps1).
 
 ## Run locally
@@ -27,7 +29,8 @@ npm test
 - Transparent qualification checks that preserve degree-specific experience and graduation alternatives.
 - Separate groups for stated basics that align, requirements needing confirmation, and recorded conditions that differ.
 - Preference-based ordering, a transparent what-if experiment (posting-skill connections, not unique job counts), a nationwide-location experiment, and a downloadable next-step plan.
-- Keyword, location, degree, role, skill, experience, salary-disclosure and evidence-scope filters.
+- An independent experience-level filter: New grad, Entry/junior, Mid-level, Senior, Staff/principal, Leadership and Not specified. Explorer and charts initially cover all levels; the guided flow starts with a transparent beginner preset.
+- Keyword, location, degree, role, skill, industry-years availability, salary-disclosure and graduate-evidence filters.
 - Source-linked job details, device-local saved jobs, up to three-role comparison, charts and filtered CSV exports.
 - Data downloads, methodology, reflection, and a five-minute presentation on the website.
 
@@ -39,7 +42,9 @@ This is a learning and decision-support tool. It does not estimate hiring probab
 
 The earlier private career-search dataset was used only to discover employer and source links. It was targeted toward Bay Area LLM roles, so it is not a representative US sampling frame. Personal rankings, applicant information, notes and application progress are **not** part of this repository or the published dataset. New collection expands the employer/source frame and verifies official postings again. The sample still reflects source access, employer selection and uneven disclosure; it is not a census.
 
-Evidence groups remain separate:
+Collection now includes experienced roles, with no maximum experience-year gate. Experience level is derived from recognizable title wording or curated graduate evidence; numerical year references are displayed separately and do not certify a minimum. Unknown titles remain unspecified.
+
+Graduate-evidence groups remain separate:
 
 | Group | Meaning |
 | --- | --- |

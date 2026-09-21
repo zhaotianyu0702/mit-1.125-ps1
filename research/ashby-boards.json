@@ -1,3 +1,314 @@
 [
-  {"company":"Anyscale","slug":"anyscale"},{"company":"Character.AI","slug":"character"},{"company":"Cerebras","slug":"cerebras"},{"company":"Cognition","slug":"cognition"},{"company":"Cursor","slug":"cursor"},{"company":"Decagon","slug":"decagon"},{"company":"Embedding VC","slug":"embedding-vc"},{"company":"Fireworks AI","slug":"fireworks"},{"company":"Genmo","slug":"genmo"},{"company":"Handshake","slug":"handshake"},{"company":"Harvey","slug":"harvey"},{"company":"Koah Labs","slug":"koahlabs"},{"company":"Liquid AI","slug":"liquid-ai"},{"company":"Luma","slug":"lumaai"},{"company":"Mistral AI","slug":"mistral.ai"},{"company":"Netic","slug":"netic"},{"company":"Perplexity","slug":"perplexity"},{"company":"Physical Intelligence","slug":"physicalintelligence"},{"company":"Plenful","slug":"plenful"},{"company":"Poolside","slug":"poolside"},{"company":"Prime Intellect","slug":"primeintellect"},{"company":"Reflection AI","slug":"reflectionai"},{"company":"Replit","slug":"replit"},{"company":"Sierra","slug":"sierra"},{"company":"Thinking Machines Lab","slug":"thinkingmachines"},{"company":"Tavus","slug":"tavus"},{"company":"Writer","slug":"writer"},{"company":"Epsilon Health","slug":"epsilon-health"},{"company":"OpenAI","slug":"openai"},{"company":"Sprinter Health","slug":"sprinter-health"},{"company":"Crusoe","slug":"crusoe"},{"company":"Quantcast","slug":"quantcast"},{"company":"Essential AI","slug":"essentialai"},{"company":"Runway","slug":"runway"},{"company":"Nexxa","slug":"nexxa"},{"company":"Preference Model","slug":"preference-model"},{"company":"Rhoda AI","slug":"rhoda-ai"},{"company":"Crucible","slug":"crucible"},{"company":"Baseten","slug":"baseten"},{"company":"Cartesia","slug":"cartesia"},{"company":"Magic.Dev","slug":"magicdev"},{"company":"Coactive","slug":"coactive"},{"company":"Foxglove","slug":"foxglove"},{"company":"Aida","slug":"aida"},{"company":"Nomic","slug":"nomic"},{"company":"Mach9","slug":"mach9"},{"company":"Modal","slug":"modal"},{"company":"Onyx","slug":"onyx"},{"company":"Spectral Labs","slug":"spectral-labs"},{"company":"Distyl","slug":"distyl"},{"company":"Lavendo","slug":"lavendo"},{"company":"Lambda","slug":"lambda"},{"company":"Specter","slug":"specter"}
+  {
+    "company": "Anyscale",
+    "slug": "anyscale"
+  },
+  {
+    "company": "Character.AI",
+    "slug": "character"
+  },
+  {
+    "company": "Cerebras",
+    "slug": "cerebras"
+  },
+  {
+    "company": "Cognition",
+    "slug": "cognition"
+  },
+  {
+    "company": "Cursor",
+    "slug": "cursor"
+  },
+  {
+    "company": "Decagon",
+    "slug": "decagon"
+  },
+  {
+    "company": "Embedding VC",
+    "slug": "embedding-vc"
+  },
+  {
+    "company": "Fireworks AI",
+    "slug": "fireworks"
+  },
+  {
+    "company": "Genmo",
+    "slug": "genmo"
+  },
+  {
+    "company": "Handshake",
+    "slug": "handshake"
+  },
+  {
+    "company": "Harvey",
+    "slug": "harvey"
+  },
+  {
+    "company": "Koah Labs",
+    "slug": "koahlabs"
+  },
+  {
+    "company": "Liquid AI",
+    "slug": "liquid-ai"
+  },
+  {
+    "company": "Luma",
+    "slug": "lumaai"
+  },
+  {
+    "company": "Mistral AI",
+    "slug": "mistral.ai"
+  },
+  {
+    "company": "Netic",
+    "slug": "netic"
+  },
+  {
+    "company": "Perplexity",
+    "slug": "perplexity"
+  },
+  {
+    "company": "Physical Intelligence",
+    "slug": "physicalintelligence"
+  },
+  {
+    "company": "Plenful",
+    "slug": "plenful"
+  },
+  {
+    "company": "Poolside",
+    "slug": "poolside"
+  },
+  {
+    "company": "Prime Intellect",
+    "slug": "primeintellect"
+  },
+  {
+    "company": "Reflection AI",
+    "slug": "reflectionai"
+  },
+  {
+    "company": "Replit",
+    "slug": "replit"
+  },
+  {
+    "company": "Sierra",
+    "slug": "sierra"
+  },
+  {
+    "company": "Thinking Machines Lab",
+    "slug": "thinkingmachines"
+  },
+  {
+    "company": "Tavus",
+    "slug": "tavus"
+  },
+  {
+    "company": "Writer",
+    "slug": "writer"
+  },
+  {
+    "company": "Epsilon Health",
+    "slug": "epsilon-health"
+  },
+  {
+    "company": "OpenAI",
+    "slug": "openai"
+  },
+  {
+    "company": "Sprinter Health",
+    "slug": "sprinter-health"
+  },
+  {
+    "company": "Crusoe",
+    "slug": "crusoe"
+  },
+  {
+    "company": "Quantcast",
+    "slug": "quantcast"
+  },
+  {
+    "company": "Essential AI",
+    "slug": "essentialai"
+  },
+  {
+    "company": "Runway",
+    "slug": "runway"
+  },
+  {
+    "company": "Nexxa",
+    "slug": "nexxa"
+  },
+  {
+    "company": "Preference Model",
+    "slug": "preference-model"
+  },
+  {
+    "company": "Rhoda AI",
+    "slug": "rhoda-ai"
+  },
+  {
+    "company": "Crucible",
+    "slug": "crucible"
+  },
+  {
+    "company": "Baseten",
+    "slug": "baseten"
+  },
+  {
+    "company": "Cartesia",
+    "slug": "cartesia"
+  },
+  {
+    "company": "Magic.Dev",
+    "slug": "magicdev"
+  },
+  {
+    "company": "Coactive",
+    "slug": "coactive"
+  },
+  {
+    "company": "Foxglove",
+    "slug": "foxglove"
+  },
+  {
+    "company": "Aida",
+    "slug": "aida"
+  },
+  {
+    "company": "Nomic",
+    "slug": "nomic"
+  },
+  {
+    "company": "Mach9",
+    "slug": "mach9"
+  },
+  {
+    "company": "Modal",
+    "slug": "modal"
+  },
+  {
+    "company": "Onyx",
+    "slug": "onyx"
+  },
+  {
+    "company": "Spectral Labs",
+    "slug": "spectral-labs"
+  },
+  {
+    "company": "Distyl",
+    "slug": "distyl"
+  },
+  {
+    "company": "Lavendo",
+    "slug": "lavendo"
+  },
+  {
+    "company": "Lambda",
+    "slug": "lambda"
+  },
+  {
+    "company": "Specter",
+    "slug": "specter"
+  },
+  {
+    "company": "Ramp",
+    "slug": "ramp"
+  },
+  {
+    "company": "Zapier",
+    "slug": "zapier"
+  },
+  {
+    "company": "Cohere",
+    "slug": "cohere"
+  },
+  {
+    "company": "Notion",
+    "slug": "notion"
+  },
+  {
+    "company": "Linear",
+    "slug": "linear"
+  },
+  {
+    "company": "Weaviate",
+    "slug": "weaviate"
+  },
+  {
+    "company": "Pinecone",
+    "slug": "pinecone"
+  },
+  {
+    "company": "Outschool",
+    "slug": "outschool"
+  },
+  {
+    "company": "Rula",
+    "slug": "rula"
+  },
+  {
+    "company": "Docker",
+    "slug": "docker"
+  },
+  {
+    "company": "Pika",
+    "slug": "pika"
+  },
+  {
+    "company": "ElevenLabs",
+    "slug": "elevenlabs"
+  },
+  {
+    "company": "Notable",
+    "slug": "notable"
+  },
+  {
+    "company": "Suno",
+    "slug": "suno"
+  },
+  {
+    "company": "Mercor",
+    "slug": "mercor"
+  },
+  {
+    "company": "PostHog",
+    "slug": "posthog"
+  },
+  {
+    "company": "Hightouch",
+    "slug": "hightouch"
+  },
+  {
+    "company": "Render",
+    "slug": "render"
+  },
+  {
+    "company": "Railway",
+    "slug": "railway"
+  },
+  {
+    "company": "Supabase",
+    "slug": "supabase"
+  },
+  {
+    "company": "MotherDuck",
+    "slug": "motherduck"
+  },
+  {
+    "company": "Hex",
+    "slug": "hex"
+  },
+  {
+    "company": "Atlan",
+    "slug": "atlan"
+  },
+  {
+    "company": "Deepgram",
+    "slug": "deepgram"
+  },
+  {
+    "company": "Synthesia",
+    "slug": "synthesia"
+  }
 ]

@@ -242,5 +242,41 @@
   {
     "company": "Patreon",
     "board": "patreon"
+  },
+  {
+    "company": "GitLab",
+    "board": "gitlab"
+  },
+  {
+    "company": "Mercury",
+    "board": "mercury"
+  },
+  {
+    "company": "Ripple",
+    "board": "ripple"
+  },
+  {
+    "company": "Peloton",
+    "board": "peloton"
+  },
+  {
+    "company": "Gusto",
+    "board": "gusto"
+  },
+  {
+    "company": "New Relic",
+    "board": "newrelic"
+  },
+  {
+    "company": "Elastic",
+    "board": "elastic"
+  },
+  {
+    "company": "Grafana Labs",
+    "board": "grafanalabs"
+  },
+  {
+    "company": "BridgeBio",
+    "board": "bridgebio"
   }
 ]

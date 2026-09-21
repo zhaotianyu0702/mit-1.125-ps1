@@ -12,12 +12,12 @@ Walk through Your background, What interests you, What you've tried, and Your pr
 Open a result card and point to aligned, confirm, or gap. Read the evidence reasons, matched skills, skill gaps, and unknowns. Aligned means the recorded basics fit; confirm means the source or profile leaves something unknown; gap means a stated condition conflicts. These labels do not mean interview or offer odds.
 
 ## 2:25-3:15 - Run two what-if actions
-Use What if I add a skill to compare current overlap with a new skill. The metric counts posting-skill connections, so one posting can contribute multiple connections. The snapshot mentions Machine learning most often, but overlap is preparation guidance, not proof of proficiency. Then enable Explore every US location. The data includes 68 postings listing a non-CA state and 27 marked Remote-US, so a beginner can test a wider search before narrowing to one metro.
+Use What if I add a skill to compare current overlap with a new skill. The metric counts posting-skill connections, so one posting can contribute multiple connections. The snapshot mentions Python most often, but overlap is preparation guidance, not proof of proficiency. Then enable Explore every US location. The data includes 304 postings listing a non-CA state and 137 marked Remote-US, so a beginner can test a wider search before narrowing to one metro.
 
 ## 3:15-4:20 - Verify before applying
-Open a source-linked job detail or comparison. Show the official title, location, qualification path, skills, salary if disclosed, sponsorship statement, verification time, and Apply link. Open two employers' official pages. Tell the audience to resolve one confirm item and build one small project from a skill gap.
+Use the Experience level filter to compare New grad, Senior and Not specified. Explain that title seniority and graduate evidence are separate, and year mentions are not validated minimums. Then open a source-linked job detail or comparison. Show the official title, location, qualification path, skills, salary if disclosed, sponsorship statement, verification time, and Apply link. Open two employers' official pages. Tell the audience to resolve one confirm item and build one small project from a skill gap.
 
 ## 4:20-5:00 - Close with limits
 Open methodology. Say: older career/26fall data was discovery only and Bay Area LLM-biased; fresh official pages broaden the sample; no applicant notes were imported. AI helped extract and summarize, followed by agent review, which is not human verification. Missing data stays unknown, and the product makes no ML prediction or success-odds claim.
 
-Current snapshot values are generated at run time: 224 postings, 60 companies, 164 source checks.
+Current snapshot values are generated at run time: 852 postings, 107 companies, 198 source checks.

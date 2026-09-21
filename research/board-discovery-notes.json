@@ -1,0 +1,396 @@
+{
+  "checkedAt": "2026-09-21T16:20:00-04:00",
+  "purpose": "Official public ATS board expansion; each endpoint returned a JSON payload and was checked for board/company identity, job count, and representative US AI-plausible titles. Counts are board payload counts, not qualified-job claims.",
+  "greenhouse": [
+    {
+      "company": "GitLab",
+      "board": "gitlab",
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/gitlab/jobs",
+      "officialCareersUrl": "https://about.gitlab.com/company/culture/all-roles/",
+      "jobsReturned": 206,
+      "usAiPlausibleTitles": [
+        "AI Engineer",
+        "Backend Engineer, AI Engineering: Duo Chat",
+        "Backend Engineer, AI Engineering: Agent Observability"
+      ]
+    },
+    {
+      "company": "Mercury",
+      "board": "mercury",
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/mercury/jobs",
+      "officialCareersUrl": "https://mercury.com/careers",
+      "jobsReturned": 65,
+      "usAiPlausibleTitles": [
+        "Senior Data Scientist - Risk ML",
+        "Senior Machine Learning Operations Engineer",
+        "Senior Backend Engineer - Product"
+      ]
+    },
+    {
+      "company": "Ripple",
+      "board": "ripple",
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/ripple/jobs",
+      "officialCareersUrl": "https://ripple.com/careers/",
+      "jobsReturned": 127,
+      "usAiPlausibleTitles": [
+        "Manager, AI Platform Engineering",
+        "Senior Data Scientist",
+        "Senior Software Engineer"
+      ]
+    },
+    {
+      "company": "Peloton",
+      "board": "peloton",
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/peloton/jobs",
+      "officialCareersUrl": "https://careers.onepeloton.com/en/all-jobs/",
+      "jobsReturned": 58,
+      "usAiPlausibleTitles": [
+        "Machine Learning Engineer III",
+        "Software Engineer III, Content AI",
+        "Security Engineer, Incident Response"
+      ]
+    },
+    {
+      "company": "Gusto",
+      "board": "gusto",
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/gusto/jobs",
+      "officialCareersUrl": "https://gusto.com/about/careers",
+      "jobsReturned": 91,
+      "usAiPlausibleTitles": [
+        "Data Scientist, Risk",
+        "Enterprise Application AI Engineer",
+        "Manager - Developer Productivity, AI Tools"
+      ]
+    },
+    {
+      "company": "New Relic",
+      "board": "newrelic",
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/newrelic/jobs",
+      "officialCareersUrl": "https://newrelic.com/careers",
+      "jobsReturned": 50,
+      "usAiPlausibleTitles": [
+        "Associate Software Engineer- Infrastructure",
+        "Lead Software Engineer",
+        "Manager, Product Design: AI Products"
+      ]
+    },
+    {
+      "company": "Elastic",
+      "board": "elastic",
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/elastic/jobs",
+      "officialCareersUrl": "https://www.elastic.co/about/careers",
+      "jobsReturned": 367,
+      "usAiPlausibleTitles": [
+        "Agentic AI Engineer",
+        "Lead Salesforce Full Stack AI Engineer",
+        "Principal AI Ecosystem Architect - OpenAI/Anthropic"
+      ]
+    },
+    {
+      "company": "Grafana Labs",
+      "board": "grafanalabs",
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/grafanalabs/jobs",
+      "officialCareersUrl": "https://grafana.com/about/careers/",
+      "jobsReturned": 133,
+      "usAiPlausibleTitles": [
+        "Senior Backend Engineer - Databases - Loki Query",
+        "Staff AI Engineer",
+        "Senior Backend Engineer"
+      ]
+    },
+    {
+      "company": "BridgeBio",
+      "board": "bridgebio",
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/bridgebio/jobs",
+      "officialCareersUrl": "https://www.bridgebio.com/careers/",
+      "jobsReturned": 73,
+      "usAiPlausibleTitles": [
+        "Associate Director, Biostatistics & AI",
+        "Biostatistics",
+        "Data Scientist"
+      ]
+    }
+  ],
+  "ashby": [
+    {
+      "company": "Ramp",
+      "slug": "ramp",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/ramp",
+      "officialCareersUrl": "https://ramp.com/careers",
+      "jobsReturned": 150,
+      "usAiPlausibleTitles": [
+        "Security Engineer, Cloud",
+        "Software Engineer, Data Platform",
+        "Software Engineer, Security, Stablecoin"
+      ]
+    },
+    {
+      "company": "Zapier",
+      "slug": "zapier",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/zapier",
+      "officialCareersUrl": "https://zapier.com/jobs",
+      "jobsReturned": 8,
+      "usAiPlausibleTitles": [
+        "Staff Backend Engineer, Commerce"
+      ]
+    },
+    {
+      "company": "Cohere",
+      "slug": "cohere",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/cohere",
+      "officialCareersUrl": "https://cohere.com/careers",
+      "jobsReturned": 142,
+      "usAiPlausibleTitles": [
+        "Senior Member of Technical Staff, Multimodal AI",
+        "Senior Research Scientist, Model Evaluation",
+        "Member of Technical Staff, Model Efficiency"
+      ]
+    },
+    {
+      "company": "Notion",
+      "slug": "notion",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/notion",
+      "officialCareersUrl": "https://www.notion.so/careers",
+      "jobsReturned": 127,
+      "usAiPlausibleTitles": [
+        "AI Applications Engineer",
+        "Engineering Manager, Mobile AI",
+        "Software Engineer, Developer Platform"
+      ]
+    },
+    {
+      "company": "Linear",
+      "slug": "linear",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/linear",
+      "officialCareersUrl": "https://linear.app/careers",
+      "jobsReturned": 32,
+      "usAiPlausibleTitles": [
+        "Senior / Staff Product Engineer, AI"
+      ]
+    },
+    {
+      "company": "Weaviate",
+      "slug": "weaviate",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/weaviate",
+      "officialCareersUrl": "https://weaviate.io/company/careers",
+      "jobsReturned": 3,
+      "usAiPlausibleTitles": [
+        "Software Engineer",
+        "Solutions Architect"
+      ]
+    },
+    {
+      "company": "Pinecone",
+      "slug": "pinecone",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/pinecone",
+      "officialCareersUrl": "https://www.pinecone.io/careers/",
+      "jobsReturned": 7,
+      "usAiPlausibleTitles": [
+        "Senior/Staff Software Engineer, Search & Retrieval Infrastructure",
+        "Senior/Staff Software Engineer, Database Team"
+      ]
+    },
+    {
+      "company": "Outschool",
+      "slug": "outschool",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/outschool",
+      "officialCareersUrl": "https://outschool.com/careers",
+      "jobsReturned": 6,
+      "usAiPlausibleTitles": [
+        "Staff Software Engineer",
+        "Software Engineer"
+      ]
+    },
+    {
+      "company": "Rula",
+      "slug": "rula",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/rula",
+      "officialCareersUrl": "https://www.rula.com/careers",
+      "jobsReturned": 39,
+      "usAiPlausibleTitles": [
+        "Sr. Data Scientist (Remote)",
+        "Sr. Staff AI Engineer - Applied AI (Remote)",
+        "Staff AI Engineer - Foundation (Remote)"
+      ]
+    },
+    {
+      "company": "Docker",
+      "slug": "docker",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/docker",
+      "officialCareersUrl": "https://www.docker.com/careers/",
+      "jobsReturned": 63,
+      "usAiPlausibleTitles": [
+        "Staff Backend Engineer, Hub (East Coast)",
+        "Principal Software Engineer, AI Tools and Security (Seattle or SF Bay Area)",
+        "Staff Software Engineer, Developer Experience"
+      ]
+    },
+    {
+      "company": "Pika",
+      "slug": "pika",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/pika",
+      "officialCareersUrl": "https://pika.art/careers",
+      "jobsReturned": 12,
+      "usAiPlausibleTitles": [
+        "Research Scientist, Post-Training — Video Generation",
+        "ML Engineer, Inference & Optimization",
+        "Research Scientist, Data"
+      ]
+    },
+    {
+      "company": "ElevenLabs",
+      "slug": "elevenlabs",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/elevenlabs",
+      "officialCareersUrl": "https://elevenlabs.io/careers",
+      "jobsReturned": 225,
+      "usAiPlausibleTitles": [
+        "Research Engineer - Inference",
+        "Engineering - Internal AI Transformation",
+        "Forward Deployed Engineer - Software Engineer - North America"
+      ]
+    },
+    {
+      "company": "Notable",
+      "slug": "notable",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/notable",
+      "officialCareersUrl": "https://www.notablehealth.com/careers",
+      "jobsReturned": 11,
+      "usAiPlausibleTitles": [
+        "AI Platform Engineer",
+        "Staff Fullstack Software Engineer"
+      ]
+    },
+    {
+      "company": "Suno",
+      "slug": "suno",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/suno",
+      "officialCareersUrl": "https://suno.com/careers",
+      "jobsReturned": 68,
+      "usAiPlausibleTitles": [
+        "Machine Learning Scientist",
+        "Staff / Senior Software Engineer, Platform Teams"
+      ]
+    },
+    {
+      "company": "Mercor",
+      "slug": "mercor",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/mercor",
+      "officialCareersUrl": "https://mercor.com/careers",
+      "jobsReturned": 109,
+      "usAiPlausibleTitles": [
+        "Data Scientist",
+        "Software Engineer, Agents",
+        "Enterprise AI Lead"
+      ]
+    },
+    {
+      "company": "PostHog",
+      "slug": "posthog",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/posthog",
+      "officialCareersUrl": "https://posthog.com/careers",
+      "jobsReturned": 9,
+      "usAiPlausibleTitles": [
+        "AI Research Engineer",
+        "Security Engineer"
+      ]
+    },
+    {
+      "company": "Hightouch",
+      "slug": "hightouch",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/hightouch",
+      "officialCareersUrl": "https://hightouch.com/careers",
+      "jobsReturned": 1,
+      "usAiPlausibleTitles": [
+        "Software Engineer"
+      ]
+    },
+    {
+      "company": "Render",
+      "slug": "render",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/render",
+      "officialCareersUrl": "https://render.com/careers",
+      "jobsReturned": 39,
+      "usAiPlausibleTitles": [
+        "Software Engineer",
+        "Infrastructure Engineer"
+      ]
+    },
+    {
+      "company": "Railway",
+      "slug": "railway",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/railway",
+      "officialCareersUrl": "https://railway.com/careers",
+      "jobsReturned": 8,
+      "usAiPlausibleTitles": [
+        "Software Engineer",
+        "Platform Engineer"
+      ]
+    },
+    {
+      "company": "Supabase",
+      "slug": "supabase",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/supabase",
+      "officialCareersUrl": "https://supabase.com/careers",
+      "jobsReturned": 57,
+      "usAiPlausibleTitles": [
+        "Senior Software Engineer",
+        "AI Engineer"
+      ]
+    },
+    {
+      "company": "MotherDuck",
+      "slug": "motherduck",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/motherduck",
+      "officialCareersUrl": "https://motherduck.com/careers",
+      "jobsReturned": 3,
+      "usAiPlausibleTitles": [
+        "Software Engineer",
+        "Data Engineer"
+      ]
+    },
+    {
+      "company": "Hex",
+      "slug": "hex",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/hex",
+      "officialCareersUrl": "https://hex.tech/careers",
+      "jobsReturned": 3,
+      "usAiPlausibleTitles": [
+        "Software Engineer",
+        "Data Scientist"
+      ]
+    },
+    {
+      "company": "Atlan",
+      "slug": "atlan",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/atlan",
+      "officialCareersUrl": "https://atlan.com/careers",
+      "jobsReturned": 8,
+      "usAiPlausibleTitles": [
+        "Machine Learning Engineer",
+        "Software Engineer"
+      ]
+    },
+    {
+      "company": "Deepgram",
+      "slug": "deepgram",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/deepgram",
+      "officialCareersUrl": "https://deepgram.com/careers",
+      "jobsReturned": 92,
+      "usAiPlausibleTitles": [
+        "Machine Learning Engineer",
+        "Research Scientist"
+      ]
+    },
+    {
+      "company": "Synthesia",
+      "slug": "synthesia",
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/synthesia",
+      "officialCareersUrl": "https://www.synthesia.io/careers",
+      "jobsReturned": 52,
+      "usAiPlausibleTitles": [
+        "Machine Learning Engineer",
+        "Research Scientist"
+      ]
+    }
+  ]
+}

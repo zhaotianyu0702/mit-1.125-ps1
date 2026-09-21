@@ -2,6 +2,8 @@
 
 The user requested a guided, personal and more interactive experience for students who are unfamiliar with AI job searching. The primary flow is now a four-step profile, plain-language role discovery, evidence-based matching, skill/location what-if scenarios, and a downloadable exploration plan. The job directory, comparison and data charts remain supporting tools.
 
+The user subsequently requested broader coverage across experience levels. Collect technical US AI roles with no upper seniority or experience-year cutoff; keep title-based experience level independent from graduate eligibility, and retain a beginner preset for the guided flow.
+
 Collection expands nationwide using official employer sources, with prior career research used only for discovery. Explicit new-grad, zero-experience, 0–2-year and unclear-eligibility groups remain distinct. Missing experience is never zero. Profile information stays in the browser. The actual submission repository is `https://github.com/zhaotianyu0702/mit-1.125-ps1`, rooted locally in `ps1/`.
 
 The original planning details below are historical; this revision, the data contract and the implemented methodology take precedence where scope differs.

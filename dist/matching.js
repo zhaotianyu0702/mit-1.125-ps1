@@ -209,6 +209,7 @@ export function assessJob(job = {}, rawProfile = {}) {
   const unknown = path.state === 'unknown' ? [...path.reasons] : [];
   const gaps = path.state === 'gap' ? [...path.reasons] : [];
   if (job.newgradStatus !== 'explicit') unknown.push('New-grad eligibility is not explicit in this record; confirm the full posting.');
+  if (job.reviewLevel === 'automated-discovery' && job.experienceReferences?.length) unknown.unshift(`The source mentions ${job.experienceReferences.join(' / ')} years of experience. These references are not parsed qualification pathways; confirm whether they are required, preferred, or degree-specific.`);
   const skills = skillAssessment(job, profile);
   if (skills.gaps.length) unknown.push(`Required skill evidence to confirm: ${skills.gaps.join('; ')}.`);
   const skillMentionsMatched = skillMentionAssessment(job, profile);

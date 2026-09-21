@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
-"""Build a deterministic public snapshot from reviewed research partitions."""
+"""Build a deterministic public snapshot from curated and automated-discovery partitions."""
 import csv
 import io
 import json
 import re
+import importlib.util
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
 ROOT = Path(__file__).resolve().parents[1]
+_experience_spec = importlib.util.spec_from_file_location('experience', ROOT / 'scripts/experience.py')
+_experience = importlib.util.module_from_spec(_experience_spec)
+_experience_spec.loader.exec_module(_experience)
 PARTITIONS = ['greenhouse', 'large_employers', 'other_employers', 'expanded_enterprise', 'expanded_ats', 'broad_greenhouse', 'broad_ashby']
 FAMILIES = {'Machine Learning Engineering': 'ML Engineering', 'Research Scientist / Research Engineer': 'Research', 'Research Engineer': 'Research', 'AI / LLM Application Engineering': 'AI Applications', 'ML Infrastructure / MLOps': 'ML Infrastructure'}
 STATES = set('AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split())
@@ -105,7 +109,7 @@ def build():
         # Resolve explicitly named US cities; country-level placeholders are
         # never counted as a state. Preserve source location text alongside it.
         loc_text = j.get('locationText', '')
-        for city, state in CITY_STATES.items():
+        for city, state in (CITY_STATES.items() if j.get('reviewLevel') != 'automated-discovery' else []):
             if re.search(r'\b' + re.escape(city) + r'\b', loc_text, re.I) and not any(l['city'].lower() == city.lower() for l in locations):
                 locations.append({'city': city, 'state': state, 'country': 'US'})
         j['locations'] = locations or [{'city': 'US location not specified', 'state': '', 'country': 'US'}]
@@ -157,6 +161,8 @@ def build():
             for p in j['qualificationPaths']:
                 if 'onboard' in p['graduation'].lower() or 'start' in p['graduation'].lower():
                     p['graduationYears'] = []
+        j.setdefault('experienceReferences', sorted({p['minYears'] for p in j['qualificationPaths'] if p.get('minYears') is not None}))
+        j.update(_experience.classify_experience(j['title'], j['newgradStatus'], j['experienceReferences']))
         output.append(j)
     output.sort(key=lambda j: (j['company'].lower(), j['title'].lower()))
     counts = Counter(j['company'] for j in output)
@@ -179,11 +185,11 @@ def build():
     coverage = sorted(latest.values(), key=lambda c: (c['company'].casefold(), c['url']))
     old_path = ROOT / 'dist/data.json'
     old_meta = json.loads(old_path.read_text()).get('meta', {}) if old_path.exists() else {}
-    meta = {'snapshotDate': '2026-09-21', 'generatedAt': datetime.now(timezone.utc).isoformat(), 'version': '2.0', 'unit': 'unique public job posting', 'geography': 'United States', 'scope': 'US AI roles: explicit graduate, zero-experience, early-career, and separately labeled unclear graduate eligibility', 'review': 'Curated source review plus separately labeled automated discovery; not employer-certified', 'githubUrl': 'https://github.com/zhaotianyu0702/mit-1.125-ps1', 'sourcePartitions': PARTITIONS, 'excludedCount': len(excluded)}
+    meta = {'snapshotDate': '2026-09-21', 'generatedAt': datetime.now(timezone.utc).isoformat(), 'version': '3.0', 'unit': 'unique public job posting', 'geography': 'United States', 'scope': 'US AI technical roles across experience levels; graduate eligibility and title-based seniority are independent fields', 'review': 'Curated source review plus separately labeled automated discovery; not employer-certified', 'githubUrl': 'https://github.com/zhaotianyu0702/mit-1.125-ps1', 'sourcePartitions': PARTITIONS, 'excludedCount': len(excluded)}
     result = {'meta': meta, 'jobs': output, 'coverage': coverage, 'excluded': excluded}
     old_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     (ROOT / 'research/integration-exclusions.json').write_text(json.dumps(excluded, ensure_ascii=False, indent=2) + '\n')
-    common = ['id', 'company', 'title', 'url', 'applyUrl', 'source', 'sourceId', 'roleFamily', 'newgradStatus', 'locationText', 'workplace', 'remote', 'remoteScope', 'reviewLevel', 'experienceReferences', 'qualificationPaths', 'startWindow', 'startYears', 'skills', 'salary', 'sponsorship', 'sponsorshipNote', 'summary', 'newgradEvidence', 'aiEvidence', 'qualificationNote', 'publishedAt', 'deadline', 'verifiedAt', 'reviewNote']
+    common = ['id', 'company', 'title', 'url', 'applyUrl', 'source', 'sourceId', 'roleFamily', 'newgradStatus', 'experienceLevel', 'experienceLevelBasis', 'experienceLevelEvidence', 'locationText', 'workplace', 'remote', 'remoteScope', 'reviewLevel', 'experienceReferences', 'qualificationPaths', 'startWindow', 'startYears', 'skills', 'salary', 'sponsorship', 'sponsorshipNote', 'summary', 'newgradEvidence', 'aiEvidence', 'qualificationNote', 'publishedAt', 'deadline', 'verifiedAt', 'reviewNote']
     write_csv('jobs.csv', output, common)
     write_csv('qualification_paths.csv', [{'job_id': j['id'], 'path_id': f"{j['id']}-{i+1}", **p} for j in output for i, p in enumerate(j['qualificationPaths'])], ['job_id', 'path_id', 'degrees', 'minYears', 'experienceType', 'graduation', 'graduationYears', 'evidence'])
     write_csv('job_locations.csv', [{'job_id': j['id'], **l, 'workplace': j['workplace'], 'remote': j['remote']} for j in output for l in j['locations']], ['job_id', 'city', 'state', 'country', 'workplace', 'remote'])
