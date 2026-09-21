@@ -22,8 +22,8 @@ Return a JSON object: `{ "jobs": [...], "coverage": [...] }`. Each job:
   "remote": false,
   "workplace": "On-site|Hybrid|Remote|Not stated",
   "locationText": "Source specific location",
-  "experienceLevel": "new-grad|entry|mid|senior|staff|leadership|unspecified",
-  "experienceLevelBasis": "title|curated|unknown",
+  "experienceLevel": "new-grad|entry|mid|senior|staff|leadership|experienced|open-level|unspecified",
+  "experienceLevelBasis": "title|curated|requirements|scope|unknown",
   "experienceLevelEvidence": "Explanation of label provenance",
   "experienceReferences": [5],
   "newgradStatus": "explicit|zero-experience|early-career|unclear",
@@ -54,13 +54,15 @@ Public Greenhouse, Ashby and Lever board APIs are useful discovery inputs, but a
 
 ## Experience level versus experience years
 
-`experienceLevel` labels recognizable seniority in the official title, with curated graduate evidence as a fallback. Senior/Staff/Leadership wording takes priority when a title also mentions graduates. Company-specific levels such as Engineer II/III are not translated into universal seniority. `unspecified` means no recognized label, not entry level.
+`experienceLevel` is a descriptive exploration bucket, independent from graduate eligibility. Keep an existing title or curated label when present. Otherwise, infer from actual cached official description requirements: 0–2 years maps to `entry`, 3–4 to `mid`, 5+ to `senior`, prior professional experience without a numeric range maps to `experienced`, and explicit multi-level or level-dependent requirements map to `open-level` (displayed as Level varies). If the source does not support one of these interpretations, retain `unspecified`. Record the reasoning in `experienceLevelEvidence`; inferred buckets are based on requirements and do not modify `newgradStatus` or `qualificationPaths`. Company-specific levels such as Engineer II/III remain un-translated when no requirement evidence supports a bucket.
 
-`experienceReferences` contains distinct year values recognized in the full description or curated pathways. References may be preferred, required, research-specific, conditional on a degree, or contextual. They never become a validated scalar minimum or qualification pathway by themselves. No experience ceiling limits collection. The visualizer independently filters title level and graduate evidence; no level or skill overlap certifies eligibility.
+`experienceReferences` contains distinct year values recognized in the full description or curated pathways. References may be preferred, required, research-specific, conditional on a degree, or contextual. They never become a validated scalar minimum or qualification pathway by themselves. No experience ceiling limits collection. The visualizer independently filters experience bucket and graduate evidence; no level or skill overlap certifies eligibility.
 
 
 ## Visualizer analysis
 
-The default interface is an aggregate opportunity and skill visualizer. It does not rank applicants or provide an application workflow. Global filters define one common posting set for direction, seniority, location and skills.
+The default interface has two views: `#landscape` for the aggregate opportunity landscape and `#skills` for local skill-mention exploration. A lightweight guided tour can move through those views and highlight explore, map, and try-a-skill actions while preserving global filters and selected skills. It does not rank applicants or provide an application workflow.
 
-Skill frequencies count each canonical skill once per posting and include required, preferred and contextual mentions. The heatmap denominator is the number of filtered postings in each direction. A selected skill set covers postings mentioning at least one selected skill. A one-skill scenario measures the change in that count, not newly eligible jobs. Recommendations exclude selected skills and rank by posting mentions, then distinct company count. A suggested practice project is editorial learning guidance, not a source claim. The automated extraction vocabulary is limited; untracked and missing skills are not evidence of absence.
+Skill frequencies count each canonical skill once per posting and include required, preferred and contextual mentions. The heatmap denominator is the number of filtered postings in each direction. A selected skill set covers postings mentioning at least one selected skill. A one-skill scenario measures the before/after change in that count, not newly eligible jobs. Recommendations exclude selected skills and rank by posting mentions, then distinct company count. A suggested practice project is editorial learning guidance, not a source claim. The automated extraction vocabulary is limited; untracked and missing skills are not evidence of absence. Skill profile data stays browser-only, with optional device-local persistence.
+
+The optional `experienceEvidenceSource` object preserves the official URL, source check date, evidence type and short excerpt. `requirementYears` preserves numbers from the selected requirement statements, including unresolved alternatives; it does not modify `qualificationPaths`. Enrichment is applied only when source ID, title, URL and source check date match the frozen artifact.

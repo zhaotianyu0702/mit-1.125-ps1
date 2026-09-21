@@ -1,4 +1,4 @@
-import { EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, ROLE_FAMILIES, experienceLevel } from './core.js';
+import { EXPERIENCE_LEVELS, EXPERIENCE_LEVEL_LABELS, ROLE_FAMILIES, experienceLevel } from './core.js?v=3.1';
 
 const GRADUATE_STATUSES = new Set(['explicit', 'zero-experience']);
 const EARLY_STATUSES = new Set([...GRADUATE_STATUSES, 'early-career']);

@@ -6,8 +6,8 @@
   <meta name="description" content="Explore US AI job distributions, map your skills, and discover what to learn next.">
   <meta name="theme-color" content="#172c37">
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css">
-  <script type="module" src="./app.js"></script>
+  <link rel="stylesheet" href="./styles.css?v=3.1">
+  <script type="module" src="./app.js?v=3.1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to charts</a>
@@ -22,6 +22,7 @@
   </header>
   <main id="main" class="shell" tabindex="-1">
     <div id="page-heading" class="page-heading"></div>
+    <section id="guide" class="guide" aria-label="Interactive guide" hidden></section>
     <div id="filters" class="filter-strip" aria-label="Chart filters"></div>
     <div id="content" aria-busy="true"><p class="loading">Loading the opportunity map…</p></div>
   </main>

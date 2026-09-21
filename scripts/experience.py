@@ -7,10 +7,10 @@ and company history in the same text.
 import re
 
 
-LEVELS = ("new-grad", "entry", "mid", "senior", "staff", "leadership", "unspecified")
+LEVELS = ("new-grad", "entry", "mid", "senior", "staff", "leadership", "experienced", "open-level", "unspecified")
 
 
-def classify_experience(title, newgrad_status="unclear", references=None):
+def classify_experience(title, newgrad_status="unclear", references=None, evidence=None):
     title = str(title or "").strip()
     lower = title.lower()
     # A common IC title contains the word Staff without implying staff-level
@@ -41,9 +41,29 @@ def classify_experience(title, newgrad_status="unclear", references=None):
     if str(newgrad_status).lower() in {"explicit", "eligible", "confirmed", "new-grad", "newgrad", "yes"}:
         return _result("new-grad", "curated", "Curated record explicitly marks a new-grad pathway.")
 
+    # Source evidence is deliberately considered only after explicit title and
+    # curated signals.  The enrichment script supplies evidence extracted from
+    # the requirements text; callers may also provide the same small schema.
+    if evidence:
+        if evidence.get("open_level"):
+            return _result("open-level", "scope", evidence["open_level"])
+        years = evidence.get("required_years")
+        if isinstance(years, (int, float)) and not isinstance(years, bool):
+            years = int(years)
+            if years <= 2:
+                return _result("entry", "requirements", evidence.get("evidence") or f"Requirements state at least {years} years of relevant experience.", years)
+            if years <= 4:
+                return _result("mid", "requirements", evidence.get("evidence") or f"Requirements state at least {years} years of relevant experience.", years)
+            return _result("senior", "requirements", evidence.get("evidence") or f"Requirements state at least {years} years of relevant experience.", years)
+        if evidence.get("experienced"):
+            return _result("experienced", "requirements", evidence["experienced"])
+
     # Engineer II/III and numeric references alone are deliberately ambiguous.
-    return _result("unspecified", "unknown", "No unambiguous experience level appears in the title.")
+    return _result("unspecified", "unknown", (evidence or {}).get("reason") or "No unambiguous experience level appears in the title or requirements.")
 
 
-def _result(level, basis, evidence):
-    return {"experienceLevel": level, "experienceLevelBasis": basis, "experienceLevelEvidence": evidence}
+def _result(level, basis, evidence, requirement_years=None):
+    result = {"experienceLevel": level, "experienceLevelBasis": basis, "experienceLevelEvidence": evidence}
+    if requirement_years is not None:
+        result["requirementYears"] = requirement_years
+    return result

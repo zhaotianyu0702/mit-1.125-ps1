@@ -259,3 +259,33 @@ body{background:white}
 
 .other-skill{display:block;max-width:210px;margin-top:13px}
 .other-skill select{font-size:11px;color:var(--muted);background:#f7f9f5}
+/* Optional guide: the existing two views stay available throughout. */
+.guide{position:sticky;top:10px;z-index:8;border:1px solid #b8cbbc;border-radius:12px;background:#f1f6ea;padding:13px 17px;margin-bottom:20px;box-shadow:0 5px 18px #172c3709}
+.guide-top,.guide-bottom,.guide-bottom>div{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.guide-top{margin-bottom:10px}
+.guide-top nav{display:flex;gap:20px}
+.guide-top nav button{display:inline-flex;align-items:center;gap:7px;padding:0;color:var(--muted);font-size:11px}
+.guide-top nav button span{display:grid;place-items:center;width:21px;height:21px;background:white;border:1px solid #c7d6c8;border-radius:50%;font-size:10px}
+.guide-top nav button[aria-current=step]{font-weight:650;color:#1d5447}
+.guide-top nav button[aria-current=step] span{background:var(--accent);color:white;border-color:var(--accent)}
+.guide-bottom p{font-size:12px;color:#3e594f}
+.guide-bottom .button{min-height:33px;padding:6px 12px;white-space:nowrap}
+.guide-bottom .text-button{white-space:nowrap}
+.guide-skip{font-size:11px}
+.guide-launch{display:block;margin:5px 0 0 auto;font-size:11px}
+.guide-focus{outline:2px solid #8ca991;outline-offset:3px;scroll-margin-top:160px}
+.bar-fill,.footprint-track i,.scenario-row .track i{transition:width .18s ease}
+@media(max-width:700px){
+ .guide{top:5px;padding:11px 13px;margin-bottom:17px}
+ .guide-top{gap:8px;margin-bottom:11px}
+ .guide-top nav{gap:12px}
+ .guide-top nav button{font-size:10px;gap:4px}
+ .guide-top nav button span{width:18px;height:18px;flex-shrink:0}
+ .guide-top nav button{max-width:88px;line-height:1.2;text-align:left}
+ .guide-bottom{align-items:flex-start;gap:8px;flex-direction:column}
+ .guide-bottom p{font-size:11px;line-height:1.4}
+ .guide-bottom>div{width:100%;justify-content:flex-end;gap:15px}
+ .guide-bottom .button{font-size:11px;min-height:32px}
+ .guide-focus{scroll-margin-top:175px}
+}
+@media(prefers-reduced-motion:reduce){.bar-fill,.footprint-track i,.scenario-row .track i{transition:none}}

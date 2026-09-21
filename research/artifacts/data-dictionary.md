@@ -7,7 +7,7 @@ The unit is one unique public job posting. A posting may contain multiple locati
 ## Product measures
 
 - `direction distribution`: postings grouped by primary `roleFamily` or selected direction.
-- `experience distribution`: postings grouped by the seven `experienceLevel` values; unspecified remains visible.
+- `experience distribution`: postings grouped by the `experienceLevel` values; unspecified remains visible.
 - `region distribution`: one count per listed state and a separate `Remote - US` bucket; totals can overlap.
 - `skill-demand matrix`: postings mentioning a skill divided by filtered postings in the direction; one count per cell.
 - `skill lab coverage`: filtered postings mentioning at least one selected skill, shown as count and fraction by role.
@@ -23,7 +23,9 @@ The unit is one unique public job posting. A posting may contain multiple locati
 | `roleFamily / tags` | Primary direction used for one-category charts, plus additional technical directions. |
 | `locations / locationText / remote / workplace` | Source-listed US places and stated work arrangement; state and remote counts can overlap. |
 | `newgradStatus / newgradEvidence` | Graduate evidence group: explicit, zero-experience, early-career, or unclear, with source explanation. |
-| `experienceLevel / experienceLevelBasis / experienceReferences` | One of seven display levels and its evidence; year references are not validated minimums. |
+| `experienceLevel / experienceLevelBasis / experienceLevelEvidence` | Descriptive level and provenance; inferred requirements use 0–2 entry, 3–4 mid, 5+ senior, explicit relevant experience without a numeric level Experience requested, and explicit multiple or level-dependent requirements Level varies. |
+| `experienceEvidenceSource / requirementYears` | Official source excerpt, URL and check date; parsed requirement numbers remain descriptive and may be ambiguous. |
+| `experienceReferences` | Raw year mentions from the full description; never a validated scalar minimum. |
 | `skills` | Mentioned skill names with required, preferred, or mentioned level. Skill lab counts a posting once per selected-skill set. |
 | `qualificationPaths` | Degree and experience alternatives; unknown values stay unknown and are not converted to zero. |
 | `salary / sponsorship` | Disclosed base-pay ranges and public sponsorship statement; missing disclosure is not a negative answer. |

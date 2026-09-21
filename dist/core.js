@@ -1,8 +1,8 @@
 export const ROLE_FAMILIES=['ML Engineering','AI Applications','Research','ML Infrastructure','Applied Data Science'];
 export const DEGREES=['Bachelor','Master','PhD'];
-export const EXPERIENCE_LEVELS=['new-grad','entry','mid','senior','staff','leadership','unspecified'];
-export const EXPERIENCE_LEVEL_LABELS={"new-grad":'New grad',entry:'Entry/junior',mid:'Mid-level',senior:'Senior',staff:'Staff/principal',leadership:'Leadership',unspecified:'Not specified'};
-export const EXPERIENCE_LEVEL_BASIS=['title','curated','unknown'];
+export const EXPERIENCE_LEVELS=['new-grad','entry','mid','senior','staff','leadership','experienced','open-level','unspecified'];
+export const EXPERIENCE_LEVEL_LABELS={"new-grad":'New grad',entry:'Entry/junior',mid:'Mid-level',senior:'Senior',staff:'Staff/principal',leadership:'Leadership',experienced:'Experience requested','open-level':'Level varies',unspecified:'Not specified'};
+export const EXPERIENCE_LEVEL_BASIS=['title','curated','requirements','scope','unknown'];
 export const DEFAULT_FILTERS={q:'',degrees:[],roles:[],state:'',city:'',company:'',workplace:'',graduation:'',start:'',experience:'',experienceLevel:'all',skill:'',tag:'',sponsorship:'',salary:'',deadlineOnly:false,includeZero:true,includeEarly:true,includeUnclear:true,includeUnknown:true,savedOnly:false,sort:'company'};
 export const freshFilters=()=>({...DEFAULT_FILTERS,degrees:[],roles:[]});
 export function unique(xs){return [...new Set(xs.filter(x=>x!==null&&x!==undefined&&x!==''))];}
