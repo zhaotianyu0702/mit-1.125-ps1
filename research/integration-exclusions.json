@@ -1,0 +1,20 @@
+[
+  {
+    "id": "waymo-greenhouse-7488508",
+    "company": "Waymo",
+    "url": "https://job-boards.greenhouse.io/waymo/jobs/7488508",
+    "reason": "PhD New Grad title conflicts with 5+ years of ML experience in the requirements; excluded pending clarification."
+  },
+  {
+    "id": "mach-industries-greenhouse-4390274009",
+    "company": "Mach Industries",
+    "url": "https://job-boards.greenhouse.io/machindustries/jobs/4390274009",
+    "reason": "Autonomy/GNC and general software responsibilities do not establish core AI/ML work under this project definition."
+  },
+  {
+    "id": "mach-industries-greenhouse-4401441009",
+    "company": "Mach Industries",
+    "url": "https://job-boards.greenhouse.io/machindustries/jobs/4401441009",
+    "reason": "Classical GNC, navigation and simulation are not sufficient evidence of core AI/ML responsibilities."
+  }
+]

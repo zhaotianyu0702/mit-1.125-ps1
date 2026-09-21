@@ -1,0 +1,997 @@
+{
+  "verificationVersion": "2026-09-21",
+  "verifiedAt": "2026-09-21T19:45:51.427030+00:00",
+  "input": "research/expanded_enterprise.json",
+  "scope": "All 29 curated IDs only; live public Ashby posting API where source=Ashby. No raw JD cache is included.",
+  "jobs": {
+    "ad58a098-ef75-4a4b-8475-55c2653213ef": {
+      "company": "Fireworks AI",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/fireworks/ad58a098-ef75-4a4b-8475-55c2653213ef",
+      "verifiedAt": "2026-09-21T19:45:51.426734+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Mateo",
+            "state": "CA",
+            "country": "US"
+          },
+          {
+            "city": "New York",
+            "state": "NY",
+            "country": "US"
+          }
+        ],
+        "remote": true,
+        "workplace": "Hybrid",
+        "qualificationPaths": [
+          {
+            "degrees": [
+              "PhD"
+            ],
+            "minYears": 0,
+            "experienceType": "research",
+            "graduation": "2026",
+            "graduationYears": [
+              2026
+            ]
+          }
+        ],
+        "startWindow": "PhD completed within six months or by December 2026",
+        "skills": [
+          {
+            "name": "C/C++",
+            "level": "mentioned"
+          },
+          {
+            "name": "Rust",
+            "level": "mentioned"
+          },
+          {
+            "name": "Go",
+            "level": "mentioned"
+          },
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "Kubernetes",
+            "level": "mentioned"
+          },
+          {
+            "name": "Ray",
+            "level": "mentioned"
+          },
+          {
+            "name": "Slurm",
+            "level": "mentioned"
+          },
+          {
+            "name": "vLLM",
+            "level": "mentioned"
+          },
+          {
+            "name": "NCCL",
+            "level": "mentioned"
+          },
+          {
+            "name": "CUDA",
+            "level": "mentioned"
+          },
+          {
+            "name": "ROCm",
+            "level": "mentioned"
+          },
+          {
+            "name": "Triton",
+            "level": "mentioned"
+          },
+          {
+            "name": "distributed systems",
+            "level": "mentioned"
+          },
+          {
+            "name": "cloud infrastructure",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live posting states PhD completion by December 2026 or within six months; listed locations are San Mateo and New York. Skills were taken from qualification and preferred lists; OR language is kept as mentioned.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/fireworks"
+    },
+    "82b41f4a-a945-4aee-a1fd-1ef9ab513e58": {
+      "company": "Fireworks AI",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/fireworks/82b41f4a-a945-4aee-a1fd-1ef9ab513e58",
+      "verifiedAt": "2026-09-21T19:45:51.426916+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Mateo",
+            "state": "CA",
+            "country": "US"
+          },
+          {
+            "city": "New York",
+            "state": "NY",
+            "country": "US"
+          }
+        ],
+        "remote": true,
+        "workplace": "Hybrid",
+        "qualificationPaths": [
+          {
+            "degrees": [
+              "PhD"
+            ],
+            "minYears": 0,
+            "experienceType": "research",
+            "graduation": "2026",
+            "graduationYears": [
+              2026
+            ]
+          }
+        ],
+        "startWindow": "PhD completed within six months or by December 2026",
+        "skills": [
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "C/C++",
+            "level": "mentioned"
+          },
+          {
+            "name": "PyTorch",
+            "level": "mentioned"
+          },
+          {
+            "name": "JAX",
+            "level": "mentioned"
+          },
+          {
+            "name": "TensorFlow",
+            "level": "mentioned"
+          },
+          {
+            "name": "LLM",
+            "level": "mentioned"
+          },
+          {
+            "name": "multimodal systems",
+            "level": "mentioned"
+          },
+          {
+            "name": "generative AI",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live posting requires or welcomes a PhD completed within six months or by December 2026; locations are San Mateo and New York. Framework items include preferred alternatives.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/fireworks"
+    },
+    "0c78aede-7c21-4d1e-88f1-f309deb9819e": {
+      "company": "Fireworks AI",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/fireworks/0c78aede-7c21-4d1e-88f1-f309deb9819e",
+      "verifiedAt": "2026-09-21T19:45:51.426921+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Mateo",
+            "state": "CA",
+            "country": "US"
+          },
+          {
+            "city": "New York",
+            "state": "NY",
+            "country": "US"
+          }
+        ],
+        "remote": true,
+        "workplace": "Hybrid",
+        "qualificationPaths": [
+          {
+            "degrees": [
+              "Bachelor",
+              "Master"
+            ],
+            "minYears": 0,
+            "experienceType": "not stated",
+            "graduation": "2026 or Summer 2027",
+            "graduationYears": [
+              2026,
+              2027
+            ]
+          }
+        ],
+        "startWindow": "December 2026 is preferred; Summer 2027 accepted",
+        "skills": [
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "C++",
+            "level": "mentioned"
+          },
+          {
+            "name": "Go",
+            "level": "mentioned"
+          },
+          {
+            "name": "Rust",
+            "level": "mentioned"
+          },
+          {
+            "name": "TypeScript",
+            "level": "mentioned"
+          },
+          {
+            "name": "LLM",
+            "level": "mentioned"
+          },
+          {
+            "name": "CUDA",
+            "level": "mentioned"
+          },
+          {
+            "name": "Kubernetes",
+            "level": "mentioned"
+          },
+          {
+            "name": "PyTorch",
+            "level": "mentioned"
+          },
+          {
+            "name": "model training",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live posting says BS/MS completed within six months or by end of 2026, or expected by Summer 2027; December 2026 is preferred. Do not encode only 2027.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/fireworks"
+    },
+    "f2d170eb-c4c3-4715-9d2e-84dd4fe857c8": {
+      "company": "Netic",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/netic/f2d170eb-c4c3-4715-9d2e-84dd4fe857c8",
+      "verifiedAt": "2026-09-21T19:45:51.426925+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          }
+        ],
+        "remote": false,
+        "workplace": "On-site",
+        "qualificationPaths": [
+          {
+            "degrees": [],
+            "minYears": null,
+            "experienceType": "not stated",
+            "graduation": "2026-2027 start window",
+            "graduationYears": [
+              2026,
+              2027
+            ]
+          }
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "FastAPI",
+            "level": "mentioned"
+          },
+          {
+            "name": "TypeScript",
+            "level": "mentioned"
+          },
+          {
+            "name": "Node",
+            "level": "mentioned"
+          },
+          {
+            "name": "React",
+            "level": "mentioned"
+          },
+          {
+            "name": "LLM",
+            "level": "mentioned"
+          },
+          {
+            "name": "TTS",
+            "level": "mentioned"
+          },
+          {
+            "name": "speech APIs",
+            "level": "mentioned"
+          },
+          {
+            "name": "fine-tuning",
+            "level": "mentioned"
+          },
+          {
+            "name": "vector databases",
+            "level": "mentioned"
+          },
+          {
+            "name": "RAG",
+            "level": "mentioned"
+          },
+          {
+            "name": "evaluation frameworks",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live posting explicitly targets new graduates available to start winter 2026 through summer 2027; it does not establish a degree requirement or numeric experience minimum in the captured requirements.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/netic"
+    },
+    "bab5d1e5-e31b-42f0-9cef-334b1f17fed3": {
+      "company": "Netic",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/netic/bab5d1e5-e31b-42f0-9cef-334b1f17fed3",
+      "verifiedAt": "2026-09-21T19:45:51.426981+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          }
+        ],
+        "remote": false,
+        "workplace": "On-site",
+        "qualificationPaths": [
+          {
+            "degrees": [],
+            "minYears": null,
+            "experienceType": "not stated",
+            "graduation": "2026-2027 start window",
+            "graduationYears": [
+              2026,
+              2027
+            ]
+          }
+        ],
+        "skills": [
+          {
+            "name": "React",
+            "level": "mentioned"
+          },
+          {
+            "name": "TypeScript",
+            "level": "mentioned"
+          },
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "databases",
+            "level": "mentioned"
+          },
+          {
+            "name": "cloud infrastructure",
+            "level": "mentioned"
+          },
+          {
+            "name": "LLM APIs",
+            "level": "mentioned"
+          },
+          {
+            "name": "embeddings",
+            "level": "mentioned"
+          },
+          {
+            "name": "RAG",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live posting targets new graduate engineers starting winter 2026 through summer 2027; degree is not established in the captured text. AI experience is described as nice-to-have, so it remains mentioned/preferred.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/netic"
+    },
+    "d9bcb6a2-0e54-4cb3-baec-43f2d74db18f": {
+      "company": "Netic",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/netic/d9bcb6a2-0e54-4cb3-baec-43f2d74db18f",
+      "verifiedAt": "2026-09-21T19:45:51.426983+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          }
+        ],
+        "remote": false,
+        "workplace": "On-site",
+        "qualificationPaths": [
+          {
+            "degrees": [],
+            "minYears": 0,
+            "experienceType": "not stated",
+            "graduation": "2026-2027 start window",
+            "graduationYears": [
+              2026,
+              2027
+            ]
+          }
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "FastAPI",
+            "level": "mentioned"
+          },
+          {
+            "name": "TypeScript",
+            "level": "mentioned"
+          },
+          {
+            "name": "Node",
+            "level": "mentioned"
+          },
+          {
+            "name": "React",
+            "level": "mentioned"
+          },
+          {
+            "name": "LLM APIs",
+            "level": "mentioned"
+          },
+          {
+            "name": "evaluation frameworks",
+            "level": "mentioned"
+          },
+          {
+            "name": "RAG",
+            "level": "mentioned"
+          },
+          {
+            "name": "LangChain",
+            "level": "mentioned"
+          },
+          {
+            "name": "MCP",
+            "level": "mentioned"
+          },
+          {
+            "name": "agent frameworks",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live posting targets new graduates starting winter 2026 through summer 2027 and says production experience is not required for agent tooling; projects/coursework count.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/netic"
+    },
+    "a8ff946f-d6b1-4059-bc9f-fe6b11504f2f": {
+      "company": "Decagon",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/decagon/a8ff946f-d6b1-4059-bc9f-fe6b11504f2f",
+      "verifiedAt": "2026-09-21T19:45:51.426986+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          },
+          {
+            "city": "New York",
+            "state": "NY",
+            "country": "US"
+          }
+        ],
+        "remote": false,
+        "workplace": "On-site",
+        "qualificationPaths": [
+          {
+            "degrees": [
+              "Bachelor"
+            ],
+            "minYears": 0,
+            "experienceType": "not stated",
+            "graduation": "December 2026-July 2027",
+            "graduationYears": [
+              2026,
+              2027
+            ]
+          }
+        ],
+        "startWindow": "2027 start",
+        "skills": [
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "TypeScript",
+            "level": "mentioned"
+          },
+          {
+            "name": "asynchronous programming",
+            "level": "mentioned"
+          },
+          {
+            "name": "multimodal models",
+            "level": "mentioned"
+          },
+          {
+            "name": "AI coding agents",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live posting explicitly requires pursuing/completing a BS or higher and graduation between December 2026 and July 2027; title start cohort is not the sole graduation evidence.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/decagon"
+    },
+    "d0e5b41d-84ab-4887-bd3a-55589b11dd7b": {
+      "company": "Cursor",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/cursor/d0e5b41d-84ab-4887-bd3a-55589b11dd7b",
+      "verifiedAt": "2026-09-21T19:45:51.426988+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          },
+          {
+            "city": "New York",
+            "state": "NY",
+            "country": "US"
+          }
+        ],
+        "remote": false,
+        "workplace": "On-site",
+        "qualificationPaths": [
+          {
+            "degrees": [],
+            "minYears": null,
+            "experienceType": "not stated",
+            "graduation": "Spring 2027",
+            "graduationYears": [
+              2027
+            ]
+          }
+        ],
+        "skills": [
+          {
+            "name": "shipped product / app / open source",
+            "level": "required"
+          }
+        ]
+      },
+      "verificationNote": "Live posting says Spring 2027 graduation in a technical field and requires a reviewable shipped project; it does not name a Bachelor or Master requirement, so degrees stays empty.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/cursor"
+    },
+    "9b5477f4-97af-4aaa-b855-910c982ce191": {
+      "company": "Genmo",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/genmo/9b5477f4-97af-4aaa-b855-910c982ce191",
+      "verifiedAt": "2026-09-21T19:45:51.426992+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          }
+        ],
+        "qualificationPaths": [
+          {
+            "degrees": [
+              "Bachelor",
+              "Master"
+            ],
+            "minYears": 2,
+            "experienceType": "not stated",
+            "graduation": "Not stated",
+            "graduationYears": []
+          }
+        ],
+        "newgradStatus": "unclear",
+        "skills": [
+          {
+            "name": "Python",
+            "level": "required"
+          },
+          {
+            "name": "PyTorch",
+            "level": "required"
+          },
+          {
+            "name": "TensorFlow",
+            "level": "required"
+          },
+          {
+            "name": "deep learning",
+            "level": "required"
+          },
+          {
+            "name": "model training",
+            "level": "required"
+          },
+          {
+            "name": "computer vision",
+            "level": "required"
+          },
+          {
+            "name": "generative AI",
+            "level": "required"
+          }
+        ]
+      },
+      "verificationNote": "Live posting requires BS/MS and 2+ years ML experience while calling recent graduates welcome; experience type is not specified, so status should be unclear rather than pure new-grad/early-career research.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/genmo"
+    },
+    "c7251e1b-d7bf-4d03-8b9e-1382743bef2c": {
+      "company": "Liquid AI",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/liquid-ai/c7251e1b-d7bf-4d03-8b9e-1382743bef2c",
+      "verifiedAt": "2026-09-21T19:45:51.426997+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          },
+          {
+            "city": "MA",
+            "state": "MA",
+            "country": "US"
+          }
+        ],
+        "remote": true,
+        "workplace": "Hybrid",
+        "qualificationPaths": [
+          {
+            "degrees": [
+              "Master"
+            ],
+            "minYears": 3,
+            "experienceType": "not stated"
+          },
+          {
+            "degrees": [
+              "PhD"
+            ],
+            "minYears": 1,
+            "experienceType": "not stated"
+          },
+          {
+            "degrees": [
+              "Bachelor"
+            ],
+            "minYears": 5,
+            "experienceType": "not stated"
+          }
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "PyTorch",
+            "level": "mentioned"
+          },
+          {
+            "name": "synthetic data generation",
+            "level": "mentioned"
+          },
+          {
+            "name": "data curation",
+            "level": "mentioned"
+          },
+          {
+            "name": "ML evaluation",
+            "level": "mentioned"
+          },
+          {
+            "name": "LLMs",
+            "level": "mentioned"
+          },
+          {
+            "name": "VLMs",
+            "level": "mentioned"
+          },
+          {
+            "name": "computer vision",
+            "level": "mentioned"
+          },
+          {
+            "name": "audio",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live posting gives separate MS 3+, PhD 1+, and BS 5+ relevant-experience thresholds; the source does not classify relevant experience as research or industry. API location includes San Francisco, Remote, and Boston/Cambridge; preserve Remote separately.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/liquid-ai"
+    },
+    "149f368c-52d5-408f-ba26-ad888f318a00": {
+      "company": "Sierra",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/sierra/149f368c-52d5-408f-ba26-ad888f318a00",
+      "verifiedAt": "2026-09-21T19:45:51.427004+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          },
+          {
+            "city": "New York",
+            "state": "NY",
+            "country": "US"
+          }
+        ],
+        "qualificationPaths": [
+          {
+            "degrees": [],
+            "minYears": null,
+            "experienceType": "not stated",
+            "graduation": "2027",
+            "graduationYears": [
+              2027
+            ]
+          }
+        ],
+        "skills": []
+      },
+      "verificationNote": "Live posting title marks New Grad 2027, but the captured requirements do not establish a degree path or named technical skill requirement; leave those fields empty.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/sierra"
+    },
+    "d9c445da-c7b4-43a3-8d71-d367681c3015": {
+      "company": "Sierra",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/sierra/d9c445da-c7b4-43a3-8d71-d367681c3015",
+      "verifiedAt": "2026-09-21T19:45:51.427009+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          }
+        ],
+        "qualificationPaths": [
+          {
+            "degrees": [
+              "Bachelor",
+              "Master"
+            ],
+            "minYears": 0,
+            "experienceType": "not stated",
+            "graduation": "June 2027",
+            "graduationYears": [
+              2027
+            ]
+          }
+        ],
+        "skills": [
+          {
+            "name": "React",
+            "level": "mentioned"
+          },
+          {
+            "name": "TypeScript",
+            "level": "mentioned"
+          },
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "Go",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live APX posting explicitly accepts undergraduate or Master degree completion by June 2027 and names React, TypeScript, Python, and Go.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/sierra"
+    },
+    "197c931d-3cda-44b3-b26b-470976730808": {
+      "company": "Koah Labs",
+      "verification": "live_ashby_api",
+      "officialSource": "https://jobs.ashbyhq.com/koahlabs/197c931d-3cda-44b3-b26b-470976730808",
+      "verifiedAt": "2026-09-21T19:45:51.427011+00:00",
+      "fields": {
+        "locations": [
+          {
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "US"
+          }
+        ],
+        "qualificationPaths": [
+          {
+            "degrees": [],
+            "minYears": null,
+            "experienceType": "not stated",
+            "graduation": "Not stated",
+            "graduationYears": []
+          }
+        ],
+        "skills": [
+          {
+            "name": "Terraform",
+            "level": "mentioned"
+          },
+          {
+            "name": "AWS",
+            "level": "mentioned"
+          },
+          {
+            "name": "PostgreSQL",
+            "level": "mentioned"
+          },
+          {
+            "name": "ClickHouse",
+            "level": "mentioned"
+          },
+          {
+            "name": "Redis",
+            "level": "mentioned"
+          },
+          {
+            "name": "Kafka",
+            "level": "mentioned"
+          },
+          {
+            "name": "Python",
+            "level": "mentioned"
+          },
+          {
+            "name": "Ruby on Rails",
+            "level": "mentioned"
+          },
+          {
+            "name": "React",
+            "level": "mentioned"
+          },
+          {
+            "name": "TypeScript",
+            "level": "mentioned"
+          }
+        ]
+      },
+      "verificationNote": "Live posting lists San Francisco and an early-career title but no degree or graduation requirement; technical stack items are explicitly listed in the source.",
+      "apiBoard": "https://api.ashbyhq.com/posting-api/job-board/koahlabs"
+    },
+    "7899565": {
+      "company": "AI2",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7899565",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "5193037007": {
+      "company": "xAI",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://job-boards.greenhouse.io/xai/jobs/5193037007",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "4711484005": {
+      "company": "Glean",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://job-boards.greenhouse.io/gleanwork/jobs/4711484005",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "4006735005": {
+      "company": "Glean",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://job-boards.greenhouse.io/gleanwork/jobs/4006735005",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "8027588": {
+      "company": "Roblox",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://careers.roblox.com/jobs/8027588?gh_jid=8027588",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "8027587": {
+      "company": "Roblox",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://careers.roblox.com/jobs/8027587?gh_jid=8027587",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "449bf7c1-41d7-47a4-89a7-0ee0b31f5918": {
+      "company": "Character.AI",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/character/449bf7c1-41d7-47a4-89a7-0ee0b31f5918",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "1cf38233-8aa0-47f8-9d85-65ce27bc3047": {
+      "company": "Anyscale",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/anyscale/1cf38233-8aa0-47f8-9d85-65ce27bc3047",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "987d7f64-c957-4c8f-b89d-2f9d64738507": {
+      "company": "Cerebras",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/cerebras/987d7f64-c957-4c8f-b89d-2f9d64738507",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "9c7da4b8-446b-4bf2-8d07-23241590bf2e": {
+      "company": "Cerebras",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/cerebras/9c7da4b8-446b-4bf2-8d07-23241590bf2e",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1": {
+      "company": "Embedding VC",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/embedding-vc/5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "439404bb-3185-4d22-b6df-4a5e39a510d6": {
+      "company": "Cognition",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/cognition/439404bb-3185-4d22-b6df-4a5e39a510d6",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "9d863c78-80c0-44cd-a574-d1330e125398": {
+      "company": "Thinking Machines Lab",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/thinkingmachines/9d863c78-80c0-44cd-a574-d1330e125398",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "72fe46e4-a772-4ebb-a413-53e4f1a8273e": {
+      "company": "Thinking Machines Lab",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/thinkingmachines/72fe46e4-a772-4ebb-a413-53e4f1a8273e",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "cce4be06-ac42-4c69-9bcd-7f5dca6f5e3c": {
+      "company": "Mistral",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/mistral.ai/cce4be06-ac42-4c69-9bcd-7f5dca6f5e3c",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    },
+    "2ec2dacd-1117-479b-a4c1-efa9df530798": {
+      "company": "Mistral",
+      "verification": "not_returned_by_live_ashby_board",
+      "officialSource": "https://jobs.ashbyhq.com/mistral.ai/2ec2dacd-1117-479b-a4c1-efa9df530798",
+      "fields": {},
+      "verificationNote": "Curated ID was not returned by the live public Ashby job-board API at verification time; no field correction was inferred."
+    }
+  },
+  "verificationNotes": [
+    "Fetched live public endpoints of the form https://api.ashbyhq.com/posting-api/job-board/{slug}.",
+    "Fields absent or ambiguous in the live JD remain empty/null; title-only start cohort is not treated as degree completion.",
+    "Skills are limited to technologies and requirements explicitly present in the live JD; OR alternatives remain mentioned/required groups rather than inferred proficiency.",
+    "IDs absent from the current live board are retained with empty fields and explicitly marked unverified."
+  ]
+}

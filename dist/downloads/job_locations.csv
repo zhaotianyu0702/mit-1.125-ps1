@@ -1,0 +1,326 @@
+﻿job_id,city,state,country,workplace,remote
+affirm-greenhouse-7822387003,US location not specified,,US,Remote,True
+ai2-greenhouse-7899565,Seattle,WA,US,On-site,False
+thealleninstitute-greenhouse-7723570,Seattle,WA,US,Not stated,False
+thealleninstitute-greenhouse-7848623,Seattle,WA,US,Not stated,False
+aida-ashby-7e32058d-9c06-4394-ba2f-aa8628eeb838,Palo Alto,CA,US,Not stated,False
+airbnb-greenhouse-7708224,US location not specified,,US,Not stated,False
+anthropic-greenhouse-5021015008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5021015008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5186067008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5186067008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5364804008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5364804008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5418323008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5418323008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5224564008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5224564008,Seattle,WA,US,Not stated,False
+anthropic-greenhouse-5224564008,New York,NY,US,Not stated,False
+anthropic-greenhouse-4951814008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-4951814008,Seattle,WA,US,Not stated,False
+anthropic-greenhouse-4951814008,New York,NY,US,Not stated,False
+anthropic-greenhouse-4631822008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5231612008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5231612008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5254364008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5254364008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5285246008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5285246008,Seattle,WA,US,Not stated,False
+anthropic-greenhouse-5285246008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5025624008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5025624008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5271380008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5271380008,Seattle,WA,US,Not stated,False
+anthropic-greenhouse-5271380008,New York,NY,US,Not stated,False
+anthropic-greenhouse-4017331008,San Francisco,CA,US,Remote,True
+anthropic-greenhouse-4017331008,Seattle,WA,US,Remote,True
+anthropic-greenhouse-4017331008,New York,NY,US,Remote,True
+anthropic-greenhouse-4613568008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-4613568008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5198255008,San Francisco,CA,US,Remote,True
+anthropic-greenhouse-5198255008,New York,NY,US,Remote,True
+anthropic-greenhouse-5160330008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-4938432008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-4613592008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-4613592008,Seattle,WA,US,Not stated,False
+anthropic-greenhouse-4613592008,New York,NY,US,Not stated,False
+anthropic-greenhouse-5416882008,San Francisco,CA,US,Remote,True
+anthropic-greenhouse-5061517008,San Francisco,CA,US,Remote,True
+anthropic-greenhouse-5061517008,Seattle,WA,US,Remote,True
+anthropic-greenhouse-5061517008,New York,NY,US,Remote,True
+anthropic-greenhouse-4616971008,San Francisco,CA,US,Remote,True
+anthropic-greenhouse-4616971008,Seattle,WA,US,Remote,True
+anthropic-greenhouse-4616971008,New York,NY,US,Remote,True
+anthropic-greenhouse-4980427008,San Francisco,CA,US,Not stated,False
+anthropic-greenhouse-5357739008,San Francisco,CA,US,Not stated,False
+anyscale-ashby-1cf38233-8aa0-47f8-9d85-65ce27bc3047,San Francisco,CA,US,On-site,True
+anyscale-ashby-1cf38233-8aa0-47f8-9d85-65ce27bc3047,Palo Alto,CA,US,On-site,True
+baseten-ashby-db6477fc-111a-4340-bf00-525fe023e6f3,San Francisco,CA,US,Remote,True
+baseten-ashby-db6477fc-111a-4340-bf00-525fe023e6f3,New York,NY,US,Remote,True
+baseten-ashby-68328a94-f785-463b-a3d7-b0dfc11839b5,San Francisco,CA,US,Not stated,False
+baseten-ashby-7c9d2bb0-ac03-4a3c-86c3-cf720cd314e8,San Francisco,CA,US,Not stated,False
+baseten-ashby-c8701794-bdc1-4932-bffa-a444ce57ed73,San Francisco,CA,US,Not stated,False
+baseten-ashby-c8701794-bdc1-4932-bffa-a444ce57ed73,Seattle,WA,US,Not stated,False
+baseten-ashby-c8701794-bdc1-4932-bffa-a444ce57ed73,New York,NY,US,Not stated,False
+baseten-ashby-fc6e5f2e-eb2d-4a6c-8a51-8422e8662bde,San Francisco,CA,US,Not stated,False
+baseten-ashby-fc6e5f2e-eb2d-4a6c-8a51-8422e8662bde,Seattle,WA,US,Not stated,False
+baseten-ashby-fc6e5f2e-eb2d-4a6c-8a51-8422e8662bde,New York,NY,US,Not stated,False
+baseten-ashby-6e396eb7-acb3-436a-89ec-05e755c477f2,San Francisco,CA,US,Not stated,False
+baseten-ashby-6e396eb7-acb3-436a-89ec-05e755c477f2,Seattle,WA,US,Not stated,False
+baseten-ashby-6e396eb7-acb3-436a-89ec-05e755c477f2,New York,NY,US,Not stated,False
+brex-greenhouse-8606845002,San Francisco,CA,US,Not stated,False
+cartesia-ashby-eeac6a77-eac5-4d72-b3d4-97d53cac4c89,San Francisco,CA,US,Not stated,False
+cartesia-ashby-bd9d6688-5486-470f-a273-20874a44f107,San Francisco,CA,US,Not stated,False
+cartesia-ashby-33a8d2ef-ccc1-446a-8fd3-9c21cd211900,San Francisco,CA,US,Not stated,False
+cerebras-ashby-987d7f64-c957-4c8f-b89d-2f9d64738507,Sunnyvale,CA,US,On-site,False
+cerebras-ashby-9c7da4b8-446b-4bf2-8d07-23241590bf2e,Sunnyvale,CA,US,Not stated,True
+character-ashby-a7ddb640-466f-4a1f-9a94-7465006aad05,Redwood City,CA,US,Not stated,False
+character.ai-ashby-449bf7c1-41d7-47a4-89a7-0ee0b31f5918,Redwood City,CA,US,Not stated,True
+character.ai-ashby-449bf7c1-41d7-47a4-89a7-0ee0b31f5918,New York,NY,US,Not stated,True
+chime-greenhouse-8578967002,US location not specified,,US,Remote,True
+cognition-ashby-439404bb-3185-4d22-b6df-4a5e39a510d6,San Francisco,CA,US,Not stated,False
+cognition-ashby-439404bb-3185-4d22-b6df-4a5e39a510d6,New York,NY,US,Not stated,False
+cognition-ashby-57e1e2a1-e0a0-4448-a278-8eed035d7428,San Francisco,CA,US,Not stated,False
+cognition-ashby-b6f96827-ce14-44f4-98fa-b1b8640858b6,San Francisco,CA,US,Not stated,False
+cursor-ashby-cd4bad0a-e2f6-4a8d-9b57-ce1780efedae,San Francisco,CA,US,Not stated,False
+cursor-ashby-cd4bad0a-e2f6-4a8d-9b57-ce1780efedae,New York,NY,US,Not stated,False
+cursor-ashby-0aa0650b-f93c-416e-9e2f-4fdf1556fd14,San Francisco,CA,US,Not stated,False
+cursor-ashby-0aa0650b-f93c-416e-9e2f-4fdf1556fd14,New York,NY,US,Not stated,False
+cursor-ashby-d0e5b41d-84ab-4887-bd3a-55589b11dd7b,San Francisco,CA,US,On-site,False
+cursor-ashby-d0e5b41d-84ab-4887-bd3a-55589b11dd7b,New York,NY,US,On-site,False
+databricks-greenhouse-8546367002,US location not specified,,US,Not stated,False
+datadog-greenhouse-6572669,New York,NY,US,Not stated,False
+datadog-greenhouse-6572669,Pittsburgh,PA,US,Not stated,False
+decagon-ashby-a8ff946f-d6b1-4059-bc9f-fe6b11504f2f,San Francisco,CA,US,On-site,False
+decagon-ashby-a8ff946f-d6b1-4059-bc9f-fe6b11504f2f,New York,NY,US,On-site,False
+decagon-ashby-9231a1ba-d9f5-4ddd-b398-158297ea7db9,San Francisco,CA,US,Not stated,False
+decagon-ashby-9231a1ba-d9f5-4ddd-b398-158297ea7db9,New York,NY,US,Not stated,False
+decagon-ashby-69fd28a8-0de2-45a5-9b98-33725515add4,San Francisco,CA,US,Not stated,False
+decagon-ashby-69fd28a8-0de2-45a5-9b98-33725515add4,New York,NY,US,Not stated,False
+decagon-ashby-f84db19b-8de3-49d6-a954-c9ee2e365956,San Francisco,CA,US,Not stated,False
+decagon-ashby-f84db19b-8de3-49d6-a954-c9ee2e365956,New York,NY,US,Not stated,False
+distyl-ashby-9af1e81f-34be-47ac-80b9-051d80c040ce,San Francisco,CA,US,Not stated,False
+distyl-ashby-9af1e81f-34be-47ac-80b9-051d80c040ce,New York,NY,US,Not stated,False
+distyl-ashby-1a44c296-a732-4374-9f8c-a613b17ae37b,San Francisco,CA,US,Not stated,False
+distyl-ashby-1a44c296-a732-4374-9f8c-a613b17ae37b,New York,NY,US,Not stated,False
+distyl-ashby-4d08070a-2a80-4eaa-b702-04d80dc2ac59,San Francisco,CA,US,Not stated,False
+distyl-ashby-4d08070a-2a80-4eaa-b702-04d80dc2ac59,New York,NY,US,Not stated,False
+distyl-ashby-f94707a5-3563-49f4-8414-ec3bb8918d03,San Francisco,CA,US,Not stated,False
+distyl-ashby-f94707a5-3563-49f4-8414-ec3bb8918d03,New York,NY,US,Not stated,False
+distyl-ashby-96951117-efef-4f27-bbc4-671559d4af30,San Francisco,CA,US,Not stated,False
+distyl-ashby-96951117-efef-4f27-bbc4-671559d4af30,New York,NY,US,Not stated,False
+doordashusa-greenhouse-7580407,San Francisco,CA,US,Not stated,False
+doordashusa-greenhouse-7580407,Sunnyvale,CA,US,Not stated,False
+embedding-vc-ashby-5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1,San Francisco,CA,US,Not stated,False
+embedding-vc-ashby-5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1,San Francisco Bay Area,CA,US,Not stated,False
+epsilon-health-ashby-d82e7114-7fab-4329-938a-52cd7bfff538,San Francisco,CA,US,Not stated,False
+figma-greenhouse-5976930004,San Francisco,CA,US,Not stated,False
+figma-greenhouse-5976930004,New York,NY,US,Not stated,False
+fireworks-ai-ashby-0c78aede-7c21-4d1e-88f1-f309deb9819e,San Mateo,CA,US,Hybrid,True
+fireworks-ai-ashby-0c78aede-7c21-4d1e-88f1-f309deb9819e,New York,NY,US,Hybrid,True
+fireworks-ai-ashby-82b41f4a-a945-4aee-a1fd-1ef9ab513e58,San Mateo,CA,US,Hybrid,True
+fireworks-ai-ashby-82b41f4a-a945-4aee-a1fd-1ef9ab513e58,New York,NY,US,Hybrid,True
+fireworks-ai-ashby-ad58a098-ef75-4a4b-8475-55c2653213ef,San Mateo,CA,US,Hybrid,True
+fireworks-ai-ashby-ad58a098-ef75-4a4b-8475-55c2653213ef,New York,NY,US,Hybrid,True
+genmo-ashby-9b5477f4-97af-4aaa-b855-910c982ce191,San Francisco,CA,US,Not stated,False
+genmo-ashby-0f8462cc-c351-41b0-a794-3558c63646e2,San Francisco,CA,US,Not stated,False
+genmo-ashby-f09286ef-c08d-49c4-8635-c1d952440865,San Francisco,CA,US,Not stated,False
+glean-greenhouse-4711484005,San Francisco,CA,US,Not stated,False
+glean-greenhouse-4006735005,Mountain View,CA,US,Not stated,False
+gleanwork-greenhouse-4501783005,Mountain View,CA,US,Not stated,False
+GOOGLE-123087196289671878,Sunnyvale,CA,US,Not stated,False
+GOOGLE-123087196289671878,Atlanta,GA,US,Not stated,False
+GOOGLE-123087196289671878,Kirkland,WA,US,Not stated,False
+GOOGLE-123087196289671878,Madison,WI,US,Not stated,False
+GOOGLE-123087196289671878,Mountain View,CA,US,Not stated,False
+GOOGLE-123087196289671878,New York,NY,US,Not stated,False
+GOOGLE-123087196289671878,Raleigh,NC,US,Not stated,False
+GOOGLE-123087196289671878,Durham,NC,US,Not stated,False
+GOOGLE-123087196289671878,San Bruno,CA,US,Not stated,False
+GOOGLE-123087196289671878,Seattle,WA,US,Not stated,False
+harvey-ashby-d78083d9-a203-4ae4-b4b9-454d65df3702,San Francisco,CA,US,Not stated,False
+id.me-greenhouse-7986505003,Mountain View,CA,US,On-site,False
+koah-labs-ashby-197c931d-3cda-44b3-b26b-470976730808,San Francisco,CA,US,Not stated,False
+liquid-ai-ashby-679d26b2-2603-424d-acb8-99f45e8b5ddd,Boston,MA,US,Not stated,False
+liquid-ai-ashby-c7251e1b-d7bf-4d03-8b9e-1382743bef2c,San Francisco,CA,US,Hybrid,True
+liquid-ai-ashby-c7251e1b-d7bf-4d03-8b9e-1382743bef2c,MA,MA,US,Hybrid,True
+liquid-ai-ashby-c7251e1b-d7bf-4d03-8b9e-1382743bef2c,Boston,MA,US,Hybrid,True
+lumaai-ashby-ed5b169b-7aef-4f84-993b-42a5aabd1bd4,Redwood City,CA,US,Not stated,False
+lumaai-ashby-278788c5-a288-41d8-92ca-f07a82310173,Redwood City,CA,US,Not stated,False
+lumaai-ashby-90734653-886d-4f6f-8af8-fb130d5400ab,Redwood City,CA,US,Not stated,False
+lumaai-ashby-d2ecd718-6ba4-42a4-a067-e5f8c4c8bb1d,Redwood City,CA,US,Not stated,False
+lumaai-ashby-96f947a0-ddbf-44fa-9e44-fc08ff2bd4e9,Redwood City,CA,US,Not stated,False
+lumaai-ashby-c4b9ff5f-40b2-40d4-9f6f-8b7aad9b8860,Redwood City,CA,US,Not stated,False
+lyft-greenhouse-8402813002,San Francisco,CA,US,Not stated,False
+lyft-greenhouse-8772592002,Seattle,WA,US,Not stated,False
+lyft-greenhouse-8689127002,New York,NY,US,Not stated,False
+lyft-greenhouse-8688633002,San Francisco,CA,US,Not stated,False
+mach9-ashby-51061973-9726-4e8e-bba4-4bfa9e3ef004,San Francisco,CA,US,Not stated,False
+mistral.ai-ashby-9fc579c8-784c-4b91-bcd0-392f35d13100,San Francisco,CA,US,Not stated,False
+mistral.ai-ashby-9fc579c8-784c-4b91-bcd0-392f35d13100,Palo Alto,CA,US,Not stated,False
+mistral.ai-ashby-9fc579c8-784c-4b91-bcd0-392f35d13100,New York,NY,US,Not stated,False
+mistral-ashby-2ec2dacd-1117-479b-a4c1-efa9df530798,San Francisco,CA,US,Not stated,False
+mistral-ashby-2ec2dacd-1117-479b-a4c1-efa9df530798,Palo Alto,CA,US,Not stated,False
+mistral.ai-ashby-5d15e1fe-789d-451d-8521-568906620c21,Palo Alto,CA,US,Not stated,False
+mistral.ai-ashby-5d15e1fe-789d-451d-8521-568906620c21,New York,NY,US,Not stated,False
+mistral-ashby-cce4be06-ac42-4c69-9bcd-7f5dca6f5e3c,Palo Alto,CA,US,Not stated,False
+modal-ashby-9fadb51f-ce11-41b1-84d5-470e66cc8ee9,San Francisco,CA,US,Not stated,False
+modal-ashby-9fadb51f-ce11-41b1-84d5-470e66cc8ee9,New York,NY,US,Not stated,False
+motional-greenhouse-7730596003,Boston,MA,US,Remote,True
+motional-greenhouse-7730596003,Pittsburgh,PA,US,Remote,True
+motional-greenhouse-7730596003,Las Vegas,NV,US,Remote,True
+motional-greenhouse-7826405003,Boston,MA,US,Remote,True
+netic-ashby-f2d170eb-c4c3-4715-9d2e-84dd4fe857c8,San Francisco,CA,US,On-site,False
+netic-ashby-bab5d1e5-e31b-42f0-9cef-334b1f17fed3,San Francisco,CA,US,On-site,False
+netic-ashby-d9bcb6a2-0e54-4cb3-baec-43f2d74db18f,San Francisco,CA,US,On-site,False
+newsbreak-greenhouse-4683873006,Mountain View,CA,US,Not stated,False
+newsbreak-greenhouse-4691989006,Mountain View,CA,US,Not stated,False
+newsbreak-greenhouse-4690262006,Mountain View,CA,US,Not stated,False
+newsbreak-greenhouse-4700278006,Mountain View,CA,US,On-site,False
+newsbreak-greenhouse-4688409006,Mountain View,CA,US,Not stated,False
+newsbreak-greenhouse-4699218006,Mountain View,CA,US,Not stated,False
+newsbreak-greenhouse-4694899006,Mountain View,CA,US,On-site,False
+newsbreak-greenhouse-4615879006,Mountain View,CA,US,On-site,False
+nuro-greenhouse-7793005,Mountain View,CA,US,Not stated,False
+nuro-greenhouse-5434059,Mountain View,CA,US,Not stated,False
+nuro-greenhouse-5416913,Mountain View,CA,US,Not stated,False
+nuro-greenhouse-7439020,Mountain View,CA,US,Not stated,False
+nuro-greenhouse-7351066,Mountain View,CA,US,On-site,False
+nuro-greenhouse-8122537,Mountain View,CA,US,Not stated,False
+nuro-greenhouse-8122483,Mountain View,CA,US,Not stated,False
+nuro-greenhouse-6916236,Mountain View,CA,US,Not stated,False
+NVIDIA-JR2011517,Santa Clara,CA,US,Hybrid,True
+NVIDIA-JR2016939,Santa Clara,CA,US,Hybrid,False
+NVIDIA-JR2011267,Santa Clara,CA,US,Not stated,False
+NVIDIA-JR2019729,Santa Clara,CA,US,Not stated,False
+NVIDIA-JR2012979,Santa Clara,CA,US,Not stated,False
+NVIDIA-JR2012698,Santa Clara,CA,US,Not stated,False
+NVIDIA-JR2016032,Santa Clara,CA,US,Not stated,False
+NVIDIA-JR2010161,Santa Clara,CA,US,Not stated,False
+NVIDIA-JR2010161,Westford,MA,US,Not stated,False
+NVIDIA-JR2010161,Austin,TX,US,Not stated,False
+NVIDIA-JR2010161,Seattle,WA,US,Not stated,False
+NVIDIA-JR2024900,Santa Clara,CA,US,Not stated,False
+NVIDIA-JR2011473,Seattle,WA,US,Not stated,False
+NVIDIA-JR2016276,Santa Clara,CA,US,Hybrid,False
+openai-ashby-4acc3515-887f-4bc9-8c2a-00f36ae480c3,San Francisco,CA,US,Not stated,False
+openai-ashby-bb90d497-06ef-4bb9-878a-e797a19cd834,San Francisco,CA,US,Not stated,False
+openai-ashby-6897d024-88c1-43ed-adb8-5d2fc5eec984,San Francisco,CA,US,Not stated,False
+openai-ashby-34c2ed3f-840f-4a68-9a00-0a0606660abf,San Francisco,CA,US,Not stated,False
+openai-ashby-ab9adae3-54b5-457e-9938-77d3278d91a5,San Francisco,CA,US,Not stated,False
+openai-ashby-df3edefb-6a8b-4ef6-b183-b3f96051783e,San Francisco,CA,US,Not stated,False
+openai-ashby-9d72171e-2630-4347-83a1-263178644282,San Francisco,CA,US,Not stated,False
+openai-ashby-3302ceaf-f6ca-4803-9846-7fff7ad48a0d,San Francisco,CA,US,Not stated,False
+openai-ashby-b2250643-bfd0-4ce6-abbf-cb7e8c8123ba,San Francisco,CA,US,Not stated,False
+openai-ashby-de06790a-7243-4e33-a6f1-e7bd34009588,San Francisco,CA,US,Not stated,False
+openai-ashby-577e6673-0a4a-491b-9a0d-facbdd3bdf3c,San Francisco,CA,US,Not stated,False
+openai-ashby-577e6673-0a4a-491b-9a0d-facbdd3bdf3c,Seattle,WA,US,Not stated,False
+openai-ashby-577e6673-0a4a-491b-9a0d-facbdd3bdf3c,New York,NY,US,Not stated,False
+openai-ashby-4a13c764-18c3-4076-ac87-29e05491be07,San Francisco,CA,US,Not stated,False
+openai-ashby-ecf1abec-898c-4acb-a984-42858836a1ff,San Francisco,CA,US,Not stated,False
+openai-ashby-80f9f564-d789-47bc-91c3-3babf5a1a33d,San Francisco,CA,US,Not stated,False
+openai-ashby-1b268692-70d8-46c2-a347-2f7705b5c174,San Francisco,CA,US,Not stated,False
+openai-ashby-4a9774e2-6505-4cc2-92eb-22a8450aacdc,San Francisco,CA,US,Not stated,False
+openai-ashby-240d459b-696d-43eb-8497-fab3e56ecd9b,San Francisco,CA,US,Not stated,False
+openai-ashby-29074a51-9cb3-47c9-a8a7-f283cd14fa6c,San Francisco,CA,US,Not stated,False
+openai-ashby-1bf678c5-1058-45ca-b9bd-b0029fccd60e,San Francisco,CA,US,Not stated,False
+openai-ashby-7243bdb7-7f75-4dff-a10f-18bd7296f632,San Francisco,CA,US,Not stated,False
+openai-ashby-719cc0f6-ed38-41db-8870-299b4d336f37,San Francisco,CA,US,Not stated,False
+openai-ashby-1c516e9f-c97d-4a40-8529-9871dac615a5,San Francisco,CA,US,Not stated,False
+openai-ashby-bd2b8228-bb0f-42e0-94bd-c853cdd56140,San Francisco,CA,US,Not stated,False
+openai-ashby-793964ae-d40b-45e3-9798-84f4b6da48c5,San Francisco,CA,US,Not stated,False
+openai-ashby-bba18df5-f30f-4d2c-909c-30e651f95579,San Francisco,CA,US,Not stated,False
+openai-ashby-cc434f5b-dc0b-42fd-97ec-e0171545c6e9,San Francisco,CA,US,Not stated,False
+openai-ashby-7322d344-9325-4a92-8445-0a2c4e9272f8,San Francisco,CA,US,Not stated,False
+openai-ashby-171ebca6-de53-4d6e-a312-30332f353957,San Francisco,CA,US,Not stated,False
+openai-ashby-7e198d81-34e0-48b6-b64e-a501a75f9d53,San Francisco,CA,US,Not stated,False
+openai-ashby-872ca3d0-c8c0-4585-9a34-7f9ed6b4dbf9,San Francisco,CA,US,Not stated,False
+openai-ashby-5f0c6579-0bfb-4a06-8a43-1dd371499e10,San Francisco,CA,US,Not stated,False
+openai-ashby-56d541d3-02b5-44d8-b40b-4df72cdd0405,San Francisco,CA,US,Not stated,False
+openai-ashby-b9dee2a0-9bb3-447e-9bce-2b1bed784e5b,San Francisco,CA,US,Not stated,False
+openai-ashby-4d14449e-5e7f-45d4-b103-8776a6c87086,San Francisco,CA,US,Not stated,False
+openai-ashby-85fceac9-fb8a-4d71-a524-a8e5f1e9b01b,San Francisco,CA,US,Not stated,False
+openai-ashby-e9627fa6-ac76-4899-9a93-9251419e61a0,San Francisco,CA,US,Not stated,False
+openai-ashby-d8794980-1d3f-4d82-8b48-811449b6c492,San Francisco,CA,US,Not stated,False
+physicalintelligence-ashby-1f6cf3eb-f70f-480b-9fff-befd56c7fd07,San Francisco,CA,US,Not stated,False
+physicalintelligence-ashby-96bf6ea8-fb8d-4a76-bec7-878a8c224cea,San Francisco,CA,US,Not stated,False
+physicalintelligence-ashby-f83ba447-2261-4832-95db-a2f88454e0ba,San Francisco,CA,US,Not stated,False
+physicalintelligence-ashby-7f8397a4-c3cd-45c6-90c7-13c4481f4699,San Francisco,CA,US,Not stated,False
+pinterest-greenhouse-8071670,Palo Alto,CA,US,Remote,True
+pinterest-greenhouse-7697137,San Francisco,CA,US,Remote,True
+pinterest-greenhouse-6121450,San Francisco,CA,US,Remote,True
+pinterest-greenhouse-6121450,Palo Alto,CA,US,Remote,True
+pinterest-greenhouse-6121450,Seattle,WA,US,Remote,True
+pinterest-greenhouse-6121543,San Francisco,CA,US,Not stated,False
+pinterest-greenhouse-6121543,Palo Alto,CA,US,Not stated,False
+pinterest-greenhouse-6121543,Seattle,WA,US,Not stated,False
+plus-2-d1b8ecc2-dfc2-4613-81ca-02d90776c618,Santa Clara,CA,US,Hybrid,False
+plus-2-f4fc6b45-6c2d-4d09-aece-fd046eb4b81b,Santa Clara,CA,US,Hybrid,False
+plus-2-89a2ec90-547f-4ec2-8476-3985353c17d6,Santa Clara,CA,US,Hybrid,False
+plus-2-4572f534-2f3c-4d4c-9fb0-55838bf7795f,Santa Clara,CA,US,Hybrid,False
+primeintellect-ashby-8bd52610-175c-42a7-a7cd-b29c45f9d305,San Francisco,CA,US,Remote,True
+primeintellect-ashby-05e4b76b-2570-4c89-baf2-9833fff7378f,San Francisco,CA,US,Remote,True
+roblox-greenhouse-8027588,San Mateo,CA,US,Not stated,False
+roblox-greenhouse-8027587,San Mateo,CA,US,Not stated,False
+roku-greenhouse-7991641,Austin,TX,US,Not stated,False
+roku-greenhouse-8065793,San Jose,CA,US,Not stated,False
+scaleai-greenhouse-4631848005,"Washington, DC",DC,US,Not stated,False
+scaleai-greenhouse-4631848005,Denver,CO,US,Not stated,False
+scaleai-greenhouse-4631848005,Honolulu,HI,US,Not stated,False
+scaleai-greenhouse-4631848005,Washington,DC,US,Not stated,False
+scaleai-greenhouse-4728014005,San Francisco,CA,US,Not stated,False
+scaleai-greenhouse-4728014005,Seattle,WA,US,Not stated,False
+scaleai-greenhouse-4728014005,New York,NY,US,Not stated,False
+scaleai-greenhouse-4528009005,San Francisco,CA,US,Not stated,False
+scaleai-greenhouse-4528009005,Seattle,WA,US,Not stated,False
+scaleai-greenhouse-4528009005,New York,NY,US,Not stated,False
+scaleai-greenhouse-4534631005,San Francisco,CA,US,Not stated,False
+scaleai-greenhouse-4534631005,Seattle,WA,US,Not stated,False
+scaleai-greenhouse-4534631005,New York,NY,US,Not stated,False
+scale-ai-greenhouse-4730836005,San Francisco,CA,US,On-site,False
+scaleai-greenhouse-4363623005,San Francisco,CA,US,Not stated,False
+scaleai-greenhouse-4363623005,New York,NY,US,Not stated,False
+scaleai-greenhouse-4363623005,"Washington, DC",DC,US,Not stated,False
+scaleai-greenhouse-4363623005,St. Louis,MO,US,Not stated,False
+scaleai-greenhouse-4363623005,Washington,DC,US,Not stated,False
+sierra-ashby-d9c445da-c7b4-43a3-8d71-d367681c3015,San Francisco,CA,US,Not stated,False
+sierra-ashby-149f368c-52d5-408f-ba26-ad888f318a00,San Francisco,CA,US,Not stated,False
+sierra-ashby-149f368c-52d5-408f-ba26-ad888f318a00,New York,NY,US,Not stated,False
+snorkelai-greenhouse-5690608004,San Francisco,CA,US,Remote,True
+snorkelai-greenhouse-5690608004,New York,NY,US,Remote,True
+snorkelai-greenhouse-6009489004,San Francisco,CA,US,Remote,True
+snorkelai-greenhouse-6009489004,New York,NY,US,Remote,True
+specter-ashby-4129379f-8d85-4929-affd-1e5fd604b0a9,San Francisco,CA,US,Not stated,False
+specter-ashby-3400c31a-12a8-4e82-9f14-502ac3a35ca6,San Francisco,CA,US,Not stated,False
+sprinter-health-ashby-707e8513-866d-4ac4-861a-b9c05cc9c00c,San Francisco,CA,US,Not stated,False
+sprinter-health-ashby-707e8513-866d-4ac4-861a-b9c05cc9c00c,Menlo Park,CA,US,Not stated,False
+sprinter-health-ashby-7c0cb244-0fa0-439d-b7dd-d24fc18e6d26,San Francisco,CA,US,Not stated,False
+sprinter-health-ashby-e9da533c-5af2-448c-b48a-ffb331ee76e2,San Francisco,CA,US,Not stated,False
+stripe-greenhouse-8137997,San Francisco,CA,US,Not stated,False
+thinkingmachines-ashby-4087e0f6-4295-419a-ba02-08e95a74ceea,San Francisco,CA,US,Not stated,False
+thinkingmachines-ashby-2d7a9e99-836a-475b-9ae3-b6b1df8baa6d,San Francisco,CA,US,Not stated,False
+thinkingmachines-ashby-93855db2-9a80-421d-9e80-ace9eca24650,San Francisco,CA,US,Not stated,False
+thinkingmachines-ashby-9dabecde-1bdb-47c6-b943-ff7b0526657c,San Francisco,CA,US,Not stated,False
+thinkingmachines-ashby-4d51cb65-5e5b-42d2-8c28-7073b8574e4b,San Francisco,CA,US,Not stated,False
+thinkingmachines-ashby-3efb6896-4840-4f90-8798-2ce49fa146e5,San Francisco,CA,US,Not stated,False
+thinkingmachines-ashby-602f2a99-34eb-4fde-9eec-b4945ee4aab6,San Francisco,CA,US,Not stated,False
+thinking-machines-lab-ashby-9d863c78-80c0-44cd-a574-d1330e125398,San Francisco,CA,US,Not stated,False
+thinking-machines-lab-ashby-72fe46e4-a772-4ebb-a413-53e4f1a8273e,San Francisco,CA,US,Not stated,True
+TIKTOK-A07409A,San Jose,CA,US,Not stated,False
+BYTEDANCE-A123804,San Jose,CA,US,Not stated,False
+BYTEDANCE-A108842,San Jose,CA,US,Not stated,False
+BYTEDANCE-A181445,San Jose,CA,US,Not stated,False
+toast-greenhouse-7984730,US location not specified,,US,Remote,True
+togetherai-greenhouse-5199554007,San Francisco,CA,US,Not stated,False
+togetherai-greenhouse-5179372007,San Francisco,CA,US,Not stated,False
+together-ai-greenhouse-5211582007,San Francisco,CA,US,On-site,False
+togetherai-greenhouse-4188119007,San Francisco,CA,US,Not stated,False
+unity-jobs-JOBREQ-2616023,Bellevue,WA,US,Not stated,False
+unity-jobs-JOBREQ-2616023,Mountain View,CA,US,Not stated,False
+waymo-greenhouse-7309064,San Francisco,CA,US,Not stated,False
+waymo-greenhouse-7309064,Mountain View,CA,US,Not stated,False
+waymo-greenhouse-6506689,San Francisco,CA,US,Not stated,False
+waymo-greenhouse-6506689,Mountain View,CA,US,Not stated,False
+xai-greenhouse-4703144007,Palo Alto,CA,US,Not stated,False
+xai-greenhouse-5193037007,Palo Alto,CA,US,Not stated,False
+xai-greenhouse-4533894007,Palo Alto,CA,US,Not stated,False

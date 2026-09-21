@@ -1,0 +1,2581 @@
+{
+  "jobs": [
+    {
+      "id": "ai2-greenhouse-7899565",
+      "company": "AI2",
+      "title": "Research Engineer, Asta",
+      "url": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7899565",
+      "applyUrl": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7899565",
+      "source": "Greenhouse",
+      "sourceId": "7899565",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "LLM",
+        "agents",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "Seattle",
+          "state": "WA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Seattle, WA",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor"
+          ],
+          "minYears": 2,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "JD requires 2+ years in agentic and ML training/evaluation/inference infrastructure."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "evaluation",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 128880,
+          "max": 193320,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build infrastructure for AI research assistants, agents, model training, evaluation, inference, and deployment.",
+      "newgradEvidence": "JD requires 2+ years in agentic and ML training/evaluation/inference infrastructure.",
+      "aiEvidence": "Build infrastructure for AI research assistants, agents, model training, evaluation, inference, and deployment.",
+      "qualificationNote": "JD requires 2+ years in agentic and ML training/evaluation/inference infrastructure.",
+      "reviewNote": "Official Greenhouse public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "xai-greenhouse-5193037007",
+      "company": "xAI",
+      "title": "ML Infrastructure Engineer",
+      "url": "https://job-boards.greenhouse.io/xai/jobs/5193037007",
+      "applyUrl": "https://job-boards.greenhouse.io/xai/jobs/5193037007",
+      "source": "Greenhouse",
+      "sourceId": "5193037007",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "inference",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "Palo Alto",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": " Palo Alto, CA",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master",
+            "PhD"
+          ],
+          "minYears": 2,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "JD requires 2+ years in production/distributed/GPU/ML infrastructure; no new-grad claim."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "distributed training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 180000,
+          "max": 440000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build ML platforms and training infrastructure for large-scale deep-learning applications.",
+      "newgradEvidence": "JD requires 2+ years in production/distributed/GPU/ML infrastructure; no new-grad claim.",
+      "aiEvidence": "Build ML platforms and training infrastructure for large-scale deep-learning applications.",
+      "qualificationNote": "JD requires 2+ years in production/distributed/GPU/ML infrastructure; no new-grad claim.",
+      "reviewNote": "Official Greenhouse public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "roblox-greenhouse-8027588",
+      "company": "Roblox",
+      "title": "[2026] Senior Machine Learning Engineer (Systems), Embodied AI/NPCs, ML Platform - PhD Early Career",
+      "url": "https://careers.roblox.com/jobs/8027588?gh_jid=8027588",
+      "applyUrl": "https://careers.roblox.com/jobs/8027588?gh_jid=8027588",
+      "source": "Greenhouse",
+      "sourceId": "8027588",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "robotics",
+        "inference",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "San Mateo",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Mateo, CA, United States",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "PhD"
+          ],
+          "minYears": 0,
+          "experienceType": "research",
+          "graduation": "2026",
+          "graduationYears": [
+            2026
+          ],
+          "evidence": "Title says PhD Early Career and JD seeks exceptional PhD new graduates for 2026."
+        }
+      ],
+      "startYears": [
+        2026
+      ],
+      "startWindow": "2026",
+      "skills": [
+        {
+          "name": "robotics",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "distributed training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Embodied-AI/NPCs and ML-platform tracks cover serving, model registry, orchestration, and training/inference control planes.",
+      "newgradEvidence": "Title says PhD Early Career and JD seeks exceptional PhD new graduates for 2026.",
+      "aiEvidence": "Embodied-AI/NPCs and ML-platform tracks cover serving, model registry, orchestration, and training/inference control planes.",
+      "qualificationNote": "Title says PhD Early Career and JD seeks exceptional PhD new graduates for 2026.",
+      "reviewNote": "Official Greenhouse public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "roblox-greenhouse-8027587",
+      "company": "Roblox",
+      "title": "[2026] Senior Machine Learning Engineer (Systems), Embodied AI/NPCs, ML Platform - PhD Early Career",
+      "url": "https://careers.roblox.com/jobs/8027587?gh_jid=8027587",
+      "applyUrl": "https://careers.roblox.com/jobs/8027587?gh_jid=8027587",
+      "source": "Greenhouse",
+      "sourceId": "8027587",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "robotics",
+        "inference",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "San Mateo",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Mateo, CA, United States",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "PhD"
+          ],
+          "minYears": 0,
+          "experienceType": "research",
+          "graduation": "2026",
+          "graduationYears": [
+            2026
+          ],
+          "evidence": "Title says PhD Early Career and JD seeks exceptional PhD new graduates for 2026."
+        }
+      ],
+      "startYears": [
+        2026
+      ],
+      "startWindow": "2026",
+      "skills": [
+        {
+          "name": "robotics",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "distributed training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Embodied-AI/NPCs and ML-platform tracks cover serving, model registry, orchestration, and training/inference control planes.",
+      "newgradEvidence": "Title says PhD Early Career and JD seeks exceptional PhD new graduates for 2026.",
+      "aiEvidence": "Embodied-AI/NPCs and ML-platform tracks cover serving, model registry, orchestration, and training/inference control planes.",
+      "qualificationNote": "Title says PhD Early Career and JD seeks exceptional PhD new graduates for 2026.",
+      "reviewNote": "Official Greenhouse public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "glean-greenhouse-4711484005",
+      "company": "Glean",
+      "title": "Machine Learning Engineer, Assistant Quality",
+      "url": "https://job-boards.greenhouse.io/gleanwork/jobs/4711484005",
+      "applyUrl": "https://job-boards.greenhouse.io/gleanwork/jobs/4711484005",
+      "source": "Greenhouse",
+      "sourceId": "4711484005",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "Machine Learning Engineering",
+      "tags": [
+        "LLM",
+        "recommendation/search",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco, CA",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor"
+          ],
+          "minYears": 2,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "JD requires 2+ years and production systems experience; no new-grad claim."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "recommendation/search",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "evaluation",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 180000,
+          "max": 205000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "ML role works on LLM applications, NLP, search, retrieval, recommendations, evaluation, and agent systems.",
+      "newgradEvidence": "JD requires 2+ years and production systems experience; no new-grad claim.",
+      "aiEvidence": "ML role works on LLM applications, NLP, search, retrieval, recommendations, evaluation, and agent systems.",
+      "qualificationNote": "JD requires 2+ years and production systems experience; no new-grad claim.",
+      "reviewNote": "Official Greenhouse public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "glean-greenhouse-4006735005",
+      "company": "Glean",
+      "title": "Machine Learning Engineer, Search Quality",
+      "url": "https://job-boards.greenhouse.io/gleanwork/jobs/4006735005",
+      "applyUrl": "https://job-boards.greenhouse.io/gleanwork/jobs/4006735005",
+      "source": "Greenhouse",
+      "sourceId": "4006735005",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "Machine Learning Engineering",
+      "tags": [
+        "LLM",
+        "recommendation/search"
+      ],
+      "locations": [
+        {
+          "city": "Mountain View",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "Mountain View, CA",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor"
+          ],
+          "minYears": 2,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "JD requires 2+ years plus a BA/BS; retained as a clearly bounded early-career adjacent role."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "recommendation/search",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 140000,
+          "max": 265000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "ML search-quality role works on search, recommendation, NLP, and large ML systems.",
+      "newgradEvidence": "JD requires 2+ years plus a BA/BS; retained as a clearly bounded early-career adjacent role.",
+      "aiEvidence": "ML search-quality role works on search, recommendation, NLP, and large ML systems.",
+      "qualificationNote": "JD requires 2+ years plus a BA/BS; retained as a clearly bounded early-career adjacent role.",
+      "reviewNote": "Official Greenhouse public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "character.ai-ashby-449bf7c1-41d7-47a4-89a7-0ee0b31f5918",
+      "company": "Character.AI",
+      "title": "Research Engineer, Post-Training (All Industry Levels)",
+      "url": "https://jobs.ashbyhq.com/character/449bf7c1-41d7-47a4-89a7-0ee0b31f5918",
+      "applyUrl": "https://jobs.ashbyhq.com/character/449bf7c1-41d7-47a4-89a7-0ee0b31f5918/application",
+      "source": "Ashby",
+      "sourceId": "449bf7c1-41d7-47a4-89a7-0ee0b31f5918",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2024-01-24T05:51:56.100+00:00",
+      "deadline": null,
+      "roleFamily": "Research Engineer",
+      "tags": [
+        "LLM",
+        "post-training",
+        "inference"
+      ],
+      "locations": [
+        {
+          "city": "Redwood City",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": true,
+      "workplace": "Not stated",
+      "locationText": "Redwood City or New York City",
+      "newgradStatus": "unclear",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "PhD"
+          ],
+          "minYears": null,
+          "experienceType": "research",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Posting labels the role All Industry Levels and requires PhD/equivalent; no numeric industry minimum is stated."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "post-training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Post-training research covers reinforcement learning, transformers, GPU training/serving, and large generative models.",
+      "newgradEvidence": "Posting labels the role All Industry Levels and requires PhD/equivalent; no numeric industry minimum is stated.",
+      "aiEvidence": "Post-training research covers reinforcement learning, transformers, GPU training/serving, and large generative models.",
+      "qualificationNote": "Posting labels the role All Industry Levels and requires PhD/equivalent; no numeric industry minimum is stated.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "anyscale-ashby-1cf38233-8aa0-47f8-9d85-65ce27bc3047",
+      "company": "Anyscale",
+      "title": "Distributed LLM Inference Engineer",
+      "url": "https://jobs.ashbyhq.com/anyscale/1cf38233-8aa0-47f8-9d85-65ce27bc3047",
+      "applyUrl": "https://jobs.ashbyhq.com/anyscale/1cf38233-8aa0-47f8-9d85-65ce27bc3047/application",
+      "source": "Ashby",
+      "sourceId": "1cf38233-8aa0-47f8-9d85-65ce27bc3047",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-05-27T23:45:11.194+00:00",
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "LLM",
+        "inference"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "Palo Alto",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": true,
+      "workplace": "On-site",
+      "locationText": "San Francisco; Palo Alto",
+      "newgradStatus": "unclear",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master",
+            "PhD"
+          ],
+          "minYears": null,
+          "experienceType": "not stated",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Distributed LLM inference on Ray/vLLM with no numeric minimum stated; verify experience level."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Role designs and optimizes batch/online LLM inference and distributed systems at scale.",
+      "newgradEvidence": "Distributed LLM inference on Ray/vLLM with no numeric minimum stated; verify experience level.",
+      "aiEvidence": "Role designs and optimizes batch/online LLM inference and distributed systems at scale.",
+      "qualificationNote": "Distributed LLM inference on Ray/vLLM with no numeric minimum stated; verify experience level.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "genmo-ashby-9b5477f4-97af-4aaa-b855-910c982ce191",
+      "company": "Genmo",
+      "title": "Research Engineer (New Grad)",
+      "url": "https://jobs.ashbyhq.com/genmo/9b5477f4-97af-4aaa-b855-910c982ce191",
+      "applyUrl": "https://jobs.ashbyhq.com/genmo/9b5477f4-97af-4aaa-b855-910c982ce191/application",
+      "source": "Ashby",
+      "sourceId": "9b5477f4-97af-4aaa-b855-910c982ce191",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-09-14T23:33:38.719+00:00",
+      "deadline": null,
+      "roleFamily": "Research Engineer",
+      "tags": [
+        "CV",
+        "LLM",
+        "inference"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco HQ",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 2,
+          "experienceType": "research",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Title says New Grad, but minimum qualifications also require 2+ years ML experience; recent graduates are welcome."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "CV",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Research develops and trains generative models with PyTorch/TensorFlow, computer vision, and deployment.",
+      "newgradEvidence": "Title says New Grad, but minimum qualifications also require 2+ years ML experience; recent graduates are welcome.",
+      "aiEvidence": "Research develops and trains generative models with PyTorch/TensorFlow, computer vision, and deployment.",
+      "qualificationNote": "Title says New Grad, but minimum qualifications also require 2+ years ML experience; recent graduates are welcome.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "embedding-vc-ashby-5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1",
+      "company": "Embedding VC",
+      "title": "AI Engineer (Early Career)",
+      "url": "https://jobs.ashbyhq.com/embedding-vc/5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1",
+      "applyUrl": "https://jobs.ashbyhq.com/embedding-vc/5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1/application",
+      "source": "Ashby",
+      "sourceId": "5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-08-26T01:36:21.991+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco Bay Area",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": null,
+          "experienceType": "not stated",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Title says AI Engineer (Early Career); JD asks for limited professional experience and project/open-source evidence."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Role builds AI product systems; the early-career posting specifically calls for a builder portfolio.",
+      "newgradEvidence": "Title says AI Engineer (Early Career); JD asks for limited professional experience and project/open-source evidence.",
+      "aiEvidence": "Role builds AI product systems; the early-career posting specifically calls for a builder portfolio.",
+      "qualificationNote": "Title says AI Engineer (Early Career); JD asks for limited professional experience and project/open-source evidence.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "cognition-ashby-439404bb-3185-4d22-b6df-4a5e39a510d6",
+      "company": "Cognition",
+      "title": "Product Engineer",
+      "url": "https://jobs.ashbyhq.com/cognition/439404bb-3185-4d22-b6df-4a5e39a510d6",
+      "applyUrl": "https://jobs.ashbyhq.com/cognition/439404bb-3185-4d22-b6df-4a5e39a510d6/application",
+      "source": "Ashby",
+      "sourceId": "439404bb-3185-4d22-b6df-4a5e39a510d6",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-08-06T18:12:49.963+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco; New York City",
+      "newgradStatus": "unclear",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": null,
+          "experienceType": "not stated",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Full-time Product Engineer posting has no numeric minimum in the captured text; industry experience is described as a strong plus."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build AI-agent product surfaces, agent harnesses, and developer experiences for Devin.",
+      "newgradEvidence": "Full-time Product Engineer posting has no numeric minimum in the captured text; industry experience is described as a strong plus.",
+      "aiEvidence": "Build AI-agent product surfaces, agent harnesses, and developer experiences for Devin.",
+      "qualificationNote": "Full-time Product Engineer posting has no numeric minimum in the captured text; industry experience is described as a strong plus.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "cursor-ashby-d0e5b41d-84ab-4887-bd3a-55589b11dd7b",
+      "company": "Cursor",
+      "title": "Software Engineer, New Grad 2027",
+      "url": "https://jobs.ashbyhq.com/cursor/d0e5b41d-84ab-4887-bd3a-55589b11dd7b",
+      "applyUrl": "https://jobs.ashbyhq.com/cursor/d0e5b41d-84ab-4887-bd3a-55589b11dd7b/application",
+      "source": "Ashby",
+      "sourceId": "d0e5b41d-84ab-4887-bd3a-55589b11dd7b",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-09-08T23:51:35.588+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco; New York",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "2027",
+          "graduationYears": [
+            2027
+          ],
+          "evidence": "Title says Software Engineer, New Grad 2027; internships or equivalent experience welcome."
+        }
+      ],
+      "startYears": [
+        2027
+      ],
+      "startWindow": "2027",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "JD assigns product and infrastructure work on AI agents, Cursor, and related developer tools.",
+      "newgradEvidence": "Title says Software Engineer, New Grad 2027; internships or equivalent experience welcome.",
+      "aiEvidence": "JD assigns product and infrastructure work on AI agents, Cursor, and related developer tools.",
+      "qualificationNote": "Title says Software Engineer, New Grad 2027; internships or equivalent experience welcome.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "fireworks-ai-ashby-ad58a098-ef75-4a4b-8475-55c2653213ef",
+      "company": "Fireworks AI",
+      "title": "Member of Technical Staff, Systems Infrastructure (2026 PhD New Grad)",
+      "url": "https://jobs.ashbyhq.com/fireworks/ad58a098-ef75-4a4b-8475-55c2653213ef",
+      "applyUrl": "https://jobs.ashbyhq.com/fireworks/ad58a098-ef75-4a4b-8475-55c2653213ef/application",
+      "source": "Ashby",
+      "sourceId": "ad58a098-ef75-4a4b-8475-55c2653213ef",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-09-08T20:44:42.789+00:00",
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "inference",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "San Mateo",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "remote": true,
+      "workplace": "Not stated",
+      "locationText": "San Mateo; New York",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "PhD"
+          ],
+          "minYears": 0,
+          "experienceType": "research",
+          "graduation": "2026",
+          "graduationYears": [
+            2026
+          ],
+          "evidence": "Title says 2026 PhD New Grad; PhD completion within six months or by December 2026."
+        }
+      ],
+      "startYears": [
+        2026
+      ],
+      "startWindow": "2026",
+      "skills": [
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "distributed training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Systems role builds schedulers, storage, networks, GPU clusters, and low-latency inference infrastructure.",
+      "newgradEvidence": "Title says 2026 PhD New Grad; PhD completion within six months or by December 2026.",
+      "aiEvidence": "Systems role builds schedulers, storage, networks, GPU clusters, and low-latency inference infrastructure.",
+      "qualificationNote": "Title says 2026 PhD New Grad; PhD completion within six months or by December 2026.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "fireworks-ai-ashby-82b41f4a-a945-4aee-a1fd-1ef9ab513e58",
+      "company": "Fireworks AI",
+      "title": "Member of Technical Staff, Research (2026 PhD New Grad)",
+      "url": "https://jobs.ashbyhq.com/fireworks/82b41f4a-a945-4aee-a1fd-1ef9ab513e58",
+      "applyUrl": "https://jobs.ashbyhq.com/fireworks/82b41f4a-a945-4aee-a1fd-1ef9ab513e58/application",
+      "source": "Ashby",
+      "sourceId": "82b41f4a-a945-4aee-a1fd-1ef9ab513e58",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-09-08T20:36:20.819+00:00",
+      "deadline": null,
+      "roleFamily": "Research Engineer",
+      "tags": [
+        "LLM",
+        "inference",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "San Mateo",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "remote": true,
+      "workplace": "Not stated",
+      "locationText": "San Mateo; New York",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "PhD"
+          ],
+          "minYears": 0,
+          "experienceType": "research",
+          "graduation": "2026",
+          "graduationYears": [
+            2026
+          ],
+          "evidence": "Title says 2026 PhD New Grad; PhD completion within six months or by December 2026."
+        }
+      ],
+      "startYears": [
+        2026
+      ],
+      "startWindow": "2026",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "distributed training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Research advances LLM and multimodal systems, model efficiency, accuracy, and scalability.",
+      "newgradEvidence": "Title says 2026 PhD New Grad; PhD completion within six months or by December 2026.",
+      "aiEvidence": "Research advances LLM and multimodal systems, model efficiency, accuracy, and scalability.",
+      "qualificationNote": "Title says 2026 PhD New Grad; PhD completion within six months or by December 2026.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "fireworks-ai-ashby-0c78aede-7c21-4d1e-88f1-f309deb9819e",
+      "company": "Fireworks AI",
+      "title": "Member of Technical Staff, New Grad (BS/MS)",
+      "url": "https://jobs.ashbyhq.com/fireworks/0c78aede-7c21-4d1e-88f1-f309deb9819e",
+      "applyUrl": "https://jobs.ashbyhq.com/fireworks/0c78aede-7c21-4d1e-88f1-f309deb9819e/application",
+      "source": "Ashby",
+      "sourceId": "0c78aede-7c21-4d1e-88f1-f309deb9819e",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-09-08T23:52:16.165+00:00",
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "inference",
+        "distributed training",
+        "LLM"
+      ],
+      "locations": [
+        {
+          "city": "San Mateo",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "remote": true,
+      "workplace": "Not stated",
+      "locationText": "San Mateo; New York",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "2027",
+          "graduationYears": [
+            2027
+          ],
+          "evidence": "Title says New Grad (BS/MS); degree completed within six months or before end of 2026, with Summer 2027 path."
+        }
+      ],
+      "startYears": [
+        2027
+      ],
+      "startWindow": "2027",
+      "skills": [
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "distributed training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Engineering placement spans inference, training/fine-tuning, distributed systems, cloud, APIs, and AI applications.",
+      "newgradEvidence": "Title says New Grad (BS/MS); degree completed within six months or before end of 2026, with Summer 2027 path.",
+      "aiEvidence": "Engineering placement spans inference, training/fine-tuning, distributed systems, cloud, APIs, and AI applications.",
+      "qualificationNote": "Title says New Grad (BS/MS); degree completed within six months or before end of 2026, with Summer 2027 path.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "liquid-ai-ashby-c7251e1b-d7bf-4d03-8b9e-1382743bef2c",
+      "company": "Liquid AI",
+      "title": "Member of Technical Staff - ML Research Engineer, Data",
+      "url": "https://jobs.ashbyhq.com/liquid-ai/c7251e1b-d7bf-4d03-8b9e-1382743bef2c",
+      "applyUrl": "https://jobs.ashbyhq.com/liquid-ai/c7251e1b-d7bf-4d03-8b9e-1382743bef2c/application",
+      "source": "Ashby",
+      "sourceId": "c7251e1b-d7bf-4d03-8b9e-1382743bef2c",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2025-07-29T23:40:48.795+00:00",
+      "deadline": null,
+      "roleFamily": "Research Engineer",
+      "tags": [
+        "LLM",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "Boston",
+          "state": "MA",
+          "country": "US"
+        }
+      ],
+      "remote": true,
+      "workplace": "Remote",
+      "locationText": "San Francisco; Remote; Boston",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "PhD"
+          ],
+          "minYears": 1,
+          "experienceType": "research",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "JD gives a PhD path with 1+ year relevant experience; MS path requires 3+ years and BS 5+."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "evaluation",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "ML research engineer trains, evaluates, and iterates models with PyTorch and synthetic data/evaluation work.",
+      "newgradEvidence": "JD gives a PhD path with 1+ year relevant experience; MS path requires 3+ years and BS 5+.",
+      "aiEvidence": "ML research engineer trains, evaluates, and iterates models with PyTorch and synthetic data/evaluation work.",
+      "qualificationNote": "JD gives a PhD path with 1+ year relevant experience; MS path requires 3+ years and BS 5+.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "cerebras-ashby-987d7f64-c957-4c8f-b89d-2f9d64738507",
+      "company": "Cerebras",
+      "title": "CoDesign & NextGen - New College Grad ",
+      "url": "https://jobs.ashbyhq.com/cerebras/987d7f64-c957-4c8f-b89d-2f9d64738507",
+      "applyUrl": "https://jobs.ashbyhq.com/cerebras/987d7f64-c957-4c8f-b89d-2f9d64738507/application",
+      "source": "Ashby",
+      "sourceId": "987d7f64-c957-4c8f-b89d-2f9d64738507",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-01-07T04:02:02.311+00:00",
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "inference",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "Sunnyvale",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Sunnyvale, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Title says New College Grad; full-time in-office CoDesign/NextGen role requires BS/MS and CPU/GPU simulation exposure."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "distributed training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 145000,
+          "max": 155000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Co-design work targets AI-chip training/inference performance and CPU/GPU simulation.",
+      "newgradEvidence": "Title says New College Grad; full-time in-office CoDesign/NextGen role requires BS/MS and CPU/GPU simulation exposure.",
+      "aiEvidence": "Co-design work targets AI-chip training/inference performance and CPU/GPU simulation.",
+      "qualificationNote": "Title says New College Grad; full-time in-office CoDesign/NextGen role requires BS/MS and CPU/GPU simulation exposure.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "cerebras-ashby-9c7da4b8-446b-4bf2-8d07-23241590bf2e",
+      "company": "Cerebras",
+      "title": "Kernel Engineer - New Grad",
+      "url": "https://jobs.ashbyhq.com/cerebras/9c7da4b8-446b-4bf2-8d07-23241590bf2e",
+      "applyUrl": "https://jobs.ashbyhq.com/cerebras/9c7da4b8-446b-4bf2-8d07-23241590bf2e/application",
+      "source": "Ashby",
+      "sourceId": "9c7da4b8-446b-4bf2-8d07-23241590bf2e",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-07-23T19:33:16.660+00:00",
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "inference",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "Sunnyvale",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": true,
+      "workplace": "Not stated",
+      "locationText": "Sunnyvale, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master",
+            "PhD"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Title says Kernel Engineer - New Grad; JD accepts BS/MS/PhD and coursework, research, or projects."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "distributed training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Duties implement and validate machine-learning and linear-algebra kernels for the wafer-scale AI engine.",
+      "newgradEvidence": "Title says Kernel Engineer - New Grad; JD accepts BS/MS/PhD and coursework, research, or projects.",
+      "aiEvidence": "Duties implement and validate machine-learning and linear-algebra kernels for the wafer-scale AI engine.",
+      "qualificationNote": "Title says Kernel Engineer - New Grad; JD accepts BS/MS/PhD and coursework, research, or projects.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "netic-ashby-f2d170eb-c4c3-4715-9d2e-84dd4fe857c8",
+      "company": "Netic",
+      "title": "Forward Deployed Engineer (FDE) - New Grad - 2026-2027",
+      "url": "https://jobs.ashbyhq.com/netic/f2d170eb-c4c3-4715-9d2e-84dd4fe857c8",
+      "applyUrl": "https://jobs.ashbyhq.com/netic/f2d170eb-c4c3-4715-9d2e-84dd4fe857c8/application",
+      "source": "Ashby",
+      "sourceId": "f2d170eb-c4c3-4715-9d2e-84dd4fe857c8",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-07-15T23:32:19.419+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "2026",
+          "graduationYears": [
+            2026
+          ],
+          "evidence": "Title says FDE New Grad 2026-2027; JD targets graduates starting winter 2026 through summer 2027."
+        }
+      ],
+      "startYears": [
+        2026
+      ],
+      "startWindow": "2026",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "evaluation",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build and deploy multimodal AI agents using LLM/TTS APIs, fine-tuning, RAG, vector databases, and evaluations.",
+      "newgradEvidence": "Title says FDE New Grad 2026-2027; JD targets graduates starting winter 2026 through summer 2027.",
+      "aiEvidence": "Build and deploy multimodal AI agents using LLM/TTS APIs, fine-tuning, RAG, vector databases, and evaluations.",
+      "qualificationNote": "Title says FDE New Grad 2026-2027; JD targets graduates starting winter 2026 through summer 2027.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "netic-ashby-bab5d1e5-e31b-42f0-9cef-334b1f17fed3",
+      "company": "Netic",
+      "title": "Full-Stack Software Engineer (Product) - New Grad - 2026-2027",
+      "url": "https://jobs.ashbyhq.com/netic/bab5d1e5-e31b-42f0-9cef-334b1f17fed3",
+      "applyUrl": "https://jobs.ashbyhq.com/netic/bab5d1e5-e31b-42f0-9cef-334b1f17fed3/application",
+      "source": "Ashby",
+      "sourceId": "bab5d1e5-e31b-42f0-9cef-334b1f17fed3",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-07-16T00:04:22.320+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "2026",
+          "graduationYears": [
+            2026
+          ],
+          "evidence": "Title says Full-Stack Software Engineer, Product - New Grad 2026-2027."
+        }
+      ],
+      "startYears": [
+        2026
+      ],
+      "startWindow": "2026",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build agentic product features for Netic's AI platform across APIs, data models, front end, and monitoring.",
+      "newgradEvidence": "Title says Full-Stack Software Engineer, Product - New Grad 2026-2027.",
+      "aiEvidence": "Build agentic product features for Netic's AI platform across APIs, data models, front end, and monitoring.",
+      "qualificationNote": "Title says Full-Stack Software Engineer, Product - New Grad 2026-2027.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "netic-ashby-d9bcb6a2-0e54-4cb3-baec-43f2d74db18f",
+      "company": "Netic",
+      "title": "Software Engineer (Agent Platform) - New Grad - 2026-2027",
+      "url": "https://jobs.ashbyhq.com/netic/d9bcb6a2-0e54-4cb3-baec-43f2d74db18f",
+      "applyUrl": "https://jobs.ashbyhq.com/netic/d9bcb6a2-0e54-4cb3-baec-43f2d74db18f/application",
+      "source": "Ashby",
+      "sourceId": "d9bcb6a2-0e54-4cb3-baec-43f2d74db18f",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-07-16T02:39:55.735+00:00",
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "LLM",
+        "agents",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "2026",
+          "graduationYears": [
+            2026
+          ],
+          "evidence": "Title says Software Engineer, Agent Platform - New Grad 2026-2027; projects/coursework accepted."
+        }
+      ],
+      "startYears": [
+        2026
+      ],
+      "startWindow": "2026",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "evaluation",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build orchestration, routing, supervision, sandboxes, and evaluation tooling for multi-agent workflows.",
+      "newgradEvidence": "Title says Software Engineer, Agent Platform - New Grad 2026-2027; projects/coursework accepted.",
+      "aiEvidence": "Build orchestration, routing, supervision, sandboxes, and evaluation tooling for multi-agent workflows.",
+      "qualificationNote": "Title says Software Engineer, Agent Platform - New Grad 2026-2027; projects/coursework accepted.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "decagon-ashby-a8ff946f-d6b1-4059-bc9f-fe6b11504f2f",
+      "company": "Decagon",
+      "title": " Member of Technical Staff - New Grad (2027 Start)",
+      "url": "https://jobs.ashbyhq.com/decagon/a8ff946f-d6b1-4059-bc9f-fe6b11504f2f",
+      "applyUrl": "https://jobs.ashbyhq.com/decagon/a8ff946f-d6b1-4059-bc9f-fe6b11504f2f/application",
+      "source": "Ashby",
+      "sourceId": "a8ff946f-d6b1-4059-bc9f-fe6b11504f2f",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-08-18T19:29:24.905+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "San Francisco; New York City",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "2027",
+          "graduationYears": [
+            2027
+          ],
+          "evidence": "Title says New Grad (2027 Start); coursework, internships, or personal projects accepted."
+        }
+      ],
+      "startYears": [
+        2027
+      ],
+      "startWindow": "2027",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "evaluation",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "New-grad teams build customer-facing AI agents, agent engineering, and multimodal/distributed systems.",
+      "newgradEvidence": "Title says New Grad (2027 Start); coursework, internships, or personal projects accepted.",
+      "aiEvidence": "New-grad teams build customer-facing AI agents, agent engineering, and multimodal/distributed systems.",
+      "qualificationNote": "Title says New Grad (2027 Start); coursework, internships, or personal projects accepted.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "mistral-ashby-cce4be06-ac42-4c69-9bcd-7f5dca6f5e3c",
+      "company": "Mistral",
+      "title": "Research Engineer, Full Stack",
+      "url": "https://jobs.ashbyhq.com/mistral.ai/cce4be06-ac42-4c69-9bcd-7f5dca6f5e3c",
+      "applyUrl": "https://jobs.ashbyhq.com/mistral.ai/cce4be06-ac42-4c69-9bcd-7f5dca6f5e3c/application",
+      "source": "Ashby",
+      "sourceId": "cce4be06-ac42-4c69-9bcd-7f5dca6f5e3c",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-09-11T15:18:15.865+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents"
+      ],
+      "locations": [
+        {
+          "city": "Palo Alto",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "Palo Alto",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 2,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "JD requires a CS/software degree and 2+ years as a technical individual contributor."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Research Engineer integrates AI models into customer software and improves product/model capabilities.",
+      "newgradEvidence": "JD requires a CS/software degree and 2+ years as a technical individual contributor.",
+      "aiEvidence": "Research Engineer integrates AI models into customer software and improves product/model capabilities.",
+      "qualificationNote": "JD requires a CS/software degree and 2+ years as a technical individual contributor.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "mistral-ashby-2ec2dacd-1117-479b-a4c1-efa9df530798",
+      "company": "Mistral",
+      "title": "Applied AI, Forward Deployed Machine Learning Engineer ",
+      "url": "https://jobs.ashbyhq.com/mistral.ai/2ec2dacd-1117-479b-a4c1-efa9df530798",
+      "applyUrl": "https://jobs.ashbyhq.com/mistral.ai/2ec2dacd-1117-479b-a4c1-efa9df530798/application",
+      "source": "Ashby",
+      "sourceId": "2ec2dacd-1117-479b-a4c1-efa9df530798",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-07-10T21:21:46.080+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents",
+        "inference"
+      ],
+      "locations": [
+        {
+          "city": "Palo Alto",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "Palo Alto; San Francisco",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Master",
+            "PhD"
+          ],
+          "minYears": 2,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "JD requires a Master's/PhD in AI/data science and 2+ years as an AI technical contributor."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "inference",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Forward-deployed ML role implements fine-tuning, RAG, agents, LLM deployment, and inference integrations.",
+      "newgradEvidence": "JD requires a Master's/PhD in AI/data science and 2+ years as an AI technical contributor.",
+      "aiEvidence": "Forward-deployed ML role implements fine-tuning, RAG, agents, LLM deployment, and inference integrations.",
+      "qualificationNote": "JD requires a Master's/PhD in AI/data science and 2+ years as an AI technical contributor.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "thinking-machines-lab-ashby-9d863c78-80c0-44cd-a574-d1330e125398",
+      "company": "Thinking Machines Lab",
+      "title": "Software Engineer, Evaluation Platform / Infra",
+      "url": "https://jobs.ashbyhq.com/thinkingmachines/9d863c78-80c0-44cd-a574-d1330e125398",
+      "applyUrl": "https://jobs.ashbyhq.com/thinkingmachines/9d863c78-80c0-44cd-a574-d1330e125398/application",
+      "source": "Ashby",
+      "sourceId": "9d863c78-80c0-44cd-a574-d1330e125398",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-08-31T03:45:44.989+00:00",
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "LLM",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor"
+          ],
+          "minYears": 2,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Minimum is Bachelor's and two years post-grad software/ML experience, exclusive of internships."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "evaluation",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 300000,
+          "max": 475000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build evaluation, benchmark, grader, and model-quality infrastructure for language/multimodal models.",
+      "newgradEvidence": "Minimum is Bachelor's and two years post-grad software/ML experience, exclusive of internships.",
+      "aiEvidence": "Build evaluation, benchmark, grader, and model-quality infrastructure for language/multimodal models.",
+      "qualificationNote": "Minimum is Bachelor's and two years post-grad software/ML experience, exclusive of internships.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "thinking-machines-lab-ashby-72fe46e4-a772-4ebb-a413-53e4f1a8273e",
+      "company": "Thinking Machines Lab",
+      "title": "Software Engineer, Research Tools",
+      "url": "https://jobs.ashbyhq.com/thinkingmachines/72fe46e4-a772-4ebb-a413-53e4f1a8273e",
+      "applyUrl": "https://jobs.ashbyhq.com/thinkingmachines/72fe46e4-a772-4ebb-a413-53e4f1a8273e/application",
+      "source": "Ashby",
+      "sourceId": "72fe46e4-a772-4ebb-a413-53e4f1a8273e",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-08-31T03:45:42.322+00:00",
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "LLM",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": true,
+      "workplace": "Not stated",
+      "locationText": "San Francisco",
+      "newgradStatus": "early-career",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor"
+          ],
+          "minYears": 2,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Minimum is Bachelor's and two years post-grad software/ML experience, exclusive of internships."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "distributed training",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 300000,
+          "max": 475000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build research tools, experiment systems, model-training workflows, and observability.",
+      "newgradEvidence": "Minimum is Bachelor's and two years post-grad software/ML experience, exclusive of internships.",
+      "aiEvidence": "Build research tools, experiment systems, model-training workflows, and observability.",
+      "qualificationNote": "Minimum is Bachelor's and two years post-grad software/ML experience, exclusive of internships.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "sierra-ashby-149f368c-52d5-408f-ba26-ad888f318a00",
+      "company": "Sierra",
+      "title": "Software Engineer, Agent (New Grad 2027)",
+      "url": "https://jobs.ashbyhq.com/sierra/149f368c-52d5-408f-ba26-ad888f318a00",
+      "applyUrl": "https://jobs.ashbyhq.com/sierra/149f368c-52d5-408f-ba26-ad888f318a00/application",
+      "source": "Ashby",
+      "sourceId": "149f368c-52d5-408f-ba26-ad888f318a00",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-08-31T17:54:40.218+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco, CA; New York, NY",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "2027",
+          "graduationYears": [
+            2027
+          ],
+          "evidence": "Title says Software Engineer, Agent (New Grad 2027)."
+        }
+      ],
+      "startYears": [
+        2027
+      ],
+      "startWindow": "2027",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build production AI agents and agent infrastructure for customer workflows.",
+      "newgradEvidence": "Title says Software Engineer, Agent (New Grad 2027).",
+      "aiEvidence": "Build production AI agents and agent infrastructure for customer workflows.",
+      "qualificationNote": "Title says Software Engineer, Agent (New Grad 2027).",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    },
+    {
+      "id": "sierra-ashby-d9c445da-c7b4-43a3-8d71-d367681c3015",
+      "company": "Sierra",
+      "title": "APX (New Grad 2027)",
+      "url": "https://jobs.ashbyhq.com/sierra/d9c445da-c7b4-43a3-8d71-d367681c3015",
+      "applyUrl": "https://jobs.ashbyhq.com/sierra/d9c445da-c7b4-43a3-8d71-d367681c3015/application",
+      "source": "Ashby",
+      "sourceId": "d9c445da-c7b4-43a3-8d71-d367681c3015",
+      "verifiedAt": "2026-09-21T19:36:31Z",
+      "publishedAt": "2026-08-31T22:47:06.440+00:00",
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "agents"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "Not stated",
+      "locationText": "San Francisco, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "2027",
+          "graduationYears": [
+            2027
+          ],
+          "evidence": "APX title and program are explicitly New Grad 2027; undergraduate/Master's completion by June 2027."
+        }
+      ],
+      "startYears": [
+        2027
+      ],
+      "startWindow": "2027",
+      "skills": [
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Rotational program builds and ships AI agents with customers and Sierra's platform.",
+      "newgradEvidence": "APX title and program are explicitly New Grad 2027; undergraduate/Master's completion by June 2027.",
+      "aiEvidence": "Rotational program builds and ships AI agents with customers and Sierra's platform.",
+      "qualificationNote": "APX title and program are explicitly New Grad 2027; undergraduate/Master's completion by June 2027.",
+      "reviewNote": "Official Ashby public posting API returned the role ID, full-time posting, US location, full description, and application URL at 2026-09-21T19:36:31Z."
+    }
+  ],
+  "coverage": [
+    {
+      "company": "Uber",
+      "url": "https://boards-api.greenhouse.io/v1/boards/uber/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "inaccessible",
+      "note": "API request failed; availability unknown.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Instacart",
+      "url": "https://boards-api.greenhouse.io/v1/boards/instacart/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 110 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "AI2",
+      "url": "https://boards-api.greenhouse.io/v1/boards/thealleninstitute/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Greenhouse board; 17 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Airbnb",
+      "url": "https://boards-api.greenhouse.io/v1/boards/airbnb/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 159 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Discord",
+      "url": "https://boards-api.greenhouse.io/v1/boards/discord/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 47 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Motional",
+      "url": "https://boards-api.greenhouse.io/v1/boards/motional/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 73 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Figma",
+      "url": "https://boards-api.greenhouse.io/v1/boards/figma/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 154 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Brex",
+      "url": "https://boards-api.greenhouse.io/v1/boards/brex/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 251 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Pinterest",
+      "url": "https://boards-api.greenhouse.io/v1/boards/pinterest/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 162 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "xAI",
+      "url": "https://boards-api.greenhouse.io/v1/boards/xai/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Greenhouse board; 275 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Roblox",
+      "url": "https://boards-api.greenhouse.io/v1/boards/roblox/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Greenhouse board; 250 listed postings inspected and 2 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 2
+    },
+    {
+      "company": "Asana",
+      "url": "https://boards-api.greenhouse.io/v1/boards/asana/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 104 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Lyft",
+      "url": "https://boards-api.greenhouse.io/v1/boards/lyft/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 178 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Cloudflare",
+      "url": "https://boards-api.greenhouse.io/v1/boards/cloudflare/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 382 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Glean",
+      "url": "https://boards-api.greenhouse.io/v1/boards/gleanwork/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Greenhouse board; 125 listed postings inspected and 2 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 2
+    },
+    {
+      "company": "Reddit",
+      "url": "https://boards-api.greenhouse.io/v1/boards/reddit/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 154 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Duolingo",
+      "url": "https://boards-api.greenhouse.io/v1/boards/duolingo/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 81 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Block",
+      "url": "https://boards-api.greenhouse.io/v1/boards/block/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 221 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Faire",
+      "url": "https://boards-api.greenhouse.io/v1/boards/faire/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 74 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Twilio",
+      "url": "https://boards-api.greenhouse.io/v1/boards/twilio/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 143 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Chime",
+      "url": "https://boards-api.greenhouse.io/v1/boards/chime/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 70 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "MongoDB",
+      "url": "https://boards-api.greenhouse.io/v1/boards/mongodb/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 401 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Toast",
+      "url": "https://boards-api.greenhouse.io/v1/boards/toast/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 319 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Komodo Health",
+      "url": "https://boards-api.greenhouse.io/v1/boards/komodohealth/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 29 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Nextdoor",
+      "url": "https://boards-api.greenhouse.io/v1/boards/nextdoor/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 21 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Epic Games",
+      "url": "https://boards-api.greenhouse.io/v1/boards/epicgames/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 146 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Snorkel AI",
+      "url": "https://boards-api.greenhouse.io/v1/boards/snorkelai/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 40 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Character.AI",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/character",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 13 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Okta",
+      "url": "https://boards-api.greenhouse.io/v1/boards/okta/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 326 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Anyscale",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/anyscale",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 22 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Scale AI",
+      "url": "https://boards-api.greenhouse.io/v1/boards/scaleai/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 223 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Genmo",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/genmo",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 5 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Flexport",
+      "url": "https://boards-api.greenhouse.io/v1/boards/flexport/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 194 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Embedding VC",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/embedding-vc",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 38 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Cognition",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/cognition",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 98 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Affirm",
+      "url": "https://boards-api.greenhouse.io/v1/boards/affirm/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 199 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Cursor",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/cursor",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 121 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Koah Labs",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/koahlabs",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 9 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Fireworks AI",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/fireworks",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 80 listed postings inspected and 3 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 3
+    },
+    {
+      "company": "Liquid AI",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/liquid-ai",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 18 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Handshake",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/handshake",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 69 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Luma",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/lumaai",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 33 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Cerebras",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/cerebras",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 115 listed postings inspected and 2 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 2
+    },
+    {
+      "company": "Netic",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/netic",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 28 listed postings inspected and 3 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 3
+    },
+    {
+      "company": "Poolside",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/poolside",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 8 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Physical Intelligence",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/physicalintelligence",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 35 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Plenful",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/plenful",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 17 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Decagon",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/decagon",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 145 listed postings inspected and 1 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Prime Intellect",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/primeintellect",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 30 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Perplexity",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/perplexity",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 119 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Mistral",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/mistral.ai",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 198 listed postings inspected and 2 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 2
+    },
+    {
+      "company": "Tavus",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/tavus",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 14 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Epsilon Health",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/epsilon-health",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 8 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Reflection AI",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/reflectionai",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 56 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Thinking Machines Lab",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/thinkingmachines",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 45 listed postings inspected and 2 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 2
+    },
+    {
+      "company": "Replit",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/replit",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 77 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Writer",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/writer",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 51 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Datadog",
+      "url": "https://boards-api.greenhouse.io/v1/boards/datadog/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 454 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Sierra",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/sierra",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "verified roles",
+      "note": "Queried official Ashby board; 210 listed postings inspected and 2 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 2
+    },
+    {
+      "company": "DoorDash",
+      "url": "https://boards-api.greenhouse.io/v1/boards/doordashusa/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 459 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Tahoe Therapeutics",
+      "url": "https://api.lever.co/v0/postings/tahoebio-ai?mode=json",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Lever board; 3 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Harvey",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/harvey",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 302 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Labelbox",
+      "url": "https://api.lever.co/v0/postings/labelbox?mode=json",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Lever board; 0 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Benchling",
+      "url": "https://api.lever.co/v0/postings/benchling?mode=json",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "inaccessible",
+      "note": "API request failed; availability unknown.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Samsara Lever",
+      "url": "https://api.lever.co/v0/postings/samsara?mode=json",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "inaccessible",
+      "note": "API request failed; availability unknown.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Agtonomy",
+      "url": "https://api.lever.co/v0/postings/agtonomy?mode=json",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Lever board; 5 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Anthropic",
+      "url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 617 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Samsara",
+      "url": "https://boards-api.greenhouse.io/v1/boards/samsara/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 268 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "PlusAI",
+      "url": "https://api.lever.co/v0/postings/plus-2?mode=json",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Lever board; 42 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Stripe",
+      "url": "https://boards-api.greenhouse.io/v1/boards/stripe/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 673 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Databricks",
+      "url": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs?content=true",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Greenhouse board; 877 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Hive",
+      "url": "https://api.lever.co/v0/postings/hive?mode=json",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Lever board; 74 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "OpenAI",
+      "url": "https://api.ashbyhq.com/posting-api/job-board/openai",
+      "checkedAt": "2026-09-21T19:36:31Z",
+      "status": "no qualifying roles",
+      "note": "Queried official Ashby board; 820 listed postings inspected and 0 selected after US/full-time/AI/early-career evidence checks.",
+      "qualifyingCount": 0
+    }
+  ],
+  "methodNotes": {
+    "newgradStatus": {
+      "explicit": "title/program explicitly targets new graduates",
+      "zero-experience": "explicit 0-2 or equivalent early path",
+      "early-career": "explicit bounded 1-2 year path without new-grad label",
+      "unclear": "AI role has no stated numeric minimum but early-career eligibility is not explicit"
+    },
+    "selection": "Only listed full-time US AI/ML roles in S were emitted; all other queried boards remain in coverage."
+  }
+}

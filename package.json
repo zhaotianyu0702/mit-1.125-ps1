@@ -1,0 +1,1 @@
+{"name":"ai-career-compass","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node --test tests/*.test.mjs","start":"python3 -m http.server 8767 --directory dist --bind 127.0.0.1"}}

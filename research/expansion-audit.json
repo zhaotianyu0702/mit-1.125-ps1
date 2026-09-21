@@ -1,0 +1,926 @@
+{
+  "auditVersion": "2026-09-21",
+  "input": "research/expanded_enterprise.json",
+  "comparisonInput": "research/expanded_ats.json",
+  "purpose": "Source-grounded correction recommendations for merged expanded records. Recommendations only; no partition files were modified.",
+  "methodNotes": [
+    "Official URLs are retained for every finding.",
+    "Evidence is paraphrased, not copied; no source passage exceeds 25 quoted words.",
+    "Location corrections compare the same official requisition captured in the ATS expansion; a placeholder US state is never accepted as a real state.",
+    "Unknown degree, experience type, and graduation information stays unknown until the official posting establishes it."
+  ],
+  "counts": {
+    "recordsAudited": 40,
+    "critical": 7,
+    "high": 28,
+    "medium": 5
+  },
+  "findings": [
+    {
+      "company": "Character.AI",
+      "sourceId": "449bf7c1-41d7-47a4-89a7-0ee0b31f5918",
+      "title": "Research Engineer, Post-Training (All Industry Levels)",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "Redwood City",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/character/449bf7c1-41d7-47a4-89a7-0ee0b31f5918"
+    },
+    {
+      "company": "Anyscale",
+      "sourceId": "1cf38233-8aa0-47f8-9d85-65ce27bc3047",
+      "title": "Distributed LLM Inference Engineer",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "Palo Alto",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/anyscale/1cf38233-8aa0-47f8-9d85-65ce27bc3047"
+    },
+    {
+      "company": "Genmo",
+      "sourceId": "9b5477f4-97af-4aaa-b855-910c982ce191",
+      "title": "Research Engineer (New Grad)",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/genmo/9b5477f4-97af-4aaa-b855-910c982ce191"
+    },
+    {
+      "company": "Embedding VC",
+      "sourceId": "5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1",
+      "title": "AI Engineer (Early Career)",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/embedding-vc/5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1"
+    },
+    {
+      "company": "Cognition",
+      "sourceId": "439404bb-3185-4d22-b6df-4a5e39a510d6",
+      "title": "Product Engineer",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/cognition/439404bb-3185-4d22-b6df-4a5e39a510d6"
+    },
+    {
+      "company": "Cursor",
+      "sourceId": "d0e5b41d-84ab-4887-bd3a-55589b11dd7b",
+      "title": "Software Engineer, New Grad 2027",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/cursor/d0e5b41d-84ab-4887-bd3a-55589b11dd7b"
+    },
+    {
+      "company": "Koah Labs",
+      "sourceId": "197c931d-3cda-44b3-b26b-470976730808",
+      "title": "Software Engineer, Early Career",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [],
+      "evidence": "The captured official posting did not establish a city/state location; remove the synthetic US-state placeholder and preserve location as unknown.",
+      "officialSource": "https://jobs.ashbyhq.com/koahlabs/197c931d-3cda-44b3-b26b-470976730808"
+    },
+    {
+      "company": "Liquid AI",
+      "sourceId": "c7251e1b-d7bf-4d03-8b9e-1382743bef2c",
+      "title": "Member of Technical Staff - ML Research Engineer, Data",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "Boston",
+          "state": "MA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/liquid-ai/c7251e1b-d7bf-4d03-8b9e-1382743bef2c"
+    },
+    {
+      "company": "Fireworks AI",
+      "sourceId": "ad58a098-ef75-4a4b-8475-55c2653213ef",
+      "title": "Member of Technical Staff, Systems Infrastructure (2026 PhD New Grad)",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Mateo",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/fireworks/ad58a098-ef75-4a4b-8475-55c2653213ef"
+    },
+    {
+      "company": "Fireworks AI",
+      "sourceId": "82b41f4a-a945-4aee-a1fd-1ef9ab513e58",
+      "title": "Member of Technical Staff, Research (2026 PhD New Grad)",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Mateo",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/fireworks/82b41f4a-a945-4aee-a1fd-1ef9ab513e58"
+    },
+    {
+      "company": "Fireworks AI",
+      "sourceId": "0c78aede-7c21-4d1e-88f1-f309deb9819e",
+      "title": "Member of Technical Staff, New Grad (BS/MS)",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Mateo",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/fireworks/0c78aede-7c21-4d1e-88f1-f309deb9819e"
+    },
+    {
+      "company": "Netic",
+      "sourceId": "f2d170eb-c4c3-4715-9d2e-84dd4fe857c8",
+      "title": "Forward Deployed Engineer (FDE) - New Grad - 2026-2027",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/netic/f2d170eb-c4c3-4715-9d2e-84dd4fe857c8"
+    },
+    {
+      "company": "Netic",
+      "sourceId": "bab5d1e5-e31b-42f0-9cef-334b1f17fed3",
+      "title": "Full-Stack Software Engineer (Product) - New Grad - 2026-2027",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/netic/bab5d1e5-e31b-42f0-9cef-334b1f17fed3"
+    },
+    {
+      "company": "Netic",
+      "sourceId": "d9bcb6a2-0e54-4cb3-baec-43f2d74db18f",
+      "title": "Software Engineer (Agent Platform) - New Grad - 2026-2027",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/netic/d9bcb6a2-0e54-4cb3-baec-43f2d74db18f"
+    },
+    {
+      "company": "Decagon",
+      "sourceId": "a8ff946f-d6b1-4059-bc9f-fe6b11504f2f",
+      "title": " Member of Technical Staff - New Grad (2027 Start)",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "New York",
+          "state": "NY",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/decagon/a8ff946f-d6b1-4059-bc9f-fe6b11504f2f"
+    },
+    {
+      "company": "Thinking Machines Lab",
+      "sourceId": "9d863c78-80c0-44cd-a574-d1330e125398",
+      "title": "Software Engineer, Evaluation Platform / Infra",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/thinkingmachines/9d863c78-80c0-44cd-a574-d1330e125398"
+    },
+    {
+      "company": "Thinking Machines Lab",
+      "sourceId": "72fe46e4-a772-4ebb-a413-53e4f1a8273e",
+      "title": "Software Engineer, Research Tools",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/thinkingmachines/72fe46e4-a772-4ebb-a413-53e4f1a8273e"
+    },
+    {
+      "company": "Mistral",
+      "sourceId": "cce4be06-ac42-4c69-9bcd-7f5dca6f5e3c",
+      "title": "Research Engineer, Full Stack",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "Palo Alto",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/mistral.ai/cce4be06-ac42-4c69-9bcd-7f5dca6f5e3c"
+    },
+    {
+      "company": "Mistral",
+      "sourceId": "2ec2dacd-1117-479b-a4c1-efa9df530798",
+      "title": "Applied AI, Forward Deployed Machine Learning Engineer ",
+      "field": "locations",
+      "severity": "high",
+      "current": [
+        {
+          "city": "United States",
+          "state": "US",
+          "country": "US"
+        }
+      ],
+      "recommendation": [
+        {
+          "city": "Palo Alto",
+          "state": "CA",
+          "country": "US"
+        },
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "evidence": "The same requisition is captured on the official ATS record with the listed city/state locations; replace the country-level placeholder.",
+      "officialSource": "https://jobs.ashbyhq.com/mistral.ai/2ec2dacd-1117-479b-a4c1-efa9df530798"
+    },
+    {
+      "company": "Fireworks AI",
+      "sourceId": "0c78aede-7c21-4d1e-88f1-f309deb9819e",
+      "title": "Member of Technical Staff, New Grad (BS/MS)",
+      "field": "qualificationPaths[0].graduation / graduationYears",
+      "severity": "critical",
+      "current": {
+        "graduation": "2027",
+        "graduationYears": [
+          2027
+        ]
+      },
+      "recommendation": {
+        "graduation": "2026 or Summer 2027 start window",
+        "graduationYears": [
+          2026,
+          2027
+        ]
+      },
+      "evidence": "The title says BS/MS New Grad; the captured qualifications mention completion within six months or by end of 2026 and a Summer 2027 path.",
+      "officialSource": "https://jobs.ashbyhq.com/fireworks/0c78aede-7c21-4d1e-88f1-f309deb9819e"
+    },
+    {
+      "company": "Netic",
+      "sourceId": "f2d170eb-c4c3-4715-9d2e-84dd4fe857c8",
+      "title": "Forward Deployed Engineer (FDE) - New Grad - 2026-2027",
+      "field": "qualificationPaths[0].graduation / graduationYears",
+      "severity": "critical",
+      "current": {
+        "graduation": "2026",
+        "graduationYears": [
+          2026
+        ]
+      },
+      "recommendation": {
+        "graduation": "2026-2027",
+        "graduationYears": [
+          2026,
+          2027
+        ]
+      },
+      "evidence": "The official title says New Grad 2026-2027; retain the start cohort as a window rather than only 2026.",
+      "officialSource": "https://jobs.ashbyhq.com/netic/f2d170eb-c4c3-4715-9d2e-84dd4fe857c8"
+    },
+    {
+      "company": "Netic",
+      "sourceId": "bab5d1e5-e31b-42f0-9cef-334b1f17fed3",
+      "title": "Full-Stack Software Engineer (Product) - New Grad - 2026-2027",
+      "field": "qualificationPaths[0].graduation / graduationYears",
+      "severity": "critical",
+      "current": {
+        "graduation": "2026",
+        "graduationYears": [
+          2026
+        ]
+      },
+      "recommendation": {
+        "graduation": "2026-2027",
+        "graduationYears": [
+          2026,
+          2027
+        ]
+      },
+      "evidence": "The official title says New Grad 2026-2027; retain the start cohort as a window rather than only 2026.",
+      "officialSource": "https://jobs.ashbyhq.com/netic/bab5d1e5-e31b-42f0-9cef-334b1f17fed3"
+    },
+    {
+      "company": "Netic",
+      "sourceId": "d9bcb6a2-0e54-4cb3-baec-43f2d74db18f",
+      "title": "Software Engineer (Agent Platform) - New Grad - 2026-2027",
+      "field": "qualificationPaths[0].graduation / graduationYears",
+      "severity": "critical",
+      "current": {
+        "graduation": "2026",
+        "graduationYears": [
+          2026
+        ]
+      },
+      "recommendation": {
+        "graduation": "2026-2027",
+        "graduationYears": [
+          2026,
+          2027
+        ]
+      },
+      "evidence": "The official title says New Grad 2026-2027; retain the start cohort as a window rather than only 2026.",
+      "officialSource": "https://jobs.ashbyhq.com/netic/d9bcb6a2-0e54-4cb3-baec-43f2d74db18f"
+    },
+    {
+      "company": "Decagon",
+      "sourceId": "a8ff946f-d6b1-4059-bc9f-fe6b11504f2f",
+      "title": " Member of Technical Staff - New Grad (2027 Start)",
+      "field": "qualificationPaths[0].graduation / startWindow",
+      "severity": "critical",
+      "current": {
+        "graduation": "2027",
+        "graduationYears": [
+          2027
+        ]
+      },
+      "recommendation": {
+        "graduation": "Not stated",
+        "graduationYears": [],
+        "startWindow": "2027 start"
+      },
+      "evidence": "The official title says New Grad (2027 Start), which establishes a start cohort but does not by itself prove a degree-completion year.",
+      "officialSource": "https://jobs.ashbyhq.com/decagon/a8ff946f-d6b1-4059-bc9f-fe6b11504f2f"
+    },
+    {
+      "company": "Anyscale",
+      "sourceId": "1cf38233-8aa0-47f8-9d85-65ce27bc3047",
+      "title": "Distributed LLM Inference Engineer",
+      "field": "qualificationPaths[0].degrees",
+      "severity": "high",
+      "current": [
+        "Bachelor",
+        "Master",
+        "PhD"
+      ],
+      "recommendation": [],
+      "evidence": "The captured qualification evidence supports the role/pathway label but does not establish a degree requirement; do not infer Bachelor/Master from a new-grad title. Verify the education section before populating degrees.",
+      "officialSource": "https://jobs.ashbyhq.com/anyscale/1cf38233-8aa0-47f8-9d85-65ce27bc3047"
+    },
+    {
+      "company": "Genmo",
+      "sourceId": "9b5477f4-97af-4aaa-b855-910c982ce191",
+      "title": "Research Engineer (New Grad)",
+      "field": "qualificationPaths[0].degrees",
+      "severity": "high",
+      "current": [
+        "Bachelor",
+        "Master"
+      ],
+      "recommendation": [],
+      "evidence": "The captured qualification evidence supports the role/pathway label but does not establish a degree requirement; do not infer Bachelor/Master from a new-grad title. Verify the education section before populating degrees.",
+      "officialSource": "https://jobs.ashbyhq.com/genmo/9b5477f4-97af-4aaa-b855-910c982ce191"
+    },
+    {
+      "company": "Cursor",
+      "sourceId": "d0e5b41d-84ab-4887-bd3a-55589b11dd7b",
+      "title": "Software Engineer, New Grad 2027",
+      "field": "qualificationPaths[0].degrees",
+      "severity": "high",
+      "current": [
+        "Bachelor",
+        "Master"
+      ],
+      "recommendation": [],
+      "evidence": "The captured qualification evidence supports the role/pathway label but does not establish a degree requirement; do not infer Bachelor/Master from a new-grad title. Verify the education section before populating degrees.",
+      "officialSource": "https://jobs.ashbyhq.com/cursor/d0e5b41d-84ab-4887-bd3a-55589b11dd7b"
+    },
+    {
+      "company": "Netic",
+      "sourceId": "f2d170eb-c4c3-4715-9d2e-84dd4fe857c8",
+      "title": "Forward Deployed Engineer (FDE) - New Grad - 2026-2027",
+      "field": "qualificationPaths[0].degrees",
+      "severity": "high",
+      "current": [
+        "Bachelor",
+        "Master"
+      ],
+      "recommendation": [],
+      "evidence": "The captured qualification evidence supports the role/pathway label but does not establish a degree requirement; do not infer Bachelor/Master from a new-grad title. Verify the education section before populating degrees.",
+      "officialSource": "https://jobs.ashbyhq.com/netic/f2d170eb-c4c3-4715-9d2e-84dd4fe857c8"
+    },
+    {
+      "company": "Netic",
+      "sourceId": "bab5d1e5-e31b-42f0-9cef-334b1f17fed3",
+      "title": "Full-Stack Software Engineer (Product) - New Grad - 2026-2027",
+      "field": "qualificationPaths[0].degrees",
+      "severity": "high",
+      "current": [
+        "Bachelor",
+        "Master"
+      ],
+      "recommendation": [],
+      "evidence": "The captured qualification evidence supports the role/pathway label but does not establish a degree requirement; do not infer Bachelor/Master from a new-grad title. Verify the education section before populating degrees.",
+      "officialSource": "https://jobs.ashbyhq.com/netic/bab5d1e5-e31b-42f0-9cef-334b1f17fed3"
+    },
+    {
+      "company": "Netic",
+      "sourceId": "d9bcb6a2-0e54-4cb3-baec-43f2d74db18f",
+      "title": "Software Engineer (Agent Platform) - New Grad - 2026-2027",
+      "field": "qualificationPaths[0].degrees",
+      "severity": "high",
+      "current": [
+        "Bachelor",
+        "Master"
+      ],
+      "recommendation": [],
+      "evidence": "The captured qualification evidence supports the role/pathway label but does not establish a degree requirement; do not infer Bachelor/Master from a new-grad title. Verify the education section before populating degrees.",
+      "officialSource": "https://jobs.ashbyhq.com/netic/d9bcb6a2-0e54-4cb3-baec-43f2d74db18f"
+    },
+    {
+      "company": "Decagon",
+      "sourceId": "a8ff946f-d6b1-4059-bc9f-fe6b11504f2f",
+      "title": " Member of Technical Staff - New Grad (2027 Start)",
+      "field": "qualificationPaths[0].degrees",
+      "severity": "high",
+      "current": [
+        "Bachelor",
+        "Master"
+      ],
+      "recommendation": [],
+      "evidence": "The captured qualification evidence supports the role/pathway label but does not establish a degree requirement; do not infer Bachelor/Master from a new-grad title. Verify the education section before populating degrees.",
+      "officialSource": "https://jobs.ashbyhq.com/decagon/a8ff946f-d6b1-4059-bc9f-fe6b11504f2f"
+    },
+    {
+      "company": "Sierra",
+      "sourceId": "149f368c-52d5-408f-ba26-ad888f318a00",
+      "title": "Software Engineer, Agent (New Grad 2027)",
+      "field": "qualificationPaths[0].degrees",
+      "severity": "high",
+      "current": [
+        "Bachelor",
+        "Master"
+      ],
+      "recommendation": [],
+      "evidence": "The captured qualification evidence supports the role/pathway label but does not establish a degree requirement; do not infer Bachelor/Master from a new-grad title. Verify the education section before populating degrees.",
+      "officialSource": "https://jobs.ashbyhq.com/sierra/149f368c-52d5-408f-ba26-ad888f318a00"
+    },
+    {
+      "company": "Sierra",
+      "sourceId": "d9c445da-c7b4-43a3-8d71-d367681c3015",
+      "title": "APX (New Grad 2027)",
+      "field": "qualificationPaths[0].degrees",
+      "severity": "high",
+      "current": [
+        "Bachelor",
+        "Master"
+      ],
+      "recommendation": [],
+      "evidence": "The captured qualification evidence supports the role/pathway label but does not establish a degree requirement; do not infer Bachelor/Master from a new-grad title. Verify the education section before populating degrees.",
+      "officialSource": "https://jobs.ashbyhq.com/sierra/d9c445da-c7b4-43a3-8d71-d367681c3015"
+    },
+    {
+      "company": "Genmo",
+      "sourceId": "9b5477f4-97af-4aaa-b855-910c982ce191",
+      "title": "Research Engineer (New Grad)",
+      "field": "newgradStatus / qualificationPaths[0].experienceType",
+      "severity": "critical",
+      "current": {
+        "newgradStatus": "early-career",
+        "experienceType": "research",
+        "minYears": 2
+      },
+      "recommendation": {
+        "newgradStatus": "unclear",
+        "experienceType": "not stated",
+        "minYears": 2
+      },
+      "evidence": "The official title says New Grad while the captured minimum says 2+ years ML experience; the source does not resolve whether those years are research or industry.",
+      "officialSource": "https://jobs.ashbyhq.com/genmo/9b5477f4-97af-4aaa-b855-910c982ce191"
+    },
+    {
+      "company": "Liquid AI",
+      "sourceId": "c7251e1b-d7bf-4d03-8b9e-1382743bef2c",
+      "title": "Member of Technical Staff - ML Research Engineer, Data",
+      "field": "qualificationPaths",
+      "severity": "critical",
+      "current": {
+        "degrees": [
+          "PhD"
+        ],
+        "minYears": 1,
+        "experienceType": "research"
+      },
+      "recommendation": {
+        "paths": [
+          {
+            "degrees": [
+              "PhD"
+            ],
+            "minYears": 1,
+            "experienceType": "not stated"
+          },
+          {
+            "degrees": [
+              "Master"
+            ],
+            "minYears": 3,
+            "experienceType": "not stated"
+          },
+          {
+            "degrees": [
+              "Bachelor"
+            ],
+            "minYears": 5,
+            "experienceType": "not stated"
+          }
+        ]
+      },
+      "evidence": "The captured official qualification has separate PhD, MS, and BS thresholds; relevant experience is not explicitly classified as research versus industry.",
+      "officialSource": "https://jobs.ashbyhq.com/liquid-ai/c7251e1b-d7bf-4d03-8b9e-1382743bef2c"
+    },
+    {
+      "company": "AI2",
+      "sourceId": "7899565",
+      "title": "Research Engineer, Asta",
+      "field": "salary",
+      "severity": "medium",
+      "current": [
+        {
+          "min": 128880,
+          "max": 193320,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "recommendation": [
+        {
+          "min": 128880,
+          "max": 193320,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "evidence": "Structured salary is already normalized with USD currency and annual period; retain base-salary scope and do not merge bonus/equity.",
+      "officialSource": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7899565"
+    },
+    {
+      "company": "xAI",
+      "sourceId": "5193037007",
+      "title": "ML Infrastructure Engineer",
+      "field": "salary",
+      "severity": "medium",
+      "current": [
+        {
+          "min": 180000,
+          "max": 440000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "recommendation": [
+        {
+          "min": 180000,
+          "max": 440000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "evidence": "Structured salary is already normalized with USD currency and annual period; retain base-salary scope and do not merge bonus/equity.",
+      "officialSource": "https://job-boards.greenhouse.io/xai/jobs/5193037007"
+    },
+    {
+      "company": "Glean",
+      "sourceId": "4711484005",
+      "title": "Machine Learning Engineer, Assistant Quality",
+      "field": "salary",
+      "severity": "medium",
+      "current": [
+        {
+          "min": 180000,
+          "max": 205000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "recommendation": [
+        {
+          "min": 180000,
+          "max": 205000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "evidence": "Structured salary is already normalized with USD currency and annual period; retain base-salary scope and do not merge bonus/equity.",
+      "officialSource": "https://job-boards.greenhouse.io/gleanwork/jobs/4711484005"
+    },
+    {
+      "company": "Thinking Machines Lab",
+      "sourceId": "9d863c78-80c0-44cd-a574-d1330e125398",
+      "title": "Software Engineer, Evaluation Platform / Infra",
+      "field": "salary",
+      "severity": "medium",
+      "current": [
+        {
+          "min": 300000,
+          "max": 475000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "recommendation": [
+        {
+          "min": 300000,
+          "max": 475000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "evidence": "Structured salary is already normalized with USD currency and annual period; retain base-salary scope and do not merge bonus/equity.",
+      "officialSource": "https://jobs.ashbyhq.com/thinkingmachines/9d863c78-80c0-44cd-a574-d1330e125398"
+    },
+    {
+      "company": "Cerebras",
+      "sourceId": "987d7f64-c957-4c8f-b89d-2f9d64738507",
+      "title": "CoDesign & NextGen - New College Grad ",
+      "field": "salary",
+      "severity": "medium",
+      "current": [
+        {
+          "min": 145000,
+          "max": 155000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "recommendation": [
+        {
+          "min": 145000,
+          "max": 155000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "evidence": "Structured salary is already normalized with USD currency and annual period; retain base-salary scope and do not merge bonus/equity.",
+      "officialSource": "https://jobs.ashbyhq.com/cerebras/987d7f64-c957-4c8f-b89d-2f9d64738507"
+    }
+  ]
+}

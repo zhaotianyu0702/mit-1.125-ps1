@@ -1,0 +1,246 @@
+[
+  {
+    "company": "Anthropic",
+    "board": "anthropic"
+  },
+  {
+    "company": "xAI",
+    "board": "xai"
+  },
+  {
+    "company": "Scale AI",
+    "board": "scaleai"
+  },
+  {
+    "company": "Snorkel AI",
+    "board": "snorkelai"
+  },
+  {
+    "company": "Roblox",
+    "board": "roblox"
+  },
+  {
+    "company": "Glean",
+    "board": "gleanwork"
+  },
+  {
+    "company": "Databricks",
+    "board": "databricks"
+  },
+  {
+    "company": "Datadog",
+    "board": "datadog"
+  },
+  {
+    "company": "Reddit",
+    "board": "reddit"
+  },
+  {
+    "company": "DoorDash",
+    "board": "doordashusa"
+  },
+  {
+    "company": "Duolingo",
+    "board": "duolingo"
+  },
+  {
+    "company": "Pinterest",
+    "board": "pinterest"
+  },
+  {
+    "company": "Airbnb",
+    "board": "airbnb"
+  },
+  {
+    "company": "Instacart",
+    "board": "instacart"
+  },
+  {
+    "company": "Lyft",
+    "board": "lyft"
+  },
+  {
+    "company": "Uber",
+    "board": "uber"
+  },
+  {
+    "company": "Stripe",
+    "board": "stripe"
+  },
+  {
+    "company": "Coinbase",
+    "board": "coinbase"
+  },
+  {
+    "company": "Affirm",
+    "board": "affirm"
+  },
+  {
+    "company": "Brex",
+    "board": "brex"
+  },
+  {
+    "company": "Block",
+    "board": "block"
+  },
+  {
+    "company": "Toast",
+    "board": "toast"
+  },
+  {
+    "company": "Twilio",
+    "board": "twilio"
+  },
+  {
+    "company": "Cloudflare",
+    "board": "cloudflare"
+  },
+  {
+    "company": "MongoDB",
+    "board": "mongodb"
+  },
+  {
+    "company": "Figma",
+    "board": "figma"
+  },
+  {
+    "company": "Discord",
+    "board": "discord"
+  },
+  {
+    "company": "Asana",
+    "board": "asana"
+  },
+  {
+    "company": "Okta",
+    "board": "okta"
+  },
+  {
+    "company": "Lattice",
+    "board": "lattice"
+  },
+  {
+    "company": "Samsara",
+    "board": "samsara"
+  },
+  {
+    "company": "Faire",
+    "board": "faire"
+  },
+  {
+    "company": "Flexport",
+    "board": "flexport"
+  },
+  {
+    "company": "Chime",
+    "board": "chime"
+  },
+  {
+    "company": "Epic Games",
+    "board": "epicgames"
+  },
+  {
+    "company": "Komodo Health",
+    "board": "komodohealth"
+  },
+  {
+    "company": "Nextdoor",
+    "board": "nextdoor"
+  },
+  {
+    "company": "The Allen Institute",
+    "board": "thealleninstitute"
+  },
+  {
+    "company": "Motional",
+    "board": "motional"
+  },
+  {
+    "company": "NewsBreak",
+    "board": "newsbreak"
+  },
+  {
+    "company": "ID.me",
+    "board": "idmeuniversityrecruiting"
+  },
+  {
+    "company": "Together AI",
+    "board": "togetherai"
+  },
+  {
+    "company": "Nuro",
+    "board": "nuro"
+  },
+  {
+    "company": "Waymo",
+    "board": "waymo"
+  },
+  {
+    "company": "Figure",
+    "board": "figure"
+  },
+  {
+    "company": "Applied Intuition",
+    "board": "appliedintuition"
+  },
+  {
+    "company": "Fireworks AI",
+    "board": "fireworksai"
+  },
+  {
+    "company": "Contextual AI",
+    "board": "contextualai"
+  },
+  {
+    "company": "Sigma Computing",
+    "board": "sigmacomputing"
+  },
+  {
+    "company": "True Anomaly",
+    "board": "trueanomaly"
+  },
+  {
+    "company": "Perplexity",
+    "board": "perplexity"
+  },
+  {
+    "company": "Mistral AI",
+    "board": "mistral"
+  },
+  {
+    "company": "Vanta",
+    "board": "vanta"
+  },
+  {
+    "company": "Rippling",
+    "board": "rippling"
+  },
+  {
+    "company": "OpenTable",
+    "board": "opentable"
+  },
+  {
+    "company": "Roku",
+    "board": "roku"
+  },
+  {
+    "company": "PagerDuty",
+    "board": "pagerduty"
+  },
+  {
+    "company": "Highspot",
+    "board": "highspot"
+  },
+  {
+    "company": "Eight Sleep",
+    "board": "eightsleep"
+  },
+  {
+    "company": "Sentry",
+    "board": "sentry"
+  },
+  {
+    "company": "Patreon",
+    "board": "patreon"
+  }
+]

@@ -1,0 +1,931 @@
+{
+  "jobs": [
+    {
+      "id": "newsbreak-greenhouse-4700278006",
+      "company": "NewsBreak",
+      "title": "Applied AI Engineer, Advertising Agents (New Grad)",
+      "url": "https://job-boards.greenhouse.io/newsbreak/jobs/4700278006",
+      "applyUrl": "https://job-boards.greenhouse.io/newsbreak/jobs/4700278006",
+      "source": "Greenhouse",
+      "sourceId": "4700278006",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "Mountain View",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Mountain View, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "Recently completed or within the next 6 months (year not stated)",
+          "graduationYears": [],
+          "evidence": "Degree path is Bachelor's/Master's in CS, AI, Data Science or related; no professional experience required; projects/research are considered."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "LLM",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "agents",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "PyTorch",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 125000,
+          "max": 175000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build LLM and agent technology for an AI-driven advertising account hosting and optimization platform.",
+      "newgradEvidence": "The JD asks for a recent graduate and a degree completed recently or within six months; it says no professional experience is required.",
+      "aiEvidence": "Responsibilities include building LLM/agent systems and an AI advertising platform.",
+      "qualificationNote": "Degree path is Bachelor's/Master's in CS, AI, Data Science or related; no professional experience required; projects/research are considered.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    },
+    {
+      "id": "newsbreak-greenhouse-4694899006",
+      "company": "NewsBreak",
+      "title": "NewsBreak Venture, AI Growth Intelligence Engineer (New Grad）",
+      "url": "https://job-boards.greenhouse.io/newsbreak/jobs/4694899006",
+      "applyUrl": "https://job-boards.greenhouse.io/newsbreak/jobs/4694899006",
+      "source": "Greenhouse",
+      "sourceId": "4694899006",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "LLM",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "Mountain View",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Mountain View, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Bachelor's or Master's in CS, Software Engineering or related; recent graduate or up to ~2 years experience path."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "SQL",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "machine learning",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Develop AI growth intelligence systems and software for NewsBreak Venture.",
+      "newgradEvidence": "Title explicitly identifies New Grad; the JD accepts a recent graduate or up to about two years of experience.",
+      "aiEvidence": "The role builds AI growth intelligence products and applies software/ML techniques to growth systems.",
+      "qualificationNote": "Bachelor's or Master's in CS, Software Engineering or related; recent graduate or up to ~2 years experience path.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    },
+    {
+      "id": "newsbreak-greenhouse-4615879006",
+      "company": "NewsBreak",
+      "title": "Software Engineer, ML Infra (Junior & New Grad)",
+      "url": "https://job-boards.greenhouse.io/newsbreak/jobs/4615879006",
+      "applyUrl": "https://job-boards.greenhouse.io/newsbreak/jobs/4615879006",
+      "source": "Greenhouse",
+      "sourceId": "4615879006",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "inference",
+        "distributed training",
+        "recommendation/search"
+      ],
+      "locations": [
+        {
+          "city": "Mountain View",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Mountain View, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor"
+          ],
+          "minYears": 2,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Bachelor's degree plus 2+ years of relevant work experience."
+        },
+        {
+          "degrees": [
+            "Master",
+            "PhD"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "The JD gives a Master's/PhD alternative without a stated experience minimum; projects and research are recorded separately."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "PyTorch",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "TensorFlow",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "AWS",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "GCP",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 125000,
+          "max": 175000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build infrastructure for offline/online training, model serving, feature serving, and ML pipeline monitoring.",
+      "newgradEvidence": "Title explicitly says Junior & New Grad; the JD provides a Master's/PhD alternative to the Bachelor's plus 2+ years path.",
+      "aiEvidence": "The role trains, serves, monitors, and supports recommendation and advertising models.",
+      "qualificationNote": "Two explicit alternatives: Bachelor's plus 2+ years industry experience OR Master's/PhD with no stated minimum; do not flatten these paths.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    },
+    {
+      "id": "id.me-greenhouse-7986505003",
+      "company": "ID.me",
+      "title": "Summer 2027 - Data Scientist (New Grad)",
+      "url": "https://job-boards.greenhouse.io/idmeuniversityrecruiting/jobs/7986505003",
+      "applyUrl": "https://job-boards.greenhouse.io/idmeuniversityrecruiting/jobs/7986505003",
+      "source": "Greenhouse",
+      "sourceId": "7986505003",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "Applied Data Science",
+      "tags": [
+        "recommendation/search",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "Mountain View",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Mountain View, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "May/June 2027",
+          "graduationYears": [
+            2027
+          ],
+          "evidence": "Master's in Data Science, Applied Mathematics, Statistics, CS, or related; coursework, research projects, or internships count as data experience."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "May/June 2027",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "SQL",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "scikit-learn",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "TensorFlow",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "PyTorch",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Use experiments, fraud analytics, and ML models to detect identity fraud and account takeover.",
+      "newgradEvidence": "Title says New Grad; the JD requires graduation in May/June 2027 from a Master's program.",
+      "aiEvidence": "Core work designs ML solutions, builds detection models, and evaluates fraud patterns.",
+      "qualificationNote": "Master's in Data Science, Applied Mathematics, Statistics, CS, or related; coursework, research projects, or internships count as data experience.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    },
+    {
+      "id": "together-ai-greenhouse-5211582007",
+      "company": "Together AI",
+      "title": "Software Engineer, New Grad (2027)",
+      "url": "https://job-boards.greenhouse.io/togetherai/jobs/5211582007",
+      "applyUrl": "https://job-boards.greenhouse.io/togetherai/jobs/5211582007",
+      "source": "Greenhouse",
+      "sourceId": "5211582007",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "inference",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "San Francisco, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "2027",
+          "graduationYears": [
+            2027
+          ],
+          "evidence": "Recent-graduate language is explicit; team placement is determined among ML/platform/infrastructure/inference."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "2027",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "C++",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "Kubernetes",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "CUDA",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 150000,
+          "max": 160000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Join ML, platform, infrastructure, or inference teams building scalable systems and performance-critical code.",
+      "newgradEvidence": "The JD calls the role early-career, says it is ideal for recent graduates, and targets the 2027 class.",
+      "aiEvidence": "The placement teams include Machine Learning, Infrastructure, and Inference; the role contributes to Together's model platform.",
+      "qualificationNote": "Recent-graduate language is explicit; team placement is determined among ML/platform/infrastructure/inference.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    },
+    {
+      "id": "scale-ai-greenhouse-4730836005",
+      "company": "Scale AI",
+      "title": "Software Engineer - New Grad",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4730836005",
+      "applyUrl": "https://job-boards.greenhouse.io/scaleai/jobs/4730836005",
+      "source": "Greenhouse",
+      "sourceId": "4730836005",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "LLM",
+        "evaluation",
+        "inference"
+      ],
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "San Francisco, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "Fall 2026 or Spring 2027",
+          "graduationYears": [
+            2026,
+            2027
+          ],
+          "evidence": "Bachelor's degree or equivalent in CS, EECS, Computer Engineering, or Statistics; product engineering experience may be coursework/project based."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Fall 2026 or Spring 2027",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "TypeScript",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "React",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "SQL",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 124000,
+          "max": 162000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Ship customer-facing software and AI infrastructure products for visualizing, querying, and exploring data used to build and deploy AI systems.",
+      "newgradEvidence": "Title and opening paragraph explicitly identify a New Grad Software Engineer opportunity.",
+      "aiEvidence": "The JD describes Scale's AI data/full-stack products and specifically lists new AI infrastructure products.",
+      "qualificationNote": "Bachelor's degree or equivalent in CS, EECS, Computer Engineering, or Statistics; product engineering experience may be coursework/project based.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    },
+    {
+      "id": "nuro-greenhouse-7351066",
+      "company": "Nuro",
+      "title": "Software Engineer, AI Platform - New Grad",
+      "url": "https://job-boards.greenhouse.io/nuro/jobs/7351066",
+      "applyUrl": "https://job-boards.greenhouse.io/nuro/jobs/7351066",
+      "source": "Greenhouse",
+      "sourceId": "7351066",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "ML Infrastructure",
+      "tags": [
+        "inference",
+        "robotics",
+        "distributed training"
+      ],
+      "locations": [
+        {
+          "city": "Mountain View",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Mountain View, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "Before July 2026",
+          "graduationYears": [
+            2026
+          ],
+          "evidence": "Bachelor's or Master's in CS, EE, Robotics or related; graduation before July 2026 required."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Before July 2026",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "C++",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "Kubernetes",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "Docker",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [
+        {
+          "min": 145000,
+          "max": 170000,
+          "currency": "USD",
+          "period": "year",
+          "scope": "US base salary"
+        }
+      ],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Build software for Nuro's AI platform supporting Level 4 autonomy, model development, and deployment.",
+      "newgradEvidence": "Title explicitly says New Grad; the JD requires a degree candidate graduating before July 2026.",
+      "aiEvidence": "The AI Platform role supports a physical-AI autonomy stack and model platform.",
+      "qualificationNote": "Bachelor's or Master's in CS, EE, Robotics or related; graduation before July 2026 required.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    },
+    {
+      "id": "waymo-greenhouse-7488508",
+      "company": "Waymo",
+      "title": "Machine Learning Engineer Perception LLM/VLM (PhD, New Grad)",
+      "url": "https://job-boards.greenhouse.io/waymo/jobs/7488508",
+      "applyUrl": "https://job-boards.greenhouse.io/waymo/jobs/7488508",
+      "source": "Greenhouse",
+      "sourceId": "7488508",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "Research Engineer",
+      "tags": [
+        "LLM",
+        "CV",
+        "evaluation",
+        "inference"
+      ],
+      "locations": [
+        {
+          "city": "Mountain View",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Mountain View, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Master"
+          ],
+          "minYears": 5,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Body requires 5+ years of machine-learning experience and lists a Master's degree as minimum."
+        },
+        {
+          "degrees": [
+            "PhD"
+          ],
+          "minYears": 5,
+          "experienceType": "industry",
+          "graduation": "Not stated",
+          "graduationYears": [],
+          "evidence": "Title says PhD, New Grad, but body lists PhD as preferred while retaining the 5+ years requirement; eligibility is unclear."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "Not stated",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "PyTorch",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "TensorFlow",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "C++",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Research and deploy perception models using LLM/VLM techniques for autonomous driving.",
+      "newgradEvidence": "Title explicitly identifies a PhD New Grad role; the JD accepts a relevant Master's or equivalent and prefers PhD-level model experience.",
+      "aiEvidence": "Perception work covers spatial-temporal representations, multimodal models, fine-tuning, and evaluation for the Waymo Driver.",
+      "qualificationNote": "Title says PhD, New Grad, but the body requires 5+ years of ML experience, lists Master's as minimum, and PhD as preferred; no Master's new-grad inference made.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    },
+    {
+      "id": "mach-industries-greenhouse-4390274009",
+      "company": "Mach Industries",
+      "title": "December 2026 New Graduate Engineer, Software / GNC",
+      "url": "https://job-boards.greenhouse.io/machindustries/jobs/4390274009",
+      "applyUrl": "https://job-boards.greenhouse.io/machindustries/jobs/4390274009",
+      "source": "Greenhouse",
+      "sourceId": "4390274009",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "robotics",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "Huntington Beach",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Huntington Beach, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master",
+            "PhD"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "By end of December 2026 or January 2027",
+          "graduationYears": [
+            2026,
+            2027
+          ],
+          "evidence": "Bachelor's, Master's, or PhD in CS, CE, EE, or related; capstone, research, internship, student-team, or personal software project accepted."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "December 2026",
+      "skills": [
+        {
+          "name": "C++",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "Rust",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "simulation",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Develop software for autonomous defense platforms, including higher-level autonomy applications and simulation/testing infrastructure.",
+      "newgradEvidence": "Title explicitly says New Graduate and the JD requires graduating by end of December 2026.",
+      "aiEvidence": "The JD specifically assigns autonomy applications for autonomous defense platforms and simulation/testing infrastructure used to validate autonomous-system performance; it does not claim ML model development.",
+      "qualificationNote": "Bachelor's, Master's, or PhD in CS, CE, EE, or related; capstone, research, internship, student-team, or personal software project accepted.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    },
+    {
+      "id": "mach-industries-greenhouse-4401441009",
+      "company": "Mach Industries",
+      "title": "May 2027 New Graduate Engineer, GNC & Modeling and Simulation",
+      "url": "https://job-boards.greenhouse.io/machindustries/jobs/4401441009",
+      "applyUrl": "https://job-boards.greenhouse.io/machindustries/jobs/4401441009",
+      "source": "Greenhouse",
+      "sourceId": "4401441009",
+      "verifiedAt": "2026-09-21T19:09:53Z",
+      "publishedAt": null,
+      "deadline": null,
+      "roleFamily": "AI Applications",
+      "tags": [
+        "robotics",
+        "evaluation"
+      ],
+      "locations": [
+        {
+          "city": "Huntington Beach",
+          "state": "CA",
+          "country": "US"
+        }
+      ],
+      "remote": false,
+      "workplace": "On-site",
+      "locationText": "Huntington Beach, CA",
+      "newgradStatus": "explicit",
+      "qualificationPaths": [
+        {
+          "degrees": [
+            "Bachelor",
+            "Master",
+            "PhD"
+          ],
+          "minYears": 0,
+          "experienceType": "not stated",
+          "graduation": "May 2027",
+          "graduationYears": [
+            2027
+          ],
+          "evidence": "Bachelor's, Master's, or doctoral degree in aerospace, mechanical, electrical, or computer engineering or related; coursework/projects in controls, estimation, navigation, robotics, or flight mechanics."
+        }
+      ],
+      "startYears": [],
+      "startWindow": "May 2027",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "C++",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "MATLAB",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "simulation",
+          "level": "mentioned",
+          "alternativeGroup": null
+        }
+      ],
+      "salary": [],
+      "sponsorship": "Not stated",
+      "sponsorshipNote": "Not stated",
+      "summary": "Develop and test guidance, navigation, and control algorithms, filters, and state-estimation methods for autonomous aircraft and missile systems.",
+      "newgradEvidence": "Title explicitly says New Graduate and the job targets May 2027 graduates.",
+      "aiEvidence": "The JD directly assigns autonomous-vehicle GNC algorithms, navigation filters, state estimation, Monte Carlo simulation, and hardware/flight testing; it does not claim ML model development.",
+      "qualificationNote": "Bachelor's, Master's, or doctoral degree in aerospace, mechanical, electrical, or computer engineering or related; coursework/projects in controls, estimation, navigation, robotics, or flight mechanics.",
+      "reviewNote": "Official Greenhouse board API returned this ID with the exact title, US location, full JD, and an Apply button at verification time."
+    }
+  ],
+  "coverage": [
+    {
+      "company": "NewsBreak",
+      "url": "https://job-boards.greenhouse.io/newsbreak",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "verified roles",
+      "note": "Three active US AI/new-grad postings verified.",
+      "qualifyingCount": 3
+    },
+    {
+      "company": "ID.me",
+      "url": "https://job-boards.greenhouse.io/idmeuniversityrecruiting",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "verified roles",
+      "note": "Data Scientist qualifies; SDE new-grad posting was reviewed but not included because AI duties were not core.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Together AI",
+      "url": "https://job-boards.greenhouse.io/togetherai",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "verified roles",
+      "note": "One active US new-grad role with ML/inference placement.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Scale AI",
+      "url": "https://job-boards.greenhouse.io/scaleai",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "verified roles",
+      "note": "One active US new-grad software role with explicit AI infrastructure duties.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Nuro",
+      "url": "https://job-boards.greenhouse.io/nuro",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "verified roles",
+      "note": "One active US AI Platform new-grad role.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "Waymo",
+      "url": "https://job-boards.greenhouse.io/waymo",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "verified roles",
+      "note": "One active US PhD new-grad perception LLM/VLM role.",
+      "qualifyingCount": 1
+    },
+    {
+      "company": "True Anomaly",
+      "url": "https://job-boards.greenhouse.io/trueanomalyinc",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "no qualifying roles",
+      "note": "Two new-grad perception/data-science postings were reviewed but both state they are 3-month temporary engagements with possible conversion.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Mach Industries",
+      "url": "https://job-boards.greenhouse.io/machindustries",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "verified roles",
+      "note": "Two active US new-graduate autonomy/GNC roles.",
+      "qualifyingCount": 2
+    },
+    {
+      "company": "Freeform",
+      "url": "https://job-boards.greenhouse.io/freeformfuturecorp",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "no qualifying roles",
+      "note": "Two new-grad software postings were reviewed; duties focus on controls, data acquisition, geometry, and factory software without a core model/AI-infrastructure responsibility.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Databricks",
+      "url": "https://job-boards.greenhouse.io/databricks",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "no qualifying roles",
+      "note": "AI FDE US posting explicitly says it is not intended for new-graduate or entry-level applicants; APM is not an AI technical role.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Datadog",
+      "url": "https://job-boards.greenhouse.io/datadog",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "no qualifying roles",
+      "note": "No active US full-time AI/new-grad role with explicit eligibility found in the board snapshot.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Figure",
+      "url": "https://job-boards.greenhouse.io/figure",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "no qualifying roles",
+      "note": "No active US full-time AI/new-grad role with explicit eligibility found in the board snapshot.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Anthropic",
+      "url": "https://job-boards.greenhouse.io/anthropic",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "no qualifying roles",
+      "note": "US research/engineering roles reviewed were experienced hires; Fellows postings were program listings rather than a qualifying full-time job.",
+      "qualifyingCount": 0
+    },
+    {
+      "company": "Applied Intuition",
+      "url": "https://job-boards.greenhouse.io/appliedintuition",
+      "checkedAt": "2026-09-21T19:09:53Z",
+      "status": "inaccessible",
+      "note": "Greenhouse board slug returned HTTP 404; no inference about job availability.",
+      "qualifyingCount": 0
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+﻿job_id,min,max,currency,period,scope
+ai2-greenhouse-7899565,128880,193320,USD,year,US base salary
+cerebras-ashby-987d7f64-c957-4c8f-b89d-2f9d64738507,145000,155000,USD,year,US base salary
+glean-greenhouse-4711484005,180000,205000,USD,year,US base salary
+glean-greenhouse-4006735005,140000,265000,USD,year,US base salary
+newsbreak-greenhouse-4700278006,125000,175000,USD,year,US base salary
+newsbreak-greenhouse-4615879006,125000,175000,USD,year,US base salary
+nuro-greenhouse-7351066,145000,170000,USD,year,US base salary
+NVIDIA-JR2011517,116000,189750,USD,year,US base salary Level 2
+NVIDIA-JR2011517,136000,218500,USD,year,US base salary Level 3
+NVIDIA-JR2016939,124000,195500,USD,year,US base salary Level 2
+NVIDIA-JR2016939,152000,241500,USD,year,US base salary Level 3
+NVIDIA-JR2016276,108000,178250,USD,year,US base salary Level 1
+NVIDIA-JR2016276,124000,195500,USD,year,US base salary Level 2
+plus-2-d1b8ecc2-dfc2-4613-81ca-02d90776c618,150000,250000,USD,year,US base salary
+plus-2-f4fc6b45-6c2d-4d09-aece-fd046eb4b81b,130000,200000,USD,year,US base salary
+plus-2-89a2ec90-547f-4ec2-8476-3985353c17d6,160000,200000,USD,year,US base salary
+plus-2-4572f534-2f3c-4d4c-9fb0-55838bf7795f,130000,200000,USD,year,US base salary
+scale-ai-greenhouse-4730836005,124000,162000,USD,year,US base salary
+thinking-machines-lab-ashby-9d863c78-80c0-44cd-a574-d1330e125398,300000,475000,USD,year,US base salary
+thinking-machines-lab-ashby-72fe46e4-a772-4ebb-a413-53e4f1a8273e,300000,475000,USD,year,US base salary
+TIKTOK-A07409A,128000,256000,USD,year,San Jose base salary
+BYTEDANCE-A123804,150000,316800,USD,year,San Jose base salary
+BYTEDANCE-A108842,150000,316800,USD,year,San Jose base salary
+BYTEDANCE-A181445,244800,450000,USD,year,San Jose base salary
+together-ai-greenhouse-5211582007,150000,160000,USD,year,US base salary
+xai-greenhouse-5193037007,180000,440000,USD,year,US base salary

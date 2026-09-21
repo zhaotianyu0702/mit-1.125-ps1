@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Career Compass · US New Grad Roles</title>
+  <meta name="description" content="Find your starting point in AI. Understand role types, explore jobs around your background and preferences, and build a source-backed preparation plan.">
+  <meta name="theme-color" content="#132844">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./journey.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to results</a>
+  <header class="topbar">
+    <a class="brand" href="#guide" data-view="guide" aria-label="AI Career Compass home"><span class="brand-mark" aria-hidden="true">✳</span><span>AI Career<span class="brand-light">Compass</span></span></a>
+    <nav aria-label="Main navigation"><button data-view="guide" class="nav">My compass</button><button data-view="explore" class="nav active">Explore jobs</button><button data-view="insights" class="nav">Market insights</button><button data-view="compare" class="nav">Compare <span id="compare-count" class="nav-count">0</span></button><button data-view="methodology" class="nav">Data & methodology</button></nav>
+    <span class="edition">US / NEW GRAD</span>
+  </header>
+  <div class="page-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">YOUR FIRST ROLE IN AI</p><h1 id="page-title">Find your direction.</h1><p class="intro-copy">Explore US AI roles for new graduates, with the requirements in plain sight.</p></div>
+      <div class="snapshot"><span class="snapshot-icon" aria-hidden="true">◷</span><div><strong id="snapshot-date">Preparing verified snapshot</strong><span>Public employer sources <button class="inline-link" data-view="methodology">How we verify</button></span></div></div>
+    </section>
+    <section id="summary" class="summary-grid" aria-label="Current sample summary"></section>
+    <section class="workspace">
+      <aside id="filters" class="filters" aria-label="Filter jobs">
+        <div class="filter-heading"><h2>Refine your search</h2><button class="text-button" id="reset">Reset</button><button id="close-filters" class="icon-button mobile-only" aria-label="Close filters">×</button></div>
+        <label class="search-label" for="search">Search</label><div class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Role, company, skill…" autocomplete="off"></div>
+        <div id="filter-fields"></div>
+        <div class="filter-footnote"><strong>Evidence, not a match score.</strong><p>Unknown requirements stay visible unless you choose to exclude them.</p><button class="inline-link" data-view="methodology">Read our inclusion rules</button></div>
+      </aside>
+      <main id="main" tabindex="-1">
+        <div id="toolbar" class="toolbar"><div><p class="eyebrow" id="view-eyebrow">EXPLORE OPPORTUNITIES</p><h2 id="results-title">Verifying the sample</h2><p id="result-subtitle" class="muted">Checking published job requirements against our inclusion rules.</p></div><div class="toolbar-actions"><button id="mobile-filters" class="button mobile-only">Filters</button><button id="export" class="button">↓ Export CSV</button><button id="share" class="icon-button" aria-label="Copy a link to this view" title="Copy a link to this view">↗</button></div></div>
+        <div id="active-filters" class="active-filters" aria-label="Active filters"></div>
+        <div id="view-content"><div class="loading">Loading the public job snapshot…</div></div>
+      </main>
+    </section>
+    <footer><span>AI Career Compass <span class="footer-separator">/</span> Built for graduates, career centers & student communities.</span><button class="inline-link" data-view="methodology">Sources, definitions & limitations</button></footer>
+  </div>
+  <div id="compare-tray" class="compare-tray" hidden></div>
+  <dialog id="job-dialog" aria-labelledby="dialog-title"><div id="job-detail"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p>This site needs JavaScript for filtering. <a href="./downloads/jobs.csv">Download the CSV dataset</a>.</p></noscript>
+</body>
+</html>

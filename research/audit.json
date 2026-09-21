@@ -1,0 +1,55 @@
+{
+  "auditedAt": "2026-09-21",
+  "scope": "Independent audit of the three source slices; source JSON files were not modified.",
+  "sourceFiles": [
+    "research/greenhouse.json",
+    "research/large_employers.json",
+    "research/other_employers.json"
+  ],
+  "summary": {
+    "sourceJobs": 29,
+    "keep": 23,
+    "exclude": 3,
+    "correct": 3,
+    "decisionCountsNote": "correct is an overlay on records that otherwise remain keepable; the 23 keepable records include the 3 records requiring field corrections.",
+    "keyFindings": [
+      "Both Mach Industries GNC/software postings are classical autonomy, controls, navigation, estimation, and simulation roles; their JDs do not show ML/model work or an AI application layer, so they should be excluded from the AI sample.",
+      "Waymo 7488508 has a PhD New Grad title but the body requires 5+ years of ML experience, lists Master's as minimum, and PhD as preferred; exclude from the default new-graduate set.",
+      "PlusAI Senior Machine Learning Engineer, Simulation and Senior Simulation Software Engineer both contain direct deep-learning or LLM/agent duties and should remain AI roles.",
+      "NVIDIA Workday canApply=true and an Apply route are current availability evidence; an old acceptance/target date shown in page metadata is not a hard deadline unless the posting labels it as one."
+    ]
+  },
+  "audits": [
+    {"id":"newsbreak-greenhouse-4700278006","decision":"keep","sourceEvidence":"JD states recent graduate, degree recently completed or within six months, and no professional experience required; responsibilities build LLM/agent advertising systems.","corrections":[]},
+    {"id":"newsbreak-greenhouse-4694899006","decision":"keep","sourceEvidence":"Title says New Grad; JD accepts recent graduate or about two years experience and describes AI growth-intelligence engineering.","corrections":[]},
+    {"id":"newsbreak-greenhouse-4615879006","decision":"keep","sourceEvidence":"JD owns offline/online model training, serving, monitoring, features, and pipelines. It explicitly gives Bachelor's plus 2+ years OR Master's/PhD.","corrections":["Preserve two qualification paths; do not expose the Master's/PhD alternative as equivalent to a Bachelor's zero-experience path."]},
+    {"id":"id.me-greenhouse-7986505003","decision":"keep","sourceEvidence":"JD requires a Master's graduating May/June 2027 and directly assigns fraud ML solutions, detection models, and experiments.","corrections":[]},
+    {"id":"together-ai-greenhouse-5211582007","decision":"keep","sourceEvidence":"JD is a 2027 new-grad role and placement spans Machine Learning, Infrastructure, and Inference teams; AI/infra fit is conditional on team placement.","corrections":["Keep the conditional team-placement caveat visible in the qualification or review note."]},
+    {"id":"scale-ai-greenhouse-4730836005","decision":"keep","sourceEvidence":"Full JD lists RL/post-training pipelines, model evaluation infrastructure, agentic AI, RAG, ML matching, and AI infrastructure projects; graduation is Fall 2026 or Spring 2027.","corrections":[]},
+    {"id":"nuro-greenhouse-7351066","decision":"keep","sourceEvidence":"Title is AI Platform - New Grad; JD targets Bachelor's/Master's candidates graduating before July 2026 and describes autonomy/model platform software.","corrections":[]},
+    {"id":"waymo-greenhouse-7488508","decision":"exclude","sourceEvidence":"Title says PhD, New Grad, but body requires 5+ years of ML experience, lists Master's as minimum, and places PhD in preferred qualifications.","corrections":["Set newgradStatus to unclear or excluded from default new-grad statistics; retain only in an exception/audit view if desired.","Do not infer a Master's new-grad path from the title."]},
+    {"id":"mach-industries-greenhouse-4390274009","decision":"exclude","sourceEvidence":"JD assigns embedded/real-time software, autonomy applications, simulation/testing, and GNC integration; no ML model, learned system, or AI application responsibility is stated.","corrections":["Remove from AI-role jobs; coverage may retain it as a reviewed non-qualifying new-graduate role.","Do not classify as AI Applications solely because the platform is autonomous."]},
+    {"id":"mach-industries-greenhouse-4401441009","decision":"exclude","sourceEvidence":"JD assigns classical GNC algorithms, navigation filters, state estimation, Monte Carlo simulation, and flight testing; no ML/model responsibility is stated.","corrections":["Remove from AI-role jobs; coverage may retain it as a reviewed non-qualifying new-graduate role.","Do not classify classical controls, estimation, or simulation as AI without a direct learned-model or AI-system duty."]},
+
+    {"id":"NVIDIA-JR2016939","decision":"correct","sourceEvidence":"New College Grad 2026 title and JD concern neural-network inference, graph compilation, and distributed AI systems; Workday reported canApply=true and Full time.","corrections":["Explain any displayed old acceptance/target date as source metadata, not a hard deadline; retain only canApply=true/current Apply evidence for active status.","Keep MS/PhD qualification path and research/project evidence separate from industry experience."]},
+    {"id":"NVIDIA-JR2016276","decision":"correct","sourceEvidence":"New College Grad 2026 title and JD concern TensorRT/TensorRT-LLM inference; Workday reported canApply=true and Full time.","corrections":["Change qualification experienceType from industry when minYears=0 unless the full JD explicitly requires prior industry experience; zero should mean no stated full-time industry minimum.","If page metadata shows an old acceptance/target date, label it metadata rather than a hard deadline."]},
+    {"id":"NVIDIA-JR2011517","decision":"keep","sourceEvidence":"New College Grad 2026 title, MS/PhD minimum, and direct AI/ML and agentic circuit-design model duties; Workday reported canApply=true and Full time.","corrections":[]},
+    {"id":"NVIDIA-JR2010161","decision":"keep","sourceEvidence":"PhD New College Grad 2026 title and Research Scientist New Graduate description; ML training, fine-tuning, serving, scaling, and resilience are core.","corrections":[]},
+    {"id":"BYTEDANCE-A123804","decision":"keep","sourceEvidence":"San Jose regular role; Graduate/2026 Start PhD title and JD explicitly develop LLM, NLP, translation, chatbot, and multimodal AIGC models.","corrections":[]},
+    {"id":"NVIDIA-JR2019729","decision":"keep","sourceEvidence":"New College Grad 2026 title and deep-learning efficiency/model-optimization research duties.","corrections":[]},
+    {"id":"NVIDIA-JR2024900","decision":"keep","sourceEvidence":"PhD New College Grad 2026 title; posting describes networking research supporting scalable AI/ML systems.","corrections":[]},
+    {"id":"NVIDIA-JR2011473","decision":"keep","sourceEvidence":"PhD New College Grad 2026 title and robotics research at the stated AI/robotics intersection.","corrections":[]},
+    {"id":"NVIDIA-JR2012698","decision":"correct","sourceEvidence":"New College Grad 2026 generative-AI research title and AI model duties; Workday reported canApply=true and Full time.","corrections":["Clear deadline 2026-02-07 unless the source explicitly labels it a deadline; current text says it is an earlier acceptance/target date and cannot support a hard deadline.","Keep canApply=true and Apply-route evidence as current availability evidence, with a recheck caveat."]},
+    {"id":"NVIDIA-JR2012979","decision":"keep","sourceEvidence":"New College Grad 2026 PhD research title; JD explicitly combines AI, GPU computing, and EDA.","corrections":[]},
+    {"id":"NVIDIA-JR2011267","decision":"keep","sourceEvidence":"New College Grad 2026 title and deep-learning, neural-rendering, and image/video-generation research duties.","corrections":[]},
+    {"id":"NVIDIA-JR2016032","decision":"keep","sourceEvidence":"PhD New College Grad 2026 title; JD describes generative models for physical AI.","corrections":[]},
+    {"id":"BYTEDANCE-A108842","decision":"keep","sourceEvidence":"San Jose regular Graduate role; PhD graduate hiring and direct ML retrieval/recommendation algorithm duties.","corrections":[]},
+    {"id":"BYTEDANCE-A181445","decision":"keep","sourceEvidence":"San Jose regular PhD graduate role; JD directly advances multimodal understanding, reasoning, model performance, and efficiency.","corrections":[]},
+
+    {"id":"plus-2-d1b8ecc2-dfc2-4613-81ca-02d90776c618","decision":"keep","sourceEvidence":"Lever JD explicitly allows PhD new grad or Master's plus 3 years; duties cover BEV fusion, multimodal sensors, deep-learning pipelines, and perception models.","corrections":[]},
+    {"id":"plus-2-f4fc6b45-6c2d-4d09-aece-fd046eb4b81b","decision":"keep","sourceEvidence":"Lever JD explicitly allows PhD new grad or MS plus 3 years; duties cover deep-learning models, simulation, forecasting, and quantitative ML analysis.","corrections":[]},
+    {"id":"plus-2-89a2ec90-547f-4ec2-8476-3985353c17d6","decision":"keep","sourceEvidence":"Lever JD explicitly allows PhD new grad or MS plus 3 years; duties cover distributed ML workloads, PyTorch, experiment tracking, cloud, and ML infrastructure.","corrections":[]},
+    {"id":"plus-2-4572f534-2f3c-4d4c-9fb0-55838bf7795f","decision":"keep","sourceEvidence":"Lever JD explicitly allows PhD new grad or MS plus 3 years; duties require LLM-powered/agentic workflows, evaluation, and sim-to-real data systems.","corrections":[]},
+    {"id":"unity-jobs-JOBREQ-2616023","decision":"keep","sourceEvidence":"Official title says Machine Learning Engineer, New Grad; JD accepts recent graduate research/project experience and assigns ML pipelines, distributed training, and platform architecture.","corrections":["Verify the role-title/URL slug mismatch during final source refresh; use the exact title shown in the official detail page."]}
+  ]
+}
