@@ -12,6 +12,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --check dist/app.js && node --check dist/core.js && node --check dist/journey.js && node --check dist/matching.js
+      - run: node --check dist/app.js && node --check dist/core.js && node --check dist/analytics.js && node --check dist/matching.js
       - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: npm test

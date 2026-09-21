@@ -56,4 +56,11 @@ Public Greenhouse, Ashby and Lever board APIs are useful discovery inputs, but a
 
 `experienceLevel` labels recognizable seniority in the official title, with curated graduate evidence as a fallback. Senior/Staff/Leadership wording takes priority when a title also mentions graduates. Company-specific levels such as Engineer II/III are not translated into universal seniority. `unspecified` means no recognized label, not entry level.
 
-`experienceReferences` contains distinct year values recognized in the full description or curated pathways. References may be preferred, required, research-specific, conditional on a degree, or contextual. They never become a validated scalar minimum or qualification pathway by themselves. No experience ceiling limits collection. The beginner starting-point view retains explicit graduate roles, entry/new-grad labels, and unspecified titles without a recognized reference above two years; this is a transparent browsing preset, not eligibility certification.
+`experienceReferences` contains distinct year values recognized in the full description or curated pathways. References may be preferred, required, research-specific, conditional on a degree, or contextual. They never become a validated scalar minimum or qualification pathway by themselves. No experience ceiling limits collection. The visualizer independently filters title level and graduate evidence; no level or skill overlap certifies eligibility.
+
+
+## Visualizer analysis
+
+The default interface is an aggregate opportunity and skill visualizer. It does not rank applicants or provide an application workflow. Global filters define one common posting set for direction, seniority, location and skills.
+
+Skill frequencies count each canonical skill once per posting and include required, preferred and contextual mentions. The heatmap denominator is the number of filtered postings in each direction. A selected skill set covers postings mentioning at least one selected skill. A one-skill scenario measures the change in that count, not newly eligible jobs. Recommendations exclude selected skills and rank by posting mentions, then distinct company count. A suggested practice project is editorial learning guidance, not a source claim. The automated extraction vocabulary is limited; untracked and missing skills are not evidence of absence.

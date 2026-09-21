@@ -1,4 +1,16 @@
-# Current implementation direction — 2026-09-21 revision
+# Current implementation direction - 2026-09-21 visualizer revision
+
+The current product is a concise visualizer, not an application or job-listing workflow. The canonical dataset remains unchanged at 852 postings from 107 companies.
+
+The information architecture has two main tabs: `Opportunity landscape` (`#landscape`, default; legacy `#explore` and `#insights` redirect here) and `Skill lab` (`#skills`), with secondary `Data & method` (`#data`) for source links, CSVs, and assignment materials. Global controls are primary role direction, experience level (all seven levels), US region/state/remote, and graduate evidence (`all`, `explicit graduate`, `early career`).
+
+Landscape renders distributions by direction, experience, and region, plus a skill-demand matrix. Skill lab provides local-only skill chips, optionally remembered on the device, and reports the fraction/count of filtered postings mentioning at least one selected skill by role. `Try one skill` compares before/after posting coverage. Missing-skill recommendations rank by posting mentions and then company breadth, with a small suggested learning-project template. These measures describe text mention coverage; they do not produce eligibility, match score, readiness, proficiency, hiring-probability, or success predictions. Unknown skill is not skill absence, and title level is not graduate status.
+
+The interface contains no job cards, apply/save/compare actions, shortlist, or wizard. Selected skills remain local and are not sent to a server. Methodology and reflection retain source provenance, data-quality caveats, the non-representative ATS sample limitation, and earlier Bay Area LLM-biased discovery provenance.
+
+The generator and six-slide presentation document these actual controls and a five-minute demo. The canonical snapshot and data collection contract remain the source of truth.
+
+# Prior implementation direction - historical context
 
 The user requested a guided, personal and more interactive experience for students who are unfamiliar with AI job searching. The primary flow is now a four-step profile, plain-language role discovery, evidence-based matching, skill/location what-if scenarios, and a downloadable exploration plan. The job directory, comparison and data charts remain supporting tools.
 

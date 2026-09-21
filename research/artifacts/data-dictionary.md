@@ -1,31 +1,38 @@
 # Data dictionary
 
-Generated from snapshot `2026-09-21` with 852 jobs and 107 companies.
+Generated from snapshot `2026-09-21` with 852 postings and 107 companies.
 
-The canonical record is one posting. One posting can have multiple qualification paths, skills, salary ranges, or US locations.
+The unit is one unique public job posting. A posting may contain multiple locations, qualification paths, skills, or salary ranges.
+
+## Product measures
+
+- `direction distribution`: postings grouped by primary `roleFamily` or selected direction.
+- `experience distribution`: postings grouped by the seven `experienceLevel` values; unspecified remains visible.
+- `region distribution`: one count per listed state and a separate `Remote - US` bucket; totals can overlap.
+- `skill-demand matrix`: postings mentioning a skill divided by filtered postings in the direction; one count per cell.
+- `skill lab coverage`: filtered postings mentioning at least one selected skill, shown as count and fraction by role.
+- `missing-skill recommendation`: unselected skills ranked by posting mentions, then company breadth; a learning suggestion.
+
+## Snapshot fields
 
 | Field | Meaning |
 | --- | --- |
 | `id` | Stable company-source identifier used for deduplication. |
-| `company` | Employer name from the official source. |
-| `title` | Exact official posting title. |
-| `url` | Canonical official posting URL. |
-| `applyUrl` | Official application route. |
-| `source/sourceId` | ATS or company-careers source and its official identifier. |
-| `verifiedAt` | Last source check timestamp. |
-| `roleFamily` | One primary AI function for mutually exclusive category charts. |
-| `tags` | Additional technical directions such as LLM, CV, or inference. |
-| `locations` | One or more source-listed US city/state/country objects. |
-| `workplace/remote` | Stated work arrangement; unknown remains Not stated. |
-| `newgradStatus` | explicit, zero-experience, early-career (0-2 industry years), or unclear (graduate eligibility not established). |
-| `experienceLevel/Basis/Evidence` | Recognized title seniority or curated graduate fallback, with provenance; unspecified is not entry level. |
-| `experienceReferences` | Year values mentioned in source text or curated paths, not a validated minimum. Required/preferred and degree alternatives need review. |
-| `qualificationPaths` | Structured degree and experience alternatives; minYears is zero only when the source explicitly says no experience is needed. |
-| `skills` | Skill name, required/preferred/mentioned level, and alternativeGroup for OR language. |
-| `salary` | Disclosed base range with currency, period, and scope; bonus/equity are not merged. |
-| `sponsorship` | Only the source's public statement: Supported, Not offered, Conditional, or Not stated. |
-| `summary/evidence fields` | Short factual paraphrases supporting role, AI, qualification, and review decisions. |
-| `coverage` | Company-level source check; inaccessible is not treated as no qualifying jobs. |
-| `profile/matching` | The browser profile is opt-in and local. Statuses use recorded requirements and unknowns; skills and preferences explain preparation and order, not recruiting probability. |
+| `company / title / url / applyUrl` | Employer, exact source title, canonical official posting URL, and official application route. |
+| `source / sourceId / verifiedAt` | ATS or company-careers provenance and latest source check timestamp. |
+| `roleFamily / tags` | Primary direction used for one-category charts, plus additional technical directions. |
+| `locations / locationText / remote / workplace` | Source-listed US places and stated work arrangement; state and remote counts can overlap. |
+| `newgradStatus / newgradEvidence` | Graduate evidence group: explicit, zero-experience, early-career, or unclear, with source explanation. |
+| `experienceLevel / experienceLevelBasis / experienceReferences` | One of seven display levels and its evidence; year references are not validated minimums. |
+| `skills` | Mentioned skill names with required, preferred, or mentioned level. Skill lab counts a posting once per selected-skill set. |
+| `qualificationPaths` | Degree and experience alternatives; unknown values stay unknown and are not converted to zero. |
+| `salary / sponsorship` | Disclosed base-pay ranges and public sponsorship statement; missing disclosure is not a negative answer. |
+| `summary / aiEvidence / qualificationNote / reviewNote` | Short factual evidence and review/provenance notes retained for source-grounded interpretation. |
+| `coverage` | Company-level source check; inaccessible or incomplete sources are not treated as no qualifying jobs. |
+| `meta` | Snapshot date, scope, unit, partitions, review description, and excluded count for reproducibility. |
 
-Unknown values remain explicit (`null`, empty arrays, or `Not stated`) and are never inferred as negative answers or zero experience.
+Unknown values remain explicit (`null`, empty arrays, `Not stated`, or `unclear`). Absence of a skill mention does not establish that the job does not require it.
+
+## Provenance
+
+The snapshot has 198 source checks and 23 postings with disclosed salary. Official URLs and review labels are preserved in `dist/downloads/jobs.csv` and the published data snapshot.

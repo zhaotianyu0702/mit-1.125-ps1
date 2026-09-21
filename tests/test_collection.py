@@ -133,6 +133,35 @@ class CollectionScreenTests(unittest.TestCase):
         self.assertEqual(path["degrees"], [])
         self.assertEqual(result["experienceReferences"], [2])
 
+    def test_go_language_requires_programming_context(self):
+        for content in (
+            "Build backend services in Go and Python.",
+            "Experience with Golang and distributed systems.",
+            "Strong programming skills in Go programming and Rust.",
+            "Python, Go, and Rust are used in our model platform.",
+        ):
+            with self.subTest(content=content):
+                result = self.screen(job(content="Build and evaluate machine learning models for production inference. " + content))
+                self.assertIsNotNone(result)
+                self.assertIn("Go", [skill["name"] for skill in result["skills"]])
+
+    def test_go_prose_is_not_a_programming_skill(self):
+        for content in (
+            "Go beyond the usual expectations for machine learning systems.",
+            "Partner with go-to-market teams on AI products.",
+            "Go live with the new inference service.",
+            "Experience with go-to-market teams.",
+            "Python skills. Go beyond expectations.",
+            "Python and Go-to-market experience.",
+            "Strong Python skills help us Go beyond the baseline.",
+            "Technologies: Python; go-to-market analytics.",
+            "Experience with Go-to-market teams.",
+        ):
+            with self.subTest(content=content):
+                result = self.screen(job(content="Build and evaluate machine learning models for production inference. " + content))
+                self.assertIsNotNone(result)
+                self.assertNotIn("Go", [skill["name"] for skill in result["skills"]])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,770 @@
+{
+  "version": 1,
+  "rule": "collector.go_language",
+  "sourceCaches": {
+    "qa/source-cache/bridgebio.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/elastic.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/idmeuniversityrecruiting.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/togetherai.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/nextdoor.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/gitlab.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/airbnb.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/block.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/samsara.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/peloton.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/snorkelai.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/anthropic.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/brex.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/stripe.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/gusto.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/toast.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/mongodb.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/nuro.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/lyft.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/discord.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/roblox.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/gleanwork.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/asana.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/faire.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/grafanalabs.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/doordashusa.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/duolingo.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/mercury.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/lattice.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/thealleninstitute.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/newsbreak.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/xai.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/ripple.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/cloudflare.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/epicgames.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/komodohealth.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/scaleai.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/coinbase.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/pagerduty.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/waymo.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/affirm.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/okta.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/motional.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/chime.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/opentable.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/datadog.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/newrelic.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/twilio.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/reddit.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/figure.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/instacart.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/roku.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/pinterest.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/flexport.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/sigmacomputing.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/figma.json": "official cached board payload; used for skill text matching only",
+    "qa/source-cache/databricks.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/synthesia.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/koahlabs.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/posthog.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/cursor.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/thinkingmachines.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/primeintellect.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/quantcast.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/openai.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/handshake.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/mach9.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/render.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/genmo.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/crusoe.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/modal.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/pinecone.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/runway.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/essentialai.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/coactive.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/deepgram.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/tavus.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/hightouch.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/fireworks.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/mercor.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/harvey.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/cartesia.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/nomic.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/ramp.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/suno.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/atlan.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/poolside.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/foxglove.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/character.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/perplexity.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/replit.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/netic.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/cohere.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/weaviate.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/rula.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/nexxa.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/docker.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/anyscale.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/aida.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/cerebras.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/rhoda-ai.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/baseten.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/mistral.ai.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/hex.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/outschool.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/notable.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/reflectionai.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/writer.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/cognition.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/lumaai.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/epsilon-health.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/elevenlabs.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/supabase.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/physicalintelligence.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/distyl.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/liquid-ai.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/specter.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/preference-model.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/linear.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/lambda.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/notion.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/lavendo.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/embedding-vc.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/motherduck.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/pika.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/sprinter-health.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/onyx.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/sierra.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/plenful.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/decagon.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/railway.json": "official cached board payload; used for skill text matching only",
+    "qa/ashby-cache/zapier.json": "official cached board payload; used for skill text matching only"
+  },
+  "partitions": {
+    "greenhouse": {
+      "file": "research/broad_greenhouse.json",
+      "removedFalsePositiveGo": [
+        {
+          "id": "anthropic-greenhouse-5192805008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5387733008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5021015008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5390811008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5116927008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5196852008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5411560008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5116820008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5387754008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5390894008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5390890008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5277834008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5390865008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5418323008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5416882008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5061517008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5390966008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "anthropic-greenhouse-5419868008",
+          "sourceCache": "qa/source-cache/anthropic.json"
+        },
+        {
+          "id": "scaleai-greenhouse-4732798005",
+          "sourceCache": "qa/source-cache/scaleai.json"
+        },
+        {
+          "id": "snorkelai-greenhouse-6009489004",
+          "sourceCache": "qa/source-cache/snorkelai.json"
+        },
+        {
+          "id": "roblox-greenhouse-8055512",
+          "sourceCache": "qa/source-cache/roblox.json"
+        },
+        {
+          "id": "databricks-greenhouse-8614863002",
+          "sourceCache": "qa/source-cache/databricks.json"
+        },
+        {
+          "id": "reddit-greenhouse-8127022",
+          "sourceCache": "qa/source-cache/reddit.json"
+        },
+        {
+          "id": "reddit-greenhouse-8126982",
+          "sourceCache": "qa/source-cache/reddit.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-7456678",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-8113186",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-7580407",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-7760003",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-8205488",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-8044246",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-7750664",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-7980080",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-7967848",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-8013249",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-8139942",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-7488724",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-7962110",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-8140067",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "doordashusa-greenhouse-5575224",
+          "sourceCache": "qa/source-cache/doordashusa.json"
+        },
+        {
+          "id": "airbnb-greenhouse-7708224",
+          "sourceCache": "qa/source-cache/airbnb.json"
+        },
+        {
+          "id": "lyft-greenhouse-8639200002",
+          "sourceCache": "qa/source-cache/lyft.json"
+        },
+        {
+          "id": "stripe-greenhouse-8044460",
+          "sourceCache": "qa/source-cache/stripe.json"
+        },
+        {
+          "id": "twilio-greenhouse-8141644",
+          "sourceCache": "qa/source-cache/twilio.json"
+        },
+        {
+          "id": "figma-greenhouse-5707966004",
+          "sourceCache": "qa/source-cache/figma.json"
+        },
+        {
+          "id": "figma-greenhouse-5976930004",
+          "sourceCache": "qa/source-cache/figma.json"
+        },
+        {
+          "id": "figma-greenhouse-6112112004",
+          "sourceCache": "qa/source-cache/figma.json"
+        },
+        {
+          "id": "figma-greenhouse-6164379004",
+          "sourceCache": "qa/source-cache/figma.json"
+        },
+        {
+          "id": "figma-greenhouse-5807963004",
+          "sourceCache": "qa/source-cache/figma.json"
+        },
+        {
+          "id": "figma-greenhouse-6008752004",
+          "sourceCache": "qa/source-cache/figma.json"
+        },
+        {
+          "id": "figma-greenhouse-5691886004",
+          "sourceCache": "qa/source-cache/figma.json"
+        },
+        {
+          "id": "figma-greenhouse-5551730004",
+          "sourceCache": "qa/source-cache/figma.json"
+        },
+        {
+          "id": "figma-greenhouse-5551532004",
+          "sourceCache": "qa/source-cache/figma.json"
+        },
+        {
+          "id": "asana-greenhouse-8097669",
+          "sourceCache": "qa/source-cache/asana.json"
+        },
+        {
+          "id": "okta-greenhouse-7961356",
+          "sourceCache": "qa/source-cache/okta.json"
+        },
+        {
+          "id": "okta-greenhouse-7917002",
+          "sourceCache": "qa/source-cache/okta.json"
+        },
+        {
+          "id": "samsara-greenhouse-7578952",
+          "sourceCache": "qa/source-cache/samsara.json"
+        },
+        {
+          "id": "samsara-greenhouse-8024110",
+          "sourceCache": "qa/source-cache/samsara.json"
+        },
+        {
+          "id": "samsara-greenhouse-7721193",
+          "sourceCache": "qa/source-cache/samsara.json"
+        },
+        {
+          "id": "samsara-greenhouse-8091855",
+          "sourceCache": "qa/source-cache/samsara.json"
+        },
+        {
+          "id": "samsara-greenhouse-7731751",
+          "sourceCache": "qa/source-cache/samsara.json"
+        },
+        {
+          "id": "samsara-greenhouse-7266357",
+          "sourceCache": "qa/source-cache/samsara.json"
+        },
+        {
+          "id": "faire-greenhouse-8633652002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "faire-greenhouse-8801507002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "faire-greenhouse-8610263002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "faire-greenhouse-7953217002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "faire-greenhouse-8660923002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "faire-greenhouse-8618124002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "faire-greenhouse-8731172002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "faire-greenhouse-8747498002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "faire-greenhouse-8801834002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "faire-greenhouse-8426107002",
+          "sourceCache": "qa/source-cache/faire.json"
+        },
+        {
+          "id": "chime-greenhouse-8586430002",
+          "sourceCache": "qa/source-cache/chime.json"
+        },
+        {
+          "id": "nextdoor-greenhouse-8198106",
+          "sourceCache": "qa/source-cache/nextdoor.json"
+        },
+        {
+          "id": "nextdoor-greenhouse-7948362",
+          "sourceCache": "qa/source-cache/nextdoor.json"
+        },
+        {
+          "id": "nextdoor-greenhouse-6005888",
+          "sourceCache": "qa/source-cache/nextdoor.json"
+        },
+        {
+          "id": "newsbreak-greenhouse-4683873006",
+          "sourceCache": "qa/source-cache/newsbreak.json"
+        },
+        {
+          "id": "togetherai-greenhouse-5179372007",
+          "sourceCache": "qa/source-cache/togetherai.json"
+        },
+        {
+          "id": "togetherai-greenhouse-5088817007",
+          "sourceCache": "qa/source-cache/togetherai.json"
+        },
+        {
+          "id": "togetherai-greenhouse-5140763007",
+          "sourceCache": "qa/source-cache/togetherai.json"
+        },
+        {
+          "id": "nuro-greenhouse-6516915",
+          "sourceCache": "qa/source-cache/nuro.json"
+        },
+        {
+          "id": "nuro-greenhouse-8097555",
+          "sourceCache": "qa/source-cache/nuro.json"
+        },
+        {
+          "id": "nuro-greenhouse-8122990",
+          "sourceCache": "qa/source-cache/nuro.json"
+        },
+        {
+          "id": "roku-greenhouse-8131362",
+          "sourceCache": "qa/source-cache/roku.json"
+        },
+        {
+          "id": "ripple-greenhouse-7961902",
+          "sourceCache": "qa/source-cache/ripple.json"
+        },
+        {
+          "id": "ripple-greenhouse-7961914",
+          "sourceCache": "qa/source-cache/ripple.json"
+        },
+        {
+          "id": "elastic-greenhouse-8114222",
+          "sourceCache": "qa/source-cache/elastic.json"
+        }
+      ],
+      "addedTruePositiveGo": [
+        {
+          "id": "gleanwork-greenhouse-4605446005",
+          "sourceCache": "qa/source-cache/gleanwork.json"
+        },
+        {
+          "id": "reddit-greenhouse-7747244",
+          "sourceCache": "qa/source-cache/reddit.json"
+        },
+        {
+          "id": "instacart-greenhouse-8053797",
+          "sourceCache": "qa/source-cache/instacart.json"
+        },
+        {
+          "id": "lyft-greenhouse-8689127002",
+          "sourceCache": "qa/source-cache/lyft.json"
+        },
+        {
+          "id": "lyft-greenhouse-8688633002",
+          "sourceCache": "qa/source-cache/lyft.json"
+        },
+        {
+          "id": "lyft-greenhouse-8430552002",
+          "sourceCache": "qa/source-cache/lyft.json"
+        },
+        {
+          "id": "lyft-greenhouse-8421650002",
+          "sourceCache": "qa/source-cache/lyft.json"
+        },
+        {
+          "id": "okta-greenhouse-8092242",
+          "sourceCache": "qa/source-cache/okta.json"
+        },
+        {
+          "id": "okta-greenhouse-7305744",
+          "sourceCache": "qa/source-cache/okta.json"
+        },
+        {
+          "id": "samsara-greenhouse-8055245",
+          "sourceCache": "qa/source-cache/samsara.json"
+        }
+      ],
+      "missingCache": [],
+      "counts": {
+        "removed": 86,
+        "added": 10,
+        "missingCache": 0
+      }
+    },
+    "ashby": {
+      "file": "research/broad_ashby.json",
+      "removedFalsePositiveGo": [
+        {
+          "id": "cerebras-ashby-ef15b7be-2fa3-4343-81aa-47ef65171af0",
+          "sourceCache": "qa/ashby-cache/cerebras.json"
+        },
+        {
+          "id": "cerebras-ashby-80775253-7fba-4a3b-87ee-0e70ce8e995c",
+          "sourceCache": "qa/ashby-cache/cerebras.json"
+        },
+        {
+          "id": "cerebras-ashby-cf45f13c-b6a9-4df2-b6c3-eefea14a024f",
+          "sourceCache": "qa/ashby-cache/cerebras.json"
+        },
+        {
+          "id": "cerebras-ashby-af87f29d-7ae1-4306-b6b0-61b21971b456",
+          "sourceCache": "qa/ashby-cache/cerebras.json"
+        },
+        {
+          "id": "fireworks-ashby-4a5dbfe4-b0d5-4394-a94b-42345fb425b4",
+          "sourceCache": "qa/ashby-cache/fireworks.json"
+        },
+        {
+          "id": "harvey-ashby-1321b20d-d6f8-4bdb-b2de-ec33c0948b53",
+          "sourceCache": "qa/ashby-cache/harvey.json"
+        },
+        {
+          "id": "lumaai-ashby-90734653-886d-4f6f-8af8-fb130d5400ab",
+          "sourceCache": "qa/ashby-cache/lumaai.json"
+        },
+        {
+          "id": "perplexity-ashby-5c561bd0-c180-4ee1-b079-647f3c20bdc0",
+          "sourceCache": "qa/ashby-cache/perplexity.json"
+        },
+        {
+          "id": "primeintellect-ashby-8bd52610-175c-42a7-a7cd-b29c45f9d305",
+          "sourceCache": "qa/ashby-cache/primeintellect.json"
+        },
+        {
+          "id": "primeintellect-ashby-abfa70f7-a6f1-44d2-a6c1-560e1c8477d4",
+          "sourceCache": "qa/ashby-cache/primeintellect.json"
+        },
+        {
+          "id": "primeintellect-ashby-05e4b76b-2570-4c89-baf2-9833fff7378f",
+          "sourceCache": "qa/ashby-cache/primeintellect.json"
+        },
+        {
+          "id": "thinkingmachines-ashby-a9469410-04c7-4e6a-b8b4-64c15933a2bf",
+          "sourceCache": "qa/ashby-cache/thinkingmachines.json"
+        },
+        {
+          "id": "thinkingmachines-ashby-3efb6896-4840-4f90-8798-2ce49fa146e5",
+          "sourceCache": "qa/ashby-cache/thinkingmachines.json"
+        },
+        {
+          "id": "openai-ashby-bba18df5-f30f-4d2c-909c-30e651f95579",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-b9dee2a0-9bb3-447e-9bce-2b1bed784e5b",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-0b57e309-426d-4f5c-a28c-6dd941b84703",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-793964ae-d40b-45e3-9798-84f4b6da48c5",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-f1567543-4de1-468e-9054-bc5fd21a55e2",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-7f299784-2c75-4d73-99e5-1e5043ec7b48",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-6897d024-88c1-43ed-adb8-5d2fc5eec984",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-34c2ed3f-840f-4a68-9a00-0a0606660abf",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-ab9adae3-54b5-457e-9938-77d3278d91a5",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-df3edefb-6a8b-4ef6-b183-b3f96051783e",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-9d72171e-2630-4347-83a1-263178644282",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-4acc3515-887f-4bc9-8c2a-00f36ae480c3",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-ca9e0aeb-6df1-4b73-8ec0-2e9e124712f1",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-c1a28411-266b-487b-8ef3-03efb254fc36",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "openai-ashby-38e3c4bf-a632-405e-9619-b87382ca2472",
+          "sourceCache": "qa/ashby-cache/openai.json"
+        },
+        {
+          "id": "sprinter-health-ashby-a97cea90-07f6-4633-b797-f82587af4046",
+          "sourceCache": "qa/ashby-cache/sprinter-health.json"
+        },
+        {
+          "id": "crusoe-ashby-933bcbb7-14f6-4058-8f28-d4354f507ed2",
+          "sourceCache": "qa/ashby-cache/crusoe.json"
+        },
+        {
+          "id": "crusoe-ashby-9f83a7b1-5cd3-454d-b477-00107001f133",
+          "sourceCache": "qa/ashby-cache/crusoe.json"
+        },
+        {
+          "id": "crusoe-ashby-0aae94c4-9fe6-4275-be3c-6c397345f7f4",
+          "sourceCache": "qa/ashby-cache/crusoe.json"
+        },
+        {
+          "id": "preference-model-ashby-96e7f7d7-3fb5-48d8-ba18-a7ebce54a9be",
+          "sourceCache": "qa/ashby-cache/preference-model.json"
+        },
+        {
+          "id": "baseten-ashby-e71e97a8-6367-4050-b6a9-42ce62ec78f1",
+          "sourceCache": "qa/ashby-cache/baseten.json"
+        },
+        {
+          "id": "baseten-ashby-b13ec426-d09d-4122-8112-cf25adbd7d60",
+          "sourceCache": "qa/ashby-cache/baseten.json"
+        },
+        {
+          "id": "baseten-ashby-64181d8a-960d-4aa4-8d98-3cb22b1e0616",
+          "sourceCache": "qa/ashby-cache/baseten.json"
+        },
+        {
+          "id": "modal-ashby-9fadb51f-ce11-41b1-84d5-470e66cc8ee9",
+          "sourceCache": "qa/ashby-cache/modal.json"
+        },
+        {
+          "id": "lavendo-ashby-5ff4fefd-0ba7-4320-a575-d2189d91add1",
+          "sourceCache": "qa/ashby-cache/lavendo.json"
+        },
+        {
+          "id": "cohere-ashby-e4603bb7-5bbe-4f73-9556-02c93f78b2af",
+          "sourceCache": "qa/ashby-cache/cohere.json"
+        },
+        {
+          "id": "rula-ashby-f2424794-c819-4f53-a8af-83322e617acb",
+          "sourceCache": "qa/ashby-cache/rula.json"
+        },
+        {
+          "id": "rula-ashby-d477da0d-6d23-4166-8afd-6a6a334f4710",
+          "sourceCache": "qa/ashby-cache/rula.json"
+        },
+        {
+          "id": "rula-ashby-f9a905bb-e477-4679-923f-ba8aada1b9de",
+          "sourceCache": "qa/ashby-cache/rula.json"
+        },
+        {
+          "id": "docker-ashby-a8adff9c-a58c-4881-95a2-b32115e375b3",
+          "sourceCache": "qa/ashby-cache/docker.json"
+        },
+        {
+          "id": "elevenlabs-ashby-a3097257-a07a-4a7e-b9fe-b8555c1a0fa7",
+          "sourceCache": "qa/ashby-cache/elevenlabs.json"
+        },
+        {
+          "id": "mercor-ashby-bebd78ce-5f12-46e9-a285-674e33838211",
+          "sourceCache": "qa/ashby-cache/mercor.json"
+        },
+        {
+          "id": "deepgram-ashby-9a030b32-d671-43e0-a221-4653bb73ba29",
+          "sourceCache": "qa/ashby-cache/deepgram.json"
+        },
+        {
+          "id": "deepgram-ashby-c91de352-9f25-479e-8877-fbea9576a52c",
+          "sourceCache": "qa/ashby-cache/deepgram.json"
+        },
+        {
+          "id": "deepgram-ashby-0b7494b3-a91e-4540-9439-5b10a1e5b391",
+          "sourceCache": "qa/ashby-cache/deepgram.json"
+        }
+      ],
+      "addedTruePositiveGo": [
+        {
+          "id": "cerebras-ashby-708b4906-c873-40a1-9b6d-71b6fdda326e",
+          "sourceCache": "qa/ashby-cache/cerebras.json"
+        },
+        {
+          "id": "crusoe-ashby-71d28215-cd90-4dc0-9113-df1dbb1afa26",
+          "sourceCache": "qa/ashby-cache/crusoe.json"
+        },
+        {
+          "id": "crusoe-ashby-62476ae3-87b9-41df-9d3b-3d0e95bdb930",
+          "sourceCache": "qa/ashby-cache/crusoe.json"
+        },
+        {
+          "id": "crusoe-ashby-3552eaf3-2c1c-425e-85ed-7e9fcad6642c",
+          "sourceCache": "qa/ashby-cache/crusoe.json"
+        },
+        {
+          "id": "cohere-ashby-41f23dad-9da2-451a-bd1e-a1800437cb64",
+          "sourceCache": "qa/ashby-cache/cohere.json"
+        },
+        {
+          "id": "cohere-ashby-8b6696e1-f1c4-4010-bde9-3cec1340a2a6",
+          "sourceCache": "qa/ashby-cache/cohere.json"
+        },
+        {
+          "id": "cohere-ashby-5806a521-8584-4bbe-b60a-49031b919251",
+          "sourceCache": "qa/ashby-cache/cohere.json"
+        }
+      ],
+      "missingCache": [],
+      "counts": {
+        "removed": 48,
+        "added": 7,
+        "missingCache": 0
+      }
+    }
+  }
+}

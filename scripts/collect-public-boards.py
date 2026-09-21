@@ -33,6 +33,26 @@ WORD_YEARS = re.compile(r'\b(one|two|three|four|five|six|seven|eight|nine|ten)(?
 WORD_NUMBERS = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10}
 SKILLS = ['Python','C++','Java','Go','SQL','PyTorch','TensorFlow','JAX','LLM','NLP','computer vision','deep learning','machine learning','Kubernetes','Docker','CUDA','Spark','Ray','AWS','GCP','RAG','reinforcement learning']
 
+def go_language(body):
+    """Recognize Go as a programming language, not an ordinary English verb."""
+    if re.search(r'\bGolang\b', body, re.I):
+        return True
+    # Keep the language name's capitalization meaningful: lowercase "go" is
+    # overwhelmingly prose (go-to-market, go beyond, go live, etc.).
+    if re.search(r'\bGo\s+(?:programming|language|development|code|services?|microservices?)\b', body):
+        return True
+    if re.search(r'\b(?:written|developed|built|programmed)\s+(?:in|with|using)\s+Go(?![\w-])', body):
+        return True
+    if re.search(r'(?i:\b(?:experience|proficiency|familiarity|knowledge|skills?)\s+(?:with|in))\s+Go(?![\w-])', body):
+        return True
+    if re.search(r'(?i:\b(?:languages?|programming languages?|technologies|tech stack|stack)\s*[:\-]\s*)Go(?![\w-])', body):
+        return True
+    languages = r'(?:Python|Rust|Java|C\+\+|C#|TypeScript|JavaScript|Scala|Ruby|Kotlin|Swift|PHP|Perl)'
+    go_end = r'(?=\s*(?:,|/|and|or|\)|;|$))'
+    if re.search(rf'\b{languages}\s*(?:,|/|and|or)\s*Go(?![\w-]){go_end}|\bGo(?![\w-])\s*(?:,|/|and|or)\s*{languages}\b', body):
+        return True
+    return False
+
 def clean(value):
     # Greenhouse often HTML-escapes an entire HTML description.
     for _ in range(2):
@@ -131,7 +151,8 @@ def screen(item, job, already):
     years = sorted(set(years))
     skills=[]
     for skill in SKILLS:
-        if re.search(r'(?<!\w)'+re.escape(skill)+r'(?!\w)',body,re.I): skills.append({'name':skill,'level':'mentioned','alternativeGroup':None})
+        found = go_language(body) if skill == 'Go' else re.search(r'(?<!\w)'+re.escape(skill)+r'(?!\w)',body,re.I)
+        if found: skills.append({'name':skill,'level':'mentioned','alternativeGroup':None})
     # Complex education/experience alternatives are not guessed from a regex.
     # The discovery tier remains unclear until source-by-source pathway review.
     requirement_note = ('The source contains a '+str(min(years))+'-year experience reference; its required/preferred status and degree-specific alternatives need confirmation.' if years else 'No numeric experience floor was recognized by the automated screen. This does not establish a zero-experience pathway.')

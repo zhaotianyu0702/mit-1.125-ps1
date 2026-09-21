@@ -1,23 +1,21 @@
 # Five-minute demo script
 
-Use the live site and this sequence. The companion presentation has visible Previous/Next controls, a page number, arrow-key support, and mobile swipe.
+Use the deployed visualizer to demonstrate one student decision: which AI direction and skill to explore next.
 
-## 0:00-0:40 - Start with the guided path
-Open the welcome screen. Say: this is a starting guide for a beginner, not a prediction engine. The snapshot is a dated set of public US AI postings; full-time status is retained from source evidence where available. No account or resume is required.
+## 0:00-0:35 - Frame the sample
+Open Opportunity landscape. Say: this is a dated, source-backed sample of 852 public US AI postings from 107 companies. It describes the observed sample, not the entire labor market.
 
-## 0:40-1:35 - Four steps
-Walk through Your background, What interests you, What you've tried, and Your preferences. Enter degree, graduation, industry and research years, then choose role families, project skills, workplace, states, and learning priority. Explain that Remember on this device is an opt-in local browser setting.
+## 0:35-1:25 - Set the shared filters
+Use primary role direction, experience level, US region/state/remote, and graduate evidence. Start with All, then choose one direction and Explicit graduate. Point out that all charts update to the selected sample. Reset graduate evidence to All before exploring skills.
 
-## 1:35-2:25 - Read a personalized result
-Open a result card and point to aligned, confirm, or gap. Read the evidence reasons, matched skills, skill gaps, and unknowns. Aligned means the recorded basics fit; confirm means the source or profile leaves something unknown; gap means a stated condition conflicts. These labels do not mean interview or offer odds.
+## 1:25-2:20 - Read Opportunity landscape
+Show distributions by direction, experience, and region. Explain that state totals can overlap when one posting lists multiple places. Use the skill-demand matrix to answer which skills are mentioned across directions. This is mention coverage, not proficiency or eligibility.
 
-## 2:25-3:15 - Run two what-if actions
-Use What if I add a skill to compare current overlap with a new skill. The metric counts posting-skill connections, so one posting can contribute multiple connections. The snapshot mentions Python most often, but overlap is preparation guidance, not proof of proficiency. Then enable Explore every US location. The data includes 304 postings listing a non-CA state and 137 marked Remote-US, so a beginner can test a wider search before narrowing to one metro.
+## 2:20-3:55 - Run Skill lab
+Open Skill lab. Select local-only skill chips, optionally turn on Remember on this device, and show the fraction and count of filtered postings mentioning at least one selected skill by role. Add one skill to the selected set. Use Try one skill to show the before/after count of postings mentioning at least one selected skill. Choices stay in the browser and are not sent to a server.
 
-## 3:15-4:20 - Verify before applying
-Use the Experience level filter to compare New grad, Senior and Not specified. Explain that title seniority and graduate evidence are separate, and year mentions are not validated minimums. Then open a source-linked job detail or comparison. Show the official title, location, qualification path, skills, salary if disclosed, sponsorship statement, verification time, and Apply link. Open two employers' official pages. Tell the audience to resolve one confirm item and build one small project from a skill gap.
+## 3:55-4:35 - Explain recommendations
+Read missing-skill recommendations. They rank by posting mentions, then company breadth; read the current top unselected skill and its posting and company counts. Open the small suggested learning project template and explain that it is a preparation prompt, not a promise that the skill is required or that the project proves proficiency.
 
-## 4:20-5:00 - Close with limits
-Open methodology. Say: older career/26fall data was discovery only and Bay Area LLM-biased; fresh official pages broaden the sample; no applicant notes were imported. AI helped extract and summarize, followed by agent review, which is not human verification. Missing data stays unknown, and the product makes no ML prediction or success-odds claim.
-
-Current snapshot values are generated at run time: 852 postings, 107 companies, 198 source checks.
+## 4:35-5:00 - Close with Data & method
+Open Data & method. Point to CSV downloads, assignment materials, official source provenance, and the one-page methodology. Close with the limits: non-representative ATS sample, unknown skill is not absence, and title level is not graduate status.

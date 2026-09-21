@@ -580,11 +580,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "machine learning",
           "level": "mentioned",
           "alternativeGroup": null
@@ -718,11 +713,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "machine learning",
           "level": "mentioned",
           "alternativeGroup": null
@@ -798,11 +788,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -874,6 +859,11 @@
         },
         {
           "name": "C++",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -1032,11 +1022,6 @@
       "skills": [
         {
           "name": "Python",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         }
@@ -2860,11 +2845,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "PyTorch",
           "level": "mentioned",
           "alternativeGroup": null
@@ -3552,11 +3532,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "SQL",
           "level": "mentioned",
           "alternativeGroup": null
@@ -3954,11 +3929,6 @@
       "startYears": [],
       "startWindow": "Not stated",
       "skills": [
-        {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
         {
           "name": "PyTorch",
           "level": "mentioned",
@@ -5565,11 +5535,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -6178,11 +6143,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "PyTorch",
           "level": "mentioned",
           "alternativeGroup": null
@@ -6257,11 +6217,6 @@
         },
         {
           "name": "C++",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -6348,11 +6303,6 @@
       "startYears": [],
       "startWindow": "Not stated",
       "skills": [
-        {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
         {
           "name": "PyTorch",
           "level": "mentioned",
@@ -7106,11 +7056,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "PyTorch",
           "level": "mentioned",
           "alternativeGroup": null
@@ -7338,11 +7283,6 @@
       "skills": [
         {
           "name": "Python",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -8874,11 +8814,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "machine learning",
           "level": "mentioned",
           "alternativeGroup": null
@@ -9289,11 +9224,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "machine learning",
           "level": "mentioned",
           "alternativeGroup": null
@@ -9428,11 +9358,6 @@
       "skills": [
         {
           "name": "Python",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -9769,11 +9694,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "machine learning",
           "level": "mentioned",
           "alternativeGroup": null
@@ -9986,11 +9906,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "SQL",
           "level": "mentioned",
           "alternativeGroup": null
@@ -10055,11 +9970,6 @@
       "skills": [
         {
           "name": "Python",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -10767,11 +10677,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "machine learning",
           "level": "mentioned",
           "alternativeGroup": null
@@ -10829,11 +10734,6 @@
       "startYears": [],
       "startWindow": "Not stated",
       "skills": [
-        {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
         {
           "name": "machine learning",
           "level": "mentioned",
@@ -10953,11 +10853,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "machine learning",
           "level": "mentioned",
           "alternativeGroup": null
@@ -11016,11 +10911,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "machine learning",
           "level": "mentioned",
           "alternativeGroup": null
@@ -11078,11 +10968,6 @@
       "startYears": [],
       "startWindow": "Not stated",
       "skills": [
-        {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
         {
           "name": "machine learning",
           "level": "mentioned",
@@ -11204,11 +11089,6 @@
       "startYears": [],
       "startWindow": "Not stated",
       "skills": [
-        {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
         {
           "name": "machine learning",
           "level": "mentioned",
@@ -11452,11 +11332,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -11593,11 +11468,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -11723,11 +11593,6 @@
       "skills": [
         {
           "name": "Python",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -12589,11 +12454,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "RAG",
           "level": "mentioned",
           "alternativeGroup": null
@@ -12663,11 +12523,6 @@
         },
         {
           "name": "C++",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -12843,6 +12698,11 @@
           "alternativeGroup": null
         },
         {
+          "name": "Go",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
           "name": "PyTorch",
           "level": "mentioned",
           "alternativeGroup": null
@@ -12923,6 +12783,11 @@
           "alternativeGroup": null
         },
         {
+          "name": "Go",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -12992,11 +12857,6 @@
         },
         {
           "name": "C++",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -13084,11 +12944,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -13163,6 +13018,11 @@
       "skills": [
         {
           "name": "Python",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -13493,11 +13353,6 @@
       "startYears": [],
       "startWindow": "Not stated",
       "skills": [
-        {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
         {
           "name": "PyTorch",
           "level": "mentioned",
@@ -14480,11 +14335,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -14566,11 +14416,6 @@
       "skills": [
         {
           "name": "Python",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -14719,11 +14564,6 @@
       "startYears": [],
       "startWindow": "Not stated",
       "skills": [
-        {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
         {
           "name": "machine learning",
           "level": "mentioned",
@@ -15207,11 +15047,6 @@
       "startYears": [],
       "startWindow": "Not stated",
       "skills": [
-        {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
         {
           "name": "LLM",
           "level": "mentioned",
@@ -16221,11 +16056,6 @@
       "skills": [
         {
           "name": "Python",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -17716,6 +17546,11 @@
           "alternativeGroup": null
         },
         {
+          "name": "Go",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
           "name": "NLP",
           "level": "mentioned",
           "alternativeGroup": null
@@ -17806,6 +17641,11 @@
           "alternativeGroup": null
         },
         {
+          "name": "Go",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
           "name": "NLP",
           "level": "mentioned",
           "alternativeGroup": null
@@ -17892,6 +17732,11 @@
       "skills": [
         {
           "name": "C++",
+          "level": "mentioned",
+          "alternativeGroup": null
+        },
+        {
+          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -18050,11 +17895,6 @@
       "skills": [
         {
           "name": "Python",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -18500,11 +18340,6 @@
           "alternativeGroup": null
         },
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -18593,11 +18428,6 @@
         },
         {
           "name": "Java",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -18693,11 +18523,6 @@
         },
         {
           "name": "Java",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -18883,11 +18708,6 @@
         },
         {
           "name": "Java",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -19324,11 +19144,6 @@
       "skills": [
         {
           "name": "Python",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         },
@@ -20166,11 +19981,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -20591,11 +20401,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "machine learning",
           "level": "mentioned",
           "alternativeGroup": null
@@ -20889,11 +20694,6 @@
       "startWindow": "Not stated",
       "skills": [
         {
-          "name": "Go",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
           "name": "LLM",
           "level": "mentioned",
           "alternativeGroup": null
@@ -20953,11 +20753,6 @@
       "skills": [
         {
           "name": "C++",
-          "level": "mentioned",
-          "alternativeGroup": null
-        },
-        {
-          "name": "Go",
           "level": "mentioned",
           "alternativeGroup": null
         }

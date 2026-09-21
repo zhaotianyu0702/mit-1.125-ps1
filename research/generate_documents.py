@@ -1,257 +1,79 @@
 #!/usr/bin/env python3
-"""Generate the course documentation bundle from the frozen data snapshot.
-
-Usage:
-  python3 research/generate_documents.py [--input dist/data.json]
-
-The input is an object with ``meta``, ``jobs`` and ``coverage``.  The script
-does not mutate the input or the website bundle; it writes only the five files
-under ``research/artifacts``.
-"""
-
+"""Generate concise AI Career Compass course artifacts from the frozen snapshot."""
 from __future__ import annotations
-
-import argparse
-import html
-import json
-import statistics
+import argparse, html, json
 from collections import Counter
-from datetime import date
 from pathlib import Path
-
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
-from reportlab.platypus import KeepTogether, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
+ROOT=Path(__file__).resolve().parents[1]; ARTIFACTS=ROOT/'research'/'artifacts'
+NAVY=colors.HexColor('#10233f'); BLUE=colors.HexColor('#1f6feb'); LIME=colors.HexColor('#b7e35f'); MUTED=colors.HexColor('#55657a'); PALE=colors.HexColor('#edf4fb')
+US_STATES=set('AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split())
 
-ROOT = Path(__file__).resolve().parents[1]
-ARTIFACTS = ROOT / "research" / "artifacts"
-NAVY = colors.HexColor("#10233f")
-BLUE = colors.HexColor("#1f6feb")
-LIME = colors.HexColor("#b7e35f")
-MUTED = colors.HexColor("#55657a")
-PALE = colors.HexColor("#edf4fb")
-US_STATES = set('AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split())
+def clean(v,f='Not stated'):
+    if v is None or v=='': return f
+    if isinstance(v,list): return ', '.join(clean(x,'') for x in v if x is not None)
+    return str(v).replace('\u2013','-').replace('\u2014','-').replace('\u2011','-')
 
+def load(p):
+    if not p.exists(): raise SystemExit(f'Input snapshot not found: {p}')
+    d=json.loads(p.read_text(encoding='utf-8'))
+    if not isinstance(d,dict) or not isinstance(d.get('jobs'),list) or not isinstance(d.get('coverage'),list): raise SystemExit('Snapshot must contain jobs and coverage lists.')
+    return d
 
-def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--input", type=Path, default=ROOT / "dist" / "data.json")
-    p.add_argument("--output", type=Path, default=ARTIFACTS)
-    return p.parse_args()
+def stats(d):
+    jobs=d['jobs']; companies={clean(j.get('company'),'Unknown') for j in jobs}; roles=Counter(clean(j.get('roleFamily')) for j in jobs); levels=Counter(clean(j.get('experienceLevel'),'unspecified') for j in jobs); regions=Counter(); skills=Counter(); skill_companies={}; sources=Counter(clean(j.get('source')) for j in jobs)
+    for j in jobs:
+        labels={str(x.get('state') or '').strip().upper() for x in j.get('locations',[])} & US_STATES
+        if j.get('remote'): labels.add('Remote - US')
+        for x in labels: regions[x]+=1
+        for n in {clean(x.get('name') if isinstance(x,dict) else x, '') for x in j.get('skills',[]) or []}:
+            if n: skills[n]+=1; skill_companies.setdefault(n,set()).add(clean(j.get('company'),'Unknown'))
+    return {'jobs':jobs,'companies':companies,'roles':roles,'levels':levels,'regions':regions,'skills':skills,'skill_companies':skill_companies,'coverage':d['coverage'],'sources':sources,'salary_count':sum(bool(j.get('salary')) for j in jobs)}
 
+def styles():
+    b=getSampleStyleSheet()
+    return {'title':ParagraphStyle('T',parent=b['Title'],fontName='Helvetica-Bold',fontSize=19,leading=22,textColor=NAVY,spaceAfter=4),'sub':ParagraphStyle('S',parent=b['Normal'],fontSize=8.2,leading=10,textColor=MUTED,spaceAfter=6),'h':ParagraphStyle('H',parent=b['Heading2'],fontName='Helvetica-Bold',fontSize=9.7,leading=11.2,textColor=BLUE,spaceBefore=4,spaceAfter=2),'body':ParagraphStyle('B',parent=b['BodyText'],fontSize=9.2,leading=11.4,textColor=NAVY,spaceAfter=2),'small':ParagraphStyle('Sm',parent=b['BodyText'],fontSize=7.7,leading=9.1,textColor=NAVY)}
 
-def load_snapshot(path: Path) -> dict:
-    if not path.exists():
-        raise SystemExit(f"Input snapshot not found: {path}\nCreate dist/data.json or pass --input PATH.")
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise SystemExit(f"Invalid JSON in {path}: {exc}") from exc
-    if not isinstance(data, dict) or not isinstance(data.get("jobs"), list) or not isinstance(data.get("coverage"), list):
-        raise SystemExit("Snapshot must be an object containing list fields 'jobs' and 'coverage'.")
-    data.setdefault("meta", {})
-    return data
+def footer(c,doc):
+    c.saveState(); c.setStrokeColor(LIME); c.setLineWidth(2); c.line(doc.leftMargin,.43*inch,letter[0]-doc.rightMargin,.43*inch); c.setFont('Helvetica',6.6); c.setFillColor(MUTED); c.drawString(doc.leftMargin,.27*inch,'AI Career Compass | visualizer documentation'); c.drawRightString(letter[0]-doc.rightMargin,.27*inch,f'Page {doc.page}'); c.restoreState()
 
+def pdf(path,title,subtitle,sections,d):
+    st=styles(); s=stats(d); doc=SimpleDocTemplate(str(path),pagesize=letter,leftMargin=.56*inch,rightMargin=.56*inch,topMargin=.46*inch,bottomMargin=.56*inch)
+    story=[Paragraph(html.escape(title),st['title']),Paragraph(html.escape(subtitle),st['sub'])]
+    t=Table([[Paragraph('Snapshot',st['small']),Paragraph(clean(d.get('meta',{}).get('snapshotDate')),st['small'])],[Paragraph('Postings / companies',st['small']),Paragraph(f"{len(s['jobs'])} / {len(s['companies'])}",st['small'])],[Paragraph('Source checks',st['small']),Paragraph(str(len(s['coverage'])),st['small'])]],colWidths=[1.45*inch,1.9*inch],hAlign='LEFT'); t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),PALE),('BOX',(0,0),(-1,-1),.35,colors.HexColor('#c9d9ea')),('INNERGRID',(0,0),(-1,-1),.2,colors.white),('LEFTPADDING',(0,0),(-1,-1),4),('RIGHTPADDING',(0,0),(-1,-1),4),('TOPPADDING',(0,0),(-1,-1),2),('BOTTOMPADDING',(0,0),(-1,-1),2)])); story += [t,Spacer(1,4)]
+    for h,b in sections: story += [Paragraph(html.escape(h),st['h']),Paragraph(html.escape(b).replace('\n','<br/>'),st['body'])]
+    doc.build(story,onFirstPage=footer,onLaterPages=footer)
 
-def clean(value: object, fallback: str = "Not stated") -> str:
-    if value is None or value == "":
-        return fallback
-    if isinstance(value, list):
-        return ", ".join(clean(x, "") for x in value if x is not None)
-    return str(value).replace("\u2013", "-").replace("\u2014", "-").replace("\u2011", "-")
+def methodology(d,out):
+    s=stats(d); src=', '.join(f'{k} ({v})' for k,v in sorted(s['sources'].items()))
+    sections=[('Purpose and interface','AI Career Compass helps students explore US AI career directions and choose skills to learn. Opportunity landscape shows the distribution of a dated posting sample. Skill lab compares selected skills with posting mentions and previews the effect of adding one skill. Data & method contains sources and course materials.'),('Canonical snapshot',f"The snapshot contains {len(s['jobs'])} unique postings from {len(s['companies'])} companies and {len(s['coverage'])} company/source checks. Sources are {src}. Counts are postings, not headcount; source links, review labels, and data-quality notes remain available in the Data & method downloads."),('Global controls and views','The two main views share primary role direction, experience level (all seven levels or one level), US region/state/remote, and graduate evidence (all, explicit graduate, or early career). Landscape reports distributions by direction, experience, and region, plus a skill-demand matrix. Skill lab uses local-only skill chips, optionally remembered on this device, and reports the fraction and count of filtered postings mentioning at least one selected skill by role. Try one skill compares before and after posting coverage.'),('Skill interpretation','Skill lab measures mention coverage: a posting counts once when it mentions at least one selected skill. Missing skills are recommendations, ranked first by posting mentions and then company breadth. The top three are preparation prompts, followed by a small suggested learning project template. Mention coverage is not skill proficiency, eligibility, hiring probability, readiness, or a claim that an unmentioned skill is absent. Automated skill extraction uses a fixed vocabulary, so tracked terms are overrepresented.'),('Collection, provenance, and limits','Records come from official ATS or company-career pages and retain canonical URLs, source IDs, verification timestamps, extraction notes, and review level. The sample is non-representative: public ATS access, employer selection, posting turnover, and disclosure wording create coverage bias. Unknown skill is not skill absence; title level is not graduate eligibility; state and skill counts may overlap; salary is advertised base pay when disclosed. Earlier career/26fall material was discovery only and Bay Area LLM-biased; no applicant notes were imported.'),('Privacy and reproduction','Selected skills are held in page memory and, only when the user opts in, local browser storage; skill selection is not sent to a server or placed in a shared URL. Public CSV downloads retain the evidence fields. The repository includes collection, deduplication, analysis, and document-generation scripts for reproducing the snapshot.')]
+    pdf(out/'methodology.pdf','Methodology','AI Career Compass | visualizer rules and evidence boundaries',sections,d)
 
+def reflection(d,out):
+    s=stats(d); sections=[('Design decision',f"The product visualizes {len(s['jobs'])} public postings to support career exploration. Two main tabs answer two questions: where opportunities appear in the sample, and which skill mentions are common enough to investigate."),('What the evidence supports','The filtered charts support descriptive questions about direction, experience, regions, and skill-mention coverage. The same filters keep the denominator visible, while official source links and Data & method downloads preserve provenance.'),('What remains uncertain','This is a non-representative ATS sample. Automated skill extraction uses a fixed vocabulary, so tracked terms are overrepresented. Unknown skill is not skill absence, title level is not graduate status, and mention coverage is not proficiency or readiness. Early career evidence can require experience; it is kept separate from explicit graduate evidence.'),('AI assistance and privacy','AI assisted extraction, normalization, and copy review; source URLs, review labels, and limitations remain visible. Skill chips are local-only and optional device memory does not send a profile to a server. No applicant data or shortlist is collected.'),('Next iteration','Repeat collection with the same schema, add documented human adjudication for ambiguous skill mentions, and compare ranked recommendations against a written review sample. Keep the interface focused on evidence and learning prompts.')]
+    pdf(out/'reflection.pdf','Reflection','AI Career Compass | short design reflection',sections,d)
 
-def stats(data: dict) -> dict:
-    jobs = data["jobs"]
-    companies = {clean(j.get("company"), "Unknown") for j in jobs}
-    families = Counter(clean(j.get("roleFamily"), "Not stated") for j in jobs)
-    statuses = Counter(clean(j.get("newgradStatus"), "Not stated") for j in jobs)
-    locations = Counter()
-    for job in jobs:
-        # Count each posting once per listed state. A posting may list several
-        # cities in the same state, and Remote-US is its own bucket.
-        # Aggregate only real US state abbreviations. Blank, country-level
-        # placeholders, and Remote-US are not states; remote gets its own row.
-        labels = {str(loc.get("state") or "").strip().upper() for loc in job.get("locations", [])}
-        labels = {label for label in labels if label in US_STATES}
-        if job.get("remote"):
-            labels.add("Remote - US")
-        for label in labels:
-            locations[label] += 1
-    salary_jobs = [j for j in jobs if j.get("salary")]
-    mentioned_skills = Counter()
-    for job in jobs:
-        for skill in job.get("skills", []):
-            label = skill.get("name") if isinstance(skill, dict) else skill
-            if label:
-                mentioned_skills[clean(label)] += 1
-    coverage = data["coverage"]
-    return {"jobs": jobs, "companies": companies, "families": families, "statuses": statuses,
-            "locations": locations, "salary_jobs": salary_jobs, "coverage": coverage,
-            "mentioned_skills": mentioned_skills}
+def dictionary(d,out):
+    s=stats(d); fields=[('id','Stable company-source identifier used for deduplication.'),('company / title / url / applyUrl','Employer, exact source title, canonical official posting URL, and official application route.'),('source / sourceId / verifiedAt','ATS or company-careers provenance and latest source check timestamp.'),('roleFamily / tags','Primary direction used for one-category charts, plus additional technical directions.'),('locations / locationText / remote / workplace','Source-listed US places and stated work arrangement; state and remote counts can overlap.'),('newgradStatus / newgradEvidence','Graduate evidence group: explicit, zero-experience, early-career, or unclear, with source explanation.'),('experienceLevel / experienceLevelBasis / experienceReferences','One of seven display levels and its evidence; year references are not validated minimums.'),('skills','Mentioned skill names with required, preferred, or mentioned level. Skill lab counts a posting once per selected-skill set.'),('qualificationPaths','Degree and experience alternatives; unknown values stay unknown and are not converted to zero.'),('salary / sponsorship','Disclosed base-pay ranges and public sponsorship statement; missing disclosure is not a negative answer.'),('summary / aiEvidence / qualificationNote / reviewNote','Short factual evidence and review/provenance notes retained for source-grounded interpretation.'),('coverage','Company-level source check; inaccessible or incomplete sources are not treated as no qualifying jobs.'),('meta','Snapshot date, scope, unit, partitions, review description, and excluded count for reproducibility.')]
+    lines=['# Data dictionary','',f"Generated from snapshot `{clean(d.get('meta',{}).get('snapshotDate'))}` with {len(s['jobs'])} postings and {len(s['companies'])} companies.",'','The unit is one unique public job posting. A posting may contain multiple locations, qualification paths, skills, or salary ranges.','','## Product measures','','- `direction distribution`: postings grouped by primary `roleFamily` or selected direction.','- `experience distribution`: postings grouped by the seven `experienceLevel` values; unspecified remains visible.','- `region distribution`: one count per listed state and a separate `Remote - US` bucket; totals can overlap.','- `skill-demand matrix`: postings mentioning a skill divided by filtered postings in the direction; one count per cell.','- `skill lab coverage`: filtered postings mentioning at least one selected skill, shown as count and fraction by role.','- `missing-skill recommendation`: unselected skills ranked by posting mentions, then company breadth; a learning suggestion.','','## Snapshot fields','','| Field | Meaning |','| --- | --- |']
+    lines += [f'| `{n}` | {m} |' for n,m in fields]; lines += ['','Unknown values remain explicit (`null`, empty arrays, `Not stated`, or `unclear`). Absence of a skill mention does not establish that the job does not require it.','','## Provenance','',f"The snapshot has {len(s['coverage'])} source checks and {s['salary_count']} postings with disclosed salary. Official URLs and review labels are preserved in `dist/downloads/jobs.csv` and the published data snapshot."]
+    (out/'data-dictionary.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
 
+def demo(d,out):
+    s=stats(d); top=s['skills'].most_common(1)[0][0] if s['skills'] else 'a selected skill'; lines=['# Five-minute demo script','','Use the deployed visualizer to demonstrate one student decision: which AI direction and skill to explore next.','','## 0:00-0:35 - Frame the sample',f"Open Opportunity landscape. Say: this is a dated, source-backed sample of {len(s['jobs'])} public US AI postings from {len(s['companies'])} companies. It describes the observed sample, not the entire labor market.",'','## 0:35-1:25 - Set the shared filters','Use primary role direction, experience level, US region/state/remote, and graduate evidence. Start with All, then choose one direction and Explicit graduate. Point out that all charts update to the selected sample. Reset graduate evidence to All before exploring skills.','','## 1:25-2:20 - Read Opportunity landscape','Show distributions by direction, experience, and region. Explain that state totals can overlap when one posting lists multiple places. Use the skill-demand matrix to answer which skills are mentioned across directions. This is mention coverage, not proficiency or eligibility.','','## 2:20-3:55 - Run Skill lab','Open Skill lab. Select local-only skill chips, optionally turn on Remember on this device, and show the fraction and count of filtered postings mentioning at least one selected skill by role. Add one skill to the selected set. Use Try one skill to show the before/after count of postings mentioning at least one selected skill. Choices stay in the browser and are not sent to a server.','','## 3:55-4:35 - Explain recommendations',f"Read missing-skill recommendations. They rank by posting mentions, then company breadth; read the current top unselected skill and its posting and company counts. Open the small suggested learning project template and explain that it is a preparation prompt, not a promise that the skill is required or that the project proves proficiency.",'','## 4:35-5:00 - Close with Data & method','Open Data & method. Point to CSV downloads, assignment materials, official source provenance, and the one-page methodology. Close with the limits: non-representative ATS sample, unknown skill is not absence, and title level is not graduate status.']
+    (out/'demo-script.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
 
-def doc_styles():
-    base = getSampleStyleSheet()
-    return {
-        "title": ParagraphStyle("DocTitle", parent=base["Title"], fontName="Helvetica-Bold", fontSize=20, leading=23, textColor=NAVY, alignment=TA_LEFT, spaceAfter=6),
-        "sub": ParagraphStyle("DocSub", parent=base["Normal"], fontName="Helvetica", fontSize=8.5, leading=11, textColor=MUTED, spaceAfter=8),
-        "h": ParagraphStyle("DocH", parent=base["Heading2"], fontName="Helvetica-Bold", fontSize=10.5, leading=12.5, textColor=BLUE, spaceBefore=5, spaceAfter=3),
-        "body": ParagraphStyle("DocBody", parent=base["BodyText"], fontName="Helvetica", fontSize=9.3, leading=11.2, textColor=NAVY, spaceAfter=3),
-        "small": ParagraphStyle("DocSmall", parent=base["BodyText"], fontName="Helvetica", fontSize=8.9, leading=10.4, textColor=NAVY, spaceAfter=2),
-        "foot": ParagraphStyle("DocFoot", parent=base["BodyText"], fontName="Helvetica", fontSize=6.6, leading=8, textColor=MUTED),
-    }
-
-
-def footer(canvas, doc):
-    canvas.saveState()
-    canvas.setStrokeColor(LIME)
-    canvas.setLineWidth(2)
-    canvas.line(doc.leftMargin, 0.48 * inch, letter[0] - doc.rightMargin, 0.48 * inch)
-    canvas.setFont("Helvetica", 7)
-    canvas.setFillColor(MUTED)
-    canvas.drawString(doc.leftMargin, 0.32 * inch, "AI Career Compass | evidence-backed public posting sample")
-    canvas.drawRightString(letter[0] - doc.rightMargin, 0.32 * inch, f"Page {doc.page}")
-    canvas.restoreState()
-
-
-def p(text: str, style):
-    return Paragraph(html.escape(clean(text)).replace("\n", "<br/>"), style)
-
-
-def make_pdf(path: Path, title: str, subtitle: str, sections: list[tuple[str, str]], data: dict, compact: bool = False):
-    styles = doc_styles()
-    doc = SimpleDocTemplate(str(path), pagesize=letter, leftMargin=0.57 * inch, rightMargin=0.57 * inch, topMargin=0.48 * inch, bottomMargin=0.62 * inch)
-    story = [Paragraph(html.escape(title), styles["title"]), Paragraph(html.escape(subtitle), styles["sub"])]
-    for heading, text in sections:
-        story.append(Paragraph(html.escape(heading), styles["h"]))
-        story.append(Paragraph(html.escape(text).replace("\n", "<br/>"), styles["small" if compact else "body"]))
-    s = stats(data)
-    summary = [[p("Snapshot", styles["small"]), p(clean(data.get("meta", {}).get("snapshotDate"), "Not stated"), styles["small"])],
-               [p("Postings / companies", styles["small"]), p(f"{len(s['jobs'])} / {len(s['companies'])}", styles["small"])],
-               [p("Coverage checked", styles["small"]), p(str(len(s["coverage"])), styles["small"])]]
-    table = Table(summary, colWidths=[1.55 * inch, 2.1 * inch], hAlign="LEFT")
-    table.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), PALE), ("BOX", (0, 0), (-1, -1), 0.4, colors.HexColor("#c9d9ea")), ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.white), ("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 5), ("RIGHTPADDING", (0, 0), (-1, -1), 5), ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3)]))
-    story.insert(2, table)
-    story.insert(3, Spacer(1, 5))
-    doc.build(story, onFirstPage=footer, onLaterPages=footer)
-
-
-def write_methodology(data: dict, out: Path):
-    s = stats(data)
-    source_counts = Counter(clean(j.get("source"), "Not stated") for j in s["jobs"])
-    status_text = ", ".join(f"{k} ({v})" for k, v in sorted(s["statuses"].items())) or "none recorded"
-    sections = [
-        ("Purpose", "AI Career Compass is a dated, source-backed guide to public US AI postings. Its default flow asks about background, role interests, project skills, and preferences, then shows evidence-based statuses and next steps. It does not predict hiring success or estimate the labor market."),
-        ("Data and scope", f"The snapshot contains {len(s['jobs'])} deduplicated public postings from {len(s['companies'])} companies and {len(s['coverage'])} source checks. Sources: " + ", ".join(f"{k} ({v})" for k, v in sorted(source_counts.items())) + f". Pathway labels at run time: {status_text}. Fresh official sources cover US technical AI roles at all experience levels; collection has no seniority or year ceiling."),
-        ("Inclusion rules", "Curated records are selected for full-time status, a US location or explicit Remote-US scope, core AI or ML responsibilities, and an active official application route. Ashby discovery checks FullTime; Greenhouse discovery does not establish employment terms. Both remain separately labeled unclear until qualification review. Pathways are explicit new-grad, zero-experience, early-career (0-2 industry years), or unclear (graduate eligibility not established). Title-based experience level is independent of graduate eligibility. Numerical year references are not validated minimums; unknown is never zero."),
-        ("Extraction and review", "Collectors retrieve official ATS or company-career pages and normalize IDs, URLs, locations, role family, qualifications, skills, salary, and sponsorship statements. Curated records receive source-specific review; broad discovery is automated and is not presented as individually reviewed. AI assists extraction and summaries. This is agent review, not human verification. Evidence paraphrases stay linked to the official page and missing values remain unknown."),
-        ("Product logic", "The four-step guide covers background, role interests, project skills, and preferences. Aligned, confirm, and gap statuses use only recorded conflicts or unknowns in stated degree, graduation, and experience conditions. Skills and preferences explain preparation and ordering but do not reject a person or create success odds. The beginner preset keeps explicit graduate evidence, entry labels, and unspecified titles without a year reference above two; users can switch levels. What-if views explore overlap. Remember on this device is an opt-in local browser profile; no applicant notes are imported."),
-        ("Deduplication and analysis", "Company plus source ID is the primary key, followed by canonical URL when needed. Role counts are postings, not headcount. Location totals count each posting once per listed state and keep Remote - US separate; states can overlap because one posting can list several states. Salary figures are disclosed base ranges only. Missing data is not a negative answer."),
-        ("Limits and provenance", "The earlier career/26fall dataset was used only for discovery and is biased toward Bay Area LLM roles; no applicant notes were imported. Fresh official sources broaden US coverage, but this remains a purposive public-posting sample rather than a census. ATS access, company selection, posting turnover, and wording differences create coverage bias, and a posting can close after the snapshot."),
-        ("Reproduction", "Run generate_documents.py against the frozen dist/data.json snapshot after the expanded partitions are merged. All counts are computed at run time and the script writes the methodology, reflection, demo script, data dictionary, and keyboard-driven presentation under research/artifacts.")]
-    make_pdf(out / "methodology.pdf", "Methodology", "AI Career Compass | transparent rules for public US AI postings across experience levels", sections, data, compact=True)
-
-
-def write_reflection(data: dict, out: Path):
-    s = stats(data)
-    status_text = ", ".join(f"{k}: {v}" for k, v in sorted(s["statuses"].items())) or "none recorded"
-    sections = [
-        ("What the snapshot supports", f"The snapshot supports a reproducible description of {len(s['jobs'])} included postings across {len(s['companies'])} companies, including role family, stated US locations, qualification pathways, selected skills, disclosed base salary, and public application links. Recorded pathway categories are dynamic ({status_text})."),
-        ("What the product supports", "The four-step guide helps a beginner state a background, choose role interests, add project skills, and set preferences. Results explain aligned, confirm, or gap statuses with source evidence. A what-if view can show skill overlap and a nationwide search. These are evidence and preparation aids, not ML predictions, success odds, or recruiter decisions."),
-        ("AI assistance and agent review", "AI was used as an extraction aid for normalization, grouping, and short summaries. Curated records received source-specific checks for URL, title, US location, employment type where exposed, AI evidence, pathway, and application route; broad automated-discovery records were not all individually reviewed. This is agent review, not human verification: no human recruiter, employer, or independent annotator confirmed the fields. Ambiguities remain unknown or unclear."),
-        ("Bias and missingness", "The earlier career/26fall dataset was used only for discovery and was biased toward Bay Area LLM roles; no applicant notes were imported. Fresh official sources broaden the sample but still favor accessible ATS pages. Salary and sponsorship disclosure are selective. A missing graduation date or experience statement stays unknown and never becomes zero. Seniority labels differ across employers; more senior postings do not imply more graduate openings."),
-        ("Privacy and next improvement", "The optional remember-on-device control stores a profile in the local browser only; there is no account or server-side applicant record in this product. Repeat the snapshot, record status changes, add sampled human adjudication, and compare extraction decisions against a written log.")]
-    make_pdf(out / "reflection.pdf", "Reflection and limitations", "AI Career Compass | what the evidence can and cannot say", sections, data, compact=True)
-
-
-def write_markdown(data: dict, out: Path):
-    s = stats(data)
-    fields = [
-        ("id", "Stable company-source identifier used for deduplication."), ("company", "Employer name from the official source."), ("title", "Exact official posting title."), ("url", "Canonical official posting URL."), ("applyUrl", "Official application route."), ("source/sourceId", "ATS or company-careers source and its official identifier."), ("verifiedAt", "Last source check timestamp."), ("roleFamily", "One primary AI function for mutually exclusive category charts."), ("tags", "Additional technical directions such as LLM, CV, or inference."), ("locations", "One or more source-listed US city/state/country objects."), ("workplace/remote", "Stated work arrangement; unknown remains Not stated."), ("newgradStatus", "explicit, zero-experience, early-career (0-2 industry years), or unclear (graduate eligibility not established)."), ("experienceLevel/Basis/Evidence", "Recognized title seniority or curated graduate fallback, with provenance; unspecified is not entry level."), ("experienceReferences", "Year values mentioned in source text or curated paths, not a validated minimum. Required/preferred and degree alternatives need review."), ("qualificationPaths", "Structured degree and experience alternatives; minYears is zero only when the source explicitly says no experience is needed."), ("skills", "Skill name, required/preferred/mentioned level, and alternativeGroup for OR language."), ("salary", "Disclosed base range with currency, period, and scope; bonus/equity are not merged."), ("sponsorship", "Only the source's public statement: Supported, Not offered, Conditional, or Not stated."), ("summary/evidence fields", "Short factual paraphrases supporting role, AI, qualification, and review decisions."), ("coverage", "Company-level source check; inaccessible is not treated as no qualifying jobs."), ("profile/matching", "The browser profile is opt-in and local. Statuses use recorded requirements and unknowns; skills and preferences explain preparation and order, not recruiting probability.")]
-    lines = ["# Data dictionary", "", f"Generated from snapshot `{clean(data.get('meta', {}).get('snapshotDate'), 'Not stated')}` with {len(s['jobs'])} jobs and {len(s['companies'])} companies.", "", "The canonical record is one posting. One posting can have multiple qualification paths, skills, salary ranges, or US locations.", "", "| Field | Meaning |", "| --- | --- |"]
-    lines += [f"| `{name}` | {meaning} |" for name, meaning in fields]
-    lines += ["", "Unknown values remain explicit (`null`, empty arrays, or `Not stated`) and are never inferred as negative answers or zero experience."]
-    (out / "data-dictionary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
-def write_demo(data: dict, out: Path):
-    s = stats(data)
-    non_ca = sum(1 for job in s["jobs"] if any(str(loc.get("state") or "").strip().upper() in US_STATES - {"CA"} for loc in job.get("locations", [])))
-    remote = sum(1 for job in s["jobs"] if job.get("remote"))
-    top_skill = s["mentioned_skills"].most_common(1)[0][0] if s["mentioned_skills"] else "one listed skill"
-    lines = ["# Five-minute demo script", "", "Use the live site and this sequence. The companion presentation has visible Previous/Next controls, a page number, arrow-key support, and mobile swipe.", "", "## 0:00-0:40 - Start with the guided path", "Open the welcome screen. Say: this is a starting guide for a beginner, not a prediction engine. The snapshot is a dated set of public US AI postings; full-time status is retained from source evidence where available. No account or resume is required.", "", "## 0:40-1:35 - Four steps", "Walk through Your background, What interests you, What you've tried, and Your preferences. Enter degree, graduation, industry and research years, then choose role families, project skills, workplace, states, and learning priority. Explain that Remember on this device is an opt-in local browser setting.", "", "## 1:35-2:25 - Read a personalized result", "Open a result card and point to aligned, confirm, or gap. Read the evidence reasons, matched skills, skill gaps, and unknowns. Aligned means the recorded basics fit; confirm means the source or profile leaves something unknown; gap means a stated condition conflicts. These labels do not mean interview or offer odds.", "", "## 2:25-3:15 - Run two what-if actions", f"Use What if I add a skill to compare current overlap with a new skill. The metric counts posting-skill connections, so one posting can contribute multiple connections. The snapshot mentions {top_skill} most often, but overlap is preparation guidance, not proof of proficiency. Then enable Explore every US location. The data includes {non_ca} postings listing a non-CA state and {remote} marked Remote-US, so a beginner can test a wider search before narrowing to one metro.", "", "## 3:15-4:20 - Verify before applying", "Use the Experience level filter to compare New grad, Senior and Not specified. Explain that title seniority and graduate evidence are separate, and year mentions are not validated minimums. Then open a source-linked job detail or comparison. Show the official title, location, qualification path, skills, salary if disclosed, sponsorship statement, verification time, and Apply link. Open two employers' official pages. Tell the audience to resolve one confirm item and build one small project from a skill gap.", "", "## 4:20-5:00 - Close with limits", "Open methodology. Say: older career/26fall data was discovery only and Bay Area LLM-biased; fresh official pages broaden the sample; no applicant notes were imported. AI helped extract and summarize, followed by agent review, which is not human verification. Missing data stays unknown, and the product makes no ML prediction or success-odds claim.", "", f"Current snapshot values are generated at run time: {len(s['jobs'])} postings, {len(s['companies'])} companies, {len(s['coverage'])} source checks."]
-    (out / "demo-script.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
-def write_presentation(data: dict, out: Path):
-    s = stats(data)
-    snapshot = html.escape(clean(data.get("meta", {}).get("snapshotDate"), "Not stated"))
-    fam_rows = "".join(f"<tr><td>{html.escape(k)}</td><td>{v}</td></tr>" for k, v in s["families"].most_common()) or "<tr><td>Not stated</td><td>0</td></tr>"
-    loc_rows = "".join(f"<tr><td>{html.escape(k)}</td><td>{v}</td></tr>" for k, v in s["locations"].most_common(8)) or "<tr><td>Not stated</td><td>0</td></tr>"
-    # Pick two different employers for a readable, source-linked comparison.
-    compare_jobs = []
-    seen_companies = set()
-    for job in s["jobs"]:
-        company = clean(job.get("company"))
-        if company not in seen_companies:
-            compare_jobs.append(job)
-            seen_companies.add(company)
-        if len(compare_jobs) == 2:
-            break
-    cards = []
-    for job in compare_jobs:
-        paths = job.get("qualificationPaths") or []
-        degree = "; ".join(clean(path.get("evidence")) for path in paths[:2]) or "Qualification path not stated"
-        source_url = html.escape(clean(job.get("url"), "#"), quote=True)
-        cards.append(
-            "<article class='source-card'>"
-            f"<p class='card-company'>{html.escape(clean(job.get('company')))}</p>"
-            f"<h3>{html.escape(clean(job.get('title')))}</h3>"
-            f"<p><b>US listing:</b> {html.escape(clean(job.get('locationText')))}</p>"
-            f"<p><b>Degree path:</b> {html.escape(degree)}</p>"
-            f"<p class='card-summary'>{html.escape(clean(job.get('summary')))}</p>"
-            f"<a href='{source_url}' target='_blank' rel='noopener'>Open official source ↗</a>"
-            "</article>"
-        )
-    compare_cards = "".join(cards) or "<p>No comparison records are available in this snapshot.</p>"
-    non_ca = sum(1 for job in s["jobs"] if any(str(loc.get("state") or "").strip().upper() in US_STATES - {"CA"} for loc in job.get("locations", [])))
-    phd_path = sum(1 for job in s["jobs"] if any("PhD" in (path.get("degrees") or []) for path in job.get("qualificationPaths", [])))
-    salary_count = len(s["salary_jobs"])
-    status_rows = "".join(f"<tr><td>{html.escape(k)}</td><td>{v}</td></tr>" for k, v in s["statuses"].most_common()) or "<tr><td>Not stated</td><td>0</td></tr>"
-    remote_count = sum(1 for job in s["jobs"] if job.get("remote"))
-    top_skill = html.escape(s["mentioned_skills"].most_common(1)[0][0] if s["mentioned_skills"] else "a listed skill")
-    slides = [
-        f"<section><p class='eyebrow'>AI CAREER COMPASS</p><h1>Start with a guided AI job search</h1><p class='lead'>A source-backed public posting sample that turns a beginner's background, interests, skills, and preferences into explainable next steps.</p><div class='accent'></div><p class='meta'>Snapshot: {snapshot} | {len(s['jobs'])} postings | {len(s['companies'])} companies</p></section>",
-        f"<section><p class='eyebrow'>01 / SAMPLE</p><h2>What is in the snapshot?</h2><div class='cards'><div><b>{len(s['jobs'])}</b><span>postings</span></div><div><b>{len(s['companies'])}</b><span>companies</span></div><div><b>{len(s['coverage'])}</b><span>source checks</span></div></div><p>Records link to public ATS or company sources and are labeled by the evidence available; broad discovery records may still need role-level employment verification. Experience levels span new-grad through leadership and unspecified. Graduate evidence stays separate: explicit, zero-experience, early-career, or unclear.</p></section>",
-        f"<section><p class='eyebrow'>02 / FOUR STEPS</p><h2>Guide the beginner before ranking</h2><div class='advice-list'><div class='advice'><b>1. Your background</b><span>Degree, graduation, industry years, and research years.</span></div><div class='advice'><b>2. What interests you</b><span>Role families that make the search concrete.</span></div><div class='advice'><b>3. What you've tried</b><span>Project skills and visible evidence to build.</span></div><div class='advice'><b>4. Your preferences</b><span>Workplace, states, relocation, and learning priority.</span></div></div><p class='note'>The profile is optional and remembered only on this device when opted in.</p></section>",
-        f"<section><p class='eyebrow'>03 / EVIDENCE</p><h2>Every match explains itself</h2><table><thead><tr><th>Pathway label</th><th>Postings</th></tr></thead><tbody>{status_rows}</tbody></table><div class='advice-list'><div class='advice'><b>Aligned</b><span>Recorded basics fit the source requirements.</span></div><div class='advice'><b>Confirm</b><span>Something is unknown and needs a source check.</span></div><div class='advice'><b>Gap</b><span>A stated condition conflicts; skills still suggest preparation.</span></div></div><p class='note'>These are evidence statuses, never ML predictions or success odds.</p></section>",
-        f"<section><p class='eyebrow'>04 / WHAT-IF</p><h2>Change one input, learn what to do next</h2><div class='advice-list'><div class='advice'><b>Add a skill</b><span>Compare current overlap with {top_skill}; overlap guides a project plan, not qualification proof.</span></div><div class='advice'><b>Widen location</b><span>{non_ca} postings list a non-CA state and {remote_count} are Remote-US. Try nationwide search before narrowing.</span></div></div><p class='note'>The guide turns an unknown or skill gap into a concrete source check or starter project.</p><a class='site-link' href='./#guide'>Back to site ↗</a></section>",
-        f"<section><p class='eyebrow'>05 / COMPARE</p><h2>Read two official pathways</h2><div class='source-grid'>{compare_cards}</div><div class='advice'><b>Preparation suggestion</b><span>Choose one confirm item and one small project from the evidence before applying.</span></div><p class='note'>Use each official source link for complete requirements and the application form.</p><a class='site-link' href='./#guide'>Back to site ↗</a></section>",
-        f"<section><p class='eyebrow'>06 / METHOD</p><h2>Evidence with clear limits</h2><ul><li>Fresh official ATS or company-career sources</li><li>Earlier career/26fall data was discovery only and Bay Area LLM-biased</li><li>AI-assisted extraction plus agent review; not human verification</li><li>Missing data stays unknown; no applicant notes imported</li><li>No ML prediction or success-odds claim</li><li>Only {salary_count} of {len(s['jobs'])} postings disclose annual base salary</li></ul><div class='accent'></div><a class='site-link' href='./#guide'>Back to site and apply ↗</a></section>",
-    ]
-    body = "\n".join(slides)
-    page = f"""<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>AI Career Compass presentation</title><style>
-    :root{{--navy:#10233f;--blue:#1f6feb;--lime:#b7e35f;--ink:#17324d;--muted:#61758b;--paper:#f7fbff}}*{{box-sizing:border-box}}body{{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 Inter,ui-sans-serif,system-ui,sans-serif}}main{{min-height:100vh;display:grid;place-items:center;padding:3rem 3rem 6rem}}section{{display:none;width:min(960px,92vw);min-height:560px;padding:4rem 4.5rem;background:#fff;border:1px solid #d9e6f2;box-shadow:0 18px 60px #10233f14;border-radius:18px}}section.active{{display:block}}h1{{font-size:clamp(2.8rem,7vw,5.8rem);line-height:.98;letter-spacing:-.06em;color:var(--navy);max-width:750px;margin:.4rem 0 1.5rem}}h2{{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.04em;color:var(--navy);margin:.5rem 0 2rem}}h3{{color:var(--navy);font-size:1rem;line-height:1.2;margin:.25rem 0 .7rem}}.eyebrow{{color:var(--blue);font-size:.78rem;font-weight:800;letter-spacing:.16em}}.lead{{font-size:1.35rem;max-width:650px;color:var(--muted)}}.meta,.note{{color:var(--muted);font-size:.9rem}}.accent{{width:100px;height:8px;background:var(--lime);border-radius:10px;margin:2rem 0}}.cards{{display:flex;gap:1rem;margin:2rem 0}}.cards div{{background:#eef6ff;border-radius:12px;padding:1.3rem 1.5rem;min-width:130px}}.cards b{{display:block;font-size:2.4rem;color:var(--blue)}}.cards span{{color:var(--muted)}}table{{width:100%;border-collapse:collapse;margin:1rem 0 1.4rem}}th,td{{text-align:left;border-bottom:1px solid #d9e6f2;padding:.7rem .55rem}}th{{color:var(--blue);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}}li{{margin:.85rem 0;font-size:1.1rem}}.advice-list{{display:grid;gap:1rem;margin:1.5rem 0}}.advice{{display:grid;gap:.25rem;background:#eef6ff;border-left:5px solid var(--lime);padding:1rem 1.2rem;border-radius:0 10px 10px 0}}.advice b{{color:var(--navy)}}.advice span{{color:var(--muted)}}.source-grid{{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0 1.2rem}}.source-card{{border:1px solid #d9e6f2;border-radius:12px;padding:1rem;background:#fbfdff}}.card-company{{color:var(--blue);font-weight:800;font-size:.8rem;margin:0 0 .4rem}}.card-summary{{color:var(--muted);font-size:.9rem}}a{{color:var(--blue);font-weight:700}}.site-link{{display:inline-block;margin-top:1rem}}.deck-nav{{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:.75rem;background:#fff;border:1px solid #d9e6f2;border-radius:999px;padding:.45rem .65rem;box-shadow:0 8px 30px #10233f20;z-index:5}}.deck-nav button{{border:0;background:#eef6ff;color:var(--navy);border-radius:999px;padding:.55rem .9rem;font:inherit;cursor:pointer}}.deck-nav button:hover,.deck-nav button:focus{{background:var(--lime)}}#page-number{{min-width:3.5rem;text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}}@media(max-width:650px){{main{{padding:1rem 1rem 5.5rem}}section{{padding:2rem;min-height:600px;width:96vw}}.cards{{flex-wrap:wrap}}.source-grid{{grid-template-columns:1fr}}.deck-nav{{width:max-content;max-width:calc(100vw - 2rem)}}}}
-    </style></head><body><main id='deck'>{body}</main><nav class='deck-nav' aria-label='Presentation navigation'><button id='prev' type='button' aria-label='Previous slide'>← Previous</button><span id='page-number'>1 / {len(slides)}</span><button id='next' type='button' aria-label='Next slide'>Next →</button></nav><script>const slides=[...document.querySelectorAll('section')],pageNumber=document.getElementById('page-number');let i=0;function show(n){{i=(n+slides.length)%slides.length;slides.forEach((s,k)=>s.classList.toggle('active',k===i));pageNumber.textContent=(i+1)+' / '+slides.length;location.hash='slide-'+(i+1)}}document.getElementById('prev').addEventListener('click',()=>show(i-1));document.getElementById('next').addEventListener('click',()=>show(i+1));document.addEventListener('keydown',e=>{{if(['ArrowRight',' ','PageDown'].includes(e.key)){{e.preventDefault();show(i+1)}}if(['ArrowLeft','PageUp'].includes(e.key)){{e.preventDefault();show(i-1)}}}});let touchX=null;document.addEventListener('touchstart',e=>{{touchX=e.changedTouches[0].screenX}},{{passive:true}});document.addEventListener('touchend',e=>{{if(touchX===null)return;const dx=e.changedTouches[0].screenX-touchX;if(Math.abs(dx)>45)show(i+(dx<0?1:-1));touchX=null}},{{passive:true}});const hash=Number(location.hash.replace('#slide-',''));show(Number.isFinite(hash)&&hash>0?hash-1:0);</script></body></html>"""
-    (out / "presentation.html").write_text(page, encoding="utf-8")
-
+def presentation(d,out):
+    s=stats(d); snap=html.escape(clean(d.get('meta',{}).get('snapshotDate'))); rr=''.join(f'<tr><td>{html.escape(k)}</td><td>{v}</td></tr>' for k,v in s['roles'].most_common(6)); ll=''.join(f'<tr><td>{html.escape(k)}</td><td>{v}</td></tr>' for k,v in s['levels'].most_common(7)); tops=', '.join(f'{html.escape(k)} ({v})' for k,v in s['skills'].most_common(5)) or 'No skill mentions'
+    slides=[f"<section><p class='eyebrow'>AI CAREER COMPASS</p><h1>A visualizer for the AI job landscape</h1><p class='lead'>Explore where postings appear, then test how selected skills change mention coverage.</p><div class='accent'></div><p class='meta'>Snapshot: {snap} | {len(s['jobs'])} postings | {len(s['companies'])} companies</p></section>",f"<section><p class='eyebrow'>01 / LANDSCAPE</p><h2>One shared filter bar</h2><div class='chips'><span>Direction</span><span>Experience level</span><span>US region / state / remote</span><span>Graduate evidence</span></div><p>All seven experience levels remain available. Graduate evidence is separate: All, Explicit graduate, or Early career.</p><div class='stat-grid'><div><b>{len(s['jobs'])}</b><small>postings</small></div><div><b>{len(s['companies'])}</b><small>companies</small></div><div><b>{len(s['coverage'])}</b><small>source checks</small></div></div></section>",f"<section><p class='eyebrow'>02 / LANDSCAPE</p><h2>Describe the sample at a glance</h2><div class='two-col'><div><h3>Primary direction</h3><table>{rr}</table></div><div><h3>Experience level</h3><table>{ll}</table></div></div><p class='note'>All charts use the selected sample. The skill matrix shows percentages within each direction. Location totals overlap when a posting lists multiple states.</p></section>",f"<section><p class='eyebrow'>03 / SKILL LAB</p><h2>Test a skill hypothesis locally</h2><p>Choose skill chips in the browser. Skill lab reports the fraction and count of filtered postings mentioning at least one selected skill by role.</p><div class='advice-list'><div class='advice'><b>Try one skill</b><span>Compare before and after posting coverage.</span></div><div class='advice'><b>Remember on this device</b><span>Optional local storage; selection is not sent to a server.</span></div><div class='advice'><b>Current high-mention examples</b><span>{tops}</span></div></div><p class='note'>A mention is evidence of text coverage, not proficiency, eligibility, readiness, or hiring probability.</p></section>","<section><p class='eyebrow'>04 / ACTIONABLE PROMPT</p><h2>Turn coverage into a small experiment</h2><div class='advice-list'><div class='advice'><b>Missing skills</b><span>Ranked by posting mentions, then distinct company breadth; top three are suggestions.</span></div><div class='advice'><b>Learning project</b><span>Use the small template to make one concrete artifact from a selected recommendation.</span></div></div><p class='note'>The recommendation helps plan learning. It does not claim an unmentioned skill is absent or that a project qualifies anyone.</p></section>","<section><p class='eyebrow'>05 / DATA &amp; METHOD</p><h2>Evidence stays inspectable</h2><ul><li>Official ATS and company source links remain in the downloads.</li><li>CSV exports preserve provenance and data-quality fields.</li><li>Methodology documents the non-representative ATS sample and missingness.</li><li>Unknown skill is not skill absence; title level is not graduate status.</li><li>Selected skills stay in the browser; device memory is optional.</li></ul><div class='accent'></div><a class='site-link' href='./#data'>Open Data &amp; method ↗</a></section>"]
+    body='\n'.join(slides); page=f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>AI Career Compass presentation</title><style>:root{{--navy:#10233f;--blue:#1f6feb;--lime:#b7e35f;--ink:#17324d;--muted:#61758b;--paper:#f7fbff}}*{{box-sizing:border-box}}body{{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 Inter,ui-sans-serif,system-ui,sans-serif}}main{{min-height:100vh;display:grid;place-items:center;padding:3rem 3rem 6rem}}section{{display:none;width:min(960px,92vw);min-height:560px;padding:4rem 4.5rem;background:#fff;border:1px solid #d9e6f2;box-shadow:0 18px 60px #10233f14;border-radius:18px}}section.active{{display:block}}h1{{font-size:clamp(2.8rem,7vw,5.8rem);line-height:.98;letter-spacing:-.06em;color:var(--navy);max-width:750px;margin:.4rem 0 1.5rem}}h2{{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.04em;color:var(--navy);margin:.5rem 0 2rem}}h3{{color:var(--navy);font-size:1rem;line-height:1.2;margin:.25rem 0 .7rem}}.eyebrow{{color:var(--blue);font-size:.78rem;font-weight:800;letter-spacing:.16em}}.lead{{font-size:1.35rem;max-width:650px;color:var(--muted)}}.meta,.note{{color:var(--muted);font-size:.9rem}}.accent{{width:100px;height:8px;background:var(--lime);border-radius:10px;margin:2rem 0}}.chips{{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.5rem 0 2rem}}.chips span{{background:#eef6ff;padding:.7rem 1rem;border-radius:999px;color:var(--blue);font-weight:700}}.stat-grid{{display:flex;gap:1rem;margin:2rem 0}}.stat-grid div{{background:#eef6ff;border-radius:12px;padding:1rem 1.3rem;min-width:130px}}.stat-grid b{{display:block;font-size:2.2rem;color:var(--blue)}}.stat-grid small{{color:var(--muted)}}.two-col{{display:grid;grid-template-columns:1fr 1fr;gap:2rem}}table{{width:100%;border-collapse:collapse;margin:.5rem 0 1rem}}td{{text-align:left;border-bottom:1px solid #d9e6f2;padding:.55rem .45rem}}td:last-child{{text-align:right;color:var(--blue);font-weight:700}}.advice-list{{display:grid;gap:1rem;margin:1.5rem 0}}.advice{{display:grid;gap:.25rem;background:#eef6ff;border-left:5px solid var(--lime);padding:1rem 1.2rem;border-radius:0 10px 10px 0}}.advice b{{color:var(--navy)}}.advice span{{color:var(--muted)}}li{{margin:.8rem 0;font-size:1.05rem}}a{{color:var(--blue);font-weight:700}}.site-link{{display:inline-block;margin-top:1rem}}.deck-nav{{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:.75rem;background:#fff;border:1px solid #d9e6f2;border-radius:999px;padding:.45rem .65rem;box-shadow:0 8px 30px #10233f20;z-index:5}}.deck-nav button{{border:0;background:#eef6ff;color:var(--navy);border-radius:999px;padding:.55rem .9rem;font:inherit;cursor:pointer}}.deck-nav button:hover,.deck-nav button:focus{{background:var(--lime)}}#page-number{{min-width:3.5rem;text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}}@media(max-width:650px){{main{{padding:1rem 1rem 5.5rem}}section{{padding:2rem;min-height:600px;width:96vw}}.two-col{{grid-template-columns:1fr}}.stat-grid{{flex-wrap:wrap}}.deck-nav{{width:max-content;max-width:calc(100vw - 2rem)}}}}</style></head><body><main id='deck'>{body}</main><nav class='deck-nav' aria-label='Presentation navigation'><button id='prev' type='button'>← Previous</button><span id='page-number'>1 / {len(slides)}</span><button id='next' type='button'>Next →</button></nav><script>const slides=[...document.querySelectorAll('section')],n=document.getElementById('page-number');let i=0;function show(x){{i=(x+slides.length)%slides.length;slides.forEach((s,k)=>s.classList.toggle('active',k===i));n.textContent=(i+1)+' / '+slides.length;location.hash='slide-'+(i+1)}}document.getElementById('prev').onclick=()=>show(i-1);document.getElementById('next').onclick=()=>show(i+1);document.onkeydown=e=>{{if(['ArrowRight',' ','PageDown'].includes(e.key)){{e.preventDefault();show(i+1)}}if(['ArrowLeft','PageUp'].includes(e.key)){{e.preventDefault();show(i-1)}}}};const h=Number(location.hash.replace('#slide-',''));show(Number.isFinite(h)&&h>0?h-1:0);</script></body></html>"""
+    (out/'presentation.html').write_text(page,encoding='utf-8')
 
 def main():
-    args = parse_args()
-    data = load_snapshot(args.input)
-    args.output.mkdir(parents=True, exist_ok=True)
-    write_methodology(data, args.output)
-    write_reflection(data, args.output)
-    write_markdown(data, args.output)
-    write_demo(data, args.output)
-    write_presentation(data, args.output)
-    print(f"Generated artifacts in {args.output}")
-
-
-if __name__ == "__main__":
-    main()
+    p=argparse.ArgumentParser(); p.add_argument('--input',type=Path,default=ROOT/'dist'/'data.json'); p.add_argument('--output',type=Path,default=ARTIFACTS); a=p.parse_args(); d=load(a.input); a.output.mkdir(parents=True,exist_ok=True); methodology(d,a.output); reflection(d,a.output); dictionary(d,a.output); demo(d,a.output); presentation(d,a.output); print(f'Generated artifacts in {a.output}')
+if __name__=='__main__': main()
