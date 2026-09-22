@@ -1,0 +1,44 @@
+[
+  {
+    "id": "context",
+    "title": "Context",
+    "start": 0,
+    "duration": 30,
+    "narration": "AI Career Compass helps students who are starting to explore jobs in the AI industry. Job titles alone can be confusing: what kinds of work exist, where are the opportunities, and which skills should I build? I created this site to make those questions easier to explore, through job-market visualizations and a personal skill experiment. Let me show you how it works."
+  },
+  {
+    "id": "methods",
+    "title": "Data and methods",
+    "start": 30,
+    "duration": 60,
+    "narration": "The dataset is a snapshot of 852 unique US AI job postings from 107 companies, collected on September twenty-first, twenty twenty-six. The sources are public Greenhouse and Ashby APIs, plus Lever and official employer career pages. The collection combines employer lists, removes duplicate postings, and normalizes locations and skill names. It includes different experience levels, so students can understand the broader market. Here is the one-page methodology note. It distinguishes 795 automatically collected records from 57 with curated source review. Returning to the overview, machine learning engineering is the largest direction, followed by infrastructure and research. This is a selected sample of accessible employers, so these distributions describe our dataset, not the entire US job market."
+  },
+  {
+    "id": "landscape",
+    "title": "Opportunity landscape",
+    "start": 90,
+    "duration": 60,
+    "narration": "The first page, Opportunity landscape, gives students a starting point. The charts compare job directions, locations, experience levels, and recurring skills. Each uses the same filters at the top. For example, choosing New York narrows the view to 225 postings and updates every chart. I can reset the filters to compare another question. The experience filter separates Entry, Senior, Staff, and Manager, with unclear cases left unspecified. Graduate evidence is a separate filter: an entry-level label does not automatically mean a role explicitly welcomes new graduates. Below, the skill heatmap compares skill mentions across directions. Together, these controls help students find a direction and location worth exploring before examining individual roles."
+  },
+  {
+    "id": "skills",
+    "title": "Skill lab",
+    "start": 150,
+    "duration": 60,
+    "narration": "Skill lab asks what I could learn next, based on skills I already use. I select Python and machine learning. This profile covers 74 of 816 postings with recorded skills. To count as covered, at least seventy percent of a posting's tracked skills must be selected; four out of five, for example. The role bars show where this profile has coverage. Now I try adding large language models. The preview rises from 74 to 167 postings: 93 additional postings reach the target, and 247 more move closer. I can inspect a practice project before adding the skill. When I apply it, the coverage and recommendations update. This is a way to prioritize learning, not a prediction of hiring success."
+  },
+  {
+    "id": "postings",
+    "title": "Job postings",
+    "start": 210,
+    "duration": 60,
+    "narration": "Job postings connects the charts to the records behind them. Each row shows the role and company, experience category, mentioned skills, location, and official source with its check date. Clicking an experience label reveals the evidence used to classify it. Selected skills are highlighted, so I can see what is covered and what is missing in a specific example. I can also filter by a skill, such as SQL, or search a company or title. Choosing View this slice in charts carries that selection back to the landscape. This page is a reference for understanding the aggregate patterns, rather than an application portal. It helps students check the evidence behind a recommendation instead of relying on a score alone."
+  },
+  {
+    "id": "closing",
+    "title": "Summary",
+    "start": 270,
+    "duration": 30,
+    "narration": "AI Career Compass brings three questions together: where are the opportunities, how do my current skills relate to them, and what could I learn next? The goal is to help students make a more informed learning and career exploration plan. The Submission page provides the dataset, methodology, and reflection, so the results can be checked. The site supports exploration; the final decision stays with the student."
+  }
+]

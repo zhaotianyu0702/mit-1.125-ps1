@@ -6,11 +6,11 @@ Live site: [AI Career Compass](https://ai-career-compass-us-new-grad.zhaotianyu0
 
 ## PS1 submission materials
 
-The **Submission** header link opens a short list of the required dataset, one-page methodology note and reflection. The existing five-minute presentation remains linked. The [submission index](SUBMISSION.md) maps deliverables to their files.
+The **Submission** header link opens a short list of the required dataset, one-page methodology note and reflection. The five-minute website recording is linked on the same page. The [submission index](SUBMISSION.md) maps deliverables to their files.
 
 - [Submission materials page](https://ai-career-compass-us-new-grad.zhaotianyu0702.chatgpt.site/submission.html)
 - [Collected dataset](dist/downloads/jobs.csv), [methodology note](dist/downloads/methodology.pdf), [short reflection](dist/downloads/reflection.pdf)
-- Existing [five-minute presentation](dist/presentation.html)
+- [Five-minute website video](dist/presentation.html) — 1080p MP4, actual page interactions and English synthetic narration
 
 The interface has two main tabs: `Opportunity landscape` (`#landscape`, the default) and `Skill lab` (`#skills`). `Job postings` (`#postings`) is the reference view for the full posting list, with experience, skills, direction, location, and source fields. It does not provide an application channel. Assignment materials, methodology, and reflection are accessible through the **Submission** header link on desktop and mobile, and the `Project files` footer. Skill profile data stays in the browser, with optional device-local memory.
 
@@ -51,7 +51,7 @@ python3 scripts/package-submission.py
 
 PDF generation needs ReportLab. The content is pinned to the frozen dataset hash in `research/submission-content.json`; review those notes before generating materials for a different snapshot. The packager checks matching snapshot hashes, copies the reviewed artifacts, creates `dist/submission.html`, and verifies every ZIP member against its source bytes. `dist/downloads/submission-manifest.json` records the hashes and CSV row counts.
 
-Inspect the PDFs after generation. `research/artifacts` contains the editable Markdown and source artifacts; `dist/downloads` contains deployable copies. The archive includes the static website source, datasets and all non-video deliverables. The GitHub repository also preserves collection partitions and scripts.
+Inspect the PDFs after generation. `research/artifacts` contains the editable Markdown and source artifacts; `dist/downloads` contains deployable copies. The archive includes the static website source, datasets and all deliverables, including the five-minute video. The GitHub repository also preserves collection partitions and scripts.
 
 ## Project structure
 
@@ -59,7 +59,7 @@ Inspect the PDFs after generation. `research/artifacts` contains the editable Ma
 dist/                       Deployable static site and canonical data snapshot
   data.json                 Source-linked snapshot
   downloads/                CSV exports and course materials
-  presentation.html         Five-slide, five-minute presentation
+  presentation.html         Five-minute video player
 research/                   Collection partitions and document generator
 scripts/build-data.py       Merge partitions and build normalized exports
 tests/                      Data and interaction checks

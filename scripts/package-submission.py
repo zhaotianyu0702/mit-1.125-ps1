@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package the frozen site and all non-video PS1 deliverables without recollecting data."""
+"""Package the frozen site and all PS1 deliverables without recollecting data."""
 from __future__ import annotations
 import csv
 import hashlib
@@ -93,12 +93,12 @@ Published site: {SITE}
 Submission materials: {SITE}/submission.html
 GitHub submission repository: {REPO}
 
-## Deliverables (excluding the recording)
+## Deliverables
 
 1. Complete static site: `site/`. Start with `site/submission.html` for documents.
 2. Dataset: `site/downloads/jobs.csv` ({n} postings) plus five related CSVs.
 3. One-page data and methodology note: `site/downloads/methodology.pdf` and editable Markdown.
-4. Five-slide presentation: `site/presentation.html`; timed demonstration script: `site/downloads/demo-script.md`. Slides and script are prepared. No video file is included.
+4. Five-minute website demonstration: `site/presentation.html`; MP4: `site/downloads/presentation.mp4`; narration: `site/downloads/demo-script.md`. Actual website recording with English synthetic narration.
 5. Short reflection: `site/downloads/reflection.pdf` and editable Markdown.
 6. Findings, two recommendations, definitions, sources and the fixed-target study: `site/downloads/`.
 
@@ -114,7 +114,7 @@ Open http://127.0.0.1:8767/. Use HTTP because the dashboard fetches data.json.
 
 ## Verify the snapshot
 
-Dataset SHA-256: `{sha(raw)}`. `manifest.json` contains each packaged file's SHA-256 and CSV row counts. This is a dated purposive sample, not a labor-market census. The original brief asks for a five-minute demonstration without specifying a recording format. Video remains outside this package.
+Dataset SHA-256: `{sha(raw)}`. `manifest.json` contains each packaged file's SHA-256 and CSV row counts. This is a dated purposive sample, not a labor-market census. The five-minute video is included in this package.
 
 ## Course submission locations
 
@@ -122,10 +122,10 @@ Enter the main published site URL in the course sheet's `PS1 Site URL` column an
 '''
     (ROOT/'SUBMISSION.md').write_text(readme.replace('`site/`','`dist/`').replace('`site/','`dist/').replace('--directory site','--directory dist').replace('`manifest.json`','`dist/downloads/submission-manifest.json`'))
     public_files=sorted(p for p in DIST.rglob('*') if p.is_file() and p.name not in {ZIP_NAME,'submission-manifest.json'})
-    allowed_suffixes={'.html','.css','.js','.json','.csv','.md','.pdf','.svg','.png','.jpg','.jpeg','.webp','.ico'}
+    allowed_suffixes={'.html','.css','.js','.json','.csv','.md','.pdf','.svg','.png','.jpg','.jpeg','.webp','.ico','.mp4'}
     assert all(p.suffix.lower() in allowed_suffixes for p in public_files), 'Review an unexpected public file type before packaging.'
     members={'README.md':readme.encode(),**{'site/'+p.relative_to(DIST).as_posix():p.read_bytes() for p in public_files}}
-    manifest={'project':'MIT 1.125 PS1 — AI Career Compass','snapshotDate':data['meta']['snapshotDate'],'skillCoverageTarget':70,'dataSha256':sha(raw),'siteUrl':SITE,'repositoryUrl':REPO,'videoIncluded':False,'csvRows':counts,'files':[{'path':name,'bytes':len(b),'sha256':sha(b)} for name,b in sorted(members.items())]}
+    manifest={'project':'MIT 1.125 PS1 — AI Career Compass','snapshotDate':data['meta']['snapshotDate'],'skillCoverageTarget':70,'dataSha256':sha(raw),'siteUrl':SITE,'repositoryUrl':REPO,'videoIncluded':(DOWNLOADS/'presentation.mp4').is_file(),'csvRows':counts,'files':[{'path':name,'bytes':len(b),'sha256':sha(b)} for name,b in sorted(members.items())]}
     manifest_bytes=(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n').encode()
     (DOWNLOADS/'submission-manifest.json').write_bytes(manifest_bytes)
     members['manifest.json']=manifest_bytes

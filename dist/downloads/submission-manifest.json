@@ -5,7 +5,7 @@
   "dataSha256": "8a1fe8ed980e8dee6c2cb2c47d5980849937cbeab08176e535dc3c88d116f426",
   "siteUrl": "https://ai-career-compass-us-new-grad.zhaotianyu0702.chatgpt.site",
   "repositoryUrl": "https://github.com/zhaotianyu0702/mit-1.125-ps1",
-  "videoIncluded": false,
+  "videoIncluded": true,
   "csvRows": {
     "jobs.csv": 852,
     "job_skills.csv": 3341,
@@ -17,8 +17,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 2045,
-      "sha256": "90c5f4e08e090ceadbb0d51c555eac94ea26730b300fb369cfe434fdfc6a90cb"
+      "bytes": 1972,
+      "sha256": "df7319321556a1b47bbed8b838d66effe3540536b31261ed1108898946042316"
     },
     {
       "path": "site/analytics.js",
@@ -47,8 +47,8 @@
     },
     {
       "path": "site/downloads/demo-script.md",
-      "bytes": 6316,
-      "sha256": "97e19add6b087a16819ada378dd39e7df7f9b7dfa68de9b68345165d3b82b500"
+      "bytes": 4086,
+      "sha256": "1040f197d84c485395d7a37dc3313cdd68a3ac2b7bf3d8c91d63bd8da8062e29"
     },
     {
       "path": "site/downloads/findings.md",
@@ -79,6 +79,11 @@
       "path": "site/downloads/methodology.pdf",
       "bytes": 5259,
       "sha256": "cb00e7d174a29897a1a456e7cdca8089894a9be5c111919539d4da880870d702"
+    },
+    {
+      "path": "site/downloads/presentation.mp4",
+      "bytes": 11668729,
+      "sha256": "9a11cf84f0b8b5456af1bdcbafa4ab56e42cd0836587dca9c5cf0fe32653479a"
     },
     {
       "path": "site/downloads/qualification_paths.csv",
@@ -142,8 +147,8 @@
     },
     {
       "path": "site/presentation.html",
-      "bytes": 7060,
-      "sha256": "e9daa6a9ddc48ec930e80339d27238475988f1b5ab7ac03fe8e13ea3d697d4d8"
+      "bytes": 1386,
+      "sha256": "46692dac84489d040cb0810cedf954874195b9892d3e5c0b83730ff637bc86f4"
     },
     {
       "path": "site/styles.css",
