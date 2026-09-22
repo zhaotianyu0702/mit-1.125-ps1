@@ -47,8 +47,8 @@
     },
     {
       "path": "site/downloads/demo-script.md",
-      "bytes": 6337,
-      "sha256": "0e74aaf480d02ba67afccada1ab1edd48c0f2d8275eeebaacef87189616eb0b1"
+      "bytes": 6316,
+      "sha256": "97e19add6b087a16819ada378dd39e7df7f9b7dfa68de9b68345165d3b82b500"
     },
     {
       "path": "site/downloads/findings.md",
@@ -122,8 +122,8 @@
     },
     {
       "path": "site/index.html",
-      "bytes": 1837,
-      "sha256": "c31a286f25ccb55219531b0f9e09515701fe42b391e55328369cc079d2ae5594"
+      "bytes": 1903,
+      "sha256": "960ff3757b261db6ea8262afcde55a03cd3c796ce7e8f00adeb9fe86ef95aee8"
     },
     {
       "path": "site/journey.css",
@@ -147,8 +147,8 @@
     },
     {
       "path": "site/styles.css",
-      "bytes": 23576,
-      "sha256": "020def6ff733c1a34d5edcb61560336881d4cde7b6cc4cf3c3eddc00977cd495"
+      "bytes": 24005,
+      "sha256": "f4af48e782b431ec4afec68ae27c42251ab3dd4696a559652f69eb166bd28643"
     },
     {
       "path": "site/submission.html",

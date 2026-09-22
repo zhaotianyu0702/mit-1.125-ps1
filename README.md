@@ -6,14 +6,14 @@ Live site: [AI Career Compass](https://ai-career-compass-us-new-grad.zhaotianyu0
 
 ## PS1 submission materials
 
-All non-video deliverables are available from the website’s **Project files → Submission materials** page and the [complete submission pack](dist/downloads/ai-career-compass-ps1.zip). The [submission index](SUBMISSION.md) maps each assignment deliverable to its file.
+All non-video deliverables are one click away through **Submission** in the website header, including the [complete submission pack](dist/downloads/ai-career-compass-ps1.zip). The [submission index](SUBMISSION.md) maps each assignment deliverable to its file.
 
 - [Submission materials page](https://ai-career-compass-us-new-grad.zhaotianyu0702.chatgpt.site/submission.html)
 - Six CSV tables, the canonical JSON, a one-page methodology note, a short reflection, the five-slide presentation and a timed five-minute demo script
 - Main findings, two data-supported recommendations, definitions, official source URLs and the fixed 70% target study
 - The video recording is not included. The course sheet has separate `PS1 Site URL` and `PS1 Repo` columns.
 
-The interface has two main tabs: `Opportunity landscape` (`#landscape`, the default) and `Skill lab` (`#skills`). `Job postings` (`#postings`) is the reference view for the full posting list, with experience, skills, direction, location, and source fields. It does not provide an application channel. Assignment materials, methodology, and reflection remain available from the compact accessible `Project files` footer. Skill profile data stays in the browser, with optional device-local memory.
+The interface has two main tabs: `Opportunity landscape` (`#landscape`, the default) and `Skill lab` (`#skills`). `Job postings` (`#postings`) is the reference view for the full posting list, with experience, skills, direction, location, and source fields. It does not provide an application channel. Assignment materials, methodology, and reflection are accessible through the **Submission** header link on desktop and mobile, and the `Project files` footer. Skill profile data stays in the browser, with optional device-local memory.
 
 All three views share four filters: primary role direction, experience level, US region/state/remote, and graduate evidence (`all`, `explicit graduate`, or `early career`). Job postings adds posting search and a canonical skill-mention filter; those selections can persist into the charts and Skill lab. Landscape shows distributions by direction, experience, and region, plus a skill-demand matrix. Skill lab reports the fraction and count of filtered postings meeting a per-posting skill target (fixed at 70%) by role. “Try one skill” shows before/after posting coverage; recommendations rank unselected skills by additional postings reaching the target, then normalized progress on unmet postings and company breadth, with a small suggested learning-project template.
 

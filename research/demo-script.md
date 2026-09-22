@@ -39,7 +39,7 @@ This is a recording-ready run sheet, not a completed recording. The time blocks 
 
 ## 3:30–4:20 · Two practical recommendations
 
-**Do:** Expand **Project files**, open **Submission materials**, and show Main findings and Two decisions the data can inform.
+**Do:** Click **Submission** in the header, and show Main findings and Two decisions the data can inform.
 
 **Say:** “The first recommendation is to compare locations beyond California before narrowing exploration. The 304 postings with a non-California location give students and career groups a concrete starting set.
 
