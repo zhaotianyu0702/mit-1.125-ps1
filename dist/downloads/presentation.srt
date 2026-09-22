@@ -1,0 +1,315 @@
+1
+00:00:00,609 --> 00:00:04,972
+AI Career Compass helps students who are
+starting to explore jobs in
+
+2
+00:00:04,984 --> 00:00:05,979
+the AI industry.
+
+3
+00:00:07,212 --> 00:00:12,110
+Job titles alone can be confusing: what
+kinds of work exist, where are the
+
+4
+00:00:12,110 --> 00:00:14,928
+opportunities, and which skills should I
+build?
+
+5
+00:00:16,113 --> 00:00:20,513
+I created this site to make those
+questions easier to explore, through
+
+6
+00:00:20,590 --> 00:00:23,868
+job-market visualizations and a personal
+skill experiment.
+
+7
+00:00:25,546 --> 00:00:26,796
+Let me show you how it works.
+
+8
+00:00:30,594 --> 00:00:36,475
+The dataset is a snapshot of 852 unique US
+AI job postings from
+
+9
+00:00:36,475 --> 00:00:41,168
+107 companies, collected on September
+twenty-first, twenty twenty-six.
+
+10
+00:00:41,558 --> 00:00:47,171
+The sources are public Greenhouse and
+Ashby APIs, plus Lever and official
+
+11
+00:00:47,171 --> 00:00:48,446
+employer career pages.
+
+12
+00:00:48,566 --> 00:00:53,821
+The collection combines employer lists,
+removes duplicate postings, and normalizes
+
+13
+00:00:53,821 --> 00:00:55,773
+locations and skill names.
+
+14
+00:00:56,133 --> 00:01:00,393
+It includes different experience levels,
+so students can understand
+
+15
+00:01:00,406 --> 00:01:01,235
+the broader market.
+
+16
+00:01:01,861 --> 00:01:04,425
+Here is the one-page methodology note.
+
+17
+00:01:04,905 --> 00:01:10,747
+It distinguishes 795 automatically
+collected records from 57 with
+
+18
+00:01:10,747 --> 00:01:12,036
+curated source review.
+
+19
+00:01:12,298 --> 00:01:16,342
+Returning to the overview, machine
+learning engineering is the largest
+
+20
+00:01:16,342 --> 00:01:19,390
+direction, followed by infrastructure and
+research.
+
+21
+00:01:19,865 --> 00:01:24,789
+This is a selected sample of accessible
+employers, so these distributions describe
+
+22
+00:01:24,789 --> 00:01:28,105
+our dataset, not the entire US job market.
+
+23
+00:01:30,601 --> 00:01:34,861
+The first page, Opportunity landscape,
+gives students a starting point.
+
+24
+00:01:36,095 --> 00:01:40,406
+The charts compare job directions,
+locations, experience levels,
+
+25
+00:01:40,687 --> 00:01:41,809
+and recurring skills.
+
+26
+00:01:42,809 --> 00:01:44,875
+Each uses the same filters at the top.
+
+27
+00:01:46,125 --> 00:01:51,521
+For example, choosing New York narrows the
+view to 225 postings and
+
+28
+00:01:51,521 --> 00:01:52,988
+updates every chart.
+
+29
+00:01:53,612 --> 00:01:56,150
+I can reset the filters to compare another
+question.
+
+30
+00:01:57,475 --> 00:02:03,546
+The experience filter separates Entry,
+Senior, Staff, and Manager, with unclear
+
+31
+00:02:03,546 --> 00:02:05,574
+cases left unspecified.
+
+32
+00:02:05,920 --> 00:02:11,221
+Graduate evidence is a separate filter: an
+entry-level label does not automatically
+
+33
+00:02:11,382 --> 00:02:14,779
+mean a role explicitly welcomes new
+graduates.
+
+34
+00:02:14,779 --> 00:02:18,950
+Below, the skill heatmap compares skill
+mentions across directions.
+
+35
+00:02:19,974 --> 00:02:24,668
+Together, these controls help students
+find a direction and location worth
+
+36
+00:02:24,681 --> 00:02:27,793
+exploring before examining individual
+roles.
+
+37
+00:02:30,605 --> 00:02:34,278
+Skill lab asks what I could learn next,
+based on skills I already use.
+
+38
+00:02:36,339 --> 00:02:38,354
+I select Python and machine learning.
+
+39
+00:02:39,602 --> 00:02:45,049
+This profile covers 74 of 816 postings
+with recorded skills.
+
+40
+00:02:45,992 --> 00:02:50,711
+To count as covered, at least seventy
+percent of a posting's tracked skills must
+
+41
+00:02:50,711 --> 00:02:53,390
+be selected; four out of five, for
+example.
+
+42
+00:02:54,915 --> 00:02:57,951
+The role bars show where this profile has
+coverage.
+
+43
+00:02:58,950 --> 00:03:01,131
+Now I try adding large language models.
+
+44
+00:03:02,585 --> 00:03:08,580
+The preview rises from 74 to 167 postings:
+93 additional
+
+45
+00:03:08,580 --> 00:03:12,572
+postings reach the target, and 247 more
+move closer.
+
+46
+00:03:14,056 --> 00:03:17,079
+I can inspect a practice project before
+adding the skill.
+
+47
+00:03:18,394 --> 00:03:21,468
+When I apply it, the coverage and
+recommendations update.
+
+48
+00:03:22,800 --> 00:03:27,622
+This is a way to prioritize learning, not
+a prediction of hiring success.
+
+49
+00:03:30,618 --> 00:03:33,628
+Job postings connects the charts to the
+records behind them.
+
+50
+00:03:35,629 --> 00:03:40,718
+Each row shows the role and company,
+experience category, mentioned skills,
+
+51
+00:03:40,974 --> 00:03:43,805
+location, and official source with its
+check date.
+
+52
+00:03:45,996 --> 00:03:50,206
+Clicking an experience label reveals the
+evidence used to classify it.
+
+53
+00:03:52,074 --> 00:03:56,959
+Selected skills are highlighted, so I can
+see what is covered and what is missing in
+
+54
+00:03:56,959 --> 00:03:58,234
+a specific example.
+
+55
+00:04:00,047 --> 00:04:04,958
+I can also filter by a skill, such as SQL,
+or search a company or title.
+
+56
+00:04:06,762 --> 00:04:11,583
+Choosing View this slice in charts carries
+that selection back to the landscape.
+
+57
+00:04:12,932 --> 00:04:17,422
+This page is a reference for understanding
+the aggregate patterns, rather than
+
+58
+00:04:17,422 --> 00:04:18,557
+an application portal.
+
+59
+00:04:21,046 --> 00:04:25,459
+It helps students check the evidence
+behind a recommendation instead of relying
+
+60
+00:04:25,586 --> 00:04:26,467
+on a score alone.
+
+61
+00:04:30,600 --> 00:04:35,639
+AI Career Compass brings three questions
+together: where are the opportunities, how
+
+62
+00:04:35,741 --> 00:04:39,070
+do my current skills relate to them, and
+what could I learn next?
+
+63
+00:04:40,051 --> 00:04:43,367
+The goal is to help students make a more
+informed learning and
+
+64
+00:04:43,380 --> 00:04:44,898
+career exploration plan.
+
+65
+00:04:45,889 --> 00:04:50,775
+The Submission page provides the dataset,
+methodology, and reflection, so the
+
+66
+00:04:50,787 --> 00:04:51,910
+results can be checked.
+
+67
+00:04:53,102 --> 00:04:57,719
+The site supports exploration; the final
+decision stays with the student.

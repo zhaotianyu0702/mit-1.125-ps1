@@ -6,11 +6,11 @@ Live site: [AI Career Compass](https://ai-career-compass-us-new-grad.zhaotianyu0
 
 ## PS1 submission materials
 
-The **Submission** header link opens a short list of the required dataset, one-page methodology note and reflection. The five-minute website recording is linked on the same page. The [submission index](SUBMISSION.md) maps deliverables to their files.
+The **Submission** header link opens four parallel items: the dataset, one-page methodology note, five-minute website recording and reflection. The [submission index](SUBMISSION.md) maps deliverables to their files.
 
 - [Submission materials page](https://ai-career-compass-us-new-grad.zhaotianyu0702.chatgpt.site/submission.html)
 - [Collected dataset](dist/downloads/jobs.csv), [methodology note](dist/downloads/methodology.pdf), [short reflection](dist/downloads/reflection.pdf)
-- [Five-minute website video](dist/presentation.html) — 1080p MP4, actual page interactions and English synthetic narration
+- [Five-minute website video](dist/presentation.html) — 1080p MP4, actual page interactions, English male synthetic narration and captions
 
 The interface has two main tabs: `Opportunity landscape` (`#landscape`, the default) and `Skill lab` (`#skills`). `Job postings` (`#postings`) is the reference view for the full posting list, with experience, skills, direction, location, and source fields. It does not provide an application channel. Assignment materials, methodology, and reflection are accessible through the **Submission** header link on desktop and mobile, and the `Project files` footer. Skill profile data stays in the browser, with optional device-local memory.
 

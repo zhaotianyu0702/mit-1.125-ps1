@@ -73,16 +73,16 @@ def main():
     artifacts=[
         ('./downloads/jobs.csv','Collected dataset','CSV'),
         ('./downloads/methodology.pdf','One-page data and methodology note','PDF'),
+        ('./presentation.html','Five-minute presentation','VIDEO'),
         ('./downloads/reflection.pdf','Short reflection','PDF')
     ]
     artifact_rows=''.join(f'<li><a href="{esc(path)}"><span>{esc(label)}</span><span class="format">{kind} ↗</span></a></li>' for path,label,kind in artifacts)
     page=f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PS1 submission materials · AI Career Compass</title><meta name="description" content="Required dataset, methodology note and reflection for MIT 1.125 PS1."><link rel="icon" href="./favicon.svg" type="image/svg+xml">
-<style>*{{box-sizing:border-box}}body{{margin:0;background:#f7f8f3;color:#172c37;font:16px/1.5 system-ui,sans-serif}}main{{max-width:720px;margin:auto;padding:36px 24px 60px}}a{{color:#176d61;text-underline-offset:3px}}a:focus-visible{{outline:3px solid #176d61;outline-offset:4px}}.back{{font-size:14px}}header{{margin:36px 0 26px}}.meta{{margin:0;color:#52635e;font-size:13px}}h1{{font-size:clamp(1.8rem,5vw,2.3rem);line-height:1.2;margin:10px 0 0}}.file-list{{list-style:none;margin:0;padding:0;border-top:1px solid #dce2da}}.file-list a{{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid #dce2da;text-decoration:none}}.file-list a:hover{{text-decoration:underline}}.format{{font-size:12px;color:#52635e;white-space:nowrap}}footer{{margin-top:24px;font-size:14px}}@media(max-width:600px){{main{{padding:24px 18px 40px}}.file-list a{{gap:14px;padding:20px 0}}}}</style></head>
+<title>PS1 submission materials · AI Career Compass</title><meta name="description" content="Required dataset, methodology note, presentation and reflection for MIT 1.125 PS1."><link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<style>*{{box-sizing:border-box}}body{{margin:0;background:#f7f8f3;color:#172c37;font:16px/1.5 system-ui,sans-serif}}main{{max-width:720px;margin:auto;padding:36px 24px 60px}}a{{color:#176d61;text-underline-offset:3px}}a:focus-visible{{outline:3px solid #176d61;outline-offset:4px}}.back{{font-size:14px}}header{{margin:36px 0 26px}}.meta{{margin:0;color:#52635e;font-size:13px}}h1{{font-size:clamp(1.8rem,5vw,2.3rem);line-height:1.2;margin:10px 0 0}}.file-list{{list-style:none;margin:0;padding:0;border-top:1px solid #dce2da}}.file-list a{{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid #dce2da;text-decoration:none}}.file-list a:hover{{text-decoration:underline}}.format{{font-size:12px;color:#52635e;white-space:nowrap}}@media(max-width:600px){{main{{padding:24px 18px 40px}}.file-list a{{gap:14px;padding:20px 0}}}}</style></head>
 <body><main><a class="back" href="./#landscape">← AI Career Compass</a><header><p class="meta">MIT 1.125 · PS1 · Tianyu Zhao</p><h1>Submission materials</h1></header>
 <ul class="file-list">{artifact_rows}</ul>
-<footer><a href="./presentation.html">Five-minute presentation</a></footer>
 </main></body></html>'''
     (DIST/'submission.html').write_text(page)
     readme=f'''# MIT 1.125 PS1 — AI Career Compass
@@ -98,7 +98,7 @@ GitHub submission repository: {REPO}
 1. Complete static site: `site/`. Start with `site/submission.html` for documents.
 2. Dataset: `site/downloads/jobs.csv` ({n} postings) plus five related CSVs.
 3. One-page data and methodology note: `site/downloads/methodology.pdf` and editable Markdown.
-4. Five-minute website demonstration: `site/presentation.html`; MP4: `site/downloads/presentation.mp4`; narration: `site/downloads/demo-script.md`. Actual website recording with English synthetic narration.
+4. Five-minute website demonstration: `site/presentation.html`; MP4: `site/downloads/presentation.mp4`; narration: `site/downloads/demo-script.md`. Actual website recording with English male synthetic narration and English captions (`site/downloads/presentation.vtt`).
 5. Short reflection: `site/downloads/reflection.pdf` and editable Markdown.
 6. Findings, two recommendations, definitions, sources and the fixed-target study: `site/downloads/`.
 
@@ -122,7 +122,7 @@ Enter the main published site URL in the course sheet's `PS1 Site URL` column an
 '''
     (ROOT/'SUBMISSION.md').write_text(readme.replace('`site/`','`dist/`').replace('`site/','`dist/').replace('--directory site','--directory dist').replace('`manifest.json`','`dist/downloads/submission-manifest.json`'))
     public_files=sorted(p for p in DIST.rglob('*') if p.is_file() and p.name not in {ZIP_NAME,'submission-manifest.json'})
-    allowed_suffixes={'.html','.css','.js','.json','.csv','.md','.pdf','.svg','.png','.jpg','.jpeg','.webp','.ico','.mp4'}
+    allowed_suffixes={'.html','.css','.js','.json','.csv','.md','.pdf','.svg','.png','.jpg','.jpeg','.webp','.ico','.mp4','.vtt','.srt'}
     assert all(p.suffix.lower() in allowed_suffixes for p in public_files), 'Review an unexpected public file type before packaging.'
     members={'README.md':readme.encode(),**{'site/'+p.relative_to(DIST).as_posix():p.read_bytes() for p in public_files}}
     manifest={'project':'MIT 1.125 PS1 — AI Career Compass','snapshotDate':data['meta']['snapshotDate'],'skillCoverageTarget':70,'dataSha256':sha(raw),'siteUrl':SITE,'repositoryUrl':REPO,'videoIncluded':(DOWNLOADS/'presentation.mp4').is_file(),'csvRows':counts,'files':[{'path':name,'bytes':len(b),'sha256':sha(b)} for name,b in sorted(members.items())]}

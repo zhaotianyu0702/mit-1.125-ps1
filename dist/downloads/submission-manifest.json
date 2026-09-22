@@ -17,8 +17,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 1972,
-      "sha256": "df7319321556a1b47bbed8b838d66effe3540536b31261ed1108898946042316"
+      "bytes": 2034,
+      "sha256": "ab926e10d11b5a2144d5dfe1f806ddca85b045fb8561a868b3724b5524a356e6"
     },
     {
       "path": "site/analytics.js",
@@ -82,8 +82,18 @@
     },
     {
       "path": "site/downloads/presentation.mp4",
-      "bytes": 11668729,
-      "sha256": "9a11cf84f0b8b5456af1bdcbafa4ab56e42cd0836587dca9c5cf0fe32653479a"
+      "bytes": 11678519,
+      "sha256": "ba04660d9ecc247e45a45a2b6367cd4ead6a74c26c6c70fd56f127cdd87f53ec"
+    },
+    {
+      "path": "site/downloads/presentation.srt",
+      "bytes": 6026,
+      "sha256": "16e3051a302b5302b89b9d343e2905879c02e21bac6bee19429a861efd944c68"
+    },
+    {
+      "path": "site/downloads/presentation.vtt",
+      "bytes": 5842,
+      "sha256": "3b6a42ec1c16ce9b2e8f73be9d46b3b15b875bc1d58f98e3668a05b558bb0691"
     },
     {
       "path": "site/downloads/qualification_paths.csv",
@@ -147,8 +157,8 @@
     },
     {
       "path": "site/presentation.html",
-      "bytes": 1386,
-      "sha256": "46692dac84489d040cb0810cedf954874195b9892d3e5c0b83730ff637bc86f4"
+      "bytes": 3239,
+      "sha256": "4c2d49197fb99f283057cdda487f1664a1e0877d02114827dd1a9cd0e05d53fc"
     },
     {
       "path": "site/styles.css",
@@ -157,8 +167,8 @@
     },
     {
       "path": "site/submission.html",
-      "bytes": 1909,
-      "sha256": "bd84f089fa9210337d481e177bd880666173f662ca17fb52ed9fad7a7451ac52"
+      "bytes": 1926,
+      "sha256": "d78b879391edaebbb386a9f845815a3ff2e33e67fa8c519f8e9198aa257502ad"
     }
   ]
 }

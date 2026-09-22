@@ -11,7 +11,7 @@ GitHub submission repository: https://github.com/zhaotianyu0702/mit-1.125-ps1
 1. Complete static site: `dist/`. Start with `dist/submission.html` for documents.
 2. Dataset: `dist/downloads/jobs.csv` (852 postings) plus five related CSVs.
 3. One-page data and methodology note: `dist/downloads/methodology.pdf` and editable Markdown.
-4. Five-minute website demonstration: `dist/presentation.html`; MP4: `dist/downloads/presentation.mp4`; narration: `dist/downloads/demo-script.md`. Actual website recording with English synthetic narration.
+4. Five-minute website demonstration: `dist/presentation.html`; MP4: `dist/downloads/presentation.mp4`; narration: `dist/downloads/demo-script.md`. Actual website recording with English male synthetic narration and English captions (`dist/downloads/presentation.vtt`).
 5. Short reflection: `dist/downloads/reflection.pdf` and editable Markdown.
 6. Findings, two recommendations, definitions, sources and the fixed-target study: `dist/downloads/`.
 
