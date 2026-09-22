@@ -1,0 +1,159 @@
+{
+  "project": "MIT 1.125 PS1 — AI Career Compass",
+  "snapshotDate": "2026-09-21",
+  "skillCoverageTarget": 70,
+  "dataSha256": "8a1fe8ed980e8dee6c2cb2c47d5980849937cbeab08176e535dc3c88d116f426",
+  "siteUrl": "https://ai-career-compass-us-new-grad.zhaotianyu0702.chatgpt.site",
+  "repositoryUrl": "https://github.com/zhaotianyu0702/mit-1.125-ps1",
+  "videoIncluded": false,
+  "csvRows": {
+    "jobs.csv": 852,
+    "job_skills.csv": 3341,
+    "job_locations.csv": 1255,
+    "qualification_paths.csv": 855,
+    "salary_ranges.csv": 26,
+    "source_coverage.csv": 198
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2045,
+      "sha256": "90c5f4e08e090ceadbb0d51c555eac94ea26730b300fb369cfe434fdfc6a90cb"
+    },
+    {
+      "path": "site/analytics.js",
+      "bytes": 9556,
+      "sha256": "0653c4ba867afab713dddfa79372e81515ca32b9ba6dec8fd1de916ac3dd37cb"
+    },
+    {
+      "path": "site/app.js",
+      "bytes": 29646,
+      "sha256": "5e72a62a073a929d1438dbdea9a23d9bd060277a0e900bb0abe7abbf4c1fa913"
+    },
+    {
+      "path": "site/core.js",
+      "bytes": 9393,
+      "sha256": "b5e9f4245eb402400ca66b34a7223ef360713a8cb2903678c45f1ff6a78bdc7b"
+    },
+    {
+      "path": "site/data.json",
+      "bytes": 2990998,
+      "sha256": "8a1fe8ed980e8dee6c2cb2c47d5980849937cbeab08176e535dc3c88d116f426"
+    },
+    {
+      "path": "site/downloads/data-dictionary.md",
+      "bytes": 3647,
+      "sha256": "84f28816c6ed43b968c086e2e857d0c5cea44afeb4cca52864676224e60387f3"
+    },
+    {
+      "path": "site/downloads/demo-script.md",
+      "bytes": 6337,
+      "sha256": "0e74aaf480d02ba67afccada1ab1edd48c0f2d8275eeebaacef87189616eb0b1"
+    },
+    {
+      "path": "site/downloads/findings.md",
+      "bytes": 2295,
+      "sha256": "5223c37bc6c803f33b8cf59f06024efcfe266f817268dd0e9c75023b9e18d1d6"
+    },
+    {
+      "path": "site/downloads/job_locations.csv",
+      "bytes": 90010,
+      "sha256": "241a54adf323e4bf382883351728d15d1226fbf9d5cc76ec0146ed6e5d9bb25c"
+    },
+    {
+      "path": "site/downloads/job_skills.csv",
+      "bytes": 187623,
+      "sha256": "e4d3fb40dbc278512577ae10abb630c4d7129622dd7a6d9616b3c47379779000"
+    },
+    {
+      "path": "site/downloads/jobs.csv",
+      "bytes": 1728929,
+      "sha256": "1183d0f4bdd45c272e9e6e4c9853cb0d8a2e76461535e417869c71b63299e363"
+    },
+    {
+      "path": "site/downloads/methodology.md",
+      "bytes": 3675,
+      "sha256": "ed021e91445b16709a1cdd7256de881050b4510789d09f6e23072ec3695bcec9"
+    },
+    {
+      "path": "site/downloads/methodology.pdf",
+      "bytes": 5259,
+      "sha256": "cb00e7d174a29897a1a456e7cdca8089894a9be5c111919539d4da880870d702"
+    },
+    {
+      "path": "site/downloads/qualification_paths.csv",
+      "bytes": 200445,
+      "sha256": "4a34d1615837030fd459b0196c22bc3cec906a7d6894a10a76e11d324cf54230"
+    },
+    {
+      "path": "site/downloads/reflection.md",
+      "bytes": 3214,
+      "sha256": "092532a57e158a45017d0a6b334b7696efb1dc6c19fc15d3b990e6db8fbd05d4"
+    },
+    {
+      "path": "site/downloads/reflection.pdf",
+      "bytes": 4961,
+      "sha256": "12d5d6e4f0d069d31579200147ee60288fa68ae1f7d1398dd621c9e8eafd7c5b"
+    },
+    {
+      "path": "site/downloads/salary_ranges.csv",
+      "bytes": 1887,
+      "sha256": "58b0f68c4eac44ff25211bd9d54c3e710669f0922d40e3d274064c88ec3bbb6a"
+    },
+    {
+      "path": "site/downloads/skill-target-study.json",
+      "bytes": 274759,
+      "sha256": "3e9edd5e859aae75db16d0625b8eca021679c6e95f7ce2b89bedd94954ced92d"
+    },
+    {
+      "path": "site/downloads/skill-target-study.md",
+      "bytes": 7720,
+      "sha256": "b1b5e32b811ff261901f822f6ba5ec811874f533c7099a8240884e03fad47bd0"
+    },
+    {
+      "path": "site/downloads/source_coverage.csv",
+      "bytes": 56039,
+      "sha256": "74349c78e4ffe03aad43e798a27813df68fac9b87d7cb6129c0eee19bc843a85"
+    },
+    {
+      "path": "site/favicon.svg",
+      "bytes": 240,
+      "sha256": "bf29dfa5f4b21607efe01ba98bb4fa2852c6fef1e59f5b622c7b044bf951c3a7"
+    },
+    {
+      "path": "site/index.html",
+      "bytes": 1837,
+      "sha256": "c31a286f25ccb55219531b0f9e09515701fe42b391e55328369cc079d2ae5594"
+    },
+    {
+      "path": "site/journey.css",
+      "bytes": 17792,
+      "sha256": "337d3b42b090118a2906d0c29cfd210ca964d0bb60c04f93d82a8a8f1fbee8e2"
+    },
+    {
+      "path": "site/journey.js",
+      "bytes": 29296,
+      "sha256": "4d7568221c8b439348c236c8f79575b934af5c9df6a18270ae277c28ae824a73"
+    },
+    {
+      "path": "site/matching.js",
+      "bytes": 16944,
+      "sha256": "29d9f8249d37eab59eb1a986c742b649c093c20d01cd9870c8e32e2065948946"
+    },
+    {
+      "path": "site/presentation.html",
+      "bytes": 7060,
+      "sha256": "e9daa6a9ddc48ec930e80339d27238475988f1b5ab7ac03fe8e13ea3d697d4d8"
+    },
+    {
+      "path": "site/styles.css",
+      "bytes": 23576,
+      "sha256": "020def6ff733c1a34d5edcb61560336881d4cde7b6cc4cf3c3eddc00977cd495"
+    },
+    {
+      "path": "site/submission.html",
+      "bytes": 7805,
+      "sha256": "02b2426dcbe989885218df9d34e2f96ad16b26c251a408f3e8351ec4cebca835"
+    }
+  ]
+}

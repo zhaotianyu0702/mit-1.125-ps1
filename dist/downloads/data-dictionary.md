@@ -26,7 +26,7 @@ The unit is one unique public job posting. A posting may contain multiple locati
 | `experienceLevel / experienceLevelBasis / experienceLevelEvidence` | Four descriptive exploration buckets: 0–2 entry; experienced individual contributor with 3+ years, independent scope, or prior production track record, senior; explicit senior technical scope, staff; people-management scope, manager. Unsupported evidence remains unspecified. |
 | `experienceEvidenceSource / requirementYears / classifiedRequirementYears` | Official excerpt, URL and check date; all parsed numbers and the numeric floor used for a requirements bucket. These do not establish eligibility. |
 | `experienceReferences` | Raw year mentions from the full description; never a validated scalar minimum. |
-| `skills` | Mentioned skill names with required, preferred, or mentioned level. Skill lab counts a posting when selected skills meet the chosen fraction of its distinct tracked skills. |
+| `skills` | Mentioned skill names with required, preferred, or mentioned level. Skill lab counts a posting when selected skills meet the fixed 70% fraction of its distinct tracked skills. |
 | `qualificationPaths` | Degree and experience alternatives; unknown values stay unknown and are not converted to zero. |
 | `salary / sponsorship` | Disclosed base-pay ranges and public sponsorship statement; missing disclosure is not a negative answer. |
 | `summary / aiEvidence / qualificationNote / reviewNote` | Short factual evidence and review/provenance notes retained for source-grounded interpretation. |

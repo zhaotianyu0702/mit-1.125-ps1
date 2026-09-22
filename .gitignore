@@ -8,3 +8,5 @@ __pycache__/
 *.pyc
 research/cache/
 research/artifacts/*-page-*.png
+
+!dist/downloads/ai-career-compass-ps1.zip
