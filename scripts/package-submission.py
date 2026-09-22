@@ -71,29 +71,19 @@ def main():
         with (DOWNLOADS/name).open(encoding='utf-8-sig',newline='') as f: counts[name]=sum(1 for _ in csv.DictReader(f))
     assert counts['jobs.csv']==n
     artifacts=[
-        ('methodology.pdf','One-page data and methodology note','PDF'),
-        ('reflection.pdf','What the data supports and cannot prove','PDF'),
-        ('demo-script.md','Five-minute demonstration script','MD'),
-        ('findings.md','Findings and practical recommendations','MD'),
-        ('data-dictionary.md','Units, fields and definitions','MD'),
-        ('skill-target-study.md','Why the skill target is fixed at 70%','MD')
+        ('./downloads/jobs.csv','Collected dataset','CSV'),
+        ('./downloads/methodology.pdf','One-page data and methodology note','PDF'),
+        ('./downloads/reflection.pdf','Short reflection','PDF')
     ]
-    link=lambda path,label:f'<a href="{esc(path)}">{esc(label)}</a>'
-    data_rows=''.join(f'<tr><th scope="row">{link("./downloads/"+name,name)}</th><td>{counts[name]:,}</td><td>{esc(desc)}</td></tr>' for name,desc in csv_names.items())
-    artifact_rows=''.join(f'<li>{link("./downloads/"+name,label)}<span>{kind}</span></li>' for name,label,kind in artifacts)
-    fact_html=''.join(f'<article><h3>{esc(title)}</h3><p>{esc(body)}</p></article>' for title,body in findings)
-    rec_html=''.join(f'<li><strong>{esc(title)}.</strong> {esc(body)}</li>' for title,body in recommendations)
+    artifact_rows=''.join(f'<li><a href="{esc(path)}"><span>{esc(label)}</span><span class="format">{kind} ↗</span></a></li>' for path,label,kind in artifacts)
     page=f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PS1 submission materials · AI Career Compass</title><meta name="description" content="Dataset, methodology, findings, reflection and demonstration materials for MIT 1.125 PS1."><link rel="icon" href="./favicon.svg" type="image/svg+xml">
-<style>*{{box-sizing:border-box}}body{{margin:0;background:#f7f8f3;color:#172c37;font:16px/1.6 system-ui,sans-serif}}main{{max-width:900px;margin:auto;padding:30px 24px 60px}}a{{color:#176d61;text-underline-offset:3px}}a:focus-visible{{outline:3px solid #176d61;outline-offset:4px}}header{{padding:24px 0;border-bottom:1px solid #dce2da}}h1{{font-size:clamp(2rem,5vw,2.7rem);line-height:1.12;margin:16px 0}}h2{{font-size:1.35rem;margin:0 0 16px}}h3{{font-size:1rem;margin:0 0 5px}}p{{margin:0 0 15px}}.meta{{color:#52635e;font-size:14px}}.actions{{display:flex;gap:14px;flex-wrap:wrap;margin:22px 0 0}}.download{{display:inline-block;background:#1f7568;color:white;border-radius:6px;padding:10px 15px;text-decoration:none;font-weight:600}}section{{padding:28px 0;border-bottom:1px solid #dce2da}}.file-list{{list-style:none;margin:0;padding:0}}.file-list li{{display:flex;justify-content:space-between;gap:20px;padding:11px 0;border-bottom:1px solid #e6eae3}}.file-list span{{color:#52635e;font-size:13px;white-space:nowrap}}.table-wrap{{overflow-x:auto}}table{{border-collapse:collapse;width:100%;font-size:14px}}th,td{{padding:10px 12px 10px 0;border-bottom:1px solid #e0e6dd;text-align:left;vertical-align:top}}th{{font-weight:500}}td:nth-child(2){{white-space:nowrap;font-variant-numeric:tabular-nums}}article+article{{margin-top:18px}}ol{{padding-left:21px}}ol li{{margin-bottom:14px}}code{{font-size:12px;overflow-wrap:anywhere}}footer{{padding-top:25px}}@media(max-width:600px){{main{{padding:20px 18px 40px}}th,td{{font-size:13px}}.table-wrap table{{min-width:620px}}.file-list li{{gap:12px}}}}@media print{{body{{background:white}}.actions{{display:none}}section{{break-inside:avoid}}}}</style></head>
-<body><main><a href="./#landscape">← AI Career Compass</a><header><p class="meta">MIT 1.125 · PS1 · Tianyu Zhao</p><h1>Submission materials</h1><p>{n:,} US AI postings · {companies} companies · Snapshot 21 September 2026</p><p>For students beginning to explore AI careers, and university career services or student groups helping them choose a direction and next learning project.</p><div class="actions"><a class="download" href="{SITE}/downloads/{ZIP_NAME}" download>Download submission pack</a><a class="download" href="./presentation.html">Open five-minute presentation</a></div><p class="meta" style="margin-top:12px">Includes all written materials and presentation notes. Video recording is not included.</p></header>
-<section aria-labelledby="documents"><h2 id="documents">Documents</h2><ul class="file-list">{artifact_rows}<li>{link('./presentation.html','Five-slide presentation')}<span>HTML</span></li><li>{link(REPO,'Submission repository')}<span>GITHUB</span></li></ul></section>
-<section aria-labelledby="dataset"><h2 id="dataset">Collected dataset</h2><p class="meta">UTF-8 CSVs. Join related tables using job_id = jobs.id. One posting can have several locations, skills or qualification paths.</p><div class="table-wrap"><table><thead><tr><th>File</th><th>Rows</th><th>Unit / contents</th></tr></thead><tbody>{data_rows}</tbody></table></div><p style="margin-top:14px">{link('./data.json','Canonical JSON snapshot')} · {link('./downloads/skill-target-study.json','Full threshold test results')}</p></section>
-<section aria-labelledby="findings"><h2 id="findings">Main findings</h2>{fact_html}<p class="meta">{esc(methods)}</p></section>
-<section aria-labelledby="recommendations"><h2 id="recommendations">Two decisions the data can inform</h2><ol>{rec_html}</ol></section>
-<section aria-labelledby="limits"><h2 id="limits">Interpretation</h2><p>198 postings have unspecified experience, 101 have no named US state, and 36 have no tracked skills. Skill lab scores 816 postings and uses the same fixed 70% target throughout. Missing data is not evidence of no requirements.</p><p>This sample cannot establish national demand, proficiency, eligibility or hiring probability. The methodology note explains collection, bias, definitions and the source trail. Skill selections stay in your browser.</p></section>
-<footer><p>{link('./#skills','Open Skill lab')} · {link('./#postings','Inspect job postings and sources')}</p><p class="meta">Frozen dataset SHA-256<br><code>{sha(raw)}</code></p></footer></main></body></html>'''
+<title>PS1 submission materials · AI Career Compass</title><meta name="description" content="Required dataset, methodology note and reflection for MIT 1.125 PS1."><link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<style>*{{box-sizing:border-box}}body{{margin:0;background:#f7f8f3;color:#172c37;font:16px/1.5 system-ui,sans-serif}}main{{max-width:720px;margin:auto;padding:36px 24px 60px}}a{{color:#176d61;text-underline-offset:3px}}a:focus-visible{{outline:3px solid #176d61;outline-offset:4px}}.back{{font-size:14px}}header{{margin:36px 0 26px}}.meta{{margin:0;color:#52635e;font-size:13px}}h1{{font-size:clamp(1.8rem,5vw,2.3rem);line-height:1.2;margin:10px 0 0}}.file-list{{list-style:none;margin:0;padding:0;border-top:1px solid #dce2da}}.file-list a{{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid #dce2da;text-decoration:none}}.file-list a:hover{{text-decoration:underline}}.format{{font-size:12px;color:#52635e;white-space:nowrap}}footer{{margin-top:24px;font-size:14px}}@media(max-width:600px){{main{{padding:24px 18px 40px}}.file-list a{{gap:14px;padding:20px 0}}}}</style></head>
+<body><main><a class="back" href="./#landscape">← AI Career Compass</a><header><p class="meta">MIT 1.125 · PS1 · Tianyu Zhao</p><h1>Submission materials</h1></header>
+<ul class="file-list">{artifact_rows}</ul>
+<footer><a href="./presentation.html">Five-minute presentation</a></footer>
+</main></body></html>'''
     (DIST/'submission.html').write_text(page)
     readme=f'''# MIT 1.125 PS1 — AI Career Compass
 
